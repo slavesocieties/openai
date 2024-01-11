@@ -66,5 +66,17 @@
                 }
             ]
         }
+    ],
+    "events": [
+        {
+            "type": "baptism",
+            "principal": "P04",
+            "date": "1839-10-16"
+        },
+        {
+            "type": "birth",
+            "principal": "P04",
+            "date": "1838-09-24"
+        }
     ]
 }

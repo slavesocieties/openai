@@ -108,11 +108,18 @@ response = client.chat.completions.create(
             "role": "system",
             "content": "These records will sometimes contain information about relationships between people. " \
             "Each relationship that you identify should be between 2 people and appear twice in your output, once for each related person. " \
-            "The relationship type that you list for each individual should indicate what the related person *is to them*."
+            "The relationship type that you list for each individual should indicate what the related person *is to them*." \
+            "The possible values for relationship type are: `parent`, `child`, `spouse`, `enslaver`, `slave`, `godparent`, `godchild`, `grandparent`, and `grandchild`."
+        },
+        {
+            "role": "system",
+            "content": "Baptismal registers will usually contain information about exactly 1 baptism. They will sometimes also contain information about a birth, particularly when an infant is being baptized. " \
+            "Baptisms and births are both events. For each event, record the type of the event (either `baptism` or `birth`), the unique identifier assigned to the principal (the person who was baptized or born), " \
+            "and the date when the event took place. Represent dates in a YYYY-MM-DD format. If you can't find a complete date, include as much information as possible."
         },               
         {            
             "role": "user",
-            "content": "Please list each person who appears in this transcription of a Spanish baptismal register: `" + example_01 + "`"
+            "content": "Please extract information from this transcription of a Spanish baptismal register: `" + example_01 + "`"
         },
         {
             "role": "assistant",
@@ -120,7 +127,7 @@ response = client.chat.completions.create(
         },
         {            
             "role": "user",
-            "content": "Please list each person who appears in this transcription of a Spanish baptismal register: `" + example_02 + "`"
+            "content": "Please extract information from this transcription of a Spanish baptismal register: `" + example_02 + "`"
         },
         {
             "role": "assistant",
@@ -128,7 +135,7 @@ response = client.chat.completions.create(
         },
         {            
             "role": "user",
-            "content": "Please list each person who appears in this transcription of a Spanish baptismal register: `" + example_03 + "`"
+            "content": "Please extract information from this transcription of a Spanish baptismal register: `" + example_03 + "`"
         },
         {
             "role": "assistant",
@@ -136,7 +143,7 @@ response = client.chat.completions.create(
         },
         {            
             "role": "user",
-            "content": "Please list each person who appears in this transcription of a Spanish baptismal register: `" + user_input + "`"
+            "content": "Please extract information from this transcription of a Spanish baptismal register: `" + user_input + "`"
         }
     ]
 )

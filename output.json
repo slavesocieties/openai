@@ -33,7 +33,7 @@
             "id": "P03",
             "name": "Isabel",
             "origin": "Africa",
-            "status": "enslaved",            
+            "status": "enslaved", 
             "relationships": [
                 {
                     "related_person": "P02",
@@ -46,9 +46,10 @@
                 {
                     "related_person": "P05",
                     "relationship_type": "child"
-                }                
+                }
             ]
         },
+        
         {
             "id": "P04",
             "name": "Jose Corras",
@@ -63,15 +64,15 @@
                 {
                     "related_person": "P03",
                     "relationship_type": "slave"
-                }            
+                }
             ]
         },
+        
         {
             "id": "P05",
-            "name": "Maria del Carmen",            
+            "name": "Maria del Carmen",
             "age": "infant",
-            "legitimacy": "legitimate",
-            "status": "enslaved",
+            "legitimacy": "legitimate", 
             "relationships": [
                 {
                     "related_person": "P02",
@@ -80,22 +81,34 @@
                 {
                     "related_person": "P03",
                     "relationship_type": "parent"
-                } ,
+                },
                 {
                     "related_person": "P06",
                     "relationship_type": "godparent"
-                }               
+                }
             ]
         },
         {
             "id": "P06",
-            "name": "Francisca Maria Herrera",
+            "name": "Francisca Maria Herrera",            
             "relationships": [
                 {
                     "related_person": "P05",
                     "relationship_type": "godchild"
                 }
             ]
+        }
+    ],
+    "events": [
+        {
+            "type": "baptism",
+            "principal": "P05",
+            "date": "1839-10-16"
+        },
+        {
+            "type": "birth",
+            "principal": "P05",
+            "date": "1839-07-15"
         }
     ]
 }

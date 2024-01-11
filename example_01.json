@@ -48,5 +48,12 @@
                 }
             ]
         }
+    ],
+    "events": [
+        {
+            "type": "baptism",
+            "principal": "P03",
+            "date": "1840-07-19"
+        }
     ]
 }

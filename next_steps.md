@@ -1,4 +1,3 @@
-3. add event extraction
 4. test different books
 5. test different types of ecclesiastical records
 7. "fine-tune" few-shot learning for different types of records/languages

@@ -98,5 +98,17 @@
                 }
             ]
         }
+    ],
+    "events": [
+        {
+            "type": "baptism",
+            "principal": "P05",
+            "date": "1839-10-17"
+        },
+        {
+            "type": "birth",
+            "principal": "P05",
+            "date": "1837-06-13"
+        }
     ]
 }
