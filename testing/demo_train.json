@@ -1,0 +1,281 @@
+{
+    "type": "baptism",
+    "country": "Cuba",
+    "state": "Cienfuegos",
+    "city": "Cienfuegos",
+    "institution": "Catedral de Nuestra Señora de la Purisima Concepción",
+    "id": 166470,
+    "title": "Libro 3 de Bautismos de Pardos y Morenos, 1839 - 1843",
+    "entries": [
+        {
+            "id": "0031-07",
+            "raw": "En diezynuebe de Julio de mil ochocientoscuarenta; yo Don Antonio Loreto Sanchez Presbitero cura beneficiado por Su Majestad de la Iglesia Parroquial de la Purisima Concepción de esta villa de Cienfuegos en ella y su jurisdiccion vicario Eclesiastico por Santa Eclesiastica Illustrisima bauticé solemnemente y puse los santos oleos a una negra adulta natural de Africa, de la propiedad de Don Juan Vives, en cuya negra ejerci las sacras ceremonias y preces y la puse por nombre Dominga fue su madrina Isabel aquien adverti el parentesco espiritual y demas obligaciones y lo firmé",
+            "normalized": "En diecinueve de julio de mil ochocientos cuarenta, yo Don Antonio Loreto Sanchez, Presbítero cura beneficiado por Su Majestad de la Iglesia Parroquial de la Purísima Concepción de esta villa de Cienfuegos y su jurisdicción, vicario eclesiástico por Santa Eclesiástica Illustrísima, bauticé solemnemente y puse los santos óleos a una negra adulta natural de África, de la propiedad de Don Juan Vives. En esta negra ejercí las sacras ceremonias y preces y le puse por nombre Dominga. Fue su madrina Isabel, a quien advertí el parentesco espiritual y demás obligaciones, y lo firmé.",
+            "data": {
+                "people": [
+                    {
+                        "id": "P01",
+                        "name": "Antonio Loreto Sanchez",
+                        "titles": [
+                            "Don"
+                        ],
+                        "occupation": "cleric"
+                    },
+                    {
+                        "id": "P02",
+                        "name": "Juan Vives",
+                        "rank": "Captain",            
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "slave"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P03",
+                        "name": "Dominga",
+                        "origin": "Africa",
+                        "ethnicitiy": "Carabalí",
+                        "age": "adult",
+                        "phenotype": "negro",
+                        "status": "enslaved",            
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "enslaver"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P04",
+                        "name": "Isabel",
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "godchild"
+                            }
+                        ]
+                    }
+                ],
+                "events": [
+                    {
+                        "type": "baptism",
+                        "principal": "P03",
+                        "date": "1840-07-19"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "0008-02",
+            "raw": "En diezyseis de Octubre de mil ochocientostreintaynuebe; yo Don Antonio Loreto Sanchez Presbitero cura beneficiado por Santa Majestad de la Iglesia Parroquial de la Purisima Concepción de esta villa de Cienfuegos en ella y su jurisdiccion vicario Eclesiastico Santa Eclesiastica Illustrisima bautice solemnemente y puse los santos oleos a una parvula que nació el trece de Junio del año de mil ochocientostreintaysiete hija legitima de los morenos Julian y Sabina, esta libre naturales de Guinea esclavos de Don Jose Corras: en cuya parvula ejervi las sacras ceremonias y preces y le puse por nombre Antonia fur su madrina Budesiceda aquien adverti el parentesco espiritual y demas obligaciones y lo firme",
+            "normalized": "En dieciséis de octubre de mil ochocientos treinta y nueve, yo Don Antonio Loreto Sanchez, Presbítero cura beneficiado por Santa Majestad de la Iglesia Parroquial de la Purísima Concepción de esta villa de Cienfuegos, en ella y su jurisdicción, vicario Eclesiástico Santa Eclesiástica Illustrísima, bauticé solemnemente y puse los santos óleos a una parvula libre que nació el trece de junio del año de mil ochocientos treinta y siete, hija legítima de los morenos Julian y Sabina, naturales de Guinea, esclavos de Don José Corras. En cuya parvula ejercí las sacras ceremonias y preces, y le puse por nombre Antonia. Fue su madrina Budesiceda, a quien advertí el parentesco espiritual y demás obligaciones, y lo firmé.",
+            "data": {
+                "people": [
+                     {
+                         "id": "P01",
+                         "name": "Antonio Loreto Sanchez",
+                         "titles": [
+                             "Don"
+                         ],
+                         "occupation": "cleric"
+                     },
+                     {
+                         "id": "P02",
+                         "name": "Julian",
+                         "origin": "Guinea",
+                         "phenotype": "moreno",
+                         "status": "enslaved",            
+                         "relationships": [
+                             {
+                                 "related_person": "P03",
+                                 "relationship_type": "spouse"
+                             },
+                             {
+                                 "related_person": "P04",
+                                 "relationship_type": "enslaver"
+                             },
+                             {
+                                 "related_person": "P05",
+                                 "relationship_type": "child"
+                             }                
+                         ]
+                     },
+                     {
+                         "id": "P03",
+                         "name": "Sabina",
+                         "origin": "Guinea",
+                         "phenotype": "moreno",
+                         "status": "enslaved",            
+                         "relationships": [
+                             {
+                                 "related_person": "P02",
+                                 "relationship_type": "spouse"
+                             },
+                             {
+                                 "related_person": "P04",
+                                 "relationship_type": "enslaver"
+                             },
+                             {
+                                 "related_person": "P05",
+                                 "relationship_type": "child"
+                             }                
+                         ]
+                     },
+                     {
+                         "id": "P04",
+                         "name": "Jose Corras",
+                         "titles": [
+                             "Don"
+                         ],            
+                         "relationships": [
+                             {
+                                 "related_person": "P02",
+                                 "relationship_type": "slave"
+                             },
+                             {
+                                 "related_person": "P03",
+                                 "relationship_type": "slave"
+                             }            
+                         ]
+                     },
+                     {
+                         "id": "P05",
+                         "name": "Antonia",            
+                         "age": "infant",
+                         "legitimacy": "legitimate",
+                         "status": "free",            
+                         "relationships": [
+                             {
+                                 "related_person": "P02",
+                                 "relationship_type": "parent"
+                             },
+                             {
+                                 "related_person": "P03",
+                                 "relationship_type": "parent"
+                             } ,
+                             {
+                                 "related_person": "P06",
+                                 "relationship_type": "godparent"
+                             }              
+                         ]
+                     },
+                     {
+                         "id": "P06",
+                         "name": "Budesiceda",
+                         "relationships": [
+                             {
+                                 "related_person": "P05",
+                                 "relationship_type": "godchild"
+                             }
+                         ]
+                     }
+                 ],
+                 "events": [
+                     {
+                         "type": "baptism",
+                         "principal": "P05",
+                         "date": "1839-10-17"
+                     },
+                     {
+                         "type": "birth",
+                         "principal": "P05",
+                         "date": "1837-06-13"
+                     }
+                 ]
+             }
+        },
+        {
+            "id": "0008-05",
+            "raw": "En diezyseis de Octubre de mil ochocientostreintaynuebe; yo Don Antonio Loreto Sanchez Presbitero cura beneficiado por Su Majestad de la Iglesia Parroquial de la Purisima Concepción de esta villa de Cienfuegos en ella y su jurisdiccion vicario Eclesiastico por Santa Eclesiastica Illustrisima bautice solemnemente y puse los santos oleos a una parvula que nacio el veinteycuatro de Septiembre del año pasado hija legitima de los negros Sebastian y Jucina naturales de Guinea de la propiedad de Don Jose Corras; en cuya parvula ejerci las sacras preces y ceremonias y precse y le puse por nombre Merced fue su madrina Don Maria Ramona Prieto; aquien adverti el parentesco espiritual y demas obligaciones y lo fir",
+            "normalized": "En dieciséis de octubre de mil ochocientos treinta y nueve, yo Don Antonio Loreto Sánchez, presbítero cura beneficiado por Su Majestad de la Iglesia Parroquial de la Purísima Concepción de esta villa de Cienfuegos, en ella y su jurisdicción, vicario eclesiástico por la Santa Eclesiástica Illustrísima, bauticé solemnemente y puse los santos óleos a una parvula que nació el veinticuatro de septiembre del año pasado, hija legítima de los negros Sebastian y Jucina, naturales de Guinea, de la propiedad de Don José Corras. En cuya parvula ejercí las sacras preces y ceremonias, y le puse por nombre Merced. Fue su madrina Doña Maria Ramona Prieto, a quien advertí el parentesco espiritual y demás obligaciones, y lo firmé.",
+            "data": {
+                "people": [
+                     {
+                         "id": "P01",
+                         "name": "Juan Gomes",
+                         "titles": [
+                             "Don"
+                         ],
+                         "occupation": "cleric"
+                     },
+                     {
+                         "id": "P02",
+                         "name": "Jucina",
+                         "phenotype": "negro",
+                         "status": "enslaved",
+                         "relationships": [
+                             {
+                                 "related_person": "P03",
+                                 "relationship_type": "enslaver"
+                             },
+                             {
+                                 "related_person": "P04",
+                                 "relationship_type": "child"
+                             }
+                         ]
+                     },
+                     {
+                         "id": "P03",
+                         "name": "Jose Corras",
+                         "rank": "Lieutenant",
+                         "relationships": [
+                             {
+                                 "related_person": "P02",
+                                 "relationship_type": "slave"
+                             }
+                         ]
+                     },
+                     
+                     {
+                         "id": "P04",
+                         "name": "Merced",
+                         "age": "infant",
+                         "legitimacy": "free",   
+                         "relationships": [
+                             {
+                                 "related_person": "P02",
+                                 "relationship_type": "parent"
+                             },
+                             {
+                                 "related_person": "P05",
+                                 "relationship_type": "godparent"
+                             }
+                         ]
+                     },
+                     {
+                         "id": "P05",
+                         "name": "Maria Ramona Prieto",
+                         "titles": [
+                             "Doña"
+                         ],
+                         "phenotype": "parda",
+                         "relationships": [
+                             {
+                                 "related_person": "P04",
+                                 "relationship_type": "godchild"
+                             }
+                         ]
+                     }
+                 ],
+                 "events": [
+                     {
+                         "type": "baptism",
+                         "principal": "P04",
+                         "date": "1839-10-16"
+                     },
+                     {
+                         "type": "birth",
+                         "principal": "P04",
+                         "date": "1838-09-24"
+                     }
+                 ]
+             }
+        }
+    ]
+}

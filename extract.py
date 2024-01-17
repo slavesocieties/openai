@@ -1,55 +1,27 @@
-from openai import OpenAI
-client = OpenAI()
+def extract_data_from_volume(volume_record_path, examples, output_path = None):
+    import json
 
-example_01 = "En diezynuebe de Julio de mil ochocientoscuarenta; yo Don Antonio Loreto Sanchez Presbitero cura beneficiado por " \
-                "Su Majestad de la Iglesia Parroquial de la Purisima Concepción de esta villa de Cienfuegos en ella y su jurisdiccion vicario Eclesiastico por " \
-                    "Santa Eclesiastica Illustrisima bauticé solemnemente y puse los santos oleos a una negra Carabalí adulta natural de Africa, de la propiedad de Capitán Juan Vives, " \
-                        "en cuya negra ejerci las sacras ceremonias y preces y la puse por nombre Dominga fue su madrina Isabel aquien adverti el parentesco espiritual y demas " \
-                            "obligaciones y lo firmé"
+    with open(volume_record_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
 
-output_01 = ""
+    with open(examples, "r", encoding="utf-8") as f:
+        examples = json.load(f)
+    
+    for x, entry in enumerate(data["entries"]):
+        norm = extract_data_from_entry(entry, examples)
+        data["entries"][x]["data"] = json.loads(norm)
 
-with open("example_01.json","r",encoding="utf-8") as f:
-    for line in f:
-        output_01 += line
+    if output_path == None:
+        output_path = volume_record_path
+    
+    with open(output_path, "w", encoding="utf-8") as f:
+        json.dump(data, f)
 
-example_02 = "En diezyseis de Octubre de mil ochocientostreintaynuebe; yo Don Antonio Loreto Sanchez Presbitero cura beneficiado " \
-                         "por Santa Majestad de la Iglesia Parroquial de la Purisima Concepción de esta villa de Cienfuegos en ella y su jurisdiccion " \
-                         "vicario Eclesiastico Santa Eclesiastica Illustrisima bautice solemnemente y puse los santos oleos a una parvula que nació el trece de Junio " \
-                         "del año de mil ochocientostreintaysiete hija legitima de los morenos Julian y Sabina, naturales de Guinea esclavos " \
-                         "de Don Jose Corras: en cuya parvula ejervi las sacras ceremonias y preces y le puse por nombre Antonia " \
-                         "fue su madrina Budesiceda aquien adverti el parentesco espiritual y demas obligaciones y lo firme"
 
-output_02 = ""
+def extract_data_from_entry(entry, example_entries):
+    import json
 
-with open("example_02.json","r",encoding="utf-8") as f:
-    for line in f:
-        output_02 += line
-
-example_03 = "En diezyseis de Octubre de mil ochocientostreintaynuebe; yo Don Juan Gomes Presbitero cura beneficiado por Su Majestad de " \
-                "la Iglesia Parroquial de la Purisima Concepción de esta villa de Cienfuegos en ella y su jurisdiccion vicario Eclesiastico por Santa Eclesiastica Illustrisima bautice " \
-                "solemnemente y puse los santos oleos a una parvula que nacio el veinteycuatro de Septiembre del año pasado hija de " \
-                "la negra Jucina de la propiedad de Teniente Jose Corras; en cuya parvula libre ejerci las " \
-                "sacras preces y ceremonias y preces y le puse por nombre Merced fue su madrina la parda Doña Maria Ramona Prieto; " \
-                "aquien adverti el parentesco espiritual y demas obligaciones y lo firme"
-
-output_03 = ""
-
-with open("example_03.json","r",encoding="utf-8") as f:
-    for line in f:
-        output_03 += line
-
-user_input = "En diezysies de Octubre de mil ochocientostreintaynuebe; yo Don Antonio Loreto Sanchez Presbitero cura beneficiado por " \
-             "Su Majestad de la Iglesia Parroquial de la Purisima Concepción de esta villa de Cienfuegos en ella y su jurisdiccion vicario " \
-             "Eclesiastico por Santa Eclesiastica Illustrisima bautice solemnemente y puse los santos oleos a una parvula que nacio, el quince de Julio " \
-             "del presente año hija legitima de los morenos Fabian y de Isabel naturales de Africa de la propiedad de Don Jose " \
-             "Corras; en cuya parvula ejerci las sacras ceremonias y preces y le puse por nombre Maria del Carmen; " \
-             "fue su madrina Francisca Maria Herrera; aquien adverti el parentesco espiritual y demas obligaciones y lo firme"
-
-response = client.chat.completions.create(
-    model="gpt-3.5-turbo-1106",
-    response_format={ "type": "json_object" },
-    messages = [
+    conversation = [
         {
             "role": "system",
             "content": "You are assisting a historian of the early modern Atlantic with a large collection of transcriptions of Catholic sacramental records written in Spanish. " \
@@ -116,42 +88,43 @@ response = client.chat.completions.create(
             "content": "Baptismal registers will usually contain information about exactly 1 baptism. They will sometimes also contain information about a birth, particularly when an infant is being baptized. " \
             "Baptisms and births are both events. For each event, record the type of the event (either `baptism` or `birth`), the unique identifier assigned to the principal (the person who was baptized or born), " \
             "and the date when the event took place. Represent dates in a YYYY-MM-DD format. If you can't find a complete date, include as much information as possible."
-        },               
-        {            
-            "role": "user",
-            "content": "Please extract information from this transcription of a Spanish baptismal register: `" + example_01 + "`"
-        },
-        {
-            "role": "assistant",
-            "content": output_01
-        },
-        {            
-            "role": "user",
-            "content": "Please extract information from this transcription of a Spanish baptismal register: `" + example_02 + "`"
-        },
-        {
-            "role": "assistant",
-            "content": output_02
-        },
-        {            
-            "role": "user",
-            "content": "Please extract information from this transcription of a Spanish baptismal register: `" + example_03 + "`"
-        },
-        {
-            "role": "assistant",
-            "content": output_03
-        },
-        {            
-            "role": "user",
-            "content": "Please extract information from this transcription of a Spanish baptismal register: `" + user_input + "`"
         }
     ]
-)
 
-model_output = response.choices[0].message.content
+    examples = []
+    for example in example_entries["entries"]:
+        examples.append({"text": example["normalized"], "data": json.dumps(example["data"])})
 
-with open("output.json", "w", encoding="utf-8") as f:
-    for line in model_output:
-        f.write(line)
+    for example in examples:
+        conversation.append(
+            {
+                "role": "user",
+                "content": "Please extract information from this transcription of a Spanish baptismal register: `" + example["text"] + "`"
+            }
+        )
+        conversation.append(
+            {
+                "role": "assistant",
+                "content": example["data"]
+            }
+        )
 
-print("Output saved.")
+    conversation.append(
+        {
+            "role": "user",
+            "content": "Please extract information from this transcription of a Spanish baptismal register: `" + entry["normalized"] + "`"
+        }
+    )
+
+    from openai import OpenAI
+    client = OpenAI()
+    
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo-1106",
+        response_format={"type": "json_object"},
+        messages = conversation        
+    )
+
+    return response.choices[0].message.content
+
+extract_data_from_volume("testing\\15834_sample.json", "testing\\demo_train.json", output_path = "testing\\15834_sample_output.json")
