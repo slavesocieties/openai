@@ -11,16 +11,7 @@ def generate_training_data(training_data_path, volume_metadata, few_shot_strateg
     bucket_name = training_data_path["bucket"]
     file_key = training_data_path["key"]
 
-    aws_access_key_id = 'ASIAZBGHHGOD4GBJLNWZ'
-    aws_secret_access_key = 'KEGbm66l8DlTBuD4KPLhN/lwBlla9mJ/MlI1zMKU'
-    aws_session_token = 'IQoJb3JpZ2luX2VjEDcaCXVzLWVhc3QtMSJIMEYCIQDgK+tNPdKrL55cuOKA0Z5L0o7QF9ZtQ6WjvHkNKJKLJwIhAOekik6SBGYsVFZd2RH/Bg+l9TDyc2l0ni2aujV7XiMSKoQECOD//////////wEQAxoMNjIxMDQwNTc5NDYzIgzhZu2hnA2dS+d0AZsq2AOnppW+zZ7W7XfFdYfOqCklGtVDt2FxRNtT1RXfMMG6XSc7nAnvL1iT2KneSJ2aKsRHHrpH4sqvXsY12ufb9+1gJjPDmFR3R4iOLP5Nqw1bUenv1GI5HRj8PqcbS2A+AB4x0hx5Yw56nYIkMW4MGNZ4+YRpVm9ZpdoUwduACS7F1NK1FjTIxA0V9gDDoOT9rk1WJ6pmG8nt2lUbICd7Xnf4hU6Lgl1rKl3iAuqlPoz1awN/LYuI2PuY3BLIdSd4AjD6e7AJVXDFs7d7zGCm7vc5x30mpZdc9gBPn6ePBfHhRqphx+hlnRfcfD0noZVaw01ktmOoii7P8/NRFuiMqaujs8zSdMcwcfdj4KgpiZUwGv0nbgP9KrTcsXD3CKgTaskiGx7NIA2yz4ywnL+E5kcmlWXbUuu8QA2PZUMw6vUgj1YlKfv2pciQRZwiCa6Iex7mb7onoWSW2FE9dL7AchKHx7nHwaifzRjFhIPYzNzMB8NUj9D4P8ohP/Kk7ku0tdUL4urtD7ueVCW2q1Cuf5lJ5UO36ZiwgnZT779w962mqA8/ibaXWNPUzcl72I+35ibAHiFtv3+St4VFIdcXqA1/hvjM3FNJaEBkTiqil3uRHx8BRaQslkWjMInXpq0GOqUBdTVGayXRl0t0cweMyi84WXCRvvkAJtCZIN0R+hE1e8AmqyKRd4gQiHIyRiXjBhWC8MsSMel9QOBJ3jX+onO34NAckl77CBPB7uG0vTEdkIk/R2pN4rXViEaQKRWU1qvE7yyU5okKeTUOsRK+eRcPXClLweNBvbzo7CxhZ1AsYCcoIG5qtiqeIXuYH5flh6L2sJOOROq8OwGYFVTUEEl1h6VMmc76' 
-    
-    s3_client = boto3.client(
-        's3',
-        aws_access_key_id=aws_access_key_id,
-        aws_secret_access_key=aws_secret_access_key,
-        aws_session_token=aws_session_token
-    )
+    s3_client = boto3.client('s3')
 
     try:
         # Get the file object from S3
