@@ -3,6 +3,8 @@
 
 -build an endpoint that can be reached remotely, write basic documentation
 
+-refactor local version of code to account for improvements in lambda
+
 -fully build out infrastructure to extract data from a full volume, fill in missing dates, disambiguate, etc.
  and create master volume record
 
