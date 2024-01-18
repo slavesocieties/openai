@@ -1,4 +1,3 @@
--fully modularize support for different kinds of records (e.g. selecting pertinent cases from larger selection based on keywords)
 -test how much training data is required and how granular it needs to be (metrics? do RAs need to do some manual extraction?)
 -create the necessary data for all extant transcriptions (RAs if we need a lot, this may also come before above)
 

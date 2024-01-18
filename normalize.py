@@ -1,17 +1,11 @@
-def normalize_volume(volume_record_path, output_path = None):
+def normalize_volume(volume_record_path, training_data_path, output_path = None, few_shot_strategy = None, max_shots = 1000):
     import json
-    
-    with open(volume_record_path, "r", encoding="utf-8") as f:
-        data = json.load(f)
+    from utility import parse_volume_record   
 
-    if data["type"] == "baptism":
-        record_type = "baptismal register"
-
-    if data["country"] in ["Cuba", "Colombia"]:
-        language = "Spanish"
+    data, volume_metadata = parse_volume_record(volume_record_path)
 
     for x, entry in enumerate(data["entries"]):
-        norm = normalize_entry(entry, record_type, language)
+        norm = normalize_entry(entry, volume_metadata, training_data_path, few_shot_strategy, max_shots)
         data["entries"][x]["normalized"] = norm
 
     if output_path == None:
@@ -20,50 +14,60 @@ def normalize_volume(volume_record_path, output_path = None):
     with open(output_path, "w", encoding="utf-8") as f:
         json.dump(data, f)
 
-def normalize_entry(entry, record_type, language):
+def normalize_entry(entry, volume_metadata, training_data_path, few_shot_strategy, max_shots):
     from openai import OpenAI
     client = OpenAI()
-    
-    response = client.chat.completions.create(
-        model="gpt-3.5-turbo-1106",    
-        messages = [
-            {
+    from utility import generate_training_data, parse_record_type
+
+    record_type = parse_record_type(volume_metadata)
+
+    conversation = [
+        {
                 "role": "system",
-                "content": "You are assisting a historian of the early modern Atlantic with a large collection of transcriptions of Catholic sacramental records written in Spanish. " \
-                "The historian will provide you with a transcription of a sacramental record written in early modern Spanish and ask you to normalize it by expanding abbreviations, " \
+                "content": f"You are assisting a historian of the early modern Atlantic with a large collection of transcriptions of Catholic sacramental records written in {volume_metadata['language']}. " \
+                f"The historian will provide you with a transcription of a {record_type} written in early modern {volume_metadata['language']} and ask you to normalize it by expanding abbreviations, " \
                 "correcting idiosyncratic or archaic spellings, modernizing capitalization and punctuation, and correcting obvious transcription errors."
-            },
+        }
+    ] 
+
+    if volume_metadata["language"] == "Spanish":
+        conversation.append(
             {
                 "role": "system",
                 "content": "Expand abbreviated names as well as words. Commonly abbreviated first names include Antonio or Antonia, Domingo or Dominga, Francisco or Francisca, " \
                 "or Juan or Juana. Commonly abbreviated last names include Fernandez, Gonzalez, Hernandez, or Rodriguez. These are not intended to be complete lists. Use context " \
-                f"to determine when a name has been abbreviated and your knowledge of {language} names to determine what the abbreviated name is."
-            },
-            {
-                "role": "user",
-                "content": "Please normalize this transcription of a Spanish baptismal register: `" + "Domingo veinte y dos de febrero yo Thomas de Orvera baptize, y pusse s.tos oleos " \
-                "a Juana de nacion Mina esclava de Juan Joseph de Justis fueron sus P.P. Joseph Salcedo y Ana de Santiago su mugger, y lo firmé." + "`"
-            },
-            {
-                "role": "assistant",
-                "content": "Domingo veintidós de febrero yo Thomas de Orvera bauticé y puse santos óleos a Juana de nacion Mina, esclava de Juan Joseph de Justis. Fueron sus padrinos " \
-                "Joseph Salcedo y Ana de Santiago su mujer, y lo firmé."
-            },
-            {
-                "role": "user",
-                "content": "Please normalize this transcription of a Spanish baptismal register: `" + "Juebes veinte y tres de feb.o de mil sietec.tos. y diez y nueve Yo Thomas de Orvera baptizé, " \
-                "y pusse los santos15 oleos á Paula h. l. de Juan Joseph, y Maria Josepha esc.s del Capitan D. Luis Hurtado de Mendoza fue su Padrino Bartholome Rixo, y lo firmé." + "`"
-            },
-            {
-                "role": "assistant",
-                "content": "Jueves veintitrés de febrero de mil setecientos diecinueve yo Thomas de Orvera bauticé " \
-                "y puse los santos óleos a Paula hija legítima de Juan Joseph y Maria Josepha, esclavos del Capitan Don Luis Hurtado de Mendoza. Fue su padrino Bartholome Rixo, y lo firmé."
-            },
-            {
-                "role": "user",
-                "content": f"Please normalize this transcription of a {language} {record_type}: `" + entry["raw"] + "`"
+                "to determine when a name has been abbreviated and your knowledge of Spanish names to determine what the abbreviated name is."
             }
-        ]
+        )
+
+    examples = generate_training_data(training_data_path, volume_metadata, few_shot_strategy, max_shots)
+
+    for example in examples:
+        conversation.append(
+            {
+                "role": "user",
+                "content": f"Please normalize this transcription of a {volume_metadata['language']} {record_type}: `" + example["raw"] + "`"
+            }
+        )
+        conversation.append(
+            {
+                "role": "assistant",
+                "content": example["normalized"]
+            }
+        )
+
+    conversation.append(
+        {
+                "role": "user",
+                "content": f"Please normalize this transcription of a {volume_metadata['language']} {record_type}: `" + entry["raw"] + "`"
+        }
+    )
+
+    response = client.chat.completions.create(
+        model="gpt-3.5-turbo-1106",    
+        messages = conversation
     )
 
     return response.choices[0].message.content
+
+normalize_volume("testing\\15834_sample.json", "training_data.json", output_path = "15834_modular_normalization.json", few_shot_strategy = None, max_shots = 1000)
