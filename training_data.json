@@ -2,9 +2,9 @@
     "examples": [
         {
             "type": "baptism",
-            "language": "Spanish",            
+            "language": "Spanish",
             "institution": "Catedral de Nuestra Señora de la Purisima Concepción",
-            "id": 166470,            
+            "id": 166470,
             "raw": "En diezynuebe de Julio de mil ochocientoscuarenta; yo Don Antonio Loreto Sanchez Presbitero cura beneficiado por Su Majestad de la Iglesia Parroquial de la Purisima Concepción de esta villa de Cienfuegos en ella y su jurisdiccion vicario Eclesiastico por Santa Eclesiastica Illustrisima bauticé solemnemente y puse los santos oleos a una negra adulta natural de Africa, de la propiedad de Don Juan Vives, en cuya negra ejerci las sacras ceremonias y preces y la puse por nombre Dominga fue su madrina Isabel aquien adverti el parentesco espiritual y demas obligaciones y lo firmé",
             "normalized": "En diecinueve de julio de mil ochocientos cuarenta, yo Don Antonio Loreto Sanchez, Presbítero cura beneficiado por Su Majestad de la Iglesia Parroquial de la Purísima Concepción de esta villa de Cienfuegos y su jurisdicción, vicario eclesiástico por Santa Eclesiástica Illustrísima, bauticé solemnemente y puse los santos óleos a una negra adulta natural de África, de la propiedad de Don Juan Vives. En esta negra ejercí las sacras ceremonias y preces y le puse por nombre Dominga. Fue su madrina Isabel, a quien advertí el parentesco espiritual y demás obligaciones, y lo firmé.",
             "data": {
@@ -20,7 +20,7 @@
                     {
                         "id": "P02",
                         "name": "Juan Vives",
-                        "rank": "Captain",            
+                        "rank": "Captain",
                         "relationships": [
                             {
                                 "related_person": "P03",
@@ -35,7 +35,7 @@
                         "ethnicitiy": "Carabalí",
                         "age": "adult",
                         "phenotype": "negro",
-                        "status": "enslaved",            
+                        "status": "enslaved",
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -69,215 +69,429 @@
         },
         {
             "type": "baptism",
-            "language": "Spanish",            
+            "language": "Spanish",
             "institution": "Catedral de Nuestra Señora de la Purisima Concepción",
             "id": 166470,
             "raw": "En diezyseis de Octubre de mil ochocientostreintaynuebe; yo Don Antonio Loreto Sanchez Presbitero cura beneficiado por Santa Majestad de la Iglesia Parroquial de la Purisima Concepción de esta villa de Cienfuegos en ella y su jurisdiccion vicario Eclesiastico Santa Eclesiastica Illustrisima bautice solemnemente y puse los santos oleos a una parvula que nació el trece de Junio del año de mil ochocientostreintaysiete hija legitima de los morenos Julian y Sabina, esta libre naturales de Guinea esclavos de Don Jose Corras: en cuya parvula ejervi las sacras ceremonias y preces y le puse por nombre Antonia fur su madrina Budesiceda aquien adverti el parentesco espiritual y demas obligaciones y lo firme",
             "normalized": "En dieciséis de octubre de mil ochocientos treinta y nueve, yo Don Antonio Loreto Sanchez, Presbítero cura beneficiado por Santa Majestad de la Iglesia Parroquial de la Purísima Concepción de esta villa de Cienfuegos, en ella y su jurisdicción, vicario Eclesiástico Santa Eclesiástica Illustrísima, bauticé solemnemente y puse los santos óleos a una parvula libre que nació el trece de junio del año de mil ochocientos treinta y siete, hija legítima de los morenos Julian y Sabina, naturales de Guinea, esclavos de Don José Corras. En cuya parvula ejercí las sacras ceremonias y preces, y le puse por nombre Antonia. Fue su madrina Budesiceda, a quien advertí el parentesco espiritual y demás obligaciones, y lo firmé.",
             "data": {
                 "people": [
-                     {
-                         "id": "P01",
-                         "name": "Antonio Loreto Sanchez",
-                         "titles": [
-                             "Don"
-                         ],
-                         "occupation": "cleric"
-                     },
-                     {
-                         "id": "P02",
-                         "name": "Julian",
-                         "origin": "Guinea",
-                         "phenotype": "moreno",
-                         "status": "enslaved",            
-                         "relationships": [
-                             {
-                                 "related_person": "P03",
-                                 "relationship_type": "spouse"
-                             },
-                             {
-                                 "related_person": "P04",
-                                 "relationship_type": "enslaver"
-                             },
-                             {
-                                 "related_person": "P05",
-                                 "relationship_type": "child"
-                             }                
-                         ]
-                     },
-                     {
-                         "id": "P03",
-                         "name": "Sabina",
-                         "origin": "Guinea",
-                         "phenotype": "moreno",
-                         "status": "enslaved",            
-                         "relationships": [
-                             {
-                                 "related_person": "P02",
-                                 "relationship_type": "spouse"
-                             },
-                             {
-                                 "related_person": "P04",
-                                 "relationship_type": "enslaver"
-                             },
-                             {
-                                 "related_person": "P05",
-                                 "relationship_type": "child"
-                             }                
-                         ]
-                     },
-                     {
-                         "id": "P04",
-                         "name": "Jose Corras",
-                         "titles": [
-                             "Don"
-                         ],            
-                         "relationships": [
-                             {
-                                 "related_person": "P02",
-                                 "relationship_type": "slave"
-                             },
-                             {
-                                 "related_person": "P03",
-                                 "relationship_type": "slave"
-                             }            
-                         ]
-                     },
-                     {
-                         "id": "P05",
-                         "name": "Antonia",            
-                         "age": "infant",
-                         "legitimacy": "legitimate",
-                         "status": "free",            
-                         "relationships": [
-                             {
-                                 "related_person": "P02",
-                                 "relationship_type": "parent"
-                             },
-                             {
-                                 "related_person": "P03",
-                                 "relationship_type": "parent"
-                             } ,
-                             {
-                                 "related_person": "P06",
-                                 "relationship_type": "godparent"
-                             }              
-                         ]
-                     },
-                     {
-                         "id": "P06",
-                         "name": "Budesiceda",
-                         "relationships": [
-                             {
-                                 "related_person": "P05",
-                                 "relationship_type": "godchild"
-                             }
-                         ]
-                     }
-                 ],
-                 "events": [
-                     {
-                         "type": "baptism",
-                         "principal": "P05",
-                         "date": "1839-10-17"
-                     },
-                     {
-                         "type": "birth",
-                         "principal": "P05",
-                         "date": "1837-06-13"
-                     }
-                 ]
-             }
+                    {
+                        "id": "P01",
+                        "name": "Antonio Loreto Sanchez",
+                        "titles": [
+                            "Don"
+                        ],
+                        "occupation": "cleric"
+                    },
+                    {
+                        "id": "P02",
+                        "name": "Julian",
+                        "origin": "Guinea",
+                        "phenotype": "moreno",
+                        "status": "enslaved",
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "enslaver"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "child"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P03",
+                        "name": "Sabina",
+                        "origin": "Guinea",
+                        "phenotype": "moreno",
+                        "status": "enslaved",
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "enslaver"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "child"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P04",
+                        "name": "Jose Corras",
+                        "titles": [
+                            "Don"
+                        ],
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "slave"
+                            },
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "slave"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P05",
+                        "name": "Antonia",
+                        "age": "infant",
+                        "legitimacy": "legitimate",
+                        "status": "free",
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P06",
+                        "name": "Budesiceda",
+                        "relationships": [
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "godchild"
+                            }
+                        ]
+                    }
+                ],
+                "events": [
+                    {
+                        "type": "baptism",
+                        "principal": "P05",
+                        "date": "1839-10-17"
+                    },
+                    {
+                        "type": "birth",
+                        "principal": "P05",
+                        "date": "1837-06-13"
+                    }
+                ]
+            }
         },
         {
             "type": "baptism",
-            "language": "Spanish",            
+            "language": "Spanish",
             "institution": "Catedral de Nuestra Señora de la Purisima Concepción",
             "id": 166470,
             "raw": "En diezyseis de Octubre de mil ochocientostreintaynuebe; yo Don Antonio Loreto Sanchez Presbitero cura beneficiado por Su Majestad de la Iglesia Parroquial de la Purisima Concepción de esta villa de Cienfuegos en ella y su jurisdiccion vicario Eclesiastico por Santa Eclesiastica Illustrisima bautice solemnemente y puse los santos oleos a una parvula que nacio el veinteycuatro de Septiembre del año pasado hija legitima de los negros Sebastian y Jucina naturales de Guinea de la propiedad de Don Jose Corras; en cuya parvula ejerci las sacras preces y ceremonias y precse y le puse por nombre Merced fue su madrina Don Maria Ramona Prieto; aquien adverti el parentesco espiritual y demas obligaciones y lo fir",
             "normalized": "En dieciséis de octubre de mil ochocientos treinta y nueve, yo Don Antonio Loreto Sánchez, presbítero cura beneficiado por Su Majestad de la Iglesia Parroquial de la Purísima Concepción de esta villa de Cienfuegos, en ella y su jurisdicción, vicario eclesiástico por la Santa Eclesiástica Illustrísima, bauticé solemnemente y puse los santos óleos a una parvula que nació el veinticuatro de septiembre del año pasado, hija legítima de los negros Sebastian y Jucina, naturales de Guinea, de la propiedad de Don José Corras. En cuya parvula ejercí las sacras preces y ceremonias, y le puse por nombre Merced. Fue su madrina Doña Maria Ramona Prieto, a quien advertí el parentesco espiritual y demás obligaciones, y lo firmé.",
             "data": {
                 "people": [
-                     {
-                         "id": "P01",
-                         "name": "Juan Gomes",
-                         "titles": [
-                             "Don"
-                         ],
-                         "occupation": "cleric"
-                     },
-                     {
-                         "id": "P02",
-                         "name": "Jucina",
-                         "phenotype": "negro",
-                         "status": "enslaved",
-                         "relationships": [
-                             {
-                                 "related_person": "P03",
-                                 "relationship_type": "enslaver"
-                             },
-                             {
-                                 "related_person": "P04",
-                                 "relationship_type": "child"
-                             }
-                         ]
-                     },
-                     {
-                         "id": "P03",
-                         "name": "Jose Corras",
-                         "rank": "Lieutenant",
-                         "relationships": [
-                             {
-                                 "related_person": "P02",
-                                 "relationship_type": "slave"
-                             }
-                         ]
-                     },
-                     
-                     {
-                         "id": "P04",
-                         "name": "Merced",
-                         "age": "infant",
-                         "legitimacy": "free",   
-                         "relationships": [
-                             {
-                                 "related_person": "P02",
-                                 "relationship_type": "parent"
-                             },
-                             {
-                                 "related_person": "P05",
-                                 "relationship_type": "godparent"
-                             }
-                         ]
-                     },
-                     {
-                         "id": "P05",
-                         "name": "Maria Ramona Prieto",
-                         "titles": [
-                             "Doña"
-                         ],
-                         "phenotype": "parda",
-                         "relationships": [
-                             {
-                                 "related_person": "P04",
-                                 "relationship_type": "godchild"
-                             }
-                         ]
-                     }
-                 ],
-                 "events": [
-                     {
-                         "type": "baptism",
-                         "principal": "P04",
-                         "date": "1839-10-16"
-                     },
-                     {
-                         "type": "birth",
-                         "principal": "P04",
-                         "date": "1838-09-24"
-                     }
-                 ]
-             }
+                    {
+                        "id": "P01",
+                        "name": "Juan Gomes",
+                        "titles": [
+                            "Don"
+                        ],
+                        "occupation": "cleric"
+                    },
+                    {
+                        "id": "P02",
+                        "name": "Sebastian",
+                        "phenotype": "negro",
+                        "status": "enslaved",
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "enslaver"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "child"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P03",
+                        "name": "Jucina",
+                        "phenotype": "negro",
+                        "status": "enslaved",
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "enslaver"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "child"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P04",
+                        "name": "Jose Corras",
+                        "rank": "Lieutenant",
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "slave"
+                            },
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "slave"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P04",
+                        "name": "Merced",
+                        "age": "infant",
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P05",
+                        "name": "Maria Ramona Prieto",
+                        "titles": [
+                            "Doña"
+                        ],
+                        "phenotype": "parda",
+                        "relationships": [
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "godchild"
+                            }
+                        ]
+                    }
+                ],
+                "events": [
+                    {
+                        "type": "baptism",
+                        "principal": "P04",
+                        "date": "1839-10-16"
+                    },
+                    {
+                        "type": "birth",
+                        "principal": "P04",
+                        "date": "1838-09-24"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "baptism",
+            "language": "Spanish",
+            "institution": "San Agustín de la Isleta",
+            "id": 7548705,
+            "raw": "En esta Mission de San Augustin de la Ysleta en treinta y uno de marzo de mil seteçientos y quarenta y ocho años baptise solemnemente a Diego apache de nacion fue su madrina Gregoria para que conste lo firme ut supra.",
+            "normalized": "En esta Misión de San Agustín de la Ysleta, en treinta y uno de marzo de mil setecientos cuarenta y ocho años, bauticé solemnemente a Diego, apache de nación. Su madrina fue Gregoria, para que conste, lo firmé ut supra.",
+            "data": {
+                "people": [
+                    {
+                        "id": "P01",
+                        "name": "Diego",
+                        "ethnicity": "Apache",
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P02",
+                        "name": "Gregoria",
+                        "relationships": [
+                            {
+                                "related_person": "P01",
+                                "relationship_type": "godchild"
+                            }
+                        ]
+                    }
+                ],
+                "events": [
+                    {
+                        "type": "baptism",
+                        "principal": "P01",
+                        "date": "1748-03-31"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "baptism",
+            "language": "Spanish",
+            "institution": "San Agustín de la Isleta",
+            "id": 7548705,
+            "raw": "En el pueblo y Mission de San Augustin de la Yzleta en nuebe dias de el mes de agosto de el año de mill setecientos synquenta baptise solemnemente y puse los santos oleos y chrysma a Juan Domingo hijo lexitimo de Andres y Pascuala fueron sus padrinos Joseph Marcos y Francisca y para que conste lo firme en dicho pueblo y mission dicho dia mes y año.",
+            "normalized": "En el pueblo y Misión de San Agustín de la Ysleta, en nueve días del mes de agosto del año de mil setecientos cincuenta, bauticé solemnemente y puse los santos óleos y crisma a Juan Domingo, hijo legítimo de Andrés y Pascuala. Fueron sus padrinos Joseph Marcos y Francisca. Para que conste, lo firmé en dicho pueblo y misión, dicho día, mes y año.",
+            "data": {
+                "people": [
+                    {
+                        "id": "P01",
+                        "name": "Juan Domingo",
+                        "legitimacy": "legitimate",
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "godparent"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P02",
+                        "name": "Andrés",
+                        "relationships": [
+                            {
+                                "related_person": "P01",
+                                "relationship_type": "child"
+                            },
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "spouse"
+                            }                            
+                        ]
+                    },
+                    {
+                        "id": "P03",
+                        "name": "Pascuala",
+                        "relationships": [
+                            {
+                                "related_person": "P01",
+                                "relationship_type": "child"
+                            },
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "spouse"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P04",
+                        "name": "Joseph Marcos",
+                        "relationships": [
+                            {
+                                "related_person": "P01",
+                                "relationship_type": "godchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P05",
+                        "name": "Francisca",
+                        "relationships": [
+                            {
+                                "related_person": "P01",
+                                "relationship_type": "godchild"
+                            }
+                        ]
+                    }
+                ],
+                "events": [
+                    {
+                        "type": "baptism",
+                        "principal": "P05",
+                        "date": "1750-08-09"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "baptism",
+            "language": "Spanish",
+            "institution": "San Agustín de la Isleta",
+            "id": 7548705,
+            "raw": "En el pueblo y Mission de San Augustin de la Yzleta en veynte y siete dias del mes de junio de el año de mill setecientos y sinquenta y tres baptise solemnemente y puse los santos oleos y chrysma a Maria Antonia parbula hija de padres ynfieles fueron sus padrinos Juan Antonio Chabes y Manuela Romero y para que conste lo firme en dicho pueblo y mission en dicho dia mes y año.",
+            "normalized": "En el pueblo y Misión de San Agustín de la Ysleta, en veinte y siete días del mes de junio del año de mil setecientos cincuenta y tres, bauticé solemnemente y puse los santos óleos y crisma a Maria Antonia, parbula hija de padres infieles. Fueron sus padrinos Juan Antonio Chabes y Manuela Romero. Para que conste, lo firmé en dicho pueblo y misión, en dicho día, mes y año.",
+            "data": {
+                "people": [
+                    {
+                        "id": "P01",
+                        "name": "Maria Antonia",
+                        "legitimacy": "illegitimate",
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "godparent"
+                            },
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P02",
+                        "name": "Juan Antonio Chabes",
+                        "relationships": [
+                            {
+                                "related_person": "P01",
+                                "relationship_type": "godchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P03",
+                        "name": "Manuela Romero",
+                        "relationships": [
+                            {
+                                "related_person": "P01",
+                                "relationship_type": "godchild"
+                            }
+                        ]
+                    }                    
+                ],
+                "events": [
+                    {
+                        "type": "baptism",
+                        "principal": "P03",
+                        "date": "1753-06-27"
+                    }
+                ]
+            }
         }
     ]
 }

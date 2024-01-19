@@ -94,3 +94,60 @@ def parse_xml(xml_path, output_path = None):
             json.dump(volume, f)   
 
     return volume
+
+def parse_txt(txt_path, output_path = None):    
+    volume = {}
+    volume["type"] = "baptism"
+    volume["country"] = "United States"
+    volume["city"] = "Isleta Pueblo"
+    volume["institution"] = "San Agustín de la Isleta"       
+    entry = ""
+    in_entry = False
+    partial = False    
+    with open(txt_path, "r", encoding="utf-8") as f:        
+        for x, line in enumerate(f):
+            if len(line) < 2:
+                continue
+            if x == 0:
+                tokens = line.split("_")
+                volume["id"] = int(tokens[1])
+                volume["title"] = " ".join(tokens[2:len(tokens) - 1])            
+                volume["entries"] = []
+            strip = ["ILL","(", ")", "[", "]", "*", "^"]
+            for x in strip:
+                line = line.replace(x, "")           
+            if "{left margin" in line:
+                in_entry = True                
+            elif ("{rubric" in line) and in_entry:
+                in_entry = False
+                if entry[-1] == " ":
+                    entry = entry[:len(entry) - 1]
+                if partial:
+                    volume["entries"].append({"id": partial_im + partial_id, "raw": entry})
+                    partial = False
+                else:        
+                    volume["entries"].append({"id": image + entry_ids[entry_index], "raw": entry})
+                entry_index += 1
+                entry = ""
+            elif "IMG" in line:
+                if in_entry:
+                    partial = True
+                    partial_id = entry_ids[entry_index]
+                    partial_im = image
+                tokens = line.replace(" ", "").replace("\n", "").split("_")
+                image = tokens[3]                
+                entry_ids = tokens[4:]
+                entry_index = 0         
+            elif in_entry:                
+                if line[-2] == "-":                    
+                    entry += line[:len(line) - 2]                    
+                else:                                        
+                    entry += line[:len(line) - 1] + " "
+
+    if output_path != None:        
+        with open(output_path, "w", encoding="utf-8") as f:
+            json.dump(volume, f)   
+
+    return volume
+
+parse_txt("txt\\FHL_007548705.txt", output_path = "json\\FHL_007548705.json")

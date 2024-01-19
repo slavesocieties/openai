@@ -8,8 +8,6 @@ def extract_data_from_volume(volume_record_path, instructions_path, training_dat
 
     examples = generate_training_data(training_data_path, volume_metadata, few_shot_strategy, max_shots)
     instructions = collect_instructions(instructions_path, volume_metadata, "extraction")
-
-    print(f"{len(instructions)} instructions found.")
     
     for x, entry in enumerate(data["entries"]):
         info = extract_data_from_entry(entry, volume_metadata, examples, instructions)

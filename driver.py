@@ -17,4 +17,4 @@ def process_transcription(volume_record_path, instructions_path, training_data_p
 
     return extracted
 
-process_transcription("testing\\166470_sample.json", "instructions.json", "training_data.json", out_path = "166470_modular_intructions_output.json")
+process_transcription("testing\\FHL_007548705_sample.json", "instructions.json", "training_data.json", out_path = "FHL_007548705.json", strategy = "i")

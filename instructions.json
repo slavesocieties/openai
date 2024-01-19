@@ -89,7 +89,7 @@
                 "extraction"
             ],
             "sequence": 11,
-            "text": "These records will sometimes contain information about relationships between people. Each relationship that you identify should be between 2 people and appear twice in your output, once for each related person. The relationship type that you list for each individual should indicate what the related person *is to them*. The possible values for relationship type are: `parent`, `child`, `spouse`, `enslaver`, `slave`, `godparent`, `godchild`, `grandparent`, and `grandchild`."
+            "text": "These records will sometimes contain information about relationships between people. Relationships exist as matched pairs such as `parent` and `child`, `enslaver` and `slave`, `spouse` and `spouse`, and `godparent` and `godchild`. Each relationship should be recorded as a dictionary with two keys. The value of the first key, `related_person`, should be the unique identifier assigned to the related person. IMPORTANT: The value of the second key, `relationship_type`, should be what the related person is to the person who's record you're currently writing. For example, if P01 is the child of P03, then the `relationship_type` associated with P03 in the record for P01 would be `parent`."
         },
         {
             "cases": [
@@ -97,6 +97,13 @@
             ],
             "sequence": 12,
             "text": "Baptismal registers will usually contain information about exactly 1 baptism. They will sometimes also contain information about a birth, particularly when an infant is being baptized. Baptisms and births are both events. For each event, record the type of the event (either `baptism` or `birth`), the unique identifier assigned to the principal (the person who was baptized or born), and the date when the event took place. Represent dates in a YYYY-MM-DD format. If you can't find a complete date, include as much information as possible."
+        },
+        {
+            "cases": [
+                "extraction"
+            ],
+            "sequence": 13,
+            "text": "Do not extract pieces of information other than those explicitly described above."
         }
     ]
 }
