@@ -52,3 +52,21 @@ def parse_record_type(volume_metadata):
         record_type = "sacramental record"
 
     return record_type
+
+def collect_instructions(instructions_path, volume_metadata, mode):
+    with open(instructions_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    keywords = [mode, volume_metadata["language"], volume_metadata["type"]]
+
+    instructions = []
+
+    for instruction in data["instructions"]:
+        match = True
+        for keyword in instruction["cases"]:
+            if keyword not in keywords:
+                match = False
+        if match:
+            instructions.append(instruction)
+
+    return sorted(instructions, key=lambda x: x["sequence"])

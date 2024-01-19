@@ -2,13 +2,14 @@ import json
 from utility import *
 from openai import OpenAI
 
-def normalize_volume(volume_record_path, training_data_path, output_path = None, few_shot_strategy = None, max_shots = 1000, ld = True):
+def normalize_volume(volume_record_path, instructions_path, training_data_path, output_path = None, few_shot_strategy = None, max_shots = 1000, ld = True):
     data, volume_metadata = parse_volume_record(volume_record_path, load=ld)
 
     examples = generate_training_data(training_data_path, volume_metadata, few_shot_strategy, max_shots)
-
+    instructions = collect_instructions(instructions_path, volume_metadata, "normalization")
+    
     for x, entry in enumerate(data["entries"]):
-        norm = normalize_entry(entry, volume_metadata, examples)
+        norm = normalize_entry(entry, volume_metadata, examples, instructions)
         data["entries"][x]["normalized"] = norm
 
     if output_path != None:    
@@ -17,29 +18,20 @@ def normalize_volume(volume_record_path, training_data_path, output_path = None,
 
     return data
 
-def normalize_entry(entry, volume_metadata, examples):    
+def normalize_entry(entry, volume_metadata, examples, instructions):    
     client = OpenAI()    
 
     record_type = parse_record_type(volume_metadata)
 
-    conversation = [
-        {
-                "role": "system",
-                "content": f"You are assisting a historian of the early modern Atlantic with a large collection of transcriptions of Catholic sacramental records written in {volume_metadata['language']}. " \
-                f"The historian will provide you with a transcription of a {record_type} written in early modern {volume_metadata['language']} and ask you to normalize it by expanding abbreviations, " \
-                "correcting idiosyncratic or archaic spellings, modernizing capitalization and punctuation, and correcting obvious transcription errors."
-        }
-    ] 
+    conversation = []
 
-    if volume_metadata["language"] == "Spanish":
+    for instruction in instructions:
         conversation.append(
             {
-                "role": "system",
-                "content": "Expand abbreviated names as well as words. Commonly abbreviated first names include Antonio or Antonia, Domingo or Dominga, Francisco or Francisca, " \
-                "or Juan or Juana. Commonly abbreviated last names include Fernandez, Gonzalez, Hernandez, or Rodriguez. These are not intended to be complete lists. Use context " \
-                "to determine when a name has been abbreviated and your knowledge of Spanish names to determine what the abbreviated name is."
+                    "role": "system",
+                    "content": instruction["text"]
             }
-        )    
+        )
 
     for example in examples:
         conversation.append(
