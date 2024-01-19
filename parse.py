@@ -1,6 +1,6 @@
-def parse_xml(xml_path, output_path = None):
-    import json
+import json
 
+def parse_xml(xml_path, output_path = None):
     images = 0
     volume = {}    
     in_entry = False
@@ -89,9 +89,8 @@ def parse_xml(xml_path, output_path = None):
                 else:                                        
                     entry += line[:len(line) - 1] + " "
 
-    if output_path == None:
-        output_path = f"{volume['id']}.json"
-    with open(output_path, "w", encoding="utf-8") as f:
-        json.dump(volume, f)   
+    if output_path != None:        
+        with open(output_path, "w", encoding="utf-8") as f:
+            json.dump(volume, f)   
 
     return volume

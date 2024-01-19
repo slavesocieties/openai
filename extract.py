@@ -1,25 +1,26 @@
-def extract_data_from_volume(volume_record_path, training_data_path, output_path = None, few_shot_strategy = None, max_shots = 1000):
-    import json
-    from utility import parse_volume_record   
+from openai import OpenAI    
+import json
+from utility import *
 
-    data, volume_metadata = parse_volume_record(volume_record_path)
+
+def extract_data_from_volume(volume_record_path, training_data_path, output_path = None, few_shot_strategy = None, max_shots = 1000, ld = True):
+    data, volume_metadata = parse_volume_record(volume_record_path, load=ld)
+
+    examples = generate_training_data(training_data_path, volume_metadata, few_shot_strategy, max_shots)
     
     for x, entry in enumerate(data["entries"]):
-        info = extract_data_from_entry(entry, volume_metadata, training_data_path, few_shot_strategy, max_shots)
+        info = extract_data_from_entry(entry, volume_metadata, examples)
         data["entries"][x]["data"] = json.loads(info)    
     
-    if output_path == None:
-        output_path = volume_record_path
+    if output_path != None:    
+        with open(output_path, "w", encoding="utf-8") as f:
+            json.dump(data, f)
+
+    return data
+
+def extract_data_from_entry(entry, volume_metadata, examples):    
+    client = OpenAI()
     
-    with open(output_path, "w", encoding="utf-8") as f:
-        json.dump(data, f)
-
-def extract_data_from_entry(entry, volume_metadata, training_data_path, few_shot_strategy, max_shots):
-    from openai import OpenAI
-    client = OpenAI()    
-    import json
-    from utility import generate_training_data, parse_record_type
-
     record_type = parse_record_type(volume_metadata)
 
     conversation = [
@@ -106,8 +107,6 @@ def extract_data_from_entry(entry, volume_metadata, training_data_path, few_shot
     for instruction in instructions:
         conversation.append(instruction)
 
-    examples = generate_training_data(training_data_path, volume_metadata, few_shot_strategy, max_shots)
-
     for example in examples:
         conversation.append(
             {
@@ -136,5 +135,3 @@ def extract_data_from_entry(entry, volume_metadata, training_data_path, few_shot
     )
 
     return response.choices[0].message.content
-
-extract_data_from_volume("testing\\15834_sample.json", "training_data.json", output_path = "testing\\15834_modular_extraction.json", few_shot_strategy = None, max_shots = 1000)

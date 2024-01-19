@@ -1,7 +1,7 @@
-def generate_training_data(training_data_path, volume_metadata, few_shot_strategy, max_shots):
-    import json
-    from random import sample
-    
+import json
+from random import sample
+
+def generate_training_data(training_data_path, volume_metadata, few_shot_strategy, max_shots):    
     examples = []
 
     with open(training_data_path, "r", encoding="utf-8") as f:
@@ -25,11 +25,12 @@ def generate_training_data(training_data_path, volume_metadata, few_shot_strateg
 
     return examples
 
-def parse_volume_record(volume_record_path):
-    import json
-
-    with open(volume_record_path, "r", encoding="utf-8") as f:
-        data = json.load(f)
+def parse_volume_record(volume_record_path, load = True):
+    if load:
+        with open(volume_record_path, "r", encoding="utf-8") as f:
+            data = json.load(f)
+    else:
+        data = volume_record_path
 
     if data["country"] in ["Colombia", "Cuba", "United States"]:
         language = "Spanish"

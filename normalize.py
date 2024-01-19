@@ -1,23 +1,24 @@
-def normalize_volume(volume_record_path, training_data_path, output_path = None, few_shot_strategy = None, max_shots = 1000):
-    import json
-    from utility import parse_volume_record   
+import json
+from utility import *
+from openai import OpenAI
 
-    data, volume_metadata = parse_volume_record(volume_record_path)
+def normalize_volume(volume_record_path, training_data_path, output_path = None, few_shot_strategy = None, max_shots = 1000, ld = True):
+    data, volume_metadata = parse_volume_record(volume_record_path, load=ld)
+
+    examples = generate_training_data(training_data_path, volume_metadata, few_shot_strategy, max_shots)
 
     for x, entry in enumerate(data["entries"]):
-        norm = normalize_entry(entry, volume_metadata, training_data_path, few_shot_strategy, max_shots)
+        norm = normalize_entry(entry, volume_metadata, examples)
         data["entries"][x]["normalized"] = norm
 
-    if output_path == None:
-        output_path = volume_record_path
-    
-    with open(output_path, "w", encoding="utf-8") as f:
-        json.dump(data, f)
+    if output_path != None:    
+        with open(output_path, "w", encoding="utf-8") as f:
+            json.dump(data, f)
 
-def normalize_entry(entry, volume_metadata, training_data_path, few_shot_strategy, max_shots):
-    from openai import OpenAI
-    client = OpenAI()
-    from utility import generate_training_data, parse_record_type
+    return data
+
+def normalize_entry(entry, volume_metadata, examples):    
+    client = OpenAI()    
 
     record_type = parse_record_type(volume_metadata)
 
@@ -38,9 +39,7 @@ def normalize_entry(entry, volume_metadata, training_data_path, few_shot_strateg
                 "or Juan or Juana. Commonly abbreviated last names include Fernandez, Gonzalez, Hernandez, or Rodriguez. These are not intended to be complete lists. Use context " \
                 "to determine when a name has been abbreviated and your knowledge of Spanish names to determine what the abbreviated name is."
             }
-        )
-
-    examples = generate_training_data(training_data_path, volume_metadata, few_shot_strategy, max_shots)
+        )    
 
     for example in examples:
         conversation.append(
@@ -69,5 +68,3 @@ def normalize_entry(entry, volume_metadata, training_data_path, few_shot_strateg
     )
 
     return response.choices[0].message.content
-
-normalize_volume("testing\\15834_sample.json", "training_data.json", output_path = "15834_modular_normalization.json", few_shot_strategy = None, max_shots = 1000)
