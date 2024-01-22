@@ -2,10 +2,10 @@ import json
 from utility import *
 from openai import OpenAI
 
-def normalize_volume(volume_record_path, instructions_path, training_data_path, output_path = None, few_shot_strategy = None, max_shots = 1000, ld = True):
+def normalize_volume(volume_record_path, instructions_path, training_data_path, keywords, output_path = None, match_mode = "or", max_shots = 1000, ld = True):
     data, volume_metadata = parse_volume_record(volume_record_path, load=ld)
 
-    examples = generate_training_data(training_data_path, volume_metadata, few_shot_strategy, max_shots)
+    examples = generate_training_data(training_data_path, keywords, match_mode=match_mode, max_shots=max_shots)
     instructions = collect_instructions(instructions_path, volume_metadata, "normalization")
     
     for x, entry in enumerate(data["entries"]):

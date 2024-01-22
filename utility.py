@@ -1,28 +1,30 @@
 import json
 from random import sample
 
-def generate_training_data(training_data_path, volume_metadata, few_shot_strategy, max_shots):    
+def generate_training_data(training_data_path, keywords, match_mode="or", max_shots=1000):    
     examples = []
 
     with open(training_data_path, "r", encoding="utf-8") as f:
         training_data = json.load(f)
 
-    if few_shot_strategy == "v":
-        examples = [x for x in training_data["examples"] if x["id"] == volume_metadata["id"]]        
-    elif few_shot_strategy == "l":
-        examples = [x for x in training_data["examples"] if x["language"] == volume_metadata["language"]]
-    elif few_shot_strategy == "t":
-        examples = [x for x in training_data["examples"] if x["type"] == volume_metadata["type"]]
-    elif few_shot_strategy == "lt":
-        examples = [x for x in training_data["examples"] if ((x["language"] == volume_metadata["language"]) and (x["type"] == volume_metadata["type"]))]
-    elif few_shot_strategy == "i":
-        examples = [x for x in training_data["examples"] if ((x["institution"] == volume_metadata["institution"]) and (x["type"] == volume_metadata["type"]))]
+    if match_mode == "or":
+        for example in training_data["examples"]:
+            for key in keywords:
+                if example[key] == keywords[key]:
+                    examples.append(example)
+                    break                    
     else:
-        examples = training_data["examples"]
-
+        for example in training_data["examples"]:
+            match = True
+            for key in keywords:
+                if example[key] != keywords[key]:
+                    match = False
+            if match:
+                examples.append(example)
+    
     if len(examples) > max_shots:
         examples = sample(examples, max_shots)
-
+    
     return examples
 
 def parse_volume_record(volume_record_path, load = True):
