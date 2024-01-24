@@ -20,9 +20,10 @@ def parse_xml(xml_path, output_path = None):
             strip = ["[margin]", "[roto]", "[signed]", "<margin>", "</margin>", "&lt;insert&gt;", "&lt;/insert&gt;", "&lt;blurry&gt;", "&lt;/blurry&gt;"]
             for x in strip:
                 line = line.replace(x, "")
-            punc = ["[", "]", "{", "}", "="]
-            for x in punc:
-                line = line.replace(x, "")
+            if not "<" in line:
+                punc = ["[", "]", "{", "}", "="]
+                for x in punc:
+                    line = line.replace(x, "")
             while line.find("  ") != -1:
                 line = line.replace("  ", " ")
             if line[0] == " ":
@@ -164,40 +165,66 @@ def parse_jorge(txt_path, output_path = None):
     volume["entries"] = []
     entry = ""
     in_entry = False
+    image = 1
+    entry_number = 1
 
-    """with open(txt_path, "r", encoding="utf-8") as f:        
-        for x, line in enumerate(f):
+    with open(txt_path, "r", encoding="utf-8") as f:        
+        for x, line in enumerate(f):            
+            if "upper margin" in line:
+                continue
             if len(line) < 2:
                 continue           
-            strip = ["ILL","(", ")", "[", "]", "*", "^"]
+            strip = ["(", ")", "[ilegible]", "[roto]", "?", "¿"]
             for x in strip:
                 line = line.replace(x, "")           
             if "[left margin" in line:
-                in_entry = True                
+                in_entry = True
+                if len(line) > 100:
+                    entry += line[line.find("margin") + 7:]               
             elif ("[signed]" in line) and in_entry:
+                if len(line) > 50:
+                    line = line[:line.find("[signed]")]
+                    entry += line
                 in_entry = False
+                if len(entry) < 1:
+                    print(entry_number)
+                    print(image)
+                    return               
                 if entry[-1] == " ":
-                    entry = entry[:len(entry) - 1]                      
+                    entry = entry[:len(entry) - 1]
+                im = "0" * (4 - len(str(image))) + str(image)                      
                 num = "0" * (2 - len(str(entry_number))) + str(entry_number)
-                volume["entries"].append({"id": f"{image}-{num}", "raw": entry})
+                entry = entry.replace("[", "").replace("]", "")
+                entry = entry.replace("\n", " ")
+                while entry.find("  ") != -1:
+                    entry = entry.replace("  ", " ")
+                while entry[len(entry) - 1] in [" ", "–"]:
+                    entry = entry[:len(entry) - 1]
+                while entry[0] in [" ", ":"]:
+                    entry = entry[1:]
+                volume["entries"].append({"id": f"{im}-{num}", "raw": entry})
                 entry_number += 1
                 entry = "" 
-            elif "[f.]" in line:               
-                
-                image = 
+            elif "[f." in line:               
+                image += 1
                 entry_number = 1 
-            elif in_entry:                
+            elif in_entry:
+                if len(line) < 2:
+                    continue                
                 if line[-2] == "-":                    
                     entry += line[:len(line) - 2]                    
                 else:                                        
-                    entry += line[:len(line) - 1] + " """
+                    entry += line[:len(line) - 1] + " "
 
     if output_path != None:        
         with open(output_path, "w", encoding="utf-8") as f:
-            json.dump(volume, f)   
+            json.dump(volume, f)
 
     return volume
 
 #parse_nbu("txt\\FHL_007548705.txt", output_path = "json\\FHL_007548705.json")
-id = 22152
-parse_xml(f"xml\\{id}.xml", output_path = f"json\\{id}.json")
+
+#id = 239746
+#parse_xml(f"xml\\{id}.xml", output_path = f"json\\{id}.json")
+
+parse_jorge("txt\\6517_clean.txt", output_path = "json\\6517.json")

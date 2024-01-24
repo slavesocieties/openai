@@ -61,4 +61,4 @@ def normalize_entry(entry, volume_metadata, examples, instructions):
 
     return response.choices[0].message.content
 
-#normalize_volume("json\\1795.json", "instructions.json", "training_data.json", {"language": "Spanish"}, output_path = "testing\\1795_norm.json", match_mode = "or", max_shots = 1000, ld = True)
+normalize_volume("testing\\6517_sample.json", "instructions.json", "training_data.json", {"language": "Spanish"}, output_path = "testing\\6517_sample.json", match_mode = "or", max_shots = 1000, ld = True)

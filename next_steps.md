@@ -1,17 +1,16 @@
--finish logic to parse Jorge's transcription
+-gen training data for jorges marriages and test
 
--test how much training data is required and how granular it needs to be (metrics? do RAs need to do some manual extraction?)
-    -create the necessary data for all extant transcriptions (RAs if we need a lot, this may also come before above)
+-write controlled vocabs and documentation for volume records
 
 -fully build out infrastructure to extract data from a full volume, fill in missing dates, disambiguate, etc.
  and create master volume record
 
--move to production, create records for all extant volumes, upload to the cloud and develop mechanism for accessing
+-test how much training data is required and how granular it needs to be (metrics? do RAs need to do some manual extraction?)
+    -create the necessary data for all extant transcriptions (RAs if we need a lot, this may also come before above)
 
-For later:
--build an endpoint that can be reached remotely, write basic documentation
-    -lambda api won't work, timeout is too short
-    -is this actually something that we need to expose an api for?
+-move to production, create records for all extant volumes, and upload to the cloud
+
+-build api to expose images and extracted content
 
 Other possibilities:
 -assign unique identifiers for places

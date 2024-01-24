@@ -510,6 +510,484 @@
                     }
                 ]
             }
+        },
+        {        
+            "type": "marriage",
+            "language": "Spanish",
+            "country": "Cuba",
+            "state": "La Habana",
+            "city": "Havana",
+            "institution": "Catedral de la Habana",
+            "id": 6517,            
+            "raw": "En beynte y tres dias del dho dicho mes de julio del dho año de 1584 aso el Ser Vico nicolas jermo desposo y belo a juan diaz natural de setubal y a ana de çamora hija de franco de çamora fueron sus padrinos julian hernandes y ysabel belasques su mujer doy fe dello",
+            "normalized": "En veintitrés días del mismo mes de julio del mismo año de 1584, el señor Vicario Nicolás Geronimo desposó y veló a Juan Díaz, natural de Setúbal, y a Ana de Zamora, hija de Francisco de Zamora. Fueron sus padrinos Julián Hernández y Isabel Velázquez, su mujer. Doy fe de ello.",
+            "data": {
+                "people": [
+                    {
+                        "id": "P01",
+                        "name": "Nicolás Geronimo",
+                        "titles": [
+                            "Vicario"
+                        ],
+                        "occupation": "cleric"
+                    },
+                    {
+                        "id": "P02",
+                        "name": "Juan Díaz",
+                        "origin": "Setúbal",
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "godparent"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P03",
+                        "name": "Ana de Zamora",                        
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "godparent"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P04",
+                        "name": "Francisco de Zamora",                        
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "child"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P05",
+                        "name": "Julián Hernández",                        
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "godchild"
+                            },
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "godchild"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "spouse"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P06",
+                        "name": "Isabel Velázquez",                        
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "godchild"
+                            },
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "godchild"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "spouse"
+                            }
+                        ]
+                    }
+                ],
+                "events": [
+                    {
+                        "type": "marriage",
+                        "principals": [
+                            "P02", "P03"
+                        ],
+                        "date": "1584-07-23"
+                    }
+                ]
+            }
+        },
+        {        
+            "type": "marriage",
+            "language": "Spanish",
+            "country": "Cuba",
+            "state": "La Habana",
+            "city": "Havana",
+            "institution": "Catedral de la Habana",
+            "id": 6517,
+            "raw": "En beynte y cinco dias del mes de julio de 1584 el Ser Vico nicolas jermo desposo y belo a diego albites y a franca hurtada criada de manuel diaz fueron sus padrinos franco ximenez y doña maria de mendoça su mujer doy fe dello",
+            "normalized": "En veinticinco días del mes de julio de 1584, el señor Vicario Nicolás Geronimo desposó y veló a Diego Albites y a Francisca Hurtada, criada de Manuel Díaz. Fueron sus padrinos Francisco Ximénez y Doña María de Mendoza, su mujer. Doy fe de ello.",
+            "data": {
+                "people": [
+                    {
+                        "id": "P01",
+                        "name": "Nicolás Geronimo",
+                        "titles": [
+                            "Vicario"
+                        ],
+                        "occupation": "cleric"
+                    },
+                    {
+                        "id": "P02",
+                        "name": "Diego Albites",                        
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "godparent"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P03",
+                        "name": "Francisca Hurtada",                        
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "indenturer"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "godparent"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P04",
+                        "name": "Manuel Díaz",                        
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "indentured servant"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P05",
+                        "name": "Francisco Ximénez",                        
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "godchild"
+                            },
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "godchild"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "spouse"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P06",
+                        "name": "María de Mendoza",
+                        "titles": [
+                            "Doña"
+                        ],                        
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "godchild"
+                            },
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "godchild"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "spouse"
+                            }
+                        ]
+                    }
+                ],
+                "events": [
+                    {
+                        "type": "marriage",
+                        "principals": [
+                            "P02", "P03"
+                        ],
+                        "date": "1584-07-25"
+                    }
+                ]
+            }
+        },
+        {        
+            "type": "marriage",
+            "language": "Spanish",
+            "country": "Cuba",
+            "state": "La Habana",
+            "city": "Havana",
+            "institution": "Catedral de la Habana",
+            "id": 6517,            
+            "raw": "lunes que se contaron beynte y dos dias del mes de otubre del dho año de 1584 años el Ser Vico nicolas jermo desposo y belo a juan peres esturiano y a mariana de la aia hija de dio diego de la aia y de cecilia de arestaça su mujer fueron su padrinos el ser Alcayde diego fernandez de quiñones y doña maria de sotolongo doy fe dello yo",
+            "normalized": "Lunes que se contaron veintidós días del mes de octubre del año de 1584, el señor Vicario Nicolás Geronimo desposó y veló a Juan Peres Esturiano y a Mariana de la Aia, hija de Diego de la Aia y de Cecilia de Arestaça, su mujer. Fueron sus padrinos el señor Alcalde Diego Fernández de Quiñones y Doña María de Sotolongo. Doy fe de ello yo.",
+            "data": {
+                "people": [
+                    {
+                        "id": "P01",
+                        "name": "Nicolás Geronimo",
+                        "titles": [
+                            "Vicario"
+                        ],
+                        "occupation": "cleric"
+                    },
+                    {
+                        "id": "P02",
+                        "name": "Juan Peres Esturiano",                        
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "godparent"
+                            },
+                            {
+                                "related_person": "P07",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P03",
+                        "name": "Mariana de la Aia",                        
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "godparent"
+                            },
+                            {
+                                "related_person": "P07",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P04",
+                        "name": "Diego de la Aia",                        
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "child"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "spouse"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P05",
+                        "name": "Cecilia de Arestaça",                        
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "child"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "spouse"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P06",
+                        "name": "Diego Fernández de Quiñones",
+                        "titles": [
+                            "Alcalde"
+                        ],                        
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "godchild"
+                            },
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "godchild"
+                            },
+                            {
+                                "related_person": "P07",
+                                "relationship_type": "spouse"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P07",
+                        "name": "María de Sotolongo",
+                        "titles": [
+                            "Doña"
+                        ],                        
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "godchild"
+                            },
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "godchild"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "spouse"
+                            }
+                        ]
+                    }
+                ],
+                "events": [
+                    {
+                        "type": "marriage",
+                        "principals": [
+                            "P02", "P03"
+                        ],
+                        "date": "1584-10-22"
+                    }
+                ]
+            }
+        },
+        {        
+            "type": "marriage",
+            "language": "Spanish",
+            "country": "Cuba",
+            "state": "La Habana",
+            "city": "Havana",
+            "institution": "Catedral de la Habana",
+            "id": 6517,            
+            "raw": "en 12 de octubre de 1618 aso yo anto çapata cura en la sta ygla mor desta ciudad de la havana despose con licencia de su sa segun orden de la sta madre yglesia a manuel anchico esclavo de jua martin y a cristina angola esclava de ma de las nieves siendo tos juo perez barvero y xpoval de samora y germo Ros criados de su sa y se velaron los dhos en 14 del dho mes y año ffo ut supra",
+            "normalized": "En 12 de octubre de 1618 años, yo Antonio Zapata, cura en la Santa Iglesia Mayor de esta ciudad de La Habana, desposé con licencia de su santidad, según orden de la Santa Madre Iglesia, a Manuel Anchico, esclavo de Juan Martín, y a Cristina Angola, esclava de María de las Nieves. Fueron testigos Juan Pérez Barbero, Cristóbal de Zamora, y Gerónimo Ros, criados de su santidad. Los desposados se velaron el 14 del mismo mes y año. Fue así.",
+            "data": {
+                "people": [
+                    {
+                        "id": "P01",
+                        "name": "Antonio Zapata",                        
+                        "occupation": "cleric"
+                    },
+                    {
+                        "id": "P02",
+                        "name": "Manuel Anchico",                        
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "enslaver"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "spouse"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P03",
+                        "name": "Juan Martín",                        
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "slave"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P04",
+                        "name": "Cristina Angola",                        
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "enslaver"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P05",
+                        "name": "María de las Nieves",                        
+                        "relationships": [                            
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "slave"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P06",
+                        "name": "Juan Pérez Barbero"
+                    },
+                    {
+                        "id": "P07",
+                        "name": "Cristóbal de Zamora"
+                    },
+                    {
+                        "id": "P08",
+                        "name": "Gerónimo Ros"
+                    }
+                ],
+                "events": [
+                    {
+                        "type": "marriage",
+                        "principals": [
+                            "P02", "P03"
+                        ],
+                        "witnesses": [
+                            "P06", "P07", "P08"
+                        ],
+                        "date": "1584-10-22"
+                    }
+                ]
+            }
         }
     ]
 }

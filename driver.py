@@ -17,4 +17,4 @@ def process_transcription(volume_record_path, instructions_path, training_data_p
 
     return extracted
 
-process_transcription("testing\\FHL_007548705_sample.json", "instructions.json", "training_data.json", {"language": "Spanish", "country": "United States"}, out_path = "FHL_007548705.json", mode = "and")
+process_transcription("testing\\6517_sample.json", "instructions.json", "training_data.json", {"type": "marriage"}, out_path = "testing\\6517_sample_output.json", mode = "and")

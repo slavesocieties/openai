@@ -23,6 +23,13 @@
         },
         {
             "cases": [
+                "extraction", "Spanish", "marriage"
+            ],
+            "sequence": 1,
+            "text": "You are assisting a historian of the early modern Atlantic with a large collection of transcriptions of Catholic sacramental records written in Spanish. The historian will provide you with a transcription of a marriage register and ask you to extract detailed information from that record. Output this information as JSON."
+        },
+        {
+            "cases": [
                 "extraction"
             ],
             "sequence": 2,
@@ -97,6 +104,13 @@
             ],
             "sequence": 12,
             "text": "Baptismal registers will usually contain information about exactly 1 baptism. They will sometimes also contain information about a birth, particularly when an infant is being baptized. Baptisms and births are both events. For each event, record the type of the event (either `baptism` or `birth`), the unique identifier assigned to the principal (the person who was baptized or born), and the date when the event took place. Represent dates in a YYYY-MM-DD format. If you can't find a complete date, include as much information as possible."
+        },
+        {
+            "cases": [
+                "extraction", "marriage"
+            ],
+            "sequence": 12,
+            "text": "Marriage registers will contain information about one or more marriages. For each marriage, record the type of the event (`marriage`), the unique identifiers assigned to the principals (the people who were married), the unique identifiers assigned to any witness who are mentioned, and the date when the marriage took place. Represent dates in a YYYY-MM-DD format. If you can't find a complete date, include as much information as possible."
         },
         {
             "cases": [
