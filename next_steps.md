@@ -1,6 +1,4 @@
--gen training data for jorges marriages and test
-
--write controlled vocabs and documentation for volume records
+-write controlled vocabs for pertinent fields
 
 -fully build out infrastructure to extract data from a full volume, fill in missing dates, disambiguate, etc.
  and create master volume record

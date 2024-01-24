@@ -35,10 +35,10 @@
                         "id": "P03",
                         "name": "Dominga",
                         "origin": "Africa",
-                        "ethnicitiy": "Carabalí",
+                        "ethnicity": "Carabalí",
                         "age": "adult",
                         "phenotype": "negro",
-                        "status": "enslaved",
+                        "free": false,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -95,7 +95,7 @@
                         "name": "Julian",
                         "origin": "Guinea",
                         "phenotype": "moreno",
-                        "status": "enslaved",
+                        "free": false,
                         "relationships": [
                             {
                                 "related_person": "P03",
@@ -116,7 +116,7 @@
                         "name": "Sabina",
                         "origin": "Guinea",
                         "phenotype": "moreno",
-                        "status": "enslaved",
+                        "free": false,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -153,8 +153,8 @@
                         "id": "P05",
                         "name": "Antonia",
                         "age": "infant",
-                        "legitimacy": "legitimate",
-                        "status": "free",
+                        "legitimate": true,
+                        "free": true,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -219,7 +219,7 @@
                         "id": "P02",
                         "name": "Sebastian",
                         "phenotype": "negro",
-                        "status": "enslaved",
+                        "free": false,
                         "relationships": [
                             {
                                 "related_person": "P03",
@@ -239,7 +239,7 @@
                         "id": "P03",
                         "name": "Jucina",
                         "phenotype": "negro",
-                        "status": "enslaved",
+                        "free": false,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -376,7 +376,7 @@
                     {
                         "id": "P01",
                         "name": "Juan Domingo",
-                        "legitimacy": "legitimate",
+                        "legitimate": true,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -469,7 +469,7 @@
                     {
                         "id": "P01",
                         "name": "Maria Antonia",
-                        "legitimacy": "illegitimate",
+                        "legitimate": false,
                         "relationships": [
                             {
                                 "related_person": "P02",

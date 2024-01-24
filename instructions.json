@@ -68,7 +68,7 @@
                 "extraction", "Spanish"
             ],
             "sequence": 7,
-            "text": "These records will sometimes contain information about the legitimacy of the birth of these people, particularly infants. When they do, please include this information in your output for the person in question. This information will usually appear as either legítimo/a (for legitimate) or ilegítimo/a (for illegitimate)."
+            "text": "These records will sometimes contain information about the legitimacy of the birth of these people, particularly infants. When they do, please include this information in your output for the person in question. This information will usually appear as either legítimo/a (for legitimate) or ilegítimo/a (for illegitimate) and should be recorded as a boolean value of true for legitimate or false for illegitimate."
         },
         {
             "cases": [
@@ -89,7 +89,7 @@
                 "extraction", "Spanish"
             ],
             "sequence": 10,
-            "text": "These records will sometimes contain information about the freedom status of these people. When they do, please include this information in your output for the person in question. This information might appear explicitly as either esclavo/a (list as `enslaved`) or libre (list as `free`). Freedom status can also be communicated implicitly, most notably when the enslaver of one or more individuals is listed."
+            "text": "These records will sometimes contain information about the freedom status of these people. When they do, please include this information in your output for the person in question. This information might appear explicitly when a person is referred to as either `libre` or an `esclavo/a`. Freedom status can also be communicated implicitly, most notably when the enslaver of one or more individuals is listed, and should be recorded as a boolean value of true for free or false for enslaved."
         },
         {
             "cases": [
