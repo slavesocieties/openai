@@ -1,0 +1,32 @@
+{
+    "controlled_vocabularies": [
+        {
+           "key": "titles",
+           "language": "Spanish",
+           "vocab": [
+                "Don", "Doña", "Padre", "Vicario", "Doctor", "Alcalde", "Licenciado", "Regidor", "Fray", "señor", "Alguacil"
+           ] 
+        },
+        {
+            "key": "ethnicity",
+            "language": "Spanish",
+            "vocab": [
+                "Gangá", "Español", "Carabalí", "Arará", "Inglés", "Kongo", "Lucumí", "Mandinga", "Mina", "Apache"
+            ]
+        },
+        {
+           "key": "occupation",
+           "language": "English",
+           "vocab": [
+                "cleric", "engineer", "student"
+           ] 
+        },
+        {
+            "key": "phenotype",
+            "language": "Spanish",
+            "vocab": [
+                "negro", "moreno", "indio", "pardo", "mestizo", "mulato", "blanco", "criollo"
+            ]
+        }
+    ]
+}

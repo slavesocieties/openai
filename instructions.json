@@ -82,7 +82,7 @@
                 "extraction", "Spanish"
             ],
             "sequence": 9,
-            "text": "These records will sometimes contain information about the phenotypes of these people. When they do, please include this information in your output for the person in question. This information might appear in the forms of words including (but not limited to): negro/a (list as `negro`), moreno/a (list as `moreno`), or pardo/a (list as `mixed-race`)."
+            "text": "These records will sometimes contain information about the phenotypes of these people. When they do, please include this information in your output for the person in question. This information might appear in the forms of words including (but not limited to): negro/a (list as `negro`), moreno/a (list as `moreno`), or pardo/a (list as `pardo`)."
         },
         {
             "cases": [

@@ -52,7 +52,7 @@ Field: origin
 Content: The person’s place of origin. This could be either an explicit place of birth or a vaguer declaration of origination. Continents, regions, or cities/towns are all acceptable.
 
 Field: ethnicity
-Content: The ethnolinguistic descriptor assigned to the person in the record. Refer to controlled vocabulary documentation for examples. Where applicable, these should be normalized in accordance with that documentation.
+Content: The ethnolinguistic descriptor assigned to the person in the record. Refer to controlled vocabulary documentation for examples.
 
 Field: age
 Content: A broad age category that applies to the person, usually either “infant” (<2 years), “child”’, or “adult”. These can either be explicit or implied based on referenced birth dates and should be recorded as their English equivalent. Note: The Spanish parvulo/a refers to an infant.
