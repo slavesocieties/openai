@@ -1,10 +1,11 @@
--write controlled vocabs for pertinent fields
-
--fully build out infrastructure to extract data from a full volume, fill in missing dates, disambiguate, etc.
- and create master volume record
-
 -test how much training data is required and how granular it needs to be (metrics? do RAs need to do some manual extraction?)
     -create the necessary data for all extant transcriptions (RAs if we need a lot, this may also come before above)
+    -possible fix for relationships: represent as separate list on same level as people/events
+
+-improve disambiguation logic (automate)
+    -build infrastructure to pass manual disambiguation results to algorithm as training data?
+
+-document code
 
 -move to production, create records for all extant volumes, and upload to the cloud
 
@@ -17,6 +18,7 @@ Other possibilities:
 -load comprehensive controlled vocabularies for various instructions
     -pros: if possible would improve model performance
     -cons: would add *a ton* of complexity, might literally be too many characters
+    -this is something to consider more seriously once some use of the system has expanded the vocabularies
 -build quick/easy NLP training data creation workflow
     -pros: would make training data creation easier
     -cons: may not need that much training data, would likely need to be a bespoke website
