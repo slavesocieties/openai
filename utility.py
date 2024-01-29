@@ -1,13 +1,37 @@
+"""Utility functions to support other pipeline components.
+"""
+
 import json
 from random import sample
 
-def generate_training_data(training_data_path, keywords, match_mode="or", max_shots=1000):    
+def generate_training_data(training_data_path, keywords=None, match_mode="or", max_shots=1000):
+    """Generates training data for text normalization or content extraction.
+
+    Args:
+        training_data_path (str): path to a json file containing manually constructed examples
+        of content extraction that will be used to train the llm
+
+        keywords (list, optional): list of keywords that define a subset of training
+        data to use in conjunction with the next parameter; if not included, all available
+        training data will be used
+
+        match_mode (str, optional): either `and` or `or`, defines subset of training data to use
+        in conjunction with previous parameter
+
+        max_shots (int, optional): defines maximum number of examples to include in conversation
+        history supplied to llm
+
+    Returns:
+        List containing training data as specified by arguments supplied. 
+    """    
     examples = []
 
     with open(training_data_path, "r", encoding="utf-8") as f:
         training_data = json.load(f)
 
-    if match_mode == "or":
+    if keywords == None:
+        examples = training_data["examples"]
+    elif match_mode == "or":
         for example in training_data["examples"]:
             for key in keywords:
                 if example[key] == keywords[key]:
@@ -27,8 +51,17 @@ def generate_training_data(training_data_path, keywords, match_mode="or", max_sh
     
     return examples
 
-def parse_volume_record(volume_record_path, load = True):
-    if load:
+def parse_volume_record(volume_record_path):
+    """Extracts basic volume metadata from volume record.
+
+    Args:
+        volume_record_path: either path to a json file containing
+        a volume record or a dictionary containing this data
+
+    Returns:
+        Augmented volume record as json and dict containing basic volume metadata. 
+    """
+    if type(volume_record_path) is str:
         with open(volume_record_path, "r", encoding="utf-8") as f:
             data = json.load(f)
     else:
@@ -44,6 +77,14 @@ def parse_volume_record(volume_record_path, load = True):
     return data, volume_metadata
 
 def parse_record_type(volume_metadata):
+    """Converts volume type as recorded in metadata to natural language equivalent.
+
+    Args:
+        volume_metadata (dict): dict containing basic volume metadata
+
+    Returns:
+        String representing natural language equivalent of volume type for use in prompting. 
+    """
     if volume_metadata["type"] == "baptism":
         record_type = "baptismal register"
     elif volume_metadata["type"] == "marriage":
@@ -56,6 +97,19 @@ def parse_record_type(volume_metadata):
     return record_type
 
 def collect_instructions(instructions_path, volume_metadata, mode):
+    """Collects pertinent natural language instructions for model.
+
+    Args:
+        instructions_path (str): path to json file containing model instructions
+
+        volume_metadata (dict): dict containing basic volume metadata
+
+        mode (str): pipeline component currently being invoked, either
+        `normalization` or `extraction`
+
+    Returns:
+        List containing instructions to be passed to model as system messages. 
+    """
     with open(instructions_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
@@ -63,6 +117,7 @@ def collect_instructions(instructions_path, volume_metadata, mode):
 
     instructions = []
 
+    #recursively checks instructions for those that match mode, language, and record type
     for instruction in data["instructions"]:
         match = True
         for keyword in instruction["cases"]:
@@ -71,9 +126,18 @@ def collect_instructions(instructions_path, volume_metadata, mode):
         if match:
             instructions.append(instruction)
 
+    #sorts language by intended sequence as defined in source file (lower first)
     return sorted(instructions, key=lambda x: x["sequence"])
 
 def parse_date(date):
+    """Transforms ISO 8601 string date to list of integers.
+
+    Args:
+        date (str): date or date range formatted to ISO 8601 standards
+
+    Returns:
+        List of one to six integers representing the same date or date range. 
+    """
     if "/" in date:
         dates = date.split("/")
         start = dates[0].split("-")
@@ -91,6 +155,16 @@ def parse_date(date):
     return parts
 
 def compare_dates(x, y):
+    """Determines which of two dates came first.
+
+    Args:
+        x (list): list of three integers representing a date (year, month, day)
+
+        y (list): list of three integers representing another date (year, month, day)
+
+    Returns:
+        True if the first date occurred before the second or both dates are the same, false otherwise. 
+    """
     if x[0] < y[0]:
         return True
     elif x[0] > y[0]:
@@ -109,6 +183,20 @@ def compare_dates(x, y):
                 return True
             
 def complete_date(date, mode="m"):
+    """Completes incomplete dates without inference.
+
+    Args:
+        date: either a date formatted to ISO 8601 standards or a list of one or two
+        integers representing an incomplete date
+
+        mode (str): complete mode, either `m` to represent a single incomplete date,
+        `s` to represent an incomplete date at the start of a date range, or `e` to
+        represent an incomplete date at the end of a date range
+
+    Returns:
+        A complete date (mode `s` or `e`) or date range (mode `m`) that uses all available
+        information without making any assumptions. 
+    """
     months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
     if type(date) == str:
         date = parse_date(date)
@@ -130,21 +218,58 @@ def complete_date(date, mode="m"):
             return date[0], date[1], 1, date[0], date[1], months[date[1] - 1]
         
 def disambiguate_people(x, y):
-    for key in ["rank", "origin", "ethnicity", "age", "legitimate", "occupation", "phenotype", "free"]:
-        if (key in x) and (key in y) and (x[key] != y[key]):
-            return False    
-    people = {"people": [x, y]}
-    with open("disambiguate.json", "w", encoding="utf-8") as f:
-        json.dump(people, f)
+    """Determines whether two records refer to the same person.
 
-    match = input("Should these records be combined? (y/n)")
+    This is currently done manually, but manual disambiguations
+    will eventually be used to train an automated solution.
+
+    Args:
+        x (dict): data representing all known information about a person
+
+        y (dict): data representing all known information about another person
+
+    Returns:
+        True if these records refer to the same person, False otherwise. 
+    """
+    #for key in ["rank", "origin", "ethnicity", "age", "legitimate", "occupation", "phenotype", "free"]:
+        #if (key in x) and (key in y) and (x[key] != y[key]):
+            #return False    
+    
+    people = {"people": [x, y]}
+
+    with open("temp.json", "w", encoding="utf-8") as f:
+        json.dump(people, f)    
+
+    match = input("Should these records be combined? (y/n)")    
 
     if match == "y":
-        return True
+        match = True
+    else:
+        match = False
+
+    people["match"] = match    
+
+    with open("disambiguate.json", "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    data["manual"].append(people)    
+
+    with open("disambiguate.json", "w", encoding="utf-8") as f:
+        json.dump(data, f)
     
-    return False
+    return match
 
 def merge_records(x, y):
+    """Merges the records of two people.
+
+    Args:
+        x (dict): data representing information about a person
+
+        y (dict): different data representing information about the same person
+
+    Returns:
+        A single dict containing all information from both input dictionaries. 
+    """
     for key in ["rank", "origin", "ethnicity", "age", "legitimate", "occupation", "phenotype", "free"]:
         if (key in y) and (key not in x):
             x[key] = y[key]

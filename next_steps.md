@@ -3,13 +3,32 @@
     -possible fix for relationships: represent as separate list on same level as people/events
 
 -improve disambiguation logic (automate)
-    -build infrastructure to pass manual disambiguation results to algorithm as training data?
+    -do manually for now, once you have a critical mass of data implement ML solution
 
--document code
+-create records for all extant volumes, and upload to the cloud
 
--move to production, create records for all extant volumes, and upload to the cloud
+HTR
 
--build api to expose images and extracted content
+-play around with the GUI some to figure out what level of detail is best for HTR
+    -lines? entries? entire images?
+
+-create training data corresponding to this level of detail
+
+-expand infrastructure to allow gpt4 api calls for text recognition
+    -check pricing (or api documentation) for model name
+
+-hook up the entire pipeline and see how widely applicable it is
+
+-build lambda functions that trigger when IIIF manifests (?) hit an S3 bucket
+    -need all images to already be in place and trigger needs to reference them
+
+Production
+
+-built api to access all images and extracted content
+
+-built web interfaces to search and access this data
+
+-write documentation for all of the above
 
 Other possibilities:
 -assign unique identifiers for places

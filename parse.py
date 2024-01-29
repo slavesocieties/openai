@@ -1,6 +1,24 @@
+"""Transforms xml representations of document transcriptions into json.
+
+Supports the natural language processing of entry-based historical records
+by transforming xml representations of document transcriptions into json,
+which is required by downstream components of nlp pipeline.
+"""
+
 import json
 
 def parse_xml(xml_path, output_path = None):
+    """Parses standard SSDA xml into json.
+
+    Args:
+        xml_path (str): path to an xml representation of a volume transcription
+
+        output_path (str, optional): path to output parsed json to; json will not
+        be saved if this is not included
+
+    Returns:
+        Dict containing parsed xml record. 
+    """
     images = 0
     volume = {}    
     in_entry = False
@@ -10,13 +28,16 @@ def parse_xml(xml_path, output_path = None):
     entry = ""
     with open(xml_path, "r", encoding="utf-8") as f:        
         for line in f:
+            #generates volume-level metadata
             if "<volume" in line:
                 for key in ["type", "country", "state", "city", "institution", "id", "title"]:
                     start = line.find(key + "=")                    
                     volume[key] = line[start + len(key) + 2:line.find('"', start + len(key) + 2)]                                      
                     if key == "id":
                         volume[key] = int(volume[key])
-                volume["entries"] = []            
+                volume["entries"] = []
+                continue
+            #text pre-processing            
             strip = ["[margin]", "[roto]", "[signed]", "<margin>", "</margin>", "&lt;insert&gt;", "&lt;/insert&gt;", "&lt;blurry&gt;", "&lt;/blurry&gt;"]
             for x in strip:
                 line = line.replace(x, "")
@@ -28,12 +49,14 @@ def parse_xml(xml_path, output_path = None):
                 line = line.replace("  ", " ")
             if line[0] == " ":
                 line = line[1:]
+            #in-volume xml parsing 
             if "<entry" in line:
                 in_entry = True
             elif "<image" in line:
                 images += 1
                 start = line.find("id")                
                 image = int(line[start + len("id") + 2:line.find('"', start + len("id") + 2)])
+                #fix for image numbers that were padded with a leading 1
                 if (image > 1000) and (images < 500):
                     image = image % 1000
                 if in_partial:
@@ -52,7 +75,8 @@ def parse_xml(xml_path, output_path = None):
                 im = "0" * (4 - len(str(image))) + str(image)
                 volume["entries"].append({"id": f"{im}-{num}", "raw": entry})
                 entry_number += 1
-                entry = ""                
+                entry = ""
+            #combines entries that cross between images on the first image                
             elif "<partial id" in line:
                 in_partial = True
             elif ("</partial" in line) and (not first_partial_close):
@@ -75,6 +99,7 @@ def parse_xml(xml_path, output_path = None):
             elif "<partial" in line:
                 btwn = False          
             elif in_entry or (in_partial and (not btwn)):
+                #logic to determine whether text is marginal notation
                 if len(line) < 10:
                     continue
                 elif len(line) < 30:
@@ -98,8 +123,20 @@ def parse_xml(xml_path, output_path = None):
 
     return volume
 
-def parse_nbu(txt_path, output_path = None):    
+def parse_nbu(txt_path, output_path = None):   
+    """Parses Native Bound-Unbound output into json.
+
+    Args:
+        txt_path (str): path to a text representation of a volume transcription
+
+        output_path (str, optional): path to output parsed json to; json will not
+        be saved if this is not included
+
+    Returns:
+        Dict containing parsed txt record. 
+    """ 
     volume = {}
+    #volume-level metadata should be included in input if this ever enters production
     volume["type"] = "baptism"
     volume["country"] = "United States"
     volume["city"] = "Isleta Pueblo"
@@ -116,9 +153,11 @@ def parse_nbu(txt_path, output_path = None):
                 volume["id"] = int(tokens[1])
                 volume["title"] = " ".join(tokens[2:len(tokens) - 1])            
                 volume["entries"] = []
+            #text pre-processing
             strip = ["ILL","(", ")", "[", "]", "*", "^"]
             for x in strip:
-                line = line.replace(x, "")           
+                line = line.replace(x, "")
+            #in-volume text parsing           
             if "{left margin" in line:
                 in_entry = True                
             elif ("{rubric" in line) and in_entry:
@@ -132,6 +171,7 @@ def parse_nbu(txt_path, output_path = None):
                     volume["entries"].append({"id": image + entry_ids[entry_index], "raw": entry})
                 entry_index += 1
                 entry = ""
+            #combines entries that cross between images on the first image
             elif "IMG" in line:
                 if in_entry:
                     partial = True
@@ -154,7 +194,19 @@ def parse_nbu(txt_path, output_path = None):
     return volume
 
 def parse_jorge(txt_path, output_path = None):
+    """Parses Jorge Delgadillo's transcriptions into json.
+
+    Args:
+        txt_path (str): path to a text representation of a volume transcription
+
+        output_path (str, optional): path to output parsed json to; json will not
+        be saved if this is not included
+
+    Returns:
+        Dict containing parsed txt record. 
+    """ 
     volume = {}
+    #volume-level metadata should be included in input if this ever enters production
     volume["type"] = "marriage"
     volume["country"] = "Cuba"
     volume["state"] = "La Habana"
@@ -173,10 +225,12 @@ def parse_jorge(txt_path, output_path = None):
             if "upper margin" in line:
                 continue
             if len(line) < 2:
-                continue           
+                continue
+            #text pre-processing           
             strip = ["(", ")", "[ilegible]", "[roto]", "?", "¿"]
             for x in strip:
                 line = line.replace(x, "")           
+            #in-volume text parsing
             if "[left margin" in line:
                 in_entry = True
                 if len(line) > 100:
@@ -227,4 +281,4 @@ def parse_jorge(txt_path, output_path = None):
 #id = 239746
 #parse_xml(f"xml\\{id}.xml", output_path = f"json\\{id}.json")
 
-parse_jorge("txt\\6517_clean.txt", output_path = "json\\6517.json")
+#parse_jorge("txt\\6517_clean.txt", output_path = "json\\6517.json")
