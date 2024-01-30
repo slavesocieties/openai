@@ -9,7 +9,124 @@
     "entries": [
         {
             "id": "0001-01",
-            "raw": "Sábado once de Enero de mil ochocientos setenta y tres yo Presbitero Don Santiago Serra , cura párroco, vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas, bauticé solemnemente y puse los santos óleos á una párvula, que nació el dia doce de Septiembre último, hija de padre no conocido y de la morena libre Aleja Peres, natural y vecina de esta feligresía; nieta materna de Telesforo y de Francisca Sanches: en dicha párvula ejercí las sagradas preces y ceremonias y le puse por nombre Maria Leoncia: fueron sus padrinos José Timoteo Pujadas y Leonarda Peñalver, a quienes advertí el parentesco espiritual y obligaciones que contrajeron y lo firmé"
+            "raw": "Sábado once de Enero de mil ochocientos setenta y tres yo Presbitero Don Santiago Serra , cura párroco, vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas, bauticé solemnemente y puse los santos óleos á una párvula, que nació el dia doce de Septiembre último, hija de padre no conocido y de la morena libre Aleja Peres, natural y vecina de esta feligresía; nieta materna de Telesforo y de Francisca Sanches: en dicha párvula ejercí las sagradas preces y ceremonias y le puse por nombre Maria Leoncia: fueron sus padrinos José Timoteo Pujadas y Leonarda Peñalver, a quienes advertí el parentesco espiritual y obligaciones que contrajeron y lo firmé",
+            "normalized": "Sábado once de enero de mil ochocientos setenta y tres, yo Presbítero Don Santiago Serra, cura párroco y vicario foráneo interino de esta iglesia de Término de San Carlos de Matanzas, bauticé solemnemente y puse los santos óleos a una parvula que nació el dia doce de septiembre último, hija de padre no conocido y de la morena libre Aleja Pérez, natural y vecina de esta feligresía, nieta materna de Telesforo y de Francisca Sánchez. En dicha parvula ejercí las sagradas preces y ceremonias, y le puse por nombre Maria Leoncia. Fueron sus padrinos José Timoteo Pujadas y Leonarda Peñalver, a quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé",
+            "data": {
+                "people": [
+                    {
+                        "id": "P01",
+                        "name": "Santiago Serra",
+                        "titles": [
+                            "Don"
+                        ],
+                        "occupation": "cleric"
+                    },
+                    {
+                       "id": "P02",
+                       "name": "Aleja Pérez", 
+                       "origin": "Matanzas",
+                       "phenotype": "morena",
+                       "free": true,
+                       "relationships": [
+                        {
+                            "related_person": "P03",
+                            "relationship_type": "parent"
+                        },
+                        {
+                            "related_person": "P04",
+                            "relationship_type": "parent"
+                        },
+                        {
+                            "related_person": "P05",
+                            "relationship_type": "child"
+                        }
+                       ]
+                    },
+                    {
+                        "id": "P03",
+                        "name": "Telesforo",
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "child"
+                            },
+                            {
+                                "related_person":"P04",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "grandchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P04",
+                        "name": "Francisca Sánchez",
+                        "relationships": [
+                            {
+                                "related_person":"P02",
+                                "relationship_type": "child"
+                            },
+                            {
+                                "related_person":"P03",
+                                "relationship_type":"spouse"
+                            },
+                            {
+                                "related_person":"P05",
+                                "relationship_type":"grandchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P05",
+                        "name": "Maria Leoncia",
+                        "age": "infant",
+                        "legitimate": false,
+                        "relationships":[
+                            {
+                                "related_person":"P02",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "grandparent"
+                            },
+                            {
+                                "related_person":"P04",
+                                "relationship_type":"parent"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "godparent"
+                            },
+                            {
+                                "related_person": "P07",
+                                "relationship_type":"godparent"
+                            }
+                        ]
+
+                    },
+                    {
+                        "id": "P06",
+                        "relationships":[
+                            {
+                                "related_person":"P05",
+                                "relationship_type":"godchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P07",
+                        "relationships":[
+                            {
+                                "related_person": "P05",
+                                "relationship_type":"godchild"
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         {
             "id": "0001-02",
