@@ -9,17 +9,14 @@
 
 HTR
 
--play around with the GUI some to figure out what level of detail is best for HTR
-    -lines? entries? entire images?
+-combine training data from Drive and S3 into a single bucket, make sure that color
+ scheme of training data is consistent and corresponds to input
 
--create training data corresponding to this level of detail
-
--expand infrastructure to allow gpt4 api calls for text recognition
-    -check pricing (or api documentation) for model name
+-expand infrastructure to allow gpt4 api calls for text recognition    
 
 -hook up the entire pipeline and see how widely applicable it is
 
--build lambda functions that trigger when IIIF manifests (?) hit an S3 bucket
+-build lambda functions (?) that trigger when IIIF manifests (?) hit an S3 bucket
     -need all images to already be in place and trigger needs to reference them
 
 Production
@@ -31,6 +28,11 @@ Production
 -write documentation for all of the above
 
 Other possibilities:
+-play around with the GUI some to figure out what level of detail is best for HTR    
+    -in the short term I'm going to build this with lines since the model won't start
+     making stuff up and we have good training data
+    -however, in the long term this will not be the most cost-effective solution,
+     so should eventually investigate if we can do this on the level of entries
 -assign unique identifiers for places
     -pros: slightly easier to link data
     -cons: adds mostly unnecessary complexity to model instructions
