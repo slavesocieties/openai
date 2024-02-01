@@ -2,6 +2,8 @@
     -create the necessary data for all extant transcriptions (RAs if we need a lot, this may also come before above)
     -possible fix for relationships: represent as separate list on same level as people/events
 
+-add a check to determine if entry is complete or not (to handle automatically transcribed partials)
+
 -improve disambiguation logic (automate)
     -do manually for now, once you have a critical mass of data implement ML solution
 
@@ -9,10 +11,13 @@
 
 HTR
 
+-update segmentation app to return entry counts and lines per entry
+
 -combine training data from Drive and S3 into a single bucket, make sure that color
  scheme of training data is consistent and corresponds to input
 
--expand infrastructure to allow gpt4 api calls for text recognition    
+-expand infrastructure to allow gpt4 api calls for text recognition
+    -can we detect and handle bad segmentation adequately?    
 
 -hook up the entire pipeline and see how widely applicable it is
 
@@ -28,6 +33,7 @@ Production
 -write documentation for all of the above
 
 Other possibilities:
+-incorporate IIIF manifests into workflow
 -play around with the GUI some to figure out what level of detail is best for HTR    
     -in the short term I'm going to build this with lines since the model won't start
      making stuff up and we have good training data

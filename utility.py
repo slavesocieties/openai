@@ -4,6 +4,16 @@
 import json
 from random import sample
 
+def load_volume_metadata(volume_id, volume_metadata_path = "volumes.json"):
+    with open(volume_metadata_path, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    for volume in data:
+        if volume["fields"]["identifier"] == volume_id:
+            return volume
+        
+    return None
+
 def generate_training_data(training_data_path, keywords=None, match_mode="or", max_shots=1000):
     """Generates training data for text normalization or content extraction.
 
