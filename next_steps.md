@@ -13,8 +13,8 @@ HTR
 
 -update segmentation app to return entry counts and lines per entry
 
--combine training data from Drive and S3 into a single bucket, make sure that color
- scheme of training data is consistent and corresponds to input
+(-combine training data from Drive and S3 into a single bucket, make sure that color
+ scheme of training data is consistent and corresponds to input)
 
 -expand infrastructure to allow gpt4 api calls for text recognition
     -can we detect and handle bad segmentation adequately?    
