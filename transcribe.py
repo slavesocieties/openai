@@ -61,7 +61,7 @@ def transcribe_volume(volume_id, volume_metadata_path = "volumes.json", image_bu
 	for image in range(volume_metadata["fields"]["images"]):
 		#segment locally with modified algorithm?
 		#append a record to entries containing entry id and number of lines
-		entries.append("dict containing image id and number of lines")
+		entries.append("dict containing entry id and number of lines")
 	
 	for entry in entries:
 		image_urls = []
@@ -76,6 +76,33 @@ def transcribe_volume(volume_id, volume_metadata_path = "volumes.json", image_bu
 		
 	os.unlink("temp.txt")
 
-	#build volume record, save, and return 
+	record = {}
+
+	#TODO add support for additional record types
+	if "Baptisms" in volume_metadata["fields"]["subject"]:
+		record["type"] = "baptism"
+	elif "Marriages" in volume_metadata["fields"]["subject"]:
+		record["type"] = "marriage"
+	elif "Burials" in volume_metadata["fields"]["subject"]:
+		record["type"] = "burial"
+	else:
+		record["type"] = "other"
+
+	for key in ["country", "state", "city", "institution" "identifier", "title"]:
+		record[key] = volume_metadata["fields"][key]
+
+	record["entries"] = []
+
+	#TODO is there any practical reason to include or exclude volume id here?
+	for entry in entries:
+		record["entries"].append({"id": entry["id"], "raw": entry["text"]})
+
+	if output_path is None:
+		output_path = f"{record['identifier']}.json"
+
+	with open(output_path, "w", encoding="utf-8") as f:
+		json.dump(record)
+
+	return record	
 
 #print(transcribe_line("https://ssda-openai-test.s3.amazonaws.com/two.jpg"))
