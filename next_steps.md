@@ -11,20 +11,21 @@
 
 HTR
 
--update segmentation app to return entry counts and lines per entry
+-figure out the characteristics of images that ChatGPT can transcribe reliably
 
-(-combine training data from Drive and S3 into a single bucket, make sure that color
- scheme of training data is consistent and corresponds to input)
+-improve (rewrite?) segmentation algo to produce this kind of data
 
--expand infrastructure to allow gpt4 api calls for text recognition
-    -can we detect and handle bad segmentation adequately?    
+-combine training data from Drive and S3 into a single bucket, make sure that color
+ scheme of training data is consistent and corresponds to input
 
--hook up the entire pipeline and see how widely applicable it is
+-add instructions and training data to transcription algo
+
+Production
+
+-hook up the entire pipeline
 
 -build lambda functions (?) that trigger when IIIF manifests (?) hit an S3 bucket
     -need all images to already be in place and trigger needs to reference them
-
-Production
 
 -built api to access all images and extracted content
 
@@ -34,11 +35,6 @@ Production
 
 Other possibilities:
 -incorporate IIIF manifests into workflow
--play around with the GUI some to figure out what level of detail is best for HTR    
-    -in the short term I'm going to build this with lines since the model won't start
-     making stuff up and we have good training data
-    -however, in the long term this will not be the most cost-effective solution,
-     so should eventually investigate if we can do this on the level of entries
 -assign unique identifiers for places
     -pros: slightly easier to link data
     -cons: adds mostly unnecessary complexity to model instructions

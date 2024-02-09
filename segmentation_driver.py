@@ -19,7 +19,7 @@ def preprocess(path_to_image):
     while os.stat(path_to_image).st_size > 3000000:
         im = Image.open(path_to_image)
         width, height = im.size
-        im = im.resize(int(round(width * .75)), int(round(height * .75)))
+        im = im.resize((int(round(width * .75)), int(round(height * .75))))
         im.save(path_to_image)
         im.close()
 
@@ -59,7 +59,7 @@ def filter_blocks(blocks, coordinates, thresh = .5):
     return entry_blocks, entry_coords
 
 def segmentation_driver(path_to_image):   
-    preprocess(path_to_image)
+    #preprocess(path_to_image)
 
     orig_img = Image.open(path_to_image)
     orig_img = orig_img.resize((960, 1280))
@@ -106,4 +106,4 @@ def segmentation_driver(path_to_image):
     
     return counts
 
-#print(segmentation_driver("740005-0353.jpg"))
+#print(segmentation_driver("239746-0037.jpg"))

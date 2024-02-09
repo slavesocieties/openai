@@ -12,8 +12,6 @@ import numpy as np
 #random sample can be constructed as before
 #can include instructions in same file as those for nlp
 
-#actually let's build this first without any training data or detailed instructions at all...
-
 def transcribe_line(image_url):
 	client = OpenAI()
 
@@ -23,7 +21,7 @@ def transcribe_line(image_url):
 		{
 		  "role": "user",
 		  "content": [
-			{"type": "text", "text": "Please use the OpenAI Vision System to manually transcribe this image. Your response should only include the transcribed text."},
+			{"type": "text", "text": "Please use the OpenAI Vision System to manually transcribe this image of a line from an early modern Spanish baptismal register. Your response should only include the transcribed text."},
 			{
 			  "type": "image_url",
 			  "image_url": {
@@ -81,23 +79,7 @@ def transcribe_volume(volume_id, volume_metadata_path = "volumes.json", source_b
 	print("Images segmented.")
 
 	for folder, subfolders, files in os.walk("segmented"):		
-		for file in files:
-			im = Image.open(os.path.join(folder, file))
-			data = np.asarray(im)
-			data = data.copy()
-			binarization_quantile = 0.1
-			bin_thresh = np.quantile(data, binarization_quantile)			
-
-			for y in range(len(data)):
-				for x in range(len(data[0])):      
-					if data[y][x] <= bin_thresh:
-						data[y][x] = 0
-					else:
-						data[y][x] = 255
-
-			im = Image.fromarray(data)
-			im.save(os.path.join(folder, file))			
-			
+		for file in files:		
 			s3_client.upload_file(os.path.join(folder, file), image_bucket, file, ExtraArgs={'ContentType': 'image/jpeg'})
 
 	print("Image segments uploaded.")
@@ -147,6 +129,11 @@ def transcribe_volume(volume_id, volume_metadata_path = "volumes.json", source_b
 
 	return record	
 
-transcribe_volume(740005, volume_metadata_path = "demo.json", source_bucket = "ssda-openai-test")
+#transcribe_volume(740005, volume_metadata_path = "demo.json", source_bucket = "ssda-openai-test")
 
-#print(transcribe_line("https://ssda-openai-test.s3.amazonaws.com/740005-0001-01-03.jpg"))
+#print(transcribe_line("https://ssda-openai-test.s3.amazonaws.com/239746-0037-02-08.jpg"))
+
+"""urls = []
+for x in range(10):
+	urls.append(f"https://ssda-openai-test.s3.amazonaws.com/239746-0037-02-{'0' * (2 - len(str(x))) + str(x)}.jpg")
+print(transcribe_entry(urls))"""
