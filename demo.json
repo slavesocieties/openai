@@ -1,0 +1,32 @@
+[
+    {
+        "type": "add",
+        "id": "740005",
+        "fields": {
+            "title": "Libro 10 de Bautismos",
+            "creator": "Digitization of the Sagrario Metropolitano Parish of Guadalajara",
+            "subject": [
+                "Mexico",
+                "Baptisms"
+            ],
+            "description": "",
+            "publisher": "Slave Societies Digital Archive",
+            "identifier": 740005,
+            "type": [
+                "Ecclesiastical records"
+            ],
+            "format": "",
+            "language": [
+                "Spanish"
+            ],
+            "images": 1,
+            "institution": "Sagrario Metropolitano Parish of Guadalajara",
+            "country": "Mexico",
+            "state": "Jalisco",
+            "city": "Guadalajara",
+            "coords": "20.67667, -103.34936",
+            "start_date": "1500-01-01T00:00:00Z",
+            "end_date": "1999-12-31T23:59:59Z"
+        }
+    }
+]

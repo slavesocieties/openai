@@ -22,8 +22,7 @@
                     },
                     {
                         "id": "P02",
-                        "name": "Juan Vives",
-                        "rank": "Captain",
+                        "name": "Juan Vives",                        
                         "relationships": [
                             {
                                 "related_person": "P03",
@@ -257,8 +256,7 @@
                     },
                     {
                         "id": "P04",
-                        "name": "Jose Corras",
-                        "rank": "Lieutenant",
+                        "name": "Jose Corras",                        
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -271,7 +269,7 @@
                         ]
                     },
                     {
-                        "id": "P04",
+                        "id": "P05",
                         "name": "Merced",
                         "age": "infant",
                         "relationships": [
@@ -284,13 +282,13 @@
                                 "relationship_type": "parent"
                             },
                             {
-                                "related_person": "P05",
+                                "related_person": "P06",
                                 "relationship_type": "godparent"
                             }
                         ]
                     },
                     {
-                        "id": "P05",
+                        "id": "P06",
                         "name": "Maria Ramona Prieto",
                         "titles": [
                             "Doña"
@@ -298,7 +296,7 @@
                         "phenotype": "pardo",
                         "relationships": [
                             {
-                                "related_person": "P04",
+                                "related_person": "P05",
                                 "relationship_type": "godchild"
                             }
                         ]

@@ -8,7 +8,7 @@ def load_volume_metadata(volume_id, volume_metadata_path = "volumes.json"):
     with open(volume_metadata_path, "r", encoding="utf-8") as f:
         data = json.load(f)
 
-    for volume in data:
+    for volume in data:        
         if volume["fields"]["identifier"] == volume_id:
             return volume
         
