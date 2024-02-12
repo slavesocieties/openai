@@ -17,6 +17,7 @@ HTR
 
 -combine training data from Drive and S3 into a single bucket, make sure that color
  scheme of training data is consistent and corresponds to input
+    -remove image segments without transcriptions (and make this part of loading data)
 
 -add instructions and training data to transcription algo
 
