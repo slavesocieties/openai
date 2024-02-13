@@ -3,6 +3,18 @@
 
 import json
 from random import sample
+from PIL import Image
+import numpy as np
+import os
+
+def check_binarized(path_to_image):
+    im = Image.open(path_to_image)    
+    if im.getbands()[0] == '1':
+        return True
+    arr = np.asarray(im)
+    if np.std(arr) < 60:
+        return False
+    return True
 
 def load_volume_metadata(volume_id, volume_metadata_path = "volumes.json"):
     with open(volume_metadata_path, "r", encoding="utf-8") as f:

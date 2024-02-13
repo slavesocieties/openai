@@ -1,6 +1,7 @@
--test how much training data is required and how granular it needs to be (metrics? do RAs need to do some manual extraction?)
-    -create the necessary data for all extant transcriptions (RAs if we need a lot, this may also come before above)
-    -possible fix for relationships: represent as separate list on same level as people/events
+NLP
+-RAs create more training data
+
+-possible fix for relationships: represent as separate list on same level as people/events
 
 -add a check to determine if entry is complete or not (to handle automatically transcribed partials)
 
@@ -10,19 +11,18 @@
 -create records for all extant volumes, and upload to the cloud
 
 HTR
-
 -figure out the characteristics of images that ChatGPT can transcribe reliably
 
 -improve (rewrite?) segmentation algo to produce this kind of data
 
--combine training data from Drive and S3 into a single bucket, make sure that color
- scheme of training data is consistent and corresponds to input
-    -remove image segments without transcriptions (and make this part of loading data)
+-combine training data from Drive and S3 into a single bucket
+    -remove image segments without transcriptions
+    -record characteristics (i.e. binarized or gray scale) for each segment
 
 -add instructions and training data to transcription algo
+    -make unmatched image segment removal part of HTR training data load
 
 Production
-
 -hook up the entire pipeline
 
 -build lambda functions (?) that trigger when IIIF manifests (?) hit an S3 bucket
