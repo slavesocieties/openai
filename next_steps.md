@@ -17,7 +17,7 @@ HTR
 
 -combine training data from Drive and S3 into a single bucket    
     -run upload script on directory with downloaded Drive content
-    -write script to scan training data bucket, check for lines that have text but aren't in json master, and add (id/color scheme/text)
+    -run script that scans training bucket
 
 -add instructions and training data to transcription algo
     -make unmatched image segment removal part of HTR training data load

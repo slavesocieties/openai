@@ -72,4 +72,4 @@ def update_training_data(images, bucket, s3_client):
     s3_client.upload_file("ssda-htr-training-data.json", bucket, "ssda-htr-training-data.json", ExtraArgs={'ContentType': 'application/json'})
     os.unlink("ssda-htr-training-data.json")
 
-print(f"{driver('htr_upload_test')} new lines processed and uploaded.")
+#print(f"{driver('htr_upload_test')} new lines processed and uploaded.")
