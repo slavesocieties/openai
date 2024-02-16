@@ -7,13 +7,13 @@ from PIL import Image
 import numpy as np
 
 def check_binarized(path_to_image):
-    im = Image.open(path_to_image)    
-    if im.getbands()[0] == '1':
-        return "bin"
-    arr = np.asarray(im)
-    if np.std(arr) < 60:
-        return "gray"
-    return "semi-bin"
+    with Image.open(path_to_image) as im:    
+        if im.getbands()[0] == '1':        
+            return "bin"
+        arr = np.asarray(im)
+        if np.std(arr) < 60:
+            return "gray"
+        return "semi-bin"
 
 def load_volume_metadata(volume_id, volume_metadata_path = "volumes.json"):
     with open(volume_metadata_path, "r", encoding="utf-8") as f:
