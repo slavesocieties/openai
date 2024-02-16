@@ -72,11 +72,15 @@ def driver(bucket = "ssda-htr-training"):
             add = {"id": image_id}
             add["color"] = check_binarized("temp.jpg")
             s3_client.download_file(bucket, f"{image_id}.txt", "temp.txt")
-            with open("temp.txt", "r", encoding="utf-8") as f:
-                for line in f:
-                    add["text"] = line.replace("\n", "")
+            with open("temp.txt", "r") as f:
+                try:
+                    for line in f:
+                        add["text"] = line.replace("\n", "")
+                except:
+                    print(f"Failed to read text for {image}")
+                    continue
             new_records.append(add)
-            adds += 1
+            adds += 1           
 
     os.unlink("temp.txt")
     os.unlink("temp.jpg")

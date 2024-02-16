@@ -16,14 +16,13 @@ HTR
 -improve (rewrite?) segmentation algo to produce this kind of data
 
 -combine training data from Drive and S3 into a single bucket    
-    -run upload script on directory with downloaded Drive content
-    -run script that scans training bucket
+    -run upload script on directory with downloaded Drive content    
 
--add instructions and training data to transcription algo
-    -make unmatched image segment removal part of HTR training data load
+-add instructions and training data to transcription algo    
 
 Production
 -hook up the entire pipeline
+    -scan training bucket before starting to build "official" data
 
 -build lambda functions (?) that trigger when IIIF manifests (?) hit an S3 bucket
     -need all images to already be in place and trigger needs to reference them
