@@ -15,9 +15,6 @@ HTR
 
 -improve (rewrite?) segmentation algo to produce this kind of data
 
--combine training data from Drive and S3 into a single bucket    
-    -run upload script on directory with downloaded Drive content    
-
 -add instructions and training data to transcription algo    
 
 Production
