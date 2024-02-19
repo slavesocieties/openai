@@ -118,6 +118,13 @@
             ],
             "sequence": 13,
             "text": "Do not extract pieces of information other than those explicitly described above."
+        },
+        {
+            "cases": [
+                "transcription", "Spanish"
+            ],
+            "sequence": 1,
+            "text": "You are assisting a historian with a collection of images of early modern Catholic sacramental records written in Spanish. The historian will provide you with a single handwritten line from one of these images and ask you to transcribe it. Please use the OpenAI Vision System to manually transcribe this line."
         }
     ]
 }

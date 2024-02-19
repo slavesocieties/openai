@@ -5,6 +5,8 @@ import json
 from random import sample
 from PIL import Image
 import numpy as np
+import boto3
+import os
 
 def check_binarized(path_to_image):
     with Image.open(path_to_image) as im:    
@@ -21,9 +23,56 @@ def load_volume_metadata(volume_id, volume_metadata_path = "volumes.json"):
 
     for volume in data:        
         if volume["fields"]["identifier"] == volume_id:
+            if "Baptisms" in volume["fields"]["subject"]:
+                volume["type"] = "baptism"
+            elif "Marriages" in volume["fields"]["subject"]:
+                volume["type"] = "marriage"
+            elif "Burials" in volume["fields"]["subject"]:
+                volume["type"] = "marriage"
             return volume
         
     return None
+
+def generate_htr_training_data(bucket_name="ssda-htr-training", metadata_path="volumes.json", keywords=None, match_mode="or", color=None, max_shots=10):
+    with open(metadata_path, "r", encoding="utf-8") as f:
+        metadata = json.load(f)
+
+    volumes = []
+
+    for volume in metadata:
+        if keywords == None:
+            volumes.append(volume["id"])
+        elif match_mode == "or":            
+            for key in keywords:
+                if volume["fields"][key] == keywords[key]:
+                    volumes.append(volume["id"])
+                    break                   
+        else:            
+            match = True
+            for key in keywords:
+                if volume["fields"][key] != keywords[key]:
+                    match = False
+            if match:
+                volumes.append(volume["id"])
+
+    s3_client = boto3.client('s3')
+    s3_client.download_file(bucket_name, f"{bucket_name}-data.json", f"{bucket_name}-data.json")
+
+    with open(f"{bucket_name}-data.json", "r") as f:
+        log = json.load(f)
+
+    os.unlink(f"{bucket_name}-data.json")
+
+    examples = []
+    for image in log["images"]:
+        if (image["id"].split("-")[0] in volumes) and ((color is None) or (image["color"] == color)):
+            examples.append({"url": f"https://{bucket_name}.s3.amazonaws.com/{image['id']}.jpg", "text": image["text"]})
+
+    if len(examples) > max_shots:
+        examples = sample(examples, max_shots)
+    
+    return examples
+    
 
 def generate_training_data(training_data_path, keywords=None, match_mode="or", max_shots=1000):
     """Generates training data for text normalization or content extraction.
@@ -126,16 +175,24 @@ def collect_instructions(instructions_path, volume_metadata, mode):
         volume_metadata (dict): dict containing basic volume metadata
 
         mode (str): pipeline component currently being invoked, either
-        `normalization` or `extraction`
+        `transcription`, `normalization`, or `extraction`
 
     Returns:
         List containing instructions to be passed to model as system messages. 
     """
     with open(instructions_path, "r", encoding="utf-8") as f:
         data = json.load(f)
+    
+    if mode == "transcription":
+        if volume_metadata["fields"]["country"] == "Brazil":
+            language = "Portuguese"
+        else:
+            language = "Spanish"        
 
-    keywords = [mode, volume_metadata["language"], volume_metadata["type"]]
-
+        keywords = [mode, language, volume_metadata["type"]]
+    else:
+        keywords = [mode, volume_metadata["language"], volume_metadata["type"]]
+    
     instructions = []
 
     #recursively checks instructions for those that match mode, language, and record type

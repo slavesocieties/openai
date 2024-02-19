@@ -5,23 +5,53 @@ import json
 import boto3
 import os
 import shutil
-import numpy as np
 
 #function that constructs training data
 #create a simple list of metadata for all volumes that we have htr training data for, use keyword matching to select subset of examples to be used for training
 #random sample can be constructed as before
 #can include instructions in same file as those for nlp
 
-def transcribe_line(image_url):
+def transcribe_line(image_url, instructions, examples):
 	client = OpenAI()
 
 	conversation = []
+
+	for instruction in instructions:
+		conversation.append(
+			{
+					"role": "system",
+					"content": instruction["text"]
+			}
+		)
+
+	for example in examples:
+		conversation.append(
+			{
+		  "role": "user",
+		  "content": [
+			{"type": "text", "text": "Please transcribe this line."},
+			{
+			  "type": "image_url",
+			  "image_url": {
+				"url": example["url"],
+				"detail": "high"
+			  }
+			}
+		  ]
+		}
+		)
+		conversation.append(
+			{
+				"role": "assistant",
+				"content": example["text"]
+			}
+		)
 
 	conversation.append(
 		{
 		  "role": "user",
 		  "content": [
-			{"type": "text", "text": "Please use the OpenAI Vision System to manually transcribe this image of a line from an early modern Spanish baptismal register. Your response should only include the transcribed text."},
+			{"type": "text", "text": "Please transcribe this line."},
 			{
 			  "type": "image_url",
 			  "image_url": {
@@ -40,19 +70,19 @@ def transcribe_line(image_url):
 
 	return response.choices[0].message.content
 
-def transcribe_entry(image_urls):
+def transcribe_entry(image_urls, instructions, examples):
 	entry_text = ""
-	for url in image_urls:
-		#print(url)
-		try:
-			entry_text += transcribe_line(url) + "\n"
+	for url in image_urls:		
+		"""try:
+			entry_text += transcribe_line(url, instructions, examples) + "\n"
 		except:
 			print(url)			
-			continue
+			continue"""
+		entry_text += transcribe_line(url, instructions, examples) + "\n"
 	
 	return entry_text
 
-def transcribe_volume(volume_id, volume_metadata_path = "volumes.json", source_bucket = "ssda-production-jpgs", image_bucket = "ssda-openai-test", transcription_bucket = "ssda-transcriptions", output_path = None):
+def transcribe_volume(volume_id, volume_metadata_path = "volumes.json", instructions_path = "instructions.json", source_bucket = "ssda-production-jpgs", image_bucket = "ssda-openai-test", transcription_bucket = "ssda-transcriptions", output_path = None):
 	#remember to save AWS credentials as environmental variables
 	s3_client = boto3.client('s3')  
 	volume_metadata = load_volume_metadata(volume_id, volume_metadata_path = volume_metadata_path)
@@ -83,18 +113,20 @@ def transcribe_volume(volume_id, volume_metadata_path = "volumes.json", source_b
 			s3_client.upload_file(os.path.join(folder, file), image_bucket, file, ExtraArgs={'ContentType': 'image/jpeg'})
 
 	print("Image segments uploaded.")
-
 	shutil.rmtree("segmented")
+
+	instructions = collect_instructions(instructions_path, volume_metadata, "transcription")
+	examples = generate_htr_training_data(bucket_name="ssda-htr-training", metadata_path="volumes.json", keywords= {"identifier": volume_id}, match_mode="or", color=None, max_shots=10)
 	
 	for entry in entries:
 		image_urls = []
 		for line_id in range(entry["lines"]):
 			padded_line = "0" * (2 - len(str(line_id + 1))) + str(line_id + 1)
 			image_urls.append(f"https://{image_bucket}.s3.amazonaws.com/{entry['id']}-{padded_line}.jpg")
-		entry["text"] = transcribe_entry(image_urls)
+		entry["text"] = transcribe_entry(image_urls, instructions, examples)
 		with open("temp.txt", "w", encoding="utf-8") as f:
 			f.write(entry["text"])
-		s3_client.upload_file("temp.txt", transcription_bucket, f"entry['id'].txt")
+		s3_client.upload_file("temp.txt", transcription_bucket, f"{entry['id']}.txt")
 		entry["text"] = entry["text"].replace("\n", " ")
 		
 	os.unlink("temp.txt")
@@ -104,12 +136,8 @@ def transcribe_volume(volume_id, volume_metadata_path = "volumes.json", source_b
 	record = {}
 
 	#TODO add support for additional record types
-	if "Baptisms" in volume_metadata["fields"]["subject"]:
-		record["type"] = "baptism"
-	elif "Marriages" in volume_metadata["fields"]["subject"]:
-		record["type"] = "marriage"
-	elif "Burials" in volume_metadata["fields"]["subject"]:
-		record["type"] = "burial"
+	if "type" in volume_metadata:
+		record["type"] = volume_metadata["type"]	
 	else:
 		record["type"] = "other"
 
@@ -129,11 +157,18 @@ def transcribe_volume(volume_id, volume_metadata_path = "volumes.json", source_b
 
 	return record	
 
-#transcribe_volume(740005, volume_metadata_path = "demo.json", source_bucket = "ssda-openai-test")
+#transcribe_volume(239746, volume_metadata_path = "demo.json", source_bucket = "ssda-openai-test")
 
 #print(transcribe_line("https://ssda-openai-test.s3.amazonaws.com/239746-0037-02-08.jpg"))
 
-"""urls = []
-for x in range(10):
-	urls.append(f"https://ssda-openai-test.s3.amazonaws.com/239746-0037-02-{'0' * (2 - len(str(x))) + str(x)}.jpg")
-print(transcribe_entry(urls))"""
+urls = []
+for x in range(1, 30):
+	urls.append(f"https://ssda-openai-test.s3.amazonaws.com/239746-0001-01-{'0' * (2 - len(str(x))) + str(x)}.jpg")
+
+
+volume_metadata = load_volume_metadata(239746, volume_metadata_path = "volumes.json")
+instructions = collect_instructions("instructions.json", volume_metadata, "transcription")
+examples = generate_htr_training_data(bucket_name="ssda-htr-training", metadata_path="volumes.json", keywords= {"identifier": 239746}, match_mode="or", color=None, max_shots=0)
+print(transcribe_line("https://ssda-openai-test.s3.amazonaws.com/239746-0001-01-12.jpg", instructions, examples))
+#print(transcribe_entry(urls, instructions, examples))
+	
