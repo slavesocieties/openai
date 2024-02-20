@@ -168,7 +168,7 @@ for x in range(1, 30):
 
 volume_metadata = load_volume_metadata(239746, volume_metadata_path = "volumes.json")
 instructions = collect_instructions("instructions.json", volume_metadata, "transcription")
-examples = generate_htr_training_data(bucket_name="ssda-htr-training", metadata_path="volumes.json", keywords= {"identifier": 239746}, match_mode="or", color=None, max_shots=0)
-print(transcribe_line("https://ssda-openai-test.s3.amazonaws.com/239746-0001-01-12.jpg", instructions, examples))
+examples = generate_htr_training_data(bucket_name="ssda-htr-training", metadata_path="volumes.json", keywords= {"identifier": 239746}, match_mode="or", color=None, max_shots=10)
+print(transcribe_line("https://ssda-openai-test.s3.amazonaws.com/239746-0001-01-08.jpg", instructions, examples))
 #print(transcribe_entry(urls, instructions, examples))
 	

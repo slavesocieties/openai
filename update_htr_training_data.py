@@ -5,6 +5,7 @@ import json
 from utility import check_binarized
 from upload_htr_training_data import update_training_data
 import os
+from PIL import Image
 
 def download_data(client, bucket="ssda-htr-training", key="ssda-htr-training-data.json"):
     try:
@@ -43,6 +44,30 @@ def list_all_objects(s3_client, bucket_name):
             break  # Exit the loop if no more objects are available
     
     return all_objects
+
+def add_pixel_count(bucket="ssda-htr-training"):
+    s3_client = boto3.client('s3')
+    lines = download_data(s3_client)
+    n = 0
+    for index, line in enumerate(lines["images"]):
+        if "pixels" not in line:
+            s3_client.download_file(bucket, f"{line['id']}.jpg", "temp.jpg")
+            with Image.open("temp.jpg") as im:        
+                lines["images"][index]["pixels"] = im.size[0] * im.size[1]
+            n += 1
+            if n % 500 == 0:
+                print(f"Pixel count added for {n} lines.")
+
+    with open("ssda-htr-training-data.json", "w") as f:
+        json.dump(lines, f)
+
+    s3_client.upload_file("ssda-htr-training-data.json", bucket, "ssda-htr-training-data.json", ExtraArgs={'ContentType': 'application/json'})
+    os.unlink("ssda-htr-training-data.json")
+    os.unlink("temp.jpg")
+
+    return n
+
+print(f"Pixel count added for {add_pixel_count()} images.")
 
 def driver(bucket = "ssda-htr-training"):
     s3_client = boto3.client('s3')
@@ -88,7 +113,7 @@ def driver(bucket = "ssda-htr-training"):
 
     return adds
 
-print(f"{driver()} new HTR training data records added.")
+#print(f"{driver()} new HTR training data records added.")
 
 
 

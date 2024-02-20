@@ -11,10 +11,14 @@ NLP
 -create records for all extant volumes, and upload to the cloud
 
 HTR
+-explore Assistant API?
+
+-try upscaling images
+
 -figure out the characteristics of images that ChatGPT can transcribe reliably
 
 -improve (rewrite?) segmentation algo to produce this kind of data
-    -make transcription GUI note coords and color scheme and update training data log    
+    -make transcription GUI note coords, color scheme, and resolution and update training data log    
 
 Production
 -hook up the entire pipeline
