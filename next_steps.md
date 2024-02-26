@@ -18,7 +18,10 @@ HTR
 -figure out the characteristics of images that ChatGPT can transcribe reliably
 
 -improve (rewrite?) segmentation algo to produce this kind of data
-    -make transcription GUI note coords, color scheme, and resolution and update training data log    
+    -make transcription GUI note coords, color scheme, and resolution and update training data log
+    -add a separate pre-processing step to crop to folio?
+    -add hyper-parameters to driver
+    -add verbosity to other pipeline components
 
 Production
 -hook up the entire pipeline

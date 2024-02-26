@@ -1,12 +1,12 @@
 import os
-from PIL import Image, ImageDraw
+from PIL import Image
 import numpy as np
 from pool_image import block_image
 from layout import layout_analyze
-from binarize_data import gray_and_rotate
+from binarize_data import rotate_block
 from find_pixels import find_pixels
 from data_segmentation import data_segmentation
-#import requests
+import json
 
 def preprocess(path_to_image):
     """Function to preprocess the image
@@ -58,40 +58,40 @@ def filter_blocks(blocks, coordinates, thresh = .5):
             entry_coords.append(coordinates[index])
     return entry_blocks, entry_coords
 
-def segmentation_driver(path_to_image):   
-    #preprocess(path_to_image)
-
+def segmentation_driver(path_to_image, save_directory="segmented", verbose=True):
     orig_img = Image.open(path_to_image)
     orig_img = orig_img.resize((960, 1280))
-    #orig_img.show()
+    # orig_img is color image resized to 960x1280
     pooled = block_image(path_to_image)
+    # pooled is a numpy array representing a grayscaled and normalized version of the image
     pooled_img = Image.fromarray(pooled)
-    pooled_img = pooled_img.resize((960, 1280))
-    #pooled_img.show()
-    pooled = np.array(pooled_img)    
+    pooled_img = pooled_img.resize((960, 1280))    
+    pooled = np.array(pooled_img)
+    # pooled is a resized version of the same array from above
+    if verbose:
+        print("Image normalized.")
+
+    # TODO do we actually need to do this resizing?    
     
-    blocks, rotated_img, coordinates = layout_analyze(pooled, orig_img, save_path="layout.jpg")
+    blocks, coordinates = layout_analyze(pooled)
+
+    # TODO this may be redundant if we can effectively filter junk crops elsewhere
     entry_blocks, entry_coords = filter_blocks(blocks, coordinates)
 
-    if entry_blocks == None:
-        return []
-    
-    all_coords = []
-    counts = []
+    segments = []
 
-    tmp = rotated_img.convert('RGB')
-    draw = ImageDraw.Draw(tmp, "RGBA")
+    if verbose:
+        print("Layout analyzed.")
+        if entry_blocks == None:
+            print("No entries found.")
+            return segments    
 
     for entry_id, block in enumerate(entry_blocks):
-        data, image_file, orig_image = gray_and_rotate(block)
-
-        crop_pixels = find_pixels(data, 5000)
-        data = np.array(orig_image)
-        count, segment_coords = data_segmentation(data, crop_pixels, path_to_image, image_file, entry_id + 1, entry_coords[entry_id]) #cropping image and output
-        for coord in segment_coords:
-            draw.rectangle((coord[0], coord[1], coord[2], coord[3]), outline= 'blue', fill=(0, 255, 0, 30))
-        all_coords.append(segment_coords)
-        counts.append(count)
+        rotated = rotate_block(block)
+        crop_pixels = find_pixels(rotated, 5000)        
+        entry_segments = data_segmentation(rotated, crop_pixels, path_to_image, entry_id + 1, save_dir=save_directory) #cropping image and output        
+        for segment in entry_segments:
+            segments.append(segment)
 
     """count = 0
     for file in os.scandir(f'./segmented/{path_to_image}'):
@@ -103,7 +103,16 @@ def segmentation_driver(path_to_image):
         os.remove(file.path)    
     os.rmdir(f'./segmented/{path_to_image}')
     print("Done segmentation and upload")"""
-    
-    return counts
 
-#print(segmentation_driver("239746-0037.jpg"))
+    if verbose:
+        print(f"{len(segments)} segmented lines saved to {save_directory}.")
+
+    # TODO figure out where int64s are coming from
+    for x, segment in enumerate(segments):
+        for y in range(len(segment["coords"])):
+            segments[x]["coords"][y] = int(segments[x]["coords"][y])            
+    
+    return segments
+
+"""with open("segmentation_test.json", "w") as f:
+    json.dump(segmentation_driver("740005-0020.jpg"), f)"""

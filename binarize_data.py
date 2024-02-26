@@ -7,7 +7,7 @@ from find_pixels import *
 prominance = 3000 # for finding crop boundaries
 
 
-def gray_and_rotate(block):
+def rotate_block(block):
     """Function to convert input image into grayscale and rotate it appropriately
 
     Parameters
@@ -18,22 +18,15 @@ def gray_and_rotate(block):
     Returns
     -------
     data : numpy array
-        rotated and greyscaled image as a numpy array
-    image_file : Image
-        rotated and greyscaled image object
-    orig_image : Image
-        the original image that has not been rotated nor greyscaled
-    """
-    image_file = block    
-    orig_image = block
-    image_file = image_file.convert('L')
+        rotated and greyscaled image as a numpy array       
+    """    
     
-    rotate_degree = get_degree(image_file)
-    image_file = image_file.rotate(rotate_degree, fillcolor=127)
-    orig_image = orig_image.rotate(rotate_degree, fillcolor=127)
+    rotate_degree = get_degree(block)
+    block = block.rotate(rotate_degree, fillcolor=255)    
     
-    data = np.asarray(image_file)
-    return data, image_file, orig_image
+    data = np.asarray(block)
+    
+    return data
 
 
 def get_degree(orig_image_gray):

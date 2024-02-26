@@ -21,7 +21,7 @@ def find_pixels(data, prominance):
     array = []
     for val in pixel_counts: #flatten the numpy array
         array.append(val[0])
-    crop_pixels = scipy.signal.find_peaks(array, prominence=prominance)[0] #find pixel boundaries
+    crop_pixels = scipy.signal.find_peaks(array, prominence=prominance)[0] #find pixel boundaries    
     return crop_pixels
 
 

@@ -2,3 +2,5 @@ __pycache__/
 temp.json
 *.jpg
 test.py
+segmentation_test.json
+segmented/

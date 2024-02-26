@@ -3,8 +3,7 @@ from statistics import harmonic_mean
 import numpy as np
 from PIL import Image, ImageDraw
 import sys
-from layout import *
-from scipy.stats import linregress
+from pool_image import block_image
 sys.setrecursionlimit(1000000000)
 
 
@@ -239,49 +238,46 @@ def GCD(x, y):
        x, y = y, x % y
     return abs(x)
 
-def layout_analyze(data, orig_img, save_path = None):
+def layout_analyze(data, save_path = None):
     """Function to compute the layout bounding blocks that contain texts within an image
 
     Parameters
     ----------
     data : numpy array
-        the image from which we will compute the layout bounding blocks
-    orig_img : Image
-        the original (colored) image 
+        a grayscale image that has been normalized from a color original    
     save_path : string (optional)
         the path to which we want to save the layout-analyzed image (With bounding box overlays)
         
     Returns
     -------
     crops_orig_vertical : list(Image)
-        a list of images of text blocks
-    return_img : Image
-        the entire image, possibly rotated
+        a list of images of text blocks    
     coordinates : list
-        a list of coordinates of the text blocks within the original image
-    """
+        a list of coordinates of the text blocks within the original image in (left, top, right, bottom) format
+    """    
+    # data is the pooled image, resized to 960x1280    
     binarization_quantile = 0.1
     bin_thresh = np.quantile(data, binarization_quantile)
-    print("Dynamic binarization threshold = "+str(bin_thresh))
+    #print("Dynamic binarization threshold = "+str(bin_thresh))
+    orig_img = data.copy()
+    orig_img = Image.fromarray(orig_img)
 
-    for y in range(len(data)):
-        for x in range(len(data[0])):      
-            if data[y][x] <= bin_thresh:
-                data[y][x] = 0
-            else:
-                data[y][x] = 255
+    data = np.where(data <= bin_thresh, 0, 255)
 
-    h, w = len(data), len(data[0])
-    print("height", h, "width", w)
-    img = Image.fromarray(data)
-    #img.show()
-    angle = find_rotate_angle(data, 20, 20)
-    print("ANGLE:", angle)
-    img = img.rotate(angle, fillcolor=1)    
-    return_img = img
+    # data is still grayscale but has been pseudo-binarized (each pixel is either 0 or 255)
+    # TODO should we actually binarize here?    
+        
+    img = Image.fromarray(data)   
+    angle = find_rotate_angle(data, 20, 20)    
+    img = img.rotate(angle, fillcolor=255)    
+    # fill color has been changed here, I think that the original version assumed the image was binarized
+    orig_img = orig_img.rotate(angle, fillcolor=255)
+    orig_img.save("pooled.jpg")    
     data = np.asarray(img)
+    # data is rotated pseudo-binarized image
     img = img.convert('RGB')
     draw = ImageDraw.Draw(img, "RGBA")
+    # img has been converted back to color (so we can draw boxes on it?)
 
     spaces_horizontal = compute_spaces(data, 20, 20) # hyperparams
     crops_horizontal = []
@@ -301,6 +297,7 @@ def layout_analyze(data, orig_img, save_path = None):
         crop_data = np.asarray(crop).T[0]
         spaces_vertical = compute_spaces(crop_data, 20, 20) # hyperparams
         for space in spaces_vertical:
+            # TODO we're still getting junk crops (ruler, parts of images were edges of a lot of pages appear, etc)
             if space[1]-space[0] > 50 and crop.size[0] > 50: # filter out garbage crops
                 draw.rectangle((indices_horizontal[i][0], space[0], indices_horizontal[i][1], space[1]), outline= 'blue', fill=(0, 255, 0, 30))
                 crops_vertical.append(crop.crop((0, space[0], crop.size[0], space[1])))
@@ -311,6 +308,9 @@ def layout_analyze(data, orig_img, save_path = None):
     if save_path is not None:
         img.save(save_path)
     
-    return crops_orig_vertical, return_img, coordinates
+    """print(f"{len(coordinates)} text regions found.")
+
+    for x in crops_orig_vertical:
+        x.show()"""
     
-        
+    return crops_orig_vertical, coordinates

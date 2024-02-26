@@ -1,9 +1,9 @@
 import os
-from PIL import Image, ImageOps
+from PIL import Image
 from deslant_img import *
 
 
-def data_segmentation(data, crop_pixels, file_name, image_file, entry_id, coords = []):
+def data_segmentation(data, crop_pixels, file_name, entry_id, save_dir="segmented"):
     """Function to crop input image by lines and output cropped images as specified by pixel boundaries
     The resulting images will be saved to disk in the segmented directory
 
@@ -29,26 +29,26 @@ def data_segmentation(data, crop_pixels, file_name, image_file, entry_id, coords
     segment_coords : list
         a list of coordinates of saved segments
     """
-    #establising initial boundaries
+    image_file = Image.fromarray(data)
+    # establising initial boundaries
     top = 0
     left = 0
     right = data.shape[1]
     bottom = 0
     index = 0
 
+    segments = []
     count = 0
 
     if (entry_id) < 10:
-        entry_id = '0'+str(entry_id)
+        entry_id = '0' + str(entry_id)
     else:
-        entry_id = str(entry_id)
+        entry_id = str(entry_id)    
 
-    segment_coords = []
-
-    if not os.path.exists("segmented"):
-        os.mkdir("segmented")
+    if not os.path.exists(save_dir):
+        os.mkdir(save_dir)
    
-    while index < len(crop_pixels): #iteratively crop the image with pixel boundaries
+    while index < len(crop_pixels): # iteratively crop the image with pixel boundaries
         top = bottom
         bottom = crop_pixels[index]
 
@@ -57,14 +57,15 @@ def data_segmentation(data, crop_pixels, file_name, image_file, entry_id, coords
         while bottom - top < 10:
             index += 1
             if index >= len(crop_pixels):
-                return count, segment_coords
+                return segments
             # left = bottom
             top = bottom
-            bottom = crop_pixels[index]
+            bottom = crop_pixels[index]        
       
         tmp_img = image_file.crop((left, top, right, bottom))
 
-        #deslanting
+        # deslanting
+        # TODO investigate deslant
         tmp_img = deslant_img(np.array(tmp_img))
         tmp_img = Image.fromarray(tmp_img.img)
         
@@ -74,25 +75,28 @@ def data_segmentation(data, crop_pixels, file_name, image_file, entry_id, coords
             idx = str(count + 1)
 
         #tmp_img.save("./segmented/"+file_name+"/"+file_name+'-'+idx+'.jpg')
-        tmp_img.save(f"segmented/{file_name[:file_name.find('.')]}-{entry_id}-{idx}.jpg")
-        segment_coords.append([left + coords[0], top + coords[1], right + coords[0], bottom + coords[1]])
+        im_id = f"{file_name[:file_name.find('.')]}-{entry_id}-{idx}"
+        tmp_img.save(f"{save_dir}/{im_id}.jpg")
+        segments.append({"id": im_id, "coords": [left, top, right, bottom]})        
         count += 1        
 
         index += 1
-    # image_file = image_file.crop((top, bottom, right, data.shape[0]))
-    image_file = image_file.crop((left, bottom, right, data.shape[0]))
+    #image_file = image_file.crop((top, bottom, right, data.shape[0]))
+    image_file = image_file.crop((left, bottom, right, data.shape[0]))    
 
     image_file = deslant_img(np.array(image_file))    
     image_file = Image.fromarray(image_file.img)
     
     if (count + 1) < 10:
-            idx = '0'+str(count + 1)
+            idx = '0' + str(count + 1)
     else:
         idx = str(count + 1)
 
     if image_file.size[1] > 9:
-        tmp_img.save(f"segmented/{file_name[:file_name.find('.')]}-{entry_id}-{idx}.jpg")
-        segment_coords.append([left + coords[0], bottom + coords[1], right + coords[0], data.shape[0] + coords[1]])
+        #tmp_img.save(f"{save_dir}/{file_name[:file_name.find('.')]}-{entry_id}-{idx}.jpg")
+        im_id = f"{file_name[:file_name.find('.')]}-{entry_id}-{idx}"
+        image_file.save(f"{save_dir}/{im_id}.jpg")
+        segments.append({"id": im_id, "coords": [left, bottom, right, data.shape[0]]})
         count += 1        
     
-    return count, segment_coords
+    return segments
