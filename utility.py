@@ -3,10 +3,47 @@
 
 import json
 from random import sample
-from PIL import Image
+from PIL import Image, ImageEnhance
 import numpy as np
 import boto3
 import os
+
+def dynamic_binarization(image_path, output_path=None, binarization_quantile=0.1, verbose=False):
+    im = Image.open(image_path)
+    data = np.array(im)    
+    im.close()
+    bin_thresh = np.quantile(data, binarization_quantile)
+    data = np.where(data <= bin_thresh, 0, 255)
+    im = Image.fromarray(data).convert("L")
+
+    if output_path is not None:
+        im.save(output_path)
+    else:
+        im.save(image_path)
+    
+    if verbose:
+        print(f"Dynamically binarized image saved to {output_path}")
+
+dynamic_binarization("segmented\\15834-0093-03-02.jpg", output_path="dyn_bin.jpg")
+
+def enhance_contrast(image_path, output_path=None, factor=2.0, verbose=False):    
+    image = Image.open(image_path).convert('L')  # Convert to grayscale if not already
+    
+    # Enhance the contrast
+    enhancer = ImageEnhance.Contrast(image)       
+    enhanced_image = enhancer.enhance(factor)
+    image.close()
+    
+    # Save the enhanced image
+    if output_path is not None:
+        enhanced_image.save(output_path)
+    else:
+        enhanced_image.save(image_path)
+    
+    if verbose:
+        print(f"Enhanced image saved to {output_path}")
+
+#enhance_contrast("segmented\\15834-0093-03-02.jpg", output_path="enhanced.jpg")
 
 def check_binarized(path_to_image):
     with Image.open(path_to_image) as im:    

@@ -22,6 +22,8 @@ HTR
     -add a separate pre-processing step to crop to folio?
     -add hyper-parameters to driver
     -add verbosity to other pipeline components
+    -improve ability to detect horizontal breaks between sections
+    -consider removing deslant
 
 Production
 -hook up the entire pipeline

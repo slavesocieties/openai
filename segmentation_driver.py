@@ -58,10 +58,7 @@ def filter_blocks(blocks, coordinates, thresh = .5):
             entry_coords.append(coordinates[index])
     return entry_blocks, entry_coords
 
-def segmentation_driver(path_to_image, save_directory="segmented", verbose=True):
-    orig_img = Image.open(path_to_image)
-    orig_img = orig_img.resize((960, 1280))
-    # orig_img is color image resized to 960x1280
+def segmentation_driver(path_to_image, save_directory="segmented", verbose=True):    
     pooled = block_image(path_to_image)
     # pooled is a numpy array representing a grayscaled and normalized version of the image
     pooled_img = Image.fromarray(pooled)
@@ -73,25 +70,33 @@ def segmentation_driver(path_to_image, save_directory="segmented", verbose=True)
 
     # TODO do we actually need to do this resizing?    
     
-    blocks, coordinates = layout_analyze(pooled)
+    blocks, coordinates, angle = layout_analyze(pooled)
 
     # TODO this may be redundant if we can effectively filter junk crops elsewhere
-    entry_blocks, entry_coords = filter_blocks(blocks, coordinates)
+    entry_blocks, entry_coords = filter_blocks(blocks, coordinates)    
 
-    segments = []
+    entries = []
+    lines = 0
 
     if verbose:
         print("Layout analyzed.")
         if entry_blocks == None:
             print("No entries found.")
-            return segments    
+            return entries    
 
     for entry_id, block in enumerate(entry_blocks):
+        entries.append({"id": f"{path_to_image[:path_to_image.find('.')]}-{entry_id + 1}", "angle": angle, "coords": entry_coords[entry_id]})
         rotated = rotate_block(block)
         crop_pixels = find_pixels(rotated, 5000)        
-        entry_segments = data_segmentation(rotated, crop_pixels, path_to_image, entry_id + 1, save_dir=save_directory) #cropping image and output        
+        entry_segments = data_segmentation(rotated, crop_pixels, path_to_image, entry_id + 1, save_dir=save_directory) #cropping image and output
+        if len(entry_segments) > 1:
+            entries[entry_id]["lines"] = []        
         for segment in entry_segments:
-            segments.append(segment)
+            # TODO figure out where int64s are coming from
+            for x in range(len(segment["coords"])):
+                segment["coords"][x] = int(segment["coords"][x])
+            entries[entry_id]["lines"].append(segment)
+            lines += 1
 
     """count = 0
     for file in os.scandir(f'./segmented/{path_to_image}'):
@@ -105,14 +110,9 @@ def segmentation_driver(path_to_image, save_directory="segmented", verbose=True)
     print("Done segmentation and upload")"""
 
     if verbose:
-        print(f"{len(segments)} segmented lines saved to {save_directory}.")
-
-    # TODO figure out where int64s are coming from
-    for x, segment in enumerate(segments):
-        for y in range(len(segment["coords"])):
-            segments[x]["coords"][y] = int(segments[x]["coords"][y])            
+        print(f"{lines} segmented lines from {len(entries)} regions of text saved to {save_directory}.")             
     
-    return segments
+    return entries
 
 """with open("segmentation_test.json", "w") as f:
-    json.dump(segmentation_driver("740005-0020.jpg"), f)"""
+    json.dump(segmentation_driver("15834-0093.jpg"), f)"""
