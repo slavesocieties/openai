@@ -6,11 +6,6 @@ import boto3
 import os
 import shutil
 
-#function that constructs training data
-#create a simple list of metadata for all volumes that we have htr training data for, use keyword matching to select subset of examples to be used for training
-#random sample can be constructed as before
-#can include instructions in same file as those for nlp
-
 def transcribe_line(image_url, instructions, examples=None):
 	client = OpenAI()
 
@@ -162,7 +157,8 @@ def transcribe_volume(volume_id, volume_metadata_path = "volumes.json", instruct
 
 """volume_metadata = load_volume_metadata(239746, volume_metadata_path = "volumes.json")
 instructions = collect_instructions("instructions.json", volume_metadata, "transcription")
-print(transcribe_line("https://ssda-openai-test.s3.amazonaws.com/dyn_bin.jpg", instructions))"""
+examples = generate_htr_training_data(bucket_name="ssda-openai-test", metadata_path="volumes.json", keywords= {"identifier": 239746}, match_mode="or", color=None, max_shots=3)
+print(transcribe_line("https://ssda-openai-test.s3.amazonaws.com/really_big.jpg", instructions))"""
 
 """urls = []
 for x in range(1, 30):

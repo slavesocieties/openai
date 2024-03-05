@@ -11,13 +11,12 @@ NLP
 -create records for all extant volumes, and upload to the cloud
 
 HTR
--explore Assistant API?
-
 -try upscaling images
 
 -figure out the characteristics of images that ChatGPT can transcribe reliably
 
 -improve (rewrite?) segmentation algo to produce this kind of data
+    -address horizontally split lines
     -make transcription GUI note coords, color scheme, and resolution and update training data log
     -add a separate pre-processing step to crop to folio?
     -add hyper-parameters to driver

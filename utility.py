@@ -8,6 +8,29 @@ import numpy as np
 import boto3
 import os
 
+def manual_htr_training_data_generation(image_root="segmented", output_dir="htr_training_data.json"):
+    data = {"images": []}
+    deletes = []  
+    for folder, subfolders, files in os.walk(image_root):
+        for file in files:
+            im = Image.open(os.path.join(folder, file))
+            pix = im.size[0] * im.size[1]
+            idx = file[:file.find(".")]
+            col = "normalized"
+            txt = input(f"Enter transcription for {idx}: ")
+            if txt == "":
+                deletes.append(os.path.join(folder, file))
+                continue
+            data["images"].append({"id": idx, "color": col, "text": txt, "pixels": pix})
+
+    for file in deletes:
+        os.unlink(file)
+
+    with open(output_dir, "w", encoding="utf-8") as f:
+        json.dump(data, f)
+
+#manual_htr_training_data_generation(image_root="segmented", output_dir="htr_training_data.json")
+
 def dynamic_binarization(image_path, output_path=None, binarization_quantile=0.1, verbose=False):
     im = Image.open(image_path)
     data = np.array(im)    
@@ -24,7 +47,7 @@ def dynamic_binarization(image_path, output_path=None, binarization_quantile=0.1
     if verbose:
         print(f"Dynamically binarized image saved to {output_path}")
 
-dynamic_binarization("segmented\\15834-0093-03-02.jpg", output_path="dyn_bin.jpg")
+#dynamic_binarization("segmented\\15834-0093-03-02.jpg", output_path="dyn_bin.jpg")
 
 def enhance_contrast(image_path, output_path=None, factor=2.0, verbose=False):    
     image = Image.open(image_path).convert('L')  # Convert to grayscale if not already
@@ -108,8 +131,7 @@ def generate_htr_training_data(bucket_name="ssda-htr-training", metadata_path="v
     if len(examples) > max_shots:
         examples = sample(examples, max_shots)
     
-    return examples
-    
+    return examples    
 
 def generate_training_data(training_data_path, keywords=None, match_mode="or", max_shots=1000):
     """Generates training data for text normalization or content extraction.

@@ -115,4 +115,4 @@ def segmentation_driver(path_to_image, save_directory="segmented", verbose=True)
     return entries
 
 """with open("segmentation_test.json", "w") as f:
-    json.dump(segmentation_driver("15834-0093.jpg"), f)"""
+    json.dump(segmentation_driver("239746-0026.jpg"), f)"""
