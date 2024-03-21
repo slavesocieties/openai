@@ -428,7 +428,20 @@
                         ]
                     }
 
+                ],
+                "events":[
+                    {
+                        "type":"baptism",
+                        "principal":"P07",
+                        "date": "1873-02-12"
+                    },
+                    {
+                        "type":"birth",
+                        "principal":"P07",
+                        "date":"1872-08-16"
+                    }
                 ]
+
             }
         },
         {
@@ -661,7 +674,162 @@
         },
         {
             "id": "0024-03",
-            "raw": "Sábado diez y nueve de Abril de mil ochocientos setenta y tres: yo Presbitero Don Santiago Serra, cura párroco, vicario, foráneo interino de esta iglesia de Término de San Cárlos de Matánzas, bauticé solemnemente y puse los santos óleos á un párvulo, que nació el dia veinte y dos de Diciembre último, hija legitimo de los pardos libres Manuel Carnera y de Dolores Carbó, el primero natural de Ceiba Mocha y la segunda natural de esta feligresía, de la que arriba son vecinos; nieto paterno de Esperanza Carriera y materno de Victoria Molins y abuelos no espresados: en dicho párvulo ejercí las sagradas preces y ceremonias y le puse por nombre Demetrio, Luis Alfonso: fueron sus padrinos Don Juan Luis Acosta y Doña Luisa de la Cabada, á quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé. Entre renglonesdevale."
+            "raw": "Sábado diez y nueve de Abril de mil ochocientos setenta y tres: yo Presbitero Don Santiago Serra, cura párroco, vicario, foráneo interino de esta iglesia de Término de San Cárlos de Matánzas, bauticé solemnemente y puse los santos óleos á un párvulo, que nació el dia veinte y dos de Diciembre último, hija legitimo de los pardos libres Manuel Carnera y de Dolores Carbó, el primero natural de Ceiba Mocha y la segunda natural de esta feligresía, de la que arriba son vecinos; nieto paterno de Esperanza Carriera y materno de Victoria Molins y abuelos no espresados: en dicho párvulo ejercí las sagradas preces y ceremonias y le puse por nombre Demetrio, Luis Alfonso: fueron sus padrinos Don Juan Luis Acosta y Doña Luisa de la Cabada, á quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé. Entre renglonesdevale.",
+            "normalized": "Sábado diez y nueve de abril de mil ochocientos setenta y tres, yo presbítero Don Santiago Serra, cura párroco, vicario, foráneo interino de esta iglesia de Término de San Cárlos de Matánzas, bauticé solemnemente y puse los santos óleos a un párvulo, que nació el día veintidós de diciembre último. Hijo legítimo de los pardos libres Manuel Carnera y de Dolores Carbo, el primero natural de Ceiba Mocha y la segunda natural de esta feligresia, de la que arriba son vecinos, y nieto paterno de Esperanza Carriera y materno de Victoria Molina y abuelos no espresados. En dicho párvulo ejercí las sagradas preces y ceremonias, y le puse por nombre Demetrio Luis Alfonso. Fueron sus padrinos Don Juan Luis Acosta y Doña Luisa de la Cabada, a quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé.",
+            "data":{
+                "people":[
+                    {
+                        "id":"P01",
+                        "name":"Santiago Serra",
+                        "titles":[
+                            "Don"
+                        ],
+                        "occupation":"cleric"
+                    },
+                    {
+                        "id":"P02",
+                        "name":"Manuel Carnera",
+                        "phenotype":"pardo",
+                        "free":true,
+                        "origin": "Ceiba Mocha",
+                        "relationships":[
+                            {
+                                "related_person":"P03",
+                                "relationship_type":"spouse"
+                            },
+                            {
+                                "related_person":"P04",
+                                "relationship_type":"parent"
+                            },
+                            {
+                                "related_person":"P06",
+                                "relationship_type":"child"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P03",
+                        "name":"Dolores Carbo",
+                        "phenotype":"pardo",
+                        "free": true,
+                        "origin":"Matanzas",
+                        "relationships":[
+                            {
+                                "related_person":"P02",
+                                "relationship_type":"spouse"
+                            },
+                            {
+                                "related_person":"P05",
+                                "relationship_type":"parent"
+                            },
+                            {
+                                "related_person":"P06",
+                                "relationship_type":"child"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P04",
+                        "name":"Esperanza Carriera",
+                        "relationships":[
+                            {
+                                "related_person":"P02",
+                                "relationship_type":"child"
+                            },
+                            {
+                                "related_person":"P06",
+                                "relationship_type":"grandchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P05",
+                        "name":"Victoria Molina",
+                        "relationships":[
+                            {
+                                "related_person":"P03",
+                                "relationship_type":"child"
+                            },
+                            {
+                                "related_person":"P06",
+                                "relationship_type":"grandchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P06",
+                        "name":"Demetrio Luis Alfonso",
+                        "age":"infant",
+                        "legitimate":true,
+                        "free":true,
+                        "relationships":[
+                            {
+                                "related_person":"P02",
+                                "relationship_type":"parent"
+                            },
+                            {
+                                "related_person":"P03",
+                                "relationship_type":"parent"
+                            },
+                            {
+                                "related_person":"P04",
+                                "relationship_type":"grandparent"
+                            },
+                            {
+                                "related_person":"P05",
+                                "relationship_type":"grandparent"
+                            },
+                            {
+                                "related_person":"P07",
+                                "relationship_type":"godparent"
+                            },
+                            {
+                                "related_person":"P08",
+                                "relationship_type":"godparent"
+                            }
+                        ]
+
+                    },
+                    {
+                        "id":"P07",
+                        "name":"Juan Luis Acosta",
+                        "titles":[
+                            "Don"
+                        ],
+                        "relationships":[
+                            {
+                                "related_person":"P06",
+                                "relationship_type":"godchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P08",
+                        "name":"Luisa de la Cabada",
+                        "titles":[
+                            "Doña"
+                        ],
+                        "relationships":[
+                            {
+                                "related_person":"P06",
+                                "relationship_type":"godchild"
+                            }
+                        ]
+                    }
+                ],
+                "events": [
+                    {
+                        "type":"baptism",
+                        "principal":"P06",
+                        "date": "1873-04-19"
+                    },
+                    {
+                        "type":"birth",
+                        "principal":"P06",
+                        "date":"1872-12-22"
+                    }
+                ]
+            }
         },
         {
             "id": "0025-01",

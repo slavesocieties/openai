@@ -6,12 +6,7 @@ import boto3
 import os
 import shutil
 
-#function that constructs training data
-#create a simple list of metadata for all volumes that we have htr training data for, use keyword matching to select subset of examples to be used for training
-#random sample can be constructed as before
-#can include instructions in same file as those for nlp
-
-def transcribe_line(image_url, instructions, examples):
+def transcribe_line(image_url, instructions, examples=None):
 	client = OpenAI()
 
 	conversation = []
@@ -24,28 +19,29 @@ def transcribe_line(image_url, instructions, examples):
 			}
 		)
 
-	for example in examples:
-		conversation.append(
-			{
-		  "role": "user",
-		  "content": [
-			{"type": "text", "text": "Please transcribe this line."},
-			{
-			  "type": "image_url",
-			  "image_url": {
-				"url": example["url"],
-				"detail": "high"
-			  }
+	if examples is not None:
+		for example in examples:
+			conversation.append(
+				{
+			"role": "user",
+			"content": [
+				{"type": "text", "text": "Please transcribe this line."},
+				{
+				"type": "image_url",
+				"image_url": {
+					"url": example["url"],
+					"detail": "high"
+				}
+				}
+			]
 			}
-		  ]
-		}
-		)
-		conversation.append(
-			{
-				"role": "assistant",
-				"content": example["text"]
-			}
-		)
+			)
+			conversation.append(
+				{
+					"role": "assistant",
+					"content": example["text"]
+				}
+			)
 
 	conversation.append(
 		{
@@ -159,9 +155,12 @@ def transcribe_volume(volume_id, volume_metadata_path = "volumes.json", instruct
 
 #transcribe_volume(239746, volume_metadata_path = "demo.json", source_bucket = "ssda-openai-test")
 
-#print(transcribe_line("https://ssda-openai-test.s3.amazonaws.com/239746-0037-02-08.jpg"))
+"""volume_metadata = load_volume_metadata(239746, volume_metadata_path = "volumes.json")
+instructions = collect_instructions("instructions.json", volume_metadata, "transcription")
+examples = generate_htr_training_data(bucket_name="ssda-openai-test", metadata_path="volumes.json", keywords= {"identifier": 239746}, match_mode="or", color=None, max_shots=3)
+print(transcribe_line("https://ssda-openai-test.s3.amazonaws.com/really_big.jpg", instructions))"""
 
-urls = []
+"""urls = []
 for x in range(1, 30):
 	urls.append(f"https://ssda-openai-test.s3.amazonaws.com/239746-0001-01-{'0' * (2 - len(str(x))) + str(x)}.jpg")
 
@@ -169,6 +168,6 @@ for x in range(1, 30):
 volume_metadata = load_volume_metadata(239746, volume_metadata_path = "volumes.json")
 instructions = collect_instructions("instructions.json", volume_metadata, "transcription")
 examples = generate_htr_training_data(bucket_name="ssda-htr-training", metadata_path="volumes.json", keywords= {"identifier": 239746}, match_mode="or", color=None, max_shots=10)
-print(transcribe_line("https://ssda-openai-test.s3.amazonaws.com/239746-0001-01-08.jpg", instructions, examples))
+print(transcribe_line("https://ssda-openai-test.s3.amazonaws.com/239746-0001-01-08.jpg", instructions, examples))"""
 #print(transcribe_entry(urls, instructions, examples))
 	

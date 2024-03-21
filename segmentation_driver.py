@@ -92,7 +92,7 @@ def segmentation_driver(path_to_image, save_directory="segmented", verbose=True,
     blocks, coordinates, angle = layout_analyze(pooled)
 
     # TODO this may be redundant if we can effectively filter junk crops elsewhere
-    entry_blocks, entry_coords = filter_blocks(blocks, coordinates)
+    entry_blocks, entry_coords = filter_blocks(blocks, coordinates)    
 
     segments = []
 
