@@ -313,4 +313,4 @@ def layout_analyze(data, save_path = None):
     for x in crops_orig_vertical:
         x.show()"""
     
-    return crops_orig_vertical, coordinates
+    return crops_orig_vertical, coordinates, angle
