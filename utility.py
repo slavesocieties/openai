@@ -93,6 +93,21 @@ def load_volume_metadata(volume_id, volume_metadata_path = "volumes.json"):
         
     return None
 
+def generate_block_htr_training_data(path_to_transcription_json, bucket_name="ssda-openai-test"):
+    with open(path_to_transcription_json, "r", encoding="utf-8") as f:
+        data = json.load(f)
+
+    volume_id = data["id"]
+    examples = []
+
+    for entry in data["entries"]:
+        example = {"id": entry["id"], "text": entry["text"]}
+        example["color"] = f"https://{bucket_name}.s3.amazonaws.com/{volume_id}-{entry["id"]}-color.jpg"
+        example["pooled"] = f"https://{bucket_name}.s3.amazonaws.com/{volume_id}-{entry["id"]}-pooled.jpg"
+        examples.append(example)
+
+    return examples
+
 def generate_htr_training_data(bucket_name="ssda-htr-training", metadata_path="volumes.json", keywords=None, match_mode="or", color=None, max_shots=10):
     with open(metadata_path, "r", encoding="utf-8") as f:
         metadata = json.load(f)
