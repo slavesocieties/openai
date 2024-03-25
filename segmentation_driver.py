@@ -55,20 +55,16 @@ def filter_blocks(blocks, coordinates, thresh = .5):
     return entry_blocks, entry_coords
 
 def segmentation_driver(path_to_image, save_directory="segmented", verbose=True, blocks_only=True):   
-    pooled = block_image(path_to_image)
-    # pooled is a numpy array representing a grayscaled and normalized version of the image
+    pooled = block_image(path_to_image)    
     pooled_img = Image.fromarray(pooled)
+    # TODO do we actually need to do this resizing? 
     pooled_img = pooled_img.resize((960, 1280))        
     pooled = np.array(pooled_img)
-    # pooled is a resized version of the same array from above
-    if verbose:
-        print("Image normalized.")
-
-    # TODO do we actually need to do this resizing?    
     
-    blocks, coordinates, angle = layout_analyze(pooled)
-
-    # TODO this may be redundant if we can effectively filter junk crops elsewhere
+    if verbose:
+        print("Image normalized.")       
+    
+    blocks, coordinates, angle = layout_analyze(pooled)    
     entry_blocks, entry_coords = filter_blocks(blocks, coordinates)    
 
     segments = []
@@ -82,21 +78,21 @@ def segmentation_driver(path_to_image, save_directory="segmented", verbose=True,
     if blocks_only:
         orig_img = Image.open(path_to_image)
         orig_img = orig_img.resize((960, 1280))
-        orig_img = orig_img.rotate(angle, fillcolor=0)     
+        orig_img = orig_img.rotate(angle, fillcolor=0)
+
+    if "/" in path_to_image:
+        path_to_image = path_to_image[path_to_image.rfind("/") + 1:]     
 
     for entry_id, block in enumerate(entry_blocks):        
         deg, block = rotate_block(block)                
-        if blocks_only:
-            # TODO allow this to handle nested directories
-            im_id = f"{path_to_image[:path_to_image.find('.')]}-{entry_id + 1}"
+        if blocks_only:            
+            im_id = f"{path_to_image[:path_to_image.find('.')]}-{'0' * (2 - len(str(entry_id + 1)))}{entry_id + 1}"
             segments.append({"id": im_id, "coords": [entry_coords[entry_id][0], entry_coords[entry_id][1], entry_coords[entry_id][2], entry_coords[entry_id][3]]})            
                         
             orig_block = orig_img.crop(entry_coords[entry_id])            
             deg, orig_block = rotate_block(orig_block, degree=deg)
             orig_block = Image.fromarray(orig_block)                        
-            orig_block.save(f"{save_directory}/{im_id}-color.jpg")
-
-            #block = block_image(f"{save_directory}/{im_id}-color.jpg")            
+            orig_block.save(f"{save_directory}/{im_id}-color.jpg")                      
                        
             block = Image.fromarray(block)            
             block.save(f"{save_directory}/{im_id}-pooled.jpg")
@@ -133,4 +129,4 @@ def segmentation_driver(path_to_image, save_directory="segmented", verbose=True,
     return segments
 
 with open("segmentation_test.json", "w") as f:
-    json.dump(segmentation_driver("239746-0077.jpg"), f)
+    json.dump(segmentation_driver("images/239746-0077.jpg"), f)
