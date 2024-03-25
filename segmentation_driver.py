@@ -40,41 +40,18 @@ def filter_blocks(blocks, coordinates, thresh = .5):
     entry_coords : list
         a list of coordinates of blocks that have noise blocks filtered
     """
-    block_areas = []
-    total_area = 0
-    widths = {}
-    for block in blocks:
-        # TODO if width equals width of largest region that isn't narrow, keep it, if not, don't
-        block_areas.append(block.width * block.height)        
-        if str(block.width) not in widths:
-            widths[str(block.width)] = 1
-        else:
-            widths[str(block.width)] += 1              
-    for area in block_areas:
-        total_area += area
-    if len(block_areas) > 0:   
-        avg_area = total_area / len(block_areas)
-    else:
-        return None, None
-    most_freq_width_count = 0
-    for width in widths:
-        if widths[width] > most_freq_width_count:
-            most_freq_width_count = widths[width]
-    most_freq_width = []
-    for width in widths:
-        if widths[width] == most_freq_width_count:
-            most_freq_width.append(width)
-    most_freq_width.sort(reverse=True)
-    most_freq_width = most_freq_width[0]
-    print(most_freq_width)
 
+    # Step 1: Find the maximum width among images with height <= 3 * width
+    max_width = max((img.width for img in blocks if img.height <= 3 * img.width), default=0)
+
+    # Step 2: Filter out images with width at least 50 pixels larger or smaller than max_width
     entry_blocks = []
-    entry_coords = []   
-    for index, block in enumerate(blocks):
-        print(block.width)        
-        if (block.width * block.height > thresh * avg_area) and ((block.width * block.height > 75000) or (block.width == most_freq_width)):
-            entry_blocks.append(block)
-            entry_coords.append(coordinates[index])
+    entry_coords = []
+    for i, img in enumerate(blocks):
+        if max_width - 50 <= img.width <= max_width + 50:
+            entry_blocks.append(img)
+            entry_coords.append(coordinates[i])
+
     return entry_blocks, entry_coords
 
 def segmentation_driver(path_to_image, save_directory="segmented", verbose=True, blocks_only=True):   
@@ -156,4 +133,4 @@ def segmentation_driver(path_to_image, save_directory="segmented", verbose=True,
     return segments
 
 with open("segmentation_test.json", "w") as f:
-    json.dump(segmentation_driver("239746-0027.jpg"), f)
+    json.dump(segmentation_driver("239746-0077.jpg"), f)
