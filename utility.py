@@ -101,9 +101,9 @@ def generate_block_htr_training_data(path_to_transcription_json, bucket_name="ss
     examples = []
 
     for entry in data["entries"]:
-        example = {"id": entry["id"], "text": entry["text"]}
-        example["color"] = f"https://{bucket_name}.s3.amazonaws.com/{volume_id}-{entry["id"]}-color.jpg"
-        example["pooled"] = f"https://{bucket_name}.s3.amazonaws.com/{volume_id}-{entry["id"]}-pooled.jpg"
+        example = {"id": entry["id"], "lines": entry["lines"]}
+        example["color"] = f"https://{bucket_name}.s3.amazonaws.com/{volume_id}-{entry['id']}-color.jpg"
+        example["pooled"] = f"https://{bucket_name}.s3.amazonaws.com/{volume_id}-{entry['id']}-pooled.jpg"
         examples.append(example)
 
     return examples
