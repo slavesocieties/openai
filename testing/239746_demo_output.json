@@ -1,0 +1,82 @@
+{
+    "type": "baptism",
+    "country": "United States",
+    "state": "Florida",
+    "city": "St. Augustine",
+    "institution": "Archives of the Diocese of St Augustine",
+    "id": 239746,
+    "title": "Baptisms - 1793-1807",
+    "entries": [
+        {
+            "id": "0076-01",
+            "text": "Sábado, día seis y nueve de marzo de mil setecientos noventa y seis. Yo, Don Miguel O'Reilly, Cura beneficiado, Vicario, y Juez Eclesiástico de esta Iglesia parroquial, Plaza, y Provincia de San Agustín de la Florida, etc., bauticé y puse los santos óleos a un Moreno de esta población, presente María Catalina. Del sacramento hecho este día con arreglo al Santo Ritual de la Iglesia Romana. El cual fue instruido de competente, y lo restante como mira la suerte, Moreno Claro es Don José de la Rosa, Morena Clara es Doña María. Me ejercí en todas las sacras ceremonias, y puse por nombre Jose Antonio Miguel. Fueron sus padrinos José Canamas y Juana Carreras, vecinos de esta ciudad. Le advertí el parentesco espiritual, demás obligaciones, y lo firmé."
+        }
+    ],
+    "people": [
+        {
+            "id": "239746-P00001",
+            "name": "Miguel O'Reilly",
+            "titles": [
+                "Don"
+            ],
+            "occupation": "cleric"
+        },
+        {
+            "id": "239746-P00002",
+            "name": "María Catalina"
+        },
+        {
+            "id": "239746-P00003",
+            "name": "José de la Rosa",
+            "phenotype": "moreno"
+        },
+        {
+            "id": "239746-P00004",
+            "name": "María",
+            "phenotype": "morena"
+        },
+        {
+            "id": "239746-P00005",
+            "name": "José Antonio Miguel",
+            "phenotype": "moreno claro",
+            "relationships": [
+                {
+                    "related_person": "239746-P00006",
+                    "relationship_type": "godparent"
+                },
+                {
+                    "related_person": "239746-P00007",
+                    "relationship_type": "godparent"
+                }
+            ]
+        },
+        {
+            "id": "239746-P00006",
+            "name": "José Canamas",
+            "relationships": [
+                {
+                    "related_person": "239746-P00005",
+                    "relationship_type": "godchild"
+                }
+            ]
+        },
+        {
+            "id": "239746-P00007",
+            "name": "Juana Carreras",
+            "relationships": [
+                {
+                    "related_person": "239746-P00005",
+                    "relationship_type": "godchild"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "type": "baptism",
+            "principal": "239746-P00005",
+            "date": "1796-03-09",
+            "id": "0076-01-E00"
+        }
+    ]
+}

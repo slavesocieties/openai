@@ -1,3 +1,5 @@
+-why are some people ids padded and others not?
+
 NLP
 -RAs create more training data
 

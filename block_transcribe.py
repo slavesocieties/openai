@@ -88,6 +88,43 @@ def transcribe_block(id, instructions_path="instructions.json", examples_path="j
 		messages = conversation
 	)
 
+	print(f"{id} transcribed.")
+
 	return response.choices[0].message.content
 
-print(transcribe_block("239746-0076-01"))
+def build_entry(gpt_output):
+	gpt_output = json.loads(gpt_output)
+	entry = {"id": gpt_output["id"]}
+	text = ""
+	for index, line in enumerate(gpt_output["lines"]):
+		if line[0] == "-" and len(text) > 0:
+			text = text[:len(text) - 1]
+			text += line[1:]
+		else:
+			text += line
+		if text[len(text) - 1] != "-" and index < (len(gpt_output["lines"]) - 1):
+			text += " "
+		elif text[len(text) - 1] == "-":
+			text = text[:len(text) - 1]
+
+	entry["raw"] = text
+
+	return entry
+
+def write_volume(volume_id, entries, output_path=None):
+	volume_metadata = load_volume_metadata(volume_id)
+	record = {"type": volume_metadata["type"], "id": volume_id}
+	for key in ["country", "state", "city", "institution", "title"]:
+		record[key] = volume_metadata["fields"][key]
+	record["entries"] = []
+	for entry in entries:
+		record["entries"].append(entry)
+
+	if output_path is None:
+		output_path = f"json/{volume_id}.json"
+	with open(output_path, "w", encoding="utf-8") as f:
+		json.dump(record, f)	
+
+"""output = transcribe_block("239746-0076-01")
+entries = [build_entry(output)]
+write_volume(239746, entries, output_path="testing/239746.json")"""

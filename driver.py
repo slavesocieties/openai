@@ -65,4 +65,4 @@ def process_transcription(volume_record_path, instructions_path, training_data_p
 
     return volume_record
 
-process_transcription("testing\\166470_sample.json", "instructions.json", "training_data.json", training_keywords = {"type": "baptism", "country": "Cuba"}, mode = "and", out_path = "testing\\166470_sample_output.json")
+#process_transcription("testing\\166470_sample.json", "instructions.json", "training_data.json", training_keywords = {"type": "baptism", "country": "Cuba"}, mode = "and", out_path = "testing\\166470_sample_output.json")

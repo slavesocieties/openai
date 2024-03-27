@@ -88,7 +88,7 @@ def load_volume_metadata(volume_id, volume_metadata_path = "volumes.json"):
             elif "Marriages" in volume["fields"]["subject"]:
                 volume["type"] = "marriage"
             elif "Burials" in volume["fields"]["subject"]:
-                volume["type"] = "marriage"
+                volume["type"] = "burial"
             return volume
         
     return None
