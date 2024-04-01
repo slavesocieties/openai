@@ -6,7 +6,6 @@ from layout import layout_analyze
 from binarize_data import rotate_block
 from find_pixels import find_pixels
 from data_segmentation import data_segmentation
-import json
 
 def preprocess(path_to_image):
     """Function to preprocess the image
@@ -128,5 +127,6 @@ def segmentation_driver(path_to_image, save_directory="segmented", verbose=True,
     
     return segments
 
-"""with open("segmentation_test.json", "w") as f:
+"""import json
+with open("segmentation_test.json", "w") as f:
     json.dump(segmentation_driver("images/239746-0075.jpg"), f)"""

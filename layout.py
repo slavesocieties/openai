@@ -272,7 +272,7 @@ def layout_analyze(data, save_path = None):
     img = img.rotate(angle, fillcolor=255)    
     # fill color has been changed here, I think that the original version assumed the image was binarized
     orig_img = orig_img.rotate(angle, fillcolor=255)
-    orig_img.save("pooled.jpg")    
+    # orig_img.save("pooled.jpg")    
     data = np.asarray(img)
     # data is rotated pseudo-binarized image
     img = img.convert('RGB')
