@@ -11,7 +11,6 @@ def transcribe_block(id, instructions_path="instructions.json", examples_path="j
 	examples = generate_block_htr_training_data(examples_path)
 
 	client = OpenAI()
-
 	conversation = []
 
 	for instruction in instructions:

@@ -10,6 +10,30 @@ import json
 from utility import *
 from openai import OpenAI
 
+def check_entry(entry):
+	client = OpenAI()
+	conversation = []
+
+	conversation.append(
+        {
+                "role": "user",
+                "content": f"This is a transcription of an early modern sacramental record: {entry['raw']} Is this a complete record? If not, is it the beginning or the end of a record?"
+        }
+    )
+
+	response = client.chat.completions.create(
+        model="gpt-3.5-turbo-1106",    
+        messages = conversation
+    )
+
+	return response.choices[0].message.content
+
+"""with open("testing/239746_full_demo_transcription.json", "r", encoding="utf-8") as f:
+	data = json.load(f)
+
+for entry in data["entries"]:
+	print(check_entry(entry))"""
+
 def normalize_volume(volume_record_path, instructions_path, training_data_path, keywords = None, match_mode = "or", max_shots = 1000, output_path = None):
     """Normalizes text from a series of transcribed entries from a historical document.
 
