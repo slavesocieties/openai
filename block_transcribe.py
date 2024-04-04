@@ -3,7 +3,7 @@ from utility import *
 from segmentation_driver import *
 import json
 
-def transcribe_block(id, instructions_path="instructions.json", examples_path="json/239746_htr_sample.json", bucket_name="ssda-openai-test"):	
+def transcribe_block(id, instructions_path="instructions.json", examples_path="htr_training_data/239746_short_htr.json", bucket_name="ssda-openai-test"):	
 	volume_id = int(id.split("-")[0])
 	block_id = id[id.find("-") + 1:]
 	volume_metadata = load_volume_metadata(volume_id)

@@ -97,6 +97,7 @@ def generate_block_htr_training_data(path_to_transcription_json, bucket_name="ss
     with open(path_to_transcription_json, "r", encoding="utf-8") as f:
         data = json.load(f)
 
+    # TODO this needs to be refactored to allow for training data from multiple volumes
     volume_id = data["id"]
     examples = []
 

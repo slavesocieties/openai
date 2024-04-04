@@ -11,6 +11,7 @@ NLP
     -assess performance for different kinds of records
 
 HTR
+    -solve rate limit issue (spend a bunch of money or try a different LLM)
     -improve segmentation algo
         -assess performance across wider range of volumes    
         -add a separate pre-processing step to crop to folio?
