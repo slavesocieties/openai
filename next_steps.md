@@ -1,3 +1,12 @@
+-strip down segmentation algo to its component parts and rebuild in a cleaner way
+    -and/or pursue a different segmentation solution
+-improve segmentation algo
+    -assess performance across wider range of volumes    
+    -add a separate pre-processing step to crop to folio?
+    -add hyper-parameters to driver
+    -add verbosity to other pipeline components
+    -improve ability to detect horizontal breaks between sections and prevent false positives
+
 NLP
     -why are some people ids padded and others not?
     -possible fix for relationships: represent as separate list on same level as people/events
@@ -11,13 +20,7 @@ NLP
     -assess performance for different kinds of records
 
 HTR
-    -solve rate limit issue (spend a bunch of money or try a different LLM)
-    -improve segmentation algo
-        -assess performance across wider range of volumes    
-        -add a separate pre-processing step to crop to folio?
-        -add hyper-parameters to driver
-        -add verbosity to other pipeline components
-        -improve ability to detect horizontal breaks between sections and prevent false positives
+    -solve rate limit issue (spend a bunch of money or try a different LLM)    
     -build more training data
     -determine how granular model tuning needs to be
     -incorporate name list checks for people, places, characteristics, etc.

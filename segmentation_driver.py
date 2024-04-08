@@ -53,6 +53,59 @@ def filter_blocks(blocks, coordinates, thresh = .5):
 
     return entry_blocks, entry_coords
 
+def detect_internal_signature(image_array, num_consecutive_rows=100):
+    """
+    Find consecutive rows that meet the criteria that at least 90% of the pixels in the first half of the row
+    and 90% in the last 10% of the row are white.
+    
+    Parameters:
+    - image_array: a grayscale Image.
+    - num_consecutive_rows: The number of consecutive rows that need to meet the criteria.
+
+    Returns:
+    - A list of tuples, each representing the start and end indices (inclusive) of consecutive rows meeting the criteria.
+    """
+    image_array = np.asarray(image_array)
+    # image_array = np.array(image_array, copy=True)
+
+    binarization_quantile = 0.1
+    bin_thresh = np.quantile(image_array, binarization_quantile)
+    image_array = np.where(image_array <= bin_thresh, 0, 1)
+
+    rows, cols = image_array.shape
+    # Calculate the thresholds for the number of white pixels
+    first_half_threshold = 0.9 * (cols // 2)
+    last_10_percent_threshold = 0.9 * (cols // 10)
+    
+    # Array to keep track of rows meeting the criteria
+    criteria_met = np.zeros(rows, dtype=bool)
+    
+    # Check criteria for each row
+    for i in range(rows):
+        if (np.sum(image_array[i, :(cols // 2)]) >= first_half_threshold) and \
+           (np.sum(image_array[i, -int(np.ceil(cols * 0.1)):]) >= last_10_percent_threshold):
+            criteria_met[i] = True   
+            
+    # Identify and collect sequences of consecutive rows meeting the criteria
+    consecutive_sequences = []
+    start_index = None
+    
+    for i in range(rows):
+        if criteria_met[i] and start_index is None:            
+            start_index = i            
+        elif (not criteria_met[i]) and (start_index is not None):            
+            if i - start_index >= num_consecutive_rows:
+                consecutive_sequences.append((start_index, i - 1))
+                start_index = None
+            else:
+                start_index = None        
+            
+    # Check if the last sequence meets the criteria
+    if start_index is not None and rows - start_index >= num_consecutive_rows:
+        consecutive_sequences.append((start_index, rows - 1))
+        
+    return consecutive_sequences
+
 def segmentation_driver(path_to_image, save_directory="segmented", verbose=True, blocks_only=True):   
     pooled = block_image(path_to_image)    
     pooled_img = Image.fromarray(pooled)
@@ -64,7 +117,28 @@ def segmentation_driver(path_to_image, save_directory="segmented", verbose=True,
         print("Image normalized.")       
     
     blocks, coordinates, angle = layout_analyze(pooled)    
-    entry_blocks, entry_coords = filter_blocks(blocks, coordinates)    
+    entry_blocks, entry_coords = filter_blocks(blocks, coordinates)
+    final_blocks = []
+    final_coords = []
+
+    for i, block in enumerate(entry_blocks):
+        deg, block = rotate_block(block)
+        block = Image.fromarray(block)        
+        signatures = detect_internal_signature(block, num_consecutive_rows=100)        
+
+        if len(signatures) == 0:
+            final_blocks.append(block)
+            final_coords.append(entry_coords[i])
+        else:
+            sig = 0
+            top = 0
+            while sig < len(signatures):                
+                final_blocks.append(block.crop((0, top, block.width, signatures[sig][0])))
+                final_coords.append((entry_coords[i][0], entry_coords[i][1] + top, entry_coords[i][2], entry_coords[i][1] + signatures[sig][0]))
+                top += signatures[sig][1]                
+                sig += 1                
+            final_blocks.append(block.crop((0, top, block.width, block.height)))
+            final_coords.append((entry_coords[i][0], entry_coords[i][1] + top, entry_coords[i][2], entry_coords[i][3]))        
 
     segments = []
 
@@ -82,13 +156,15 @@ def segmentation_driver(path_to_image, save_directory="segmented", verbose=True,
     if "/" in path_to_image:
         path_to_image = path_to_image[path_to_image.rfind("/") + 1:]     
 
-    for entry_id, block in enumerate(entry_blocks):        
+    for entry_id, block in enumerate(final_blocks):
+        block.show()        
         deg, block = rotate_block(block)                
         if blocks_only:            
             im_id = f"{path_to_image[:path_to_image.find('.')]}-{'0' * (2 - len(str(entry_id + 1)))}{entry_id + 1}"
-            segments.append({"id": im_id, "coords": [entry_coords[entry_id][0], entry_coords[entry_id][1], entry_coords[entry_id][2], entry_coords[entry_id][3]]})            
+            segments.append({"id": im_id, "coords": [final_coords[entry_id][0], final_coords[entry_id][1], final_coords[entry_id][2], final_coords[entry_id][3]]})            
                         
-            orig_block = orig_img.crop(entry_coords[entry_id])            
+            orig_block = orig_img.crop(final_coords[entry_id])
+            orig_block.show()            
             deg, orig_block = rotate_block(orig_block, degree=deg)
             orig_block = Image.fromarray(orig_block)                        
             orig_block.save(f"{save_directory}/{im_id}-color.jpg")                      
@@ -127,6 +203,6 @@ def segmentation_driver(path_to_image, save_directory="segmented", verbose=True,
     
     return segments
 
-"""import json
+import json
 with open("segmentation_test.json", "w") as f:
-    json.dump(segmentation_driver("images/239746-0218.jpg"), f)"""
+    json.dump(segmentation_driver("images/239746-0175.jpg"), f)
