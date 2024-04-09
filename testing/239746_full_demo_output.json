@@ -1,0 +1,109 @@
+{
+    "type": "baptism",
+    "country": "United States",
+    "state": "Florida",
+    "city": "St. Augustine",
+    "institution": "Archives of the Diocese of St Augustine",
+    "id": 239746,
+    "title": "Baptisms - 1793-1807",
+    "entries": [
+        {
+            "id": "0076-01",
+            "text": "Sábado, día seis y nueve de marzo de mil setecientos noventa y seis. Yo, Don Miguel O'Reilly, cura beneficiado, Vicario, y Juez Eclesiástico de esta Iglesia Parroquial, Plaza, y Provincia de San Agustín de la Florida, etc.: Bauticé y puse los santos Óleos a un moreno de esta población, presente María, cristiana del sacramento. Hecho este día con arreglo al Santo Ritual de la Iglesia Romana. El cual fue instruido de conocimiento y lo restante como mira la Suerte. Moreno claro es Don José de la Rosa, morena clara es Doña María. Me ejercí en todas las sacras ceremonias, y puse por nombre Jose Antonio Miguel. Fueron sus Padrinos José Canamas y Juana Carreras, vecinos de esta Ciudad. Les advertí el Parentesco espiritual, demás obligaciones y lo firmé."
+        }
+    ],
+    "people": [
+        {
+            "id": "239746-P00001",
+            "name": "Miguel O'Reilly",
+            "titles": [
+                "Don"
+            ],
+            "occupation": "cleric"
+        },
+        {
+            "id": "239746-P00002",
+            "name": "Jose de la Rosa",
+            "phenotype": "moreno",
+            "free": true,
+            "relationships": [
+                {
+                    "related_person": "239746-P00003",
+                    "relationship_type": "parent"
+                },
+                {
+                    "related_person": "239746-P00004",
+                    "relationship_type": "godparent"
+                }
+            ]
+        },
+        {
+            "id": "239746-P00003",
+            "name": "María",
+            "phenotype": "morena",
+            "free": true,
+            "relationships": [
+                {
+                    "related_person": "239746-P00002",
+                    "relationship_type": "parent"
+                },
+                {
+                    "related_person": "239746-P00004",
+                    "relationship_type": "godparent"
+                }
+            ]
+        },
+        {
+            "id": "239746-P00004",
+            "name": "Jose Antonio Miguel",
+            "age": "child",
+            "phenotype": "moreno",
+            "relationships": [
+                {
+                    "related_person": "239746-P00002",
+                    "relationship_type": "parent"
+                },
+                {
+                    "related_person": "239746-P00003",
+                    "relationship_type": "parent"
+                },
+                {
+                    "related_person": "239746-P00002",
+                    "relationship_type": "godparent"
+                },
+                {
+                    "related_person": "239746-P00003",
+                    "relationship_type": "godparent"
+                }
+            ]
+        },
+        {
+            "id": "239746-P00005",
+            "name": "José Canamas",
+            "relationships": [
+                {
+                    "related_person": "239746-P00004",
+                    "relationship_type": "godparent"
+                }
+            ]
+        },
+        {
+            "id": "239746-P00006",
+            "name": "Juana Carreras",
+            "relationships": [
+                {
+                    "related_person": "239746-P00004",
+                    "relationship_type": "godparent"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "type": "baptism",
+            "principal": "239746-P00004",
+            "date": "1796-03-09",
+            "id": "0076-01-E00"
+        }
+    ]
+}

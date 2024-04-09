@@ -122,9 +122,9 @@ def segmentation_driver(path_to_image, save_directory="segmented", verbose=True,
     final_coords = []
 
     for i, block in enumerate(entry_blocks):
-        deg, block = rotate_block(block)
-        block = Image.fromarray(block)        
-        signatures = detect_internal_signature(block, num_consecutive_rows=100)        
+        #deg, block = rotate_block(block)
+        #block = Image.fromarray(block)        
+        signatures = detect_internal_signature(block, num_consecutive_rows=50)        
 
         if len(signatures) == 0:
             final_blocks.append(block)
