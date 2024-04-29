@@ -3,7 +3,7 @@ from PIL import Image
 from deslant_img import *
 
 
-def data_segmentation(data, crop_pixels, file_name, entry_id, save_dir="segmented"):
+def segment_lines(data, crop_pixels, file_name, entry_id, save_dir="segmented"):
     """Function to crop input image by lines and output cropped images as specified by pixel boundaries
     The resulting images will be saved to disk in the segmented directory
 
@@ -15,19 +15,15 @@ def data_segmentation(data, crop_pixels, file_name, entry_id, save_dir="segmente
         of indices indicate where to crop the image
     file_name : string
         name of the root file
-    image_file : Image
-        the gray-scale version of the image file object to be cropped        
-    start_id : int
-        id of the current starting line
-    coords : list
-        coordinates of block in original image
+    entry_id : integer
+        id of the entry from which lines are to be segmented        
+    save_dir (optional) : string
+        directory to which segmented lines should be saved
 
     Returns
     -------
-    count : int
-        number of saved segments
-    segment_coords : list
-        a list of coordinates of saved segments
+    segments: list
+        list of dictionaries contained ids and pixel coordinates of saved lines
     """
     image_file = Image.fromarray(data)
     # establising initial boundaries

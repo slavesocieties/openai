@@ -5,10 +5,10 @@ from pool_image import block_image
 from layout import layout_analyze
 from binarize_data import rotate_block
 from find_pixels import find_pixels
-from data_segmentation import data_segmentation
+from segment_lines import segment_lines
 
-def preprocess(path_to_image):
-    """Function to preprocess the image
+def downscale_image(path_to_image):
+    """reduces image size to 3MB or less by proportionally shrinking dimensions
 
     Parameters
     ----------
@@ -22,22 +22,22 @@ def preprocess(path_to_image):
         im.save(path_to_image)
         im.close()
 
-def filter_blocks(blocks, coordinates, thresh = .5):
+def filter_blocks(blocks, coordinates):
     """Function to filter out noise blocks
 
     Parameters
     ----------
     blocks : list
-        a list of blocks produced from the layout analyzer
+        Images of regions of text segmented from an uncropped image
     coordinates : list
-        a list of coordinates of the blocks
+        pixel coordinates of these regions within uncropped image
     
     Returns
     -------
     entry_blocks : list
-        a list of blocks that have noise blocks filtered
+        regions of text likely to contain partial or whole sacramental records
     entry_coords : list
-        a list of coordinates of blocks that have noise blocks filtered
+        pixel coordinates of these filtered text regions
     """
 
     # Step 1: Find the maximum width among images with height <= 3 * width
@@ -55,8 +55,9 @@ def filter_blocks(blocks, coordinates, thresh = .5):
 
 def detect_internal_signature(image_array, num_consecutive_rows=100):
     """
-    Find consecutive rows that meet the criteria that at least 90% of the pixels in the first half of the row
-    and 90% in the last 10% of the row are white.
+    Find consecutive rows in an Image that meet the criteria that at least 90% of the pixels in the first half of the row
+    and 90% in the last 10% of the row are white. Used to identify signature blocks in Images likely to contain multiple
+    sacramental records but that layout analysis has failed to separate.
     
     Parameters:
     - image_array: a grayscale Image.
@@ -106,7 +107,26 @@ def detect_internal_signature(image_array, num_consecutive_rows=100):
         
     return consecutive_sequences
 
-def segmentation_driver(path_to_image, save_directory="segmented", verbose=True, blocks_only=True):   
+def segmentation_driver(path_to_image, save_directory="segmented", verbose=True, blocks_only=True):
+    """
+    Main function for image segmentation. Segments uncropped image into blocks and/or lines of text for manual or automated transcription.
+
+    Parameters
+    ----------
+    path_to_image : string
+        path to image to be segmented
+    save_directory : string
+        directory to which segmented blocks and/or lines should be saved
+    verbose : Boolean
+        True if function call should produce explanatory output, false otherwise
+    blocks_only : Boolean
+        True if function call should only segment blocks, false for blocks and lines
+    
+    Returns
+    -------
+    segments : list
+        dictionaries containing ids and coordinates for segmented blocks or lines
+    """   
     pooled = block_image(path_to_image)    
     pooled_img = Image.fromarray(pooled)
     # TODO do we actually need to do this resizing? 
@@ -175,7 +195,7 @@ def segmentation_driver(path_to_image, save_directory="segmented", verbose=True,
             continue
 
         crop_pixels = find_pixels(block, 5000)        
-        entry_segments = data_segmentation(block, crop_pixels, path_to_image, entry_id + 1, save_dir=save_directory) #cropping image and output        
+        entry_segments = segment_lines(block, crop_pixels, path_to_image, entry_id + 1, save_dir=save_directory) #cropping image and output        
         for segment in entry_segments:
             segments.append(segment)        
 
@@ -203,6 +223,6 @@ def segmentation_driver(path_to_image, save_directory="segmented", verbose=True,
     
     return segments
 
-import json
+"""import json
 with open("segmentation_test.json", "w") as f:
-    json.dump(segmentation_driver("images/239746-0175.jpg"), f)
+    json.dump(segmentation_driver("images/239746-0175.jpg"), f)"""
