@@ -139,13 +139,12 @@ def segmentation_driver(path_to_image, save_directory="segmented", verbose=True,
         print("Image normalized.")       
     
     blocks, coordinates, angle = layout_analyze(pooled, display=display)    
-    entry_blocks, entry_coords = filter_blocks(blocks, coordinates)
-    final_blocks = []
-    final_coords = []
+    entry_blocks, entry_coords = filter_blocks(blocks, coordinates)    
 
-    for i, block in enumerate(entry_blocks):
+    """for i, block in enumerate(entry_blocks):
         #deg, block = rotate_block(block)
-        #block = Image.fromarray(block)        
+        #block = Image.fromarray(block)
+        block.show()        
         signatures = detect_internal_signature(block, num_consecutive_rows=50)        
 
         if len(signatures) == 0:
@@ -160,7 +159,7 @@ def segmentation_driver(path_to_image, save_directory="segmented", verbose=True,
                 top += signatures[sig][1]                
                 sig += 1                
             final_blocks.append(block.crop((0, top, block.width, block.height)))
-            final_coords.append((entry_coords[i][0], entry_coords[i][1] + top, entry_coords[i][2], entry_coords[i][3]))        
+            final_coords.append((entry_coords[i][0], entry_coords[i][1] + top, entry_coords[i][2], entry_coords[i][3])) """       
 
     segments = []
 
@@ -178,13 +177,13 @@ def segmentation_driver(path_to_image, save_directory="segmented", verbose=True,
     if "/" in path_to_image:
         path_to_image = path_to_image[path_to_image.rfind("/") + 1:]     
 
-    for entry_id, block in enumerate(final_blocks):                
+    for entry_id, block in enumerate(entry_blocks):                        
         deg, block = rotate_block(block)                
         if blocks_only:            
             im_id = f"{path_to_image[:path_to_image.find('.')]}-{'0' * (2 - len(str(entry_id + 1)))}{entry_id + 1}"
-            segments.append({"id": im_id, "coords": [final_coords[entry_id][0], final_coords[entry_id][1], final_coords[entry_id][2], final_coords[entry_id][3]]})            
+            segments.append({"id": im_id, "coords": [entry_coords[entry_id][0], entry_coords[entry_id][1], entry_coords[entry_id][2], entry_coords[entry_id][3]]})            
                         
-            orig_block = orig_img.crop(final_coords[entry_id])
+            orig_block = orig_img.crop(entry_coords[entry_id])
             if display:
                 orig_block.show()            
             deg, orig_block = rotate_block(orig_block, degree=deg)
@@ -227,4 +226,4 @@ def segmentation_driver(path_to_image, save_directory="segmented", verbose=True,
 
 import json
 with open("segmentation_test.json", "w") as f:
-    json.dump(segmentation_driver("images/239746-0175.jpg", display=True), f)
+    json.dump(segmentation_driver("images/239746-0088.jpg", display=True), f)
