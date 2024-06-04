@@ -107,7 +107,7 @@ def detect_internal_signature(image_array, num_consecutive_rows=100):
         
     return consecutive_sequences
 
-def segmentation_driver(path_to_image, save_directory="segmented", verbose=True, blocks_only=True):
+def segmentation_driver(path_to_image, save_directory="segmented", verbose=True, blocks_only=True, display=False):
     """
     Main function for image segmentation. Segments uncropped image into blocks and/or lines of text for manual or automated transcription.
 
@@ -129,6 +129,8 @@ def segmentation_driver(path_to_image, save_directory="segmented", verbose=True,
     """   
     pooled = block_image(path_to_image)    
     pooled_img = Image.fromarray(pooled)
+    if display:
+        pooled_img.show()
     # TODO do we actually need to do this resizing? 
     pooled_img = pooled_img.resize((960, 1280))        
     pooled = np.array(pooled_img)
@@ -136,7 +138,7 @@ def segmentation_driver(path_to_image, save_directory="segmented", verbose=True,
     if verbose:
         print("Image normalized.")       
     
-    blocks, coordinates, angle = layout_analyze(pooled)    
+    blocks, coordinates, angle = layout_analyze(pooled, display=display)    
     entry_blocks, entry_coords = filter_blocks(blocks, coordinates)
     final_blocks = []
     final_coords = []
@@ -176,15 +178,15 @@ def segmentation_driver(path_to_image, save_directory="segmented", verbose=True,
     if "/" in path_to_image:
         path_to_image = path_to_image[path_to_image.rfind("/") + 1:]     
 
-    for entry_id, block in enumerate(final_blocks):
-        block.show()        
+    for entry_id, block in enumerate(final_blocks):                
         deg, block = rotate_block(block)                
         if blocks_only:            
             im_id = f"{path_to_image[:path_to_image.find('.')]}-{'0' * (2 - len(str(entry_id + 1)))}{entry_id + 1}"
             segments.append({"id": im_id, "coords": [final_coords[entry_id][0], final_coords[entry_id][1], final_coords[entry_id][2], final_coords[entry_id][3]]})            
                         
             orig_block = orig_img.crop(final_coords[entry_id])
-            orig_block.show()            
+            if display:
+                orig_block.show()            
             deg, orig_block = rotate_block(orig_block, degree=deg)
             orig_block = Image.fromarray(orig_block)                        
             orig_block.save(f"{save_directory}/{im_id}-color.jpg")                      
@@ -223,6 +225,6 @@ def segmentation_driver(path_to_image, save_directory="segmented", verbose=True,
     
     return segments
 
-"""import json
+import json
 with open("segmentation_test.json", "w") as f:
-    json.dump(segmentation_driver("images/239746-0175.jpg"), f)"""
+    json.dump(segmentation_driver("images/239746-0175.jpg", display=True), f)

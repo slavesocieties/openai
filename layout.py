@@ -125,7 +125,7 @@ def compute_spaces(data, compress_height, compress_width, multiplier=1.2):
             left = i
     return spaces
 
-def layout_analyze(data, save_path = None):
+def layout_analyze(data, save_path = None, display = False):
     """Function to compute the layout bounding blocks that contain texts within an image
 
     Parameters
@@ -192,6 +192,9 @@ def layout_analyze(data, save_path = None):
                 crops_orig_vertical.append(orig_img.crop((indices_horizontal[i][0], space[0], indices_horizontal[i][1], space[1])))
                 coordinates.append((indices_horizontal[i][0], space[0], indices_horizontal[i][1], space[1]))
 
+    if display:
+        img.show()
+    
     if save_path is not None:
         img.save(save_path)
 
