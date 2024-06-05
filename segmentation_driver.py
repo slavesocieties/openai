@@ -174,8 +174,7 @@ def segmentation_driver(path_to_image, save_directory="segmented", verbose=True,
         orig_img = orig_img.resize((960, 1280))
         orig_img = orig_img.rotate(angle, fillcolor=0)
 
-    if "/" in path_to_image:
-        path_to_image = path_to_image[path_to_image.rfind("/") + 1:]     
+    path_to_image = path_to_image[path_to_image.rfind("/") + 1:]     
 
     for entry_id, block in enumerate(entry_blocks):                        
         deg, block = rotate_block(block)                
