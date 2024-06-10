@@ -8,8 +8,12 @@
     "title": "Baptisms - 1793-1807",
     "entries": [
         {
-            "id": "0076-01",
-            "text": "Sábado, día seis y nueve de marzo de mil setecientos noventa y seis. Yo, Don Miguel O'Reilly, cura beneficiado, Vicario, y Juez Eclesiástico de esta Iglesia Parroquial, Plaza, y Provincia de San Agustín de la Florida, etc.: Bauticé y puse los santos Óleos a un moreno de esta población, presente María, cristiana del sacramento. Hecho este día con arreglo al Santo Ritual de la Iglesia Romana. El cual fue instruido de conocimiento y lo restante como mira la Suerte. Moreno claro es Don José de la Rosa, morena clara es Doña María. Me ejercí en todas las sacras ceremonias, y puse por nombre Jose Antonio Miguel. Fueron sus Padrinos José Canamas y Juana Carreras, vecinos de esta Ciudad. Les advertí el Parentesco espiritual, demás obligaciones y lo firmé."
+            "id": "0088-01",
+            "text": "Lunes, día diez y siete de octubre de mil setecientos noventa y seis, yo Don Miguel O'Reilly, Cura Beneficiado, Vicario, Juez Eclesiástico de esta Iglesia parroquial, Plaza, y Provincia de San Agustín de la Florida, etc., bauticé y puse los santos Óleos a una niña de color moreno, como de trece meses de edad, hija natural de Santiago y Tomasa Moreno, y de María Font, todos esclavos del Rey. Y en ella ejercí las sacras ceremonias y preces de nuestra santa Madre Iglesia, y la puse por nombre Ana Maria Josefa. Fue su Madrina Doña Ana Maria M. Bonato, vecina de esta ciudad. La advertí del parentesco espiritual y demás obligaciones, y lo firmé en dicho día, mes y año. Miguel O'Reilly."
+        },
+        {
+            "id": "0088-02",
+            "text": "Sábado, día veinte y nueve de octubre de mil setecientos noventa y seis. Yo, Don Miguel O'Reilly, Cura beneficiado, Vicario, Juez eclesiástico de esta Iglesia parroquial, Plaza, y Provincia de San Agustín de la Florida Nuestro Señor, bauticé y puse los santos Óleos a un niño de color moreno, que nació el día catorce del corriente mes y año. Hijo natural de Juan Moreno libre, natural de Carolina del Sur en los Estados Unidos de América, y de Ridaura, morena, esclava de Don Juan Rodriguez, vecino de esta Ciudad; y en el ejercicio las sacras Ceremonias y Preces de nuestra madre Iglesia, y le puse por nombre Celesto Tomas. Fue su padrino Don Tomas de Aguilar, le advertí el parentesco espiritual y demás obligaciones, y lo firmé en dicho día, mes, y año. Miguel O'Reilly"
         }
     ],
     "people": [
@@ -23,76 +27,116 @@
         },
         {
             "id": "239746-P00002",
-            "name": "Jose de la Rosa",
+            "name": "Santiago",
             "phenotype": "moreno",
-            "free": true,
+            "free": false,
             "relationships": [
                 {
                     "related_person": "239746-P00003",
-                    "relationship_type": "parent"
+                    "relationship_type": "spouse"
                 },
                 {
                     "related_person": "239746-P00004",
-                    "relationship_type": "godparent"
+                    "relationship_type": "parent"
                 }
             ]
         },
         {
             "id": "239746-P00003",
-            "name": "María",
-            "phenotype": "morena",
-            "free": true,
+            "name": "Tomasa Moreno",
+            "phenotype": "moreno",
+            "free": false,
             "relationships": [
                 {
                     "related_person": "239746-P00002",
-                    "relationship_type": "parent"
+                    "relationship_type": "spouse"
                 },
                 {
                     "related_person": "239746-P00004",
-                    "relationship_type": "godparent"
+                    "relationship_type": "parent"
                 }
             ]
         },
         {
             "id": "239746-P00004",
-            "name": "Jose Antonio Miguel",
-            "age": "child",
-            "phenotype": "moreno",
+            "name": "María Font",
             "relationships": [
                 {
                     "related_person": "239746-P00002",
-                    "relationship_type": "parent"
+                    "relationship_type": "child"
                 },
                 {
                     "related_person": "239746-P00003",
-                    "relationship_type": "parent"
+                    "relationship_type": "child"
                 },
                 {
-                    "related_person": "239746-P00002",
-                    "relationship_type": "godparent"
-                },
-                {
-                    "related_person": "239746-P00003",
+                    "related_person": "239746-P00005",
                     "relationship_type": "godparent"
                 }
             ]
         },
         {
             "id": "239746-P00005",
-            "name": "José Canamas",
+            "name": "Ana Maria M. Bonato",
+            "titles": [
+                "Doña"
+            ],
             "relationships": [
                 {
                     "related_person": "239746-P00004",
-                    "relationship_type": "godparent"
+                    "relationship_type": "godchild"
                 }
             ]
         },
         {
             "id": "239746-P00006",
-            "name": "Juana Carreras",
+            "name": "Juan Moreno",
+            "phenotype": "moreno",
+            "free": true,
+            "origin": "Carolina del Sur, Estados Unidos"
+        },
+        {
+            "id": "239746-P00007",
+            "name": "Ridaura",
+            "phenotype": "morena",
+            "free": false,
             "relationships": [
                 {
-                    "related_person": "239746-P00004",
+                    "related_person": "239746-P00008",
+                    "relationship_type": "child"
+                }
+            ]
+        },
+        {
+            "id": "239746-P00008",
+            "name": "Celesto Tomas",
+            "age": "infant",
+            "legitimate": false,
+            "phenotype": "moreno",
+            "relationships": [
+                {
+                    "related_person": "239746-P00006",
+                    "relationship_type": "parent"
+                },
+                {
+                    "related_person": "239746-P00007",
+                    "relationship_type": "parent"
+                },
+                {
+                    "related_person": "239746-P00009",
+                    "relationship_type": "godparent"
+                }
+            ]
+        },
+        {
+            "id": "239746-P00009",
+            "name": "Tomas de Aguilar",
+            "titles": [
+                "Don"
+            ],
+            "relationships": [
+                {
+                    "related_person": "239746-P00008",
                     "relationship_type": "godparent"
                 }
             ]
@@ -102,8 +146,20 @@
         {
             "type": "baptism",
             "principal": "239746-P00004",
-            "date": "1796-03-09",
-            "id": "0076-01-E00"
+            "date": "1796-10-17",
+            "id": "0088-01-E00"
+        },
+        {
+            "type": "baptism",
+            "principal": "239746-P00008",
+            "date": "1796-10-29",
+            "id": "0088-02-E00"
+        },
+        {
+            "type": "birth",
+            "principal": "239746-P00008",
+            "date": "1796-10-14",
+            "id": "0088-02-E01"
         }
     ]
 }
