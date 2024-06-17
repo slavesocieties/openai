@@ -453,4 +453,19 @@ def merge_records(x, y):
             x["id"].append(id)
 
     return x
+
+def transform_recogito_output(json_dir):
+    import json
+
+    with open(json_dir, 'r', encoding='utf-8') as f:
+        data = json.load(f)
+
+    for index, image in enumerate(data['images']):
+        for dex, box in enumerate(image['coords']):            
+            data['images'][index]['coords'][dex] = [box[0], box[1],
+                                    box[0] + box[2],
+                                    box[1] + box[3]]
+
+    with open(json_dir, 'w', encoding='utf-8') as f:
+        json.dump(data, f)
     

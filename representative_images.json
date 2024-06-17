@@ -1,8 +1,530 @@
 {
     "images": [
         {
-            "id": "239746-0088",
-            "info": "A relatively clean image from the volume that the early development of the pipeline has focused on. It is segmented correctly by the current version of the segmentation algorithm."
+            "id": "225290-0182",
+            "info": "Record: Baptisms, Burials and Marriages - 16th & 17th Centuries 01/01/1594 - 12/31/1676 (ID: 225290). Purpose: Stress test becuase of the damage and somewhat faded text. Period: 1500-1600",
+            "damage": 2.5,
+            "coords": [
+                [
+                    871,
+                    1406,
+                    2498,
+                    2020
+                ],
+                [
+                    861,
+                    2348,
+                    2530,
+                    3144
+                ],
+                [
+                    878,
+                    480,
+                    2499,
+                    1108
+                ]
+            ]
+        },
+        {
+            "id": "740004-0014",
+            "info": "Libro 1 Mixto 07/14/1599 - 07/23/1634 (ID: 740004). Purpose: Similar base format, shorter and more paragraphs, and slight curve/slant to writing. Period: 1500-1600",
+            "damage": 1.5,
+            "coords": [
+                [
+                    1125,
+                    2605,
+                    2679,
+                    2813
+                ],
+                [
+                    1137,
+                    728,
+                    2674,
+                    903
+                ],
+                [
+                    1129,
+                    2233,
+                    2672,
+                    2515
+                ],
+                [
+                    1135,
+                    1629,
+                    2663,
+                    1872
+                ],
+                [
+                    1129,
+                    2879,
+                    2676,
+                    3130
+                ],
+                [
+                    1135,
+                    997,
+                    2693,
+                    1195
+                ],
+                [
+                    1165,
+                    540,
+                    2679,
+                    717
+                ],
+                [
+                    1153,
+                    1296,
+                    2695,
+                    1503
+                ],
+                [
+                    1145,
+                    1975,
+                    2664,
+                    2165
+                ]
+            ]
+        },
+        {
+            "id": "740004-0233",
+            "info": "Libro 1 Mixto 07/14/1599 - 07/23/1634 (ID: 740004). Purpose: Stress test within a slightly different format, inconsistent hand-writing, and slight bleed through. Period: 1500-1600",
+            "damage": 2,
+            "coords": [
+                [
+                    1047,
+                    2282,
+                    2447,
+                    2570
+                ],
+                [
+                    1021,
+                    1964,
+                    2429,
+                    2179
+                ],
+                [
+                    881,
+                    256,
+                    2362,
+                    570
+                ],
+                [
+                    1061,
+                    2627,
+                    2464,
+                    2878
+                ],
+                [
+                    943,
+                    639,
+                    2367,
+                    906
+                ],
+                [
+                    1007,
+                    1545,
+                    2355,
+                    1864
+                ],
+                [
+                    959,
+                    996,
+                    2407,
+                    1410
+                ]
+            ]
+        },
+        {
+            "id": "6490-0066",
+            "info": "Libro de Barajas: Bautismos, 1590-160. 01/20/1590 - 01/16/1600 (ID: 6490). Purpose: Stress test within a slightly different format, inconsistent/messy hand-writing, and slight bleed through. Period: 1500-1600",
+            "damage": 2,
+            "coords": [
+                [
+                    321,
+                    1263,
+                    1621,
+                    1677
+                ],
+                [
+                    299,
+                    811,
+                    1585,
+                    1149
+                ],
+                [
+                    286,
+                    390,
+                    1584,
+                    771
+                ],
+                [
+                    290,
+                    1755,
+                    1631,
+                    2201
+                ]
+            ]
+        },
+        {
+            "id": "6517-0105",
+            "info": "Libro de Barajas: Matrimonios, 1584-1622. 07/16/1584 - 01/30/1622 (ID: 6517). Purpose: Lighter hand-writing, and visible damange (White background). Period: 1500-1600",
+            "damage": 2,
+            "coords": [
+                [
+                    574,
+                    1512,
+                    1710,
+                    1995
+                ],
+                [
+                    593,
+                    813,
+                    1733,
+                    1250
+                ],
+                [
+                    587,
+                    233,
+                    1751,
+                    650
+                ]
+            ]
+        },
+        {
+            "id": "38559-0034",
+            "info": "Batismos avulsos de escravos e livres, 1681-1761. 01/09/1681 - 07/24/1761 (ID: 38559). Purpose: Formatted with some bleed through. Cluttered handwriting. Period: 1601-1700",
+            "damage": 2,
+            "coords": [
+                [
+                    398,
+                    190,
+                    1671,
+                    545
+                ],
+                [
+                    367,
+                    1168,
+                    1688,
+                    1550
+                ],
+                [
+                    352,
+                    1721,
+                    1661,
+                    2094
+                ],
+                [
+                    376,
+                    640,
+                    1675,
+                    1072
+                ],
+                [
+                    324,
+                    2224,
+                    1648,
+                    2394
+                ]
+            ]
+        },
+        {
+            "id": "760007-0013",
+            "info": "Book 1 Baptisms Whites 12/27/1689 - 03/25/1731 (ID: 760007). Purpose: Very formatted, but has some bleed through. Period: 1601-1700.",
+            "damage": 1.5,
+            "coords": [
+                [
+                    1054,
+                    3944,
+                    3223,
+                    4449
+                ],
+                [
+                    976,
+                    886,
+                    3243,
+                    1365
+                ],
+                [
+                    1029,
+                    2825,
+                    3247,
+                    3780
+                ],
+                [
+                    976,
+                    1558,
+                    3272,
+                    2640
+                ]
+            ]
+        },
+        {
+            "id": "701162-0054",
+            "info": "Book 1 of Slave and Free Baptisms, Marriages, and Burials, 1647 - 1721 12/16/1647 - 06/26/1721 (ID: 701162). Purpose: Formatted well, but has some clear holes. Period: 1601-1700.",
+            "damage": 1.5,
+            "coords": [
+                [
+                    834,
+                    2532,
+                    2373,
+                    3133
+                ],
+                [
+                    810,
+                    701,
+                    2456,
+                    1236
+                ],
+                [
+                    825,
+                    1869,
+                    2373,
+                    2467
+                ],
+                [
+                    831,
+                    1323,
+                    2384,
+                    1770
+                ]
+            ]
+        },
+        {
+            "id": "128787-0030",
+            "info": "Batismos de livres e escravos, 1668-1733 05/02/1668 - 04/20/1733 (ID: 128787). Purpose: Stress test: Water damage and curved writing. Period: 1601-1700.",
+            "damage": 2,
+            "coords": [
+                [
+                    446,
+                    1692,
+                    1682,
+                    1956
+                ],
+                [
+                    455,
+                    1405,
+                    1648,
+                    1660
+                ],
+                [
+                    437,
+                    1089,
+                    1673,
+                    1370
+                ],
+                [
+                    476,
+                    1924,
+                    1694,
+                    2201
+                ],
+                [
+                    412,
+                    215,
+                    1578,
+                    487
+                ],
+                [
+                    439,
+                    809,
+                    1694,
+                    1052
+                ],
+                [
+                    437,
+                    500,
+                    1631,
+                    752
+                ]
+            ]
+        },
+        {
+            "id": "236210-0052",
+            "info": "Baptisms - 1784-1793 01/01/1784 - 12/31/1793 (ID: 236210). Purpose: Well formatted, some bleed through. Period: 1701-1800.",
+            "damage": 1.5,
+            "coords": [
+                [
+                    917,
+                    283,
+                    2261,
+                    559
+                ],
+                [
+                    932,
+                    1587,
+                    2321,
+                    2701
+                ],
+                [
+                    922,
+                    662,
+                    2302,
+                    1521
+                ],
+                [
+                    952,
+                    2777,
+                    2274,
+                    3181
+                ]
+            ]
+        },
+        {
+            "id": "701006-0008",
+            "info": "1 Book of Slave, Freed, and Free Marriages, 1848-1879 06/14/1848 - 05/17/1879 (ID: 701006). Purpose: Well formatted. Period: 1801-1900.",
+            "damage": 1.5,
+            "coords": [
+                [
+                    768,
+                    2627,
+                    2432,
+                    3241
+                ],
+                [
+                    736,
+                    1694,
+                    2413,
+                    2475
+                ],
+                [
+                    718,
+                    791,
+                    2434,
+                    1532
+                ]
+            ]
+        },
+        {
+            "id": "701006-0026",
+            "info": "1 Book of Slave, Freed, and Free Marriages, 1848-1879 06/14/1848 - 05/17/1879 (ID: 701006). Purpose: Well formatted, slight bleed through. Period: 1801-1900.",
+            "damage": 1.5,
+            "coords": [
+                [
+                    698,
+                    1327,
+                    2405,
+                    1943
+                ],
+                [
+                    719,
+                    2747,
+                    2441,
+                    3350
+                ],
+                [
+                    719,
+                    2141,
+                    2434,
+                    2603
+                ],
+                [
+                    560,
+                    778,
+                    2410,
+                    1117
+                ]
+            ]
+        },
+        {
+            "id": "704827-0058",
+            "info": "Testamento de Florentina Francelina do Amor Divino - 1885 01/01/1885 - 12/31/1885 (ID: 704827). Purpose: Well formatted, thin handwriting. Period: 1801-1900.",
+            "damage": 1.5,
+            "coords": [
+                [
+                    703,
+                    2003,
+                    1985,
+                    2607
+                ],
+                [
+                    707,
+                    762,
+                    2024,
+                    1702
+                ],
+                [
+                    701,
+                    2660,
+                    2008,
+                    3018
+                ],
+                [
+                    742,
+                    485,
+                    2057,
+                    692
+                ]
+            ]
+        },
+        {
+            "id": "585912-0092",
+            "info": "Actas de Defunción, 1902 01/01/1902 - 12/31/1902 (ID: 585912). Purpose: Stress Test: Faint handwriting, multiple signatures. Period: 1901-1950.",
+            "damage": 1.5,
+            "coords": [
+                [
+                    803,
+                    425,
+                    2241,
+                    1201
+                ],
+                [
+                    793,
+                    1699,
+                    2273,
+                    2498
+                ]
+            ]
+        },
+        {
+            "id": "701241-0057",
+            "info": "Book 15 of Baptisms, 1872 - 1926 02/09/1872 - 02/18/1926 (ID: 701241). Purpose: Less lighting, but well formatted. Period: 1901-1950.",
+            "damage": 1.5,
+            "coords": [
+                [
+                    834,
+                    1544,
+                    2569,
+                    2461
+                ],
+                [
+                    817,
+                    2717,
+                    2389,
+                    3454
+                ],
+                [
+                    841,
+                    726,
+                    2426,
+                    1332
+                ]
+            ]
+        },
+        {
+            "id": "701225-0074",
+            "info": "Book 4 of Slave and Free Marriages and Baptisms, 1887 - 1930 09/13/1887 - 02/08/1930 (ID: 701225). Purpose: Bleed through and signatures in the middle. Period: 1901-1950.",
+            "damage": 1.5,
+            "coords": [
+                [
+                    861,
+                    525,
+                    2568,
+                    1386
+                ],
+                [
+                    882,
+                    1689,
+                    2562,
+                    2573
+                ],
+                [
+                    885,
+                    2752,
+                    2562,
+                    3491
+                ]
+            ]
         }
     ]
 }
