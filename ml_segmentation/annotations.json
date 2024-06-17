@@ -1,0 +1,674 @@
+{
+    "images": [
+        {
+            "filename": "239746-0013.jpg",
+            "size": {
+                "width": 3648,
+                "height": 2736
+            },
+            "annotations": [
+                {
+                    "name": "text",
+                    "polygon": [
+                        458,
+                        2086,
+                        747,
+                        2457
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": false,
+                        "margin": true
+                    }
+                },
+                {
+                    "name": "text",
+                    "polygon": [
+                        823,
+                        1852,
+                        2480,
+                        3402
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": false,
+                        "margin": false
+                    }
+                },
+                {
+                    "name": "folio",
+                    "polygon": [
+                        413,
+                        88,
+                        2556,
+                        3528
+                    ],
+                    "attributes": {}
+                },
+                {
+                    "name": "text",
+                    "polygon": [
+                        461,
+                        624,
+                        779,
+                        1030
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": false,
+                        "margin": true
+                    }
+                },
+                {
+                    "name": "text",
+                    "polygon": [
+                        823,
+                        350,
+                        2455,
+                        1774
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": false,
+                        "margin": false
+                    }
+                }
+            ]
+        },
+        {
+            "filename": "239746-0014.jpg",
+            "size": {
+                "width": 3648,
+                "height": 2736
+            },
+            "annotations": [
+                {
+                    "name": "text",
+                    "polygon": [
+                        363,
+                        580,
+                        697,
+                        1260
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": false,
+                        "margin": true
+                    }
+                },
+                {
+                    "name": "folio",
+                    "polygon": [
+                        187,
+                        98,
+                        2310,
+                        3456
+                    ],
+                    "attributes": {}
+                },
+                {
+                    "name": "text",
+                    "polygon": [
+                        379,
+                        2054,
+                        665,
+                        2602
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": false,
+                        "margin": true
+                    }
+                },
+                {
+                    "name": "text",
+                    "polygon": [
+                        754,
+                        214,
+                        2272,
+                        1909
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": false,
+                        "margin": false
+                    }
+                },
+                {
+                    "name": "text",
+                    "polygon": [
+                        741,
+                        2023,
+                        2285,
+                        3314
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": true,
+                        "margin": false
+                    }
+                }
+            ]
+        },
+        {
+            "filename": "239746-0018.jpg",
+            "size": {
+                "width": 3648,
+                "height": 2736
+            },
+            "annotations": [
+                {
+                    "name": "text",
+                    "polygon": [
+                        826,
+                        214,
+                        2313,
+                        684
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": true,
+                        "margin": false
+                    }
+                },
+                {
+                    "name": "text",
+                    "polygon": [
+                        788,
+                        2536,
+                        2319,
+                        3327
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": true,
+                        "margin": false
+                    }
+                },
+                {
+                    "name": "text",
+                    "polygon": [
+                        498,
+                        280,
+                        760,
+                        366
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": false,
+                        "margin": true
+                    }
+                },
+                {
+                    "name": "text",
+                    "polygon": [
+                        814,
+                        822,
+                        2326,
+                        2467
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": false,
+                        "margin": false
+                    }
+                },
+                {
+                    "name": "text",
+                    "polygon": [
+                        464,
+                        882,
+                        788,
+                        1361
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": false,
+                        "margin": true
+                    }
+                },
+                {
+                    "name": "text",
+                    "polygon": [
+                        432,
+                        2505,
+                        757,
+                        3207
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": false,
+                        "margin": true
+                    }
+                },
+                {
+                    "name": "folio",
+                    "polygon": [
+                        240,
+                        132,
+                        2345,
+                        3491
+                    ],
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "filename": "239746-0019.jpg",
+            "size": {
+                "width": 3648,
+                "height": 2736
+            },
+            "annotations": [
+                {
+                    "name": "text",
+                    "polygon": [
+                        763,
+                        734,
+                        2382,
+                        1808
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": false,
+                        "margin": false
+                    }
+                },
+                {
+                    "name": "text",
+                    "polygon": [
+                        757,
+                        148,
+                        2376,
+                        646
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": true,
+                        "margin": false
+                    }
+                },
+                {
+                    "name": "text",
+                    "polygon": [
+                        417,
+                        775,
+                        703,
+                        1478
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": false,
+                        "margin": true
+                    }
+                },
+                {
+                    "name": "text",
+                    "polygon": [
+                        404,
+                        1953,
+                        684,
+                        2820
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": false,
+                        "margin": true
+                    }
+                },
+                {
+                    "name": "text",
+                    "polygon": [
+                        757,
+                        1871,
+                        2401,
+                        3352
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": false,
+                        "margin": false
+                    }
+                },
+                {
+                    "name": "folio",
+                    "polygon": [
+                        366,
+                        79,
+                        2477,
+                        3522
+                    ],
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "filename": "239746-0020.jpg",
+            "size": {
+                "width": 3648,
+                "height": 2736
+            },
+            "annotations": [
+                {
+                    "name": "text",
+                    "polygon": [
+                        650,
+                        284,
+                        2203,
+                        2042
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": false,
+                        "margin": false
+                    }
+                },
+                {
+                    "name": "text",
+                    "polygon": [
+                        643,
+                        2208,
+                        2187,
+                        3343
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": true,
+                        "margin": false
+                    }
+                },
+                {
+                    "name": "folio",
+                    "polygon": [
+                        133,
+                        126,
+                        2225,
+                        3465
+                    ],
+                    "attributes": {}
+                },
+                {
+                    "name": "text",
+                    "polygon": [
+                        309,
+                        589,
+                        612,
+                        1235
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": false,
+                        "margin": true
+                    }
+                },
+                {
+                    "name": "text",
+                    "polygon": [
+                        297,
+                        2208,
+                        618,
+                        2820
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": false,
+                        "margin": true
+                    }
+                }
+            ]
+        },
+        {
+            "filename": "239746-0021.jpg",
+            "size": {
+                "width": 3648,
+                "height": 2736
+            },
+            "annotations": [
+                {
+                    "name": "text",
+                    "polygon": [
+                        429,
+                        681,
+                        744,
+                        1046
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": false,
+                        "margin": true
+                    }
+                },
+                {
+                    "name": "folio",
+                    "polygon": [
+                        391,
+                        82,
+                        2502,
+                        3525
+                    ],
+                    "attributes": {}
+                },
+                {
+                    "name": "text",
+                    "polygon": [
+                        785,
+                        139,
+                        2401,
+                        542
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": true,
+                        "margin": false
+                    }
+                },
+                {
+                    "name": "text",
+                    "polygon": [
+                        779,
+                        614,
+                        2389,
+                        1805
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": false,
+                        "margin": false
+                    }
+                },
+                {
+                    "name": "text",
+                    "polygon": [
+                        436,
+                        1960,
+                        744,
+                        2659
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": false,
+                        "margin": true
+                    }
+                },
+                {
+                    "name": "text",
+                    "polygon": [
+                        757,
+                        1925,
+                        2379,
+                        3377
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": false,
+                        "margin": false
+                    }
+                }
+            ]
+        },
+        {
+            "filename": "239746-0022.jpg",
+            "size": {
+                "width": 3648,
+                "height": 2736
+            },
+            "annotations": [
+                {
+                    "name": "text",
+                    "polygon": [
+                        291,
+                        1840,
+                        628,
+                        2508
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": false,
+                        "margin": true
+                    }
+                },
+                {
+                    "name": "text",
+                    "polygon": [
+                        303,
+                        536,
+                        606,
+                        1191
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": false,
+                        "margin": true
+                    }
+                },
+                {
+                    "name": "text",
+                    "polygon": [
+                        650,
+                        1815,
+                        2206,
+                        3384
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": false,
+                        "margin": false
+                    }
+                },
+                {
+                    "name": "text",
+                    "polygon": [
+                        316,
+                        284,
+                        577,
+                        375
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": false,
+                        "margin": true
+                    }
+                },
+                {
+                    "name": "text",
+                    "polygon": [
+                        653,
+                        271,
+                        2187,
+                        1689
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": false,
+                        "margin": false
+                    }
+                },
+                {
+                    "name": "folio",
+                    "polygon": [
+                        98,
+                        139,
+                        2225,
+                        3494
+                    ],
+                    "attributes": {}
+                }
+            ]
+        },
+        {
+            "filename": "239746-0023.jpg",
+            "size": {
+                "width": 3648,
+                "height": 2736
+            },
+            "annotations": [
+                {
+                    "name": "text",
+                    "polygon": [
+                        801,
+                        1500,
+                        2430,
+                        3289
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": false,
+                        "margin": false
+                    }
+                },
+                {
+                    "name": "text",
+                    "polygon": [
+                        461,
+                        1519,
+                        782,
+                        1916
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": false,
+                        "margin": true
+                    }
+                },
+                {
+                    "name": "text",
+                    "polygon": [
+                        820,
+                        161,
+                        2426,
+                        1424
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": false,
+                        "margin": false
+                    }
+                },
+                {
+                    "name": "folio",
+                    "polygon": [
+                        442,
+                        79,
+                        2584,
+                        3522
+                    ],
+                    "attributes": {}
+                },
+                {
+                    "name": "text",
+                    "polygon": [
+                        467,
+                        252,
+                        766,
+                        693
+                    ],
+                    "attributes": {
+                        "script": 0,
+                        "partial": false,
+                        "margin": true
+                    }
+                }
+            ]
+        }
+    ]
+}
