@@ -1,5 +1,4 @@
 from typing import List, Tuple
-import numpy as np
 
 def calculate_iou(box1: Tuple[int, int, int, int], box2: Tuple[int, int, int, int]) -> float:
     """
