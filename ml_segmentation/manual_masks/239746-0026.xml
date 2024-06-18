@@ -1,5 +1,5 @@
 <annotation>
-  <filename>239746-0021.jpg</filename>
+  <filename>239746-0026.jpg</filename>
   <folder></folder>
   <source>
     <sourceImage></sourceImage>
@@ -10,7 +10,7 @@
     <ncols>2736</ncols>
   </imagesize>
   <object>
-    <name>text</name>
+    <name>folio</name>
     <deleted>0</deleted>
     <verified>0</verified>
     <occluded>no</occluded>
@@ -23,24 +23,24 @@
     <type>bounding_box</type>
     <polygon>
       <pt>
-        <x>756.82</x>
-        <y>1924.94</y>
+        <x>189.78</x>
+        <y>91.49</y>
       </pt>
       <pt>
-        <x>2379.21</x>
-        <y>1924.94</y>
+        <x>2322.50</x>
+        <y>91.49</y>
       </pt>
       <pt>
-        <x>2379.21</x>
-        <y>3377.21</y>
+        <x>2322.50</x>
+        <y>3474.87</y>
       </pt>
       <pt>
-        <x>756.82</x>
-        <y>3377.21</y>
+        <x>189.78</x>
+        <y>3474.87</y>
       </pt>
       <username></username>
     </polygon>
-    <attributes>script="0", partial=False, margin=False, rotation=0.0</attributes>
+    <attributes>rotation=0.0</attributes>
   </object>
   <object>
     <name>text</name>
@@ -56,20 +56,20 @@
     <type>bounding_box</type>
     <polygon>
       <pt>
-        <x>435.50</x>
-        <y>1959.59</y>
+        <x>508.00</x>
+        <y>252.15</y>
       </pt>
       <pt>
-        <x>744.22</x>
-        <y>1959.59</y>
+        <x>804.08</x>
+        <y>252.15</y>
       </pt>
       <pt>
-        <x>744.22</x>
-        <y>2658.95</y>
+        <x>804.08</x>
+        <y>346.66</y>
       </pt>
       <pt>
-        <x>435.50</x>
-        <y>2658.95</y>
+        <x>508.00</x>
+        <y>346.66</y>
       </pt>
       <username></username>
     </polygon>
@@ -89,24 +89,24 @@
     <type>bounding_box</type>
     <polygon>
       <pt>
-        <x>785.18</x>
-        <y>138.74</y>
+        <x>426.05</x>
+        <y>494.72</y>
       </pt>
       <pt>
-        <x>2401.26</x>
-        <y>138.74</y>
+        <x>791.48</x>
+        <y>494.72</y>
       </pt>
       <pt>
-        <x>2401.26</x>
-        <y>541.98</y>
+        <x>791.48</x>
+        <y>897.96</y>
       </pt>
       <pt>
-        <x>785.18</x>
-        <y>541.98</y>
+        <x>426.05</x>
+        <y>897.96</y>
       </pt>
       <username></username>
     </polygon>
-    <attributes>script="0", partial=True, margin=False, rotation=0.0</attributes>
+    <attributes>script="0", partial=False, margin=True, rotation=0.0</attributes>
   </object>
   <object>
     <name>text</name>
@@ -122,24 +122,24 @@
     <type>bounding_box</type>
     <polygon>
       <pt>
-        <x>778.88</x>
-        <y>614.43</y>
+        <x>407.14</x>
+        <y>2104.50</y>
       </pt>
       <pt>
-        <x>2388.66</x>
-        <y>614.43</y>
+        <x>747.37</x>
+        <y>2104.50</y>
       </pt>
       <pt>
-        <x>2388.66</x>
-        <y>1805.23</y>
+        <x>747.37</x>
+        <y>2469.93</y>
       </pt>
       <pt>
-        <x>778.88</x>
-        <y>1805.23</y>
+        <x>407.14</x>
+        <y>2469.93</y>
       </pt>
       <username></username>
     </polygon>
-    <attributes>script="0", partial=False, margin=False, rotation=0.0</attributes>
+    <attributes>script="0", partial=False, margin=True, rotation=0.0</attributes>
   </object>
   <object>
     <name>text</name>
@@ -155,27 +155,27 @@
     <type>bounding_box</type>
     <polygon>
       <pt>
-        <x>429.20</x>
-        <y>680.59</y>
+        <x>816.68</x>
+        <y>226.95</y>
       </pt>
       <pt>
-        <x>744.22</x>
-        <y>680.59</y>
+        <x>2300.45</x>
+        <y>226.95</y>
       </pt>
       <pt>
-        <x>744.22</x>
-        <y>1046.02</y>
+        <x>2300.45</x>
+        <y>2019.45</y>
       </pt>
       <pt>
-        <x>429.20</x>
-        <y>1046.02</y>
+        <x>816.68</x>
+        <y>2019.45</y>
       </pt>
       <username></username>
     </polygon>
-    <attributes>script="0", partial=False, margin=True, rotation=0.0</attributes>
+    <attributes>script="0", partial=False, margin=False, rotation=0.0</attributes>
   </object>
   <object>
-    <name>folio</name>
+    <name>text</name>
     <deleted>0</deleted>
     <verified>0</verified>
     <occluded>no</occluded>
@@ -188,23 +188,23 @@
     <type>bounding_box</type>
     <polygon>
       <pt>
-        <x>391.39</x>
-        <y>82.04</y>
+        <x>791.48</x>
+        <y>2104.50</y>
       </pt>
       <pt>
-        <x>2502.07</x>
-        <y>82.04</y>
+        <x>2291.00</x>
+        <y>2104.50</y>
       </pt>
       <pt>
-        <x>2502.07</x>
-        <y>3525.27</y>
+        <x>2291.00</x>
+        <y>3244.90</y>
       </pt>
       <pt>
-        <x>391.39</x>
-        <y>3525.27</y>
+        <x>791.48</x>
+        <y>3244.90</y>
       </pt>
       <username></username>
     </polygon>
-    <attributes>rotation=0.0</attributes>
+    <attributes>script="0", partial=True, margin=False, rotation=0.0</attributes>
   </object>
 </annotation>

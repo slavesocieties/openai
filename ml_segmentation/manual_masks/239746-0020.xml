@@ -23,57 +23,24 @@
     <type>bounding_box</type>
     <polygon>
       <pt>
-        <x>649.71</x>
-        <y>283.65</y>
+        <x>309.49</x>
+        <y>589.23</y>
       </pt>
       <pt>
-        <x>2202.79</x>
-        <y>283.65</y>
+        <x>611.91</x>
+        <y>589.23</y>
       </pt>
       <pt>
-        <x>2202.79</x>
-        <y>2041.50</y>
+        <x>611.91</x>
+        <y>1235.03</y>
       </pt>
       <pt>
-        <x>649.71</x>
-        <y>2041.50</y>
+        <x>309.49</x>
+        <y>1235.03</y>
       </pt>
       <username></username>
     </polygon>
-    <attributes>script="0", partial=False, margin=False, rotation=0.0</attributes>
-  </object>
-  <object>
-    <name>text</name>
-    <deleted>0</deleted>
-    <verified>0</verified>
-    <occluded>no</occluded>
-    <date></date>
-    <id>1</id>
-    <parts>
-      <hasparts></hasparts>
-      <ispartof></ispartof>
-    </parts>
-    <type>bounding_box</type>
-    <polygon>
-      <pt>
-        <x>643.41</x>
-        <y>2208.46</y>
-      </pt>
-      <pt>
-        <x>2187.04</x>
-        <y>2208.46</y>
-      </pt>
-      <pt>
-        <x>2187.04</x>
-        <y>3342.56</y>
-      </pt>
-      <pt>
-        <x>643.41</x>
-        <y>3342.56</y>
-      </pt>
-      <username></username>
-    </polygon>
-    <attributes>script="0", partial=True, margin=False, rotation=0.0</attributes>
+    <attributes>script="0", partial=False, margin=True, rotation=0.0</attributes>
   </object>
   <object>
     <name>folio</name>
@@ -81,7 +48,7 @@
     <verified>0</verified>
     <occluded>no</occluded>
     <date></date>
-    <id>2</id>
+    <id>1</id>
     <parts>
       <hasparts></hasparts>
       <ispartof></ispartof>
@@ -114,6 +81,39 @@
     <verified>0</verified>
     <occluded>no</occluded>
     <date></date>
+    <id>2</id>
+    <parts>
+      <hasparts></hasparts>
+      <ispartof></ispartof>
+    </parts>
+    <type>bounding_box</type>
+    <polygon>
+      <pt>
+        <x>296.89</x>
+        <y>2208.46</y>
+      </pt>
+      <pt>
+        <x>618.21</x>
+        <y>2208.46</y>
+      </pt>
+      <pt>
+        <x>618.21</x>
+        <y>2819.61</y>
+      </pt>
+      <pt>
+        <x>296.89</x>
+        <y>2819.61</y>
+      </pt>
+      <username></username>
+    </polygon>
+    <attributes>script="0", partial=False, margin=True, rotation=0.0</attributes>
+  </object>
+  <object>
+    <name>text</name>
+    <deleted>0</deleted>
+    <verified>0</verified>
+    <occluded>no</occluded>
+    <date></date>
     <id>3</id>
     <parts>
       <hasparts></hasparts>
@@ -122,24 +122,24 @@
     <type>bounding_box</type>
     <polygon>
       <pt>
-        <x>309.49</x>
-        <y>589.23</y>
+        <x>649.71</x>
+        <y>283.65</y>
       </pt>
       <pt>
-        <x>611.91</x>
-        <y>589.23</y>
+        <x>2202.79</x>
+        <y>283.65</y>
       </pt>
       <pt>
-        <x>611.91</x>
-        <y>1235.03</y>
+        <x>2202.79</x>
+        <y>2041.50</y>
       </pt>
       <pt>
-        <x>309.49</x>
-        <y>1235.03</y>
+        <x>649.71</x>
+        <y>2041.50</y>
       </pt>
       <username></username>
     </polygon>
-    <attributes>script="0", partial=False, margin=True, rotation=0.0</attributes>
+    <attributes>script="0", partial=False, margin=False, rotation=0.0</attributes>
   </object>
   <object>
     <name>text</name>
@@ -155,23 +155,23 @@
     <type>bounding_box</type>
     <polygon>
       <pt>
-        <x>296.89</x>
+        <x>643.41</x>
         <y>2208.46</y>
       </pt>
       <pt>
-        <x>618.21</x>
+        <x>2187.04</x>
         <y>2208.46</y>
       </pt>
       <pt>
-        <x>618.21</x>
-        <y>2819.61</y>
+        <x>2187.04</x>
+        <y>3342.56</y>
       </pt>
       <pt>
-        <x>296.89</x>
-        <y>2819.61</y>
+        <x>643.41</x>
+        <y>3342.56</y>
       </pt>
       <username></username>
     </polygon>
-    <attributes>script="0", partial=False, margin=True, rotation=0.0</attributes>
+    <attributes>script="0", partial=True, margin=False, rotation=0.0</attributes>
   </object>
 </annotation>
