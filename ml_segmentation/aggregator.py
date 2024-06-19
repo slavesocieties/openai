@@ -50,8 +50,8 @@ def prune_dict(big_dict):
     image_annotations = {}    
     image_annotations['filename'] = big_dict['filename']['text']    
     image_annotations['size'] = {}
-    image_annotations['size']['width'] = int(big_dict['imagesize']['nrows']['text'])
-    image_annotations['size']['height'] = int(big_dict['imagesize']['ncols']['text'])    
+    image_annotations['size']['width'] = int(big_dict['imagesize']['ncols']['text'])
+    image_annotations['size']['height'] = int(big_dict['imagesize']['nrows']['text'])    
     if type(big_dict['object']) is list:
         image_annotations['annotations'] = []
         for obj in big_dict['object']:            
@@ -60,7 +60,7 @@ def prune_dict(big_dict):
         image_annotations['annotations'] = [process_annotation_object(big_dict['object'])]
     return image_annotations
 
-def driver(export_dir, save_dir='new_annotations.json'):
+def driver(export_dir, save_dir='annotations.json'):
     aggregated_annotations = {'images': []}
     for root, folders, files in os.walk(export_dir):
         for file in files:            
@@ -71,4 +71,4 @@ def driver(export_dir, save_dir='new_annotations.json'):
         json.dump(aggregated_annotations, f)
     print(f'Annotations from {len(aggregated_annotations["images"])} images transformed and saved to {save_dir}.')
 
-driver('manual_masks')      
+driver('annotations')      
