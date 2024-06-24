@@ -8,3 +8,4 @@ ssda-openai-test-data.json
 images/
 output/
 masks/
+*.png
