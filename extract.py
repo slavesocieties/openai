@@ -110,7 +110,7 @@ def extract_data_from_entry(entry, volume_metadata, examples, instructions):
     
     #generate response from llm
     response = client.chat.completions.create(
-        model="gpt-3.5-turbo-1106",
+        model="gpt-4o",
         response_format={"type": "json_object"},
         messages = conversation        
     )

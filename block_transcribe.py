@@ -96,6 +96,10 @@ def build_entry(gpt_output):
 	entry = {"id": gpt_output["id"]}
 	text = ""
 	for index, line in enumerate(gpt_output["lines"]):
+		# TODO: investigate why this can occur
+		if len(line) == 0:
+			continue
+		
 		if line[0] == "-" and len(text) > 0:
 			text = text[:len(text) - 1]
 			text += line[1:]
