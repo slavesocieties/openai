@@ -23,7 +23,17 @@
                     2499,
                     1108
                 ]
-            ]
+            ],
+            "current": {
+                "f-score": 9001,
+                "precision": 9001,
+                "recall": 9001
+            },
+            "otsu_binarization": {
+                "f-score": 9001,
+                "precision": 9001,
+                "recall": 9001
+            }
         },
         {
             "id": "740004-0014",
