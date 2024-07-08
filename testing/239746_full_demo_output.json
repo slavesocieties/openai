@@ -9,11 +9,11 @@
     "entries": [
         {
             "id": "0088-01",
-            "text": "Lunes, día diez y siete de octubre de mil setecientos noventa y seis, yo Don Miguel O'Reilly, Cura Beneficiado, Vicario, Juez Eclesiástico de esta Iglesia parroquial, Plaza, y Provincia de San Agustín de la Florida, etc., bauticé y puse los santos Óleos a una niña de color moreno, como de trece meses de edad, hija natural de Santiago y Tomasa Moreno, y de María Font, todos esclavos del Rey. Y en ella ejercí las sacras ceremonias y preces de nuestra santa Madre Iglesia, y la puse por nombre Ana Maria Josefa. Fue su Madrina Doña Ana Maria M. Bonato, vecina de esta ciudad. La advertí del parentesco espiritual y demás obligaciones, y lo firmé en dicho día, mes y año. Miguel O'Reilly."
+            "text": "Lunes, día diecisiete de octubre de mil setecientos noventa y nueve. Yo, Don Miguel O'Reilly, cura beneficiado, vicario, juez eclesiástico de esta iglesia parroquial, plaza, provincia de San Agustín de la Florida, etc., bauticé y puse los santos óleos a una niña de color morena como de trece meses de edad, hija natural de Santiago y María, morenos esclavos del Rey. En ella ejercí las sacras ceremonias y preces de nuestra Santa Madre Iglesia, y la puse por nombre Ana María Josefa. Fue su madrina Doña Ana María La Donita, vecina de esta ciudad, a la cual advertí el parentesco espiritual y demás obligaciones, y lo firmé en dicho día, mes y año."
         },
         {
             "id": "0088-02",
-            "text": "Sábado, día veinte y nueve de octubre de mil setecientos noventa y seis. Yo, Don Miguel O'Reilly, Cura beneficiado, Vicario, Juez eclesiástico de esta Iglesia parroquial, Plaza, y Provincia de San Agustín de la Florida Nuestro Señor, bauticé y puse los santos Óleos a un niño de color moreno, que nació el día catorce del corriente mes y año. Hijo natural de Juan Moreno libre, natural de Carolina del Sur en los Estados Unidos de América, y de Ridaura, morena, esclava de Don Juan Rodriguez, vecino de esta Ciudad; y en el ejercicio las sacras Ceremonias y Preces de nuestra madre Iglesia, y le puse por nombre Celesto Tomas. Fue su padrino Don Tomas de Aguilar, le advertí el parentesco espiritual y demás obligaciones, y lo firmé en dicho día, mes, y año. Miguel O'Reilly"
+            "text": "Sábado, día veintinueve de octubre de mil setecientos noventa y siete, yo Don Miguel O'Reilly, cura beneficiado, vicario, juez eclesiástico de esta iglesia parroquial, plaza, y provincia de San Agustín de la Florida, etc., bauticé y puse los santos óleos a un niño de color moreno, que nació el día catorce del corriente mes y año. Hijo natural de Lucas Moreno, libre, natural de Carolina del Sur en los Estados Unidos de América, y de Deleana, morena esclava de Don Juan Rodríguez, vecino de esta ciudad. En él ejercí las sacras ceremonias y preces de nuestra madre iglesia, y le puse por nombre Celisto Tomás. Fue su padrino Don Tomás de Aguilar. Le advertí el parentesco espiritual y demás obligaciones, y lo firmé en dicho día, mes, y año.\n\nMiguel O’Reilly"
         }
     ],
     "people": [
@@ -23,7 +23,14 @@
             "titles": [
                 "Don"
             ],
-            "occupation": "cleric"
+            "occupation": [
+                "cleric",
+                "cleric"
+            ],
+            "mentions": [
+                "0088-02",
+                "0088-01"
+            ]
         },
         {
             "id": "239746-P00002",
@@ -36,14 +43,19 @@
                     "relationship_type": "spouse"
                 },
                 {
+                    "related_person": "239746-P00006",
+                    "relationship_type": "enslaver"
+                },
+                {
                     "related_person": "239746-P00004",
                     "relationship_type": "parent"
                 }
-            ]
+            ],
+            "mentions": "0088-01"
         },
         {
             "id": "239746-P00003",
-            "name": "Tomasa Moreno",
+            "name": "María",
             "phenotype": "moreno",
             "free": false,
             "relationships": [
@@ -52,32 +64,41 @@
                     "relationship_type": "spouse"
                 },
                 {
+                    "related_person": "239746-P00006",
+                    "relationship_type": "enslaver"
+                },
+                {
                     "related_person": "239746-P00004",
                     "relationship_type": "parent"
                 }
-            ]
+            ],
+            "mentions": "0088-01"
         },
         {
             "id": "239746-P00004",
-            "name": "María Font",
+            "name": "Ana María Josefa",
+            "age": "child",
+            "phenotype": "moreno",
+            "free": false,
             "relationships": [
                 {
                     "related_person": "239746-P00002",
-                    "relationship_type": "child"
+                    "relationship_type": "parent"
                 },
                 {
                     "related_person": "239746-P00003",
-                    "relationship_type": "child"
+                    "relationship_type": "parent"
                 },
                 {
                     "related_person": "239746-P00005",
                     "relationship_type": "godparent"
                 }
-            ]
+            ],
+            "mentions": "0088-01"
         },
         {
             "id": "239746-P00005",
-            "name": "Ana Maria M. Bonato",
+            "name": "Ana María La Donita",
             "titles": [
                 "Doña"
             ],
@@ -86,79 +107,116 @@
                     "related_person": "239746-P00004",
                     "relationship_type": "godchild"
                 }
-            ]
+            ],
+            "mentions": "0088-01"
         },
         {
             "id": "239746-P00006",
-            "name": "Juan Moreno",
-            "phenotype": "moreno",
-            "free": true,
-            "origin": "Carolina del Sur, Estados Unidos"
+            "name": "El Rey",
+            "relationships": [
+                {
+                    "related_person": "239746-P00002",
+                    "relationship_type": "enslaver"
+                },
+                {
+                    "related_person": "239746-P00003",
+                    "relationship_type": "enslaver"
+                }
+            ],
+            "mentions": "0088-01"
         },
         {
             "id": "239746-P00007",
-            "name": "Ridaura",
-            "phenotype": "morena",
-            "free": false,
-            "relationships": [
-                {
-                    "related_person": "239746-P00008",
-                    "relationship_type": "child"
-                }
-            ]
+            "name": "Lucas Moreno",
+            "origin": "Carolina del Sur, Estados Unidos de América",
+            "phenotype": "moreno",
+            "free": true,
+            "mentions": "0088-02"
         },
         {
             "id": "239746-P00008",
-            "name": "Celesto Tomas",
-            "age": "infant",
-            "legitimate": false,
+            "name": "Deleana",
             "phenotype": "moreno",
+            "free": false,
             "relationships": [
                 {
-                    "related_person": "239746-P00006",
-                    "relationship_type": "parent"
-                },
-                {
-                    "related_person": "239746-P00007",
-                    "relationship_type": "parent"
-                },
-                {
                     "related_person": "239746-P00009",
-                    "relationship_type": "godparent"
+                    "relationship_type": "enslaver"
+                },
+                {
+                    "related_person": "239746-P00010",
+                    "relationship_type": "child"
                 }
-            ]
+            ],
+            "mentions": "0088-02"
         },
         {
             "id": "239746-P00009",
-            "name": "Tomas de Aguilar",
+            "name": "Juan Rodríguez",
             "titles": [
                 "Don"
             ],
             "relationships": [
                 {
                     "related_person": "239746-P00008",
+                    "relationship_type": "slave"
+                }
+            ],
+            "mentions": "0088-02"
+        },
+        {
+            "id": "239746-P00010",
+            "name": "Celisto Tomás",
+            "ethnicity": "moreno",
+            "age": "child",
+            "relationships": [
+                {
+                    "related_person": "239746-P00007",
+                    "relationship_type": "parent"
+                },
+                {
+                    "related_person": "239746-P00008",
+                    "relationship_type": "parent"
+                },
+                {
+                    "related_person": "239746-P00011",
                     "relationship_type": "godparent"
                 }
-            ]
+            ],
+            "mentions": "0088-02"
+        },
+        {
+            "id": "239746-P00011",
+            "name": "Tomás de Aguilar",
+            "titles": [
+                "Don"
+            ],
+            "relationships": [
+                {
+                    "related_person": "239746-P00010",
+                    "relationship_type": "godchild"
+                }
+            ],
+            "mentions": "0088-02"
         }
     ],
     "events": [
         {
             "type": "baptism",
             "principal": "239746-P00004",
-            "date": "1796-10-17",
+            "date": "1799-10-17",
             "id": "0088-01-E00"
         },
         {
             "type": "baptism",
-            "principal": "239746-P00008",
-            "date": "1796-10-29",
+            "principal": "239746-P00010",
+            "date": "1797-10-29",
             "id": "0088-02-E00"
         },
         {
             "type": "birth",
-            "principal": "239746-P00008",
-            "date": "1796-10-14",
+            "principal": "239746-P00010",
+            "date": "1797-10-14",
             "id": "0088-02-E01"
         }
     ]

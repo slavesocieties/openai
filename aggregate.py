@@ -74,6 +74,7 @@ def aggregate_entry_records(path_to_entry_records, output_path=None):
         #adds entry info to each person id so that it is unique at the volume level
         for person in entry["data"]["people"]:
             person["id"] = f"{entry['id']}-{person['id']}"
+            person["mentions"] = entry['id']
             if "relationships" in person:
                 for rel in person["relationships"]:
                     #temporary fix to catch incorrectly structured model output

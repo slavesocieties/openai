@@ -412,6 +412,7 @@ def disambiguate_people(x, y):
     
     return match
 
+# this needs to be improved to account for nuance/change over time (e.g. DOB instead of age)
 def merge_records(x, y):
     """Merges the records of two people.
 
@@ -423,9 +424,14 @@ def merge_records(x, y):
     Returns:
         A single dict containing all information from both input dictionaries. 
     """
-    for key in ["rank", "origin", "ethnicity", "age", "legitimate", "occupation", "phenotype", "free"]:
+    for key in ["rank", "origin", "ethnicity", "age", "legitimate", "occupation", "phenotype", "free", "mentions"]:
         if (key in y) and (key not in x):
             x[key] = y[key]
+        elif key in y:
+            if type(x[key]) == list:
+                x[key].append(y[key])
+            else:
+                x[key] = [x[key], y[key]]
 
     if ("titles" in x) and ("titles" in y):
         for title in y["titles"]:
