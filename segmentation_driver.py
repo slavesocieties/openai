@@ -107,7 +107,7 @@ def detect_internal_signature(image_array, num_consecutive_rows=100):
         
     return consecutive_sequences
 
-def segmentation_driver(path_to_image, save_directory="segmented", verbose=True, blocks_only=True, display=False):
+def segmentation_driver(path_to_image, save_cropped_images=True, save_directory="segmented", verbose=True, blocks_only=True, display=False):
     """
     Main function for image segmentation. Segments uncropped image into blocks and/or lines of text for manual or automated transcription.
 
@@ -183,14 +183,16 @@ def segmentation_driver(path_to_image, save_directory="segmented", verbose=True,
             segments.append({"id": im_id, "coords": [entry_coords[entry_id][0], entry_coords[entry_id][1], entry_coords[entry_id][2], entry_coords[entry_id][3]]})            
                         
             orig_block = orig_img.crop(entry_coords[entry_id])
+            
             if display:
-                orig_block.show()            
-            deg, orig_block = rotate_block(orig_block, degree=deg)
-            orig_block = Image.fromarray(orig_block)                        
-            orig_block.save(f"{save_directory}/{im_id}-color.jpg")                      
-                       
-            block = Image.fromarray(block)            
-            block.save(f"{save_directory}/{im_id}-pooled.jpg")
+                orig_block.show()
+            
+            if save_cropped_images:            
+                deg, orig_block = rotate_block(orig_block, degree=deg)
+                orig_block = Image.fromarray(orig_block)                                   
+                orig_block.save(f"{save_directory}/{im_id}-color.jpg")                      
+                block = Image.fromarray(block)                        
+                block.save(f"{save_directory}/{im_id}-pooled.jpg")
             
             continue
 
