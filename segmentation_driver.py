@@ -161,13 +161,13 @@ def segmentation_driver(path_to_image, save_cropped_images=True, save_directory=
             final_blocks.append(block.crop((0, top, block.width, block.height)))
             final_coords.append((entry_coords[i][0], entry_coords[i][1] + top, entry_coords[i][2], entry_coords[i][3])) """       
 
-    segments = []
+    im_record = {}
 
     if verbose:
         print("Layout analyzed.")
         if entry_blocks == None:
             print("No entries found.")
-            return segments
+            return im_record
 
     if blocks_only:
         orig_img = Image.open(path_to_image)
@@ -177,10 +177,13 @@ def segmentation_driver(path_to_image, save_cropped_images=True, save_directory=
     path_to_image = path_to_image[path_to_image.rfind("/") + 1:]     
 
     for entry_id, block in enumerate(entry_blocks):                        
-        deg, block = rotate_block(block)                
-        if blocks_only:            
-            im_id = f"{path_to_image[:path_to_image.find('.')]}-{'0' * (2 - len(str(entry_id + 1)))}{entry_id + 1}"
-            segments.append({"id": im_id, "coords": [entry_coords[entry_id][0], entry_coords[entry_id][1], entry_coords[entry_id][2], entry_coords[entry_id][3]]})            
+        deg, block = rotate_block(block)         
+        if not "image_id" in im_record:
+            im_id = path_to_image[:path_to_image.find('.')]
+            im_record["image_id"] = im_id
+            im_record["text"] = []                            
+        if blocks_only:           
+            im_record["text"].append({"segment_id": f"{'0' * (2 - len(str(entry_id + 1)))}{entry_id + 1}", "coords": [int(entry_coords[entry_id][0]), int(entry_coords[entry_id][1]), int(entry_coords[entry_id][2]), int(entry_coords[entry_id][3])]})            
                         
             orig_block = orig_img.crop(entry_coords[entry_id])
             
@@ -195,11 +198,12 @@ def segmentation_driver(path_to_image, save_cropped_images=True, save_directory=
                 block.save(f"{save_directory}/{im_id}-pooled.jpg")
             
             continue
-
-        crop_pixels = find_pixels(block, 5000)        
+        
+        # TODO update for line-based segmentation
+        """crop_pixels = find_pixels(block, 5000)        
         entry_segments = segment_lines(block, crop_pixels, path_to_image, entry_id + 1, save_dir=save_directory) #cropping image and output        
         for segment in entry_segments:
-            segments.append(segment)        
+            segments.append(segment)"""        
 
     """count = 0
     for file in os.scandir(f'./segmented/{path_to_image}'):
@@ -212,19 +216,16 @@ def segmentation_driver(path_to_image, save_cropped_images=True, save_directory=
     os.rmdir(f'./segmented/{path_to_image}')
     print("Done segmentation and upload")"""
 
-    if verbose and (not blocks_only):
+    """if verbose and (not blocks_only):
         print(f"{len(segments)} segmented lines saved to {save_directory}.")
     elif verbose:
-        print(f"{len(segments)} blocks of text saved to {save_directory}.")
-
-    # TODO figure out where int64s are coming from
-    if not blocks_only:
-        for x, segment in enumerate(segments):
-            for y in range(len(segment["coords"])):
-                segments[x]["coords"][y] = int(segments[x]["coords"][y])            
+        print(f"{len(segments)} blocks of text saved to {save_directory}.")"""
     
-    return segments
+    if verbose and blocks_only and save_cropped_images:
+        print(f"{len(im_record['text'])} blocks of text saved to {save_directory}.")        
+    
+    return im_record
 
-'''import json
+"""import json
 with open("segmentation_test.json", "w") as f:
-    json.dump(segmentation_driver("images/239746-0013.jpg", display=True), f)'''
+    json.dump(segmentation_driver("images/239746-0013.jpg", display=True), f)"""
