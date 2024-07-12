@@ -77,7 +77,8 @@ def find_rotate_angle(data, compress_height, compress_width):
     maxAngle : int
         the angle of rotation needed to correct the image
     """
-    img = Image.fromarray(data)
+
+    img = Image.fromarray(data.astype(np.uint8))
     maxStd = 0
     maxAngle = 0
     for i in range(-10, 10):
@@ -154,6 +155,10 @@ def layout_analyze(data, save_path = None, display = False):
     # data is still grayscale but has been pseudo-binarized (each pixel is either 0 or 255)
     # TODO should we actually binarize here?    
         
+
+    data = data.astype(np.uint8)
+    print(type(data))
+
     img = Image.fromarray(data)   
     angle = find_rotate_angle(data, 20, 20)    
     img = img.rotate(angle, fillcolor=255)    

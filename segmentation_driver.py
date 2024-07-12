@@ -223,6 +223,6 @@ def segmentation_driver(path_to_image, save_directory="segmented", verbose=True,
     
     return segments
 
-import json
-with open("segmentation_test.json", "w") as f:
-    json.dump(segmentation_driver("images/239746-0088.jpg", display=True), f)
+# import json
+# with open("segmentation_test.json", "w") as f:
+#     json.dump(segmentation_driver("images/239746-0088.jpg", display=True), f)

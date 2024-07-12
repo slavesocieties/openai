@@ -6,11 +6,21 @@
                 "f-score": 0,
                 "precision": 0.0,
                 "recall": 0.0
+            },
+            "cropped_performance": {
+                "f-score": 0.6666666666666666,
+                "precision": 1.0,
+                "recall": 0.5
             }
         },
         {
             "filename": "239746-0111.jpg",
             "uncropped_performance": {
+                "f-score": 0.5714285714285714,
+                "precision": 0.6666666666666666,
+                "recall": 0.5
+            },
+            "cropped_performance": {
                 "f-score": 0,
                 "precision": 0.0,
                 "recall": 0.0
@@ -22,11 +32,21 @@
                 "f-score": 0,
                 "precision": 0.0,
                 "recall": 0.0
+            },
+            "cropped_performance": {
+                "f-score": 0,
+                "precision": 0,
+                "recall": 0.0
             }
         },
         {
             "filename": "239746-0104.jpg",
             "uncropped_performance": {
+                "f-score": 0,
+                "precision": 0,
+                "recall": 0.0
+            },
+            "cropped_performance": {
                 "f-score": 0,
                 "precision": 0,
                 "recall": 0.0
@@ -38,6 +58,11 @@
                 "f-score": 0,
                 "precision": 0.0,
                 "recall": 0.0
+            },
+            "cropped_performance": {
+                "f-score": 0.5714285714285714,
+                "precision": 1.0,
+                "recall": 0.4
             }
         },
         {
@@ -46,38 +71,63 @@
                 "f-score": 0,
                 "precision": 0,
                 "recall": 0.0
+            },
+            "cropped_performance": {
+                "f-score": 0,
+                "precision": 0,
+                "recall": 0.0
             }
         },
         {
             "filename": "239746-0107.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.6666666666666666,
+                "precision": 1.0,
+                "recall": 0.5
+            },
+            "cropped_performance": {
+                "f-score": 0.6666666666666666,
+                "precision": 1.0,
+                "recall": 0.5
             }
         },
         {
             "filename": "239746-0113.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.3333333333333333,
+                "precision": 0.5,
+                "recall": 0.25
+            },
+            "cropped_performance": {
+                "f-score": 0.5714285714285714,
+                "precision": 0.6666666666666666,
+                "recall": 0.5
             }
         },
         {
             "filename": "239746-0117.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.5,
+                "precision": 0.5,
+                "recall": 0.5
+            },
+            "cropped_performance": {
+                "f-score": 0.4444444444444444,
+                "precision": 0.4,
+                "recall": 0.5
             }
         },
         {
             "filename": "239746-0103.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.25,
+                "precision": 0.5,
+                "recall": 0.16666666666666666
+            },
+            "cropped_performance": {
+                "f-score": 0.6,
+                "precision": 0.75,
+                "recall": 0.5
             }
         },
         {
@@ -85,6 +135,11 @@
             "uncropped_performance": {
                 "f-score": 0,
                 "precision": 0.0,
+                "recall": 0.0
+            },
+            "cropped_performance": {
+                "f-score": 0,
+                "precision": 0,
                 "recall": 0.0
             }
         },
@@ -94,6 +149,11 @@
                 "f-score": 0,
                 "precision": 0,
                 "recall": 0.0
+            },
+            "cropped_performance": {
+                "f-score": 0.5714285714285714,
+                "precision": 0.6666666666666666,
+                "recall": 0.5
             }
         },
         {
@@ -102,14 +162,24 @@
                 "f-score": 0,
                 "precision": 0.0,
                 "recall": 0.0
+            },
+            "cropped_performance": {
+                "f-score": 0,
+                "precision": 0.0,
+                "recall": 0.0
             }
         },
         {
             "filename": "239746-0100.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.5714285714285714,
+                "precision": 0.6666666666666666,
+                "recall": 0.5
+            },
+            "cropped_performance": {
+                "f-score": 0.2222222222222222,
+                "precision": 0.2,
+                "recall": 0.25
             }
         },
         {
@@ -118,46 +188,76 @@
                 "f-score": 0,
                 "precision": 0,
                 "recall": 0.0
+            },
+            "cropped_performance": {
+                "f-score": 0.5714285714285714,
+                "precision": 0.6666666666666666,
+                "recall": 0.5
             }
         },
         {
             "filename": "239746-0048.jpg",
             "uncropped_performance": {
+                "f-score": 0.2857142857142857,
+                "precision": 1.0,
+                "recall": 0.16666666666666666
+            },
+            "cropped_performance": {
                 "f-score": 0,
-                "precision": 0.0,
+                "precision": 0,
                 "recall": 0.0
             }
         },
         {
             "filename": "239746-0049.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.5,
+                "precision": 1.0,
+                "recall": 0.3333333333333333
+            },
+            "cropped_performance": {
+                "f-score": 0.8,
+                "precision": 1.0,
+                "recall": 0.6666666666666666
             }
         },
         {
             "filename": "239746-0115.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.5,
+                "precision": 0.5,
+                "recall": 0.5
+            },
+            "cropped_performance": {
+                "f-score": 0.5714285714285714,
+                "precision": 0.6666666666666666,
+                "recall": 0.5
             }
         },
         {
             "filename": "239746-0101.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.4444444444444444,
+                "precision": 0.4,
+                "recall": 0.5
+            },
+            "cropped_performance": {
+                "f-score": 0.5714285714285714,
+                "precision": 0.6666666666666666,
+                "recall": 0.5
             }
         },
         {
             "filename": "239746-0129.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.5714285714285714,
+                "precision": 0.6666666666666666,
+                "recall": 0.5
+            },
+            "cropped_performance": {
+                "f-score": 0.6666666666666666,
+                "precision": 1.0,
+                "recall": 0.5
             }
         },
         {
@@ -166,22 +266,37 @@
                 "f-score": 0,
                 "precision": 0.0,
                 "recall": 0.0
+            },
+            "cropped_performance": {
+                "f-score": 0.25,
+                "precision": 0.25,
+                "recall": 0.25
             }
         },
         {
             "filename": "239746-0204.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.3333333333333333,
+                "precision": 0.5,
+                "recall": 0.25
+            },
+            "cropped_performance": {
+                "f-score": 0.4,
+                "precision": 1.0,
+                "recall": 0.25
             }
         },
         {
             "filename": "239746-0013.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.5714285714285714,
+                "precision": 0.6666666666666666,
+                "recall": 0.5
+            },
+            "cropped_performance": {
+                "f-score": 0.3333333333333333,
+                "precision": 0.5,
+                "recall": 0.25
             }
         },
         {
@@ -190,59 +305,99 @@
                 "f-score": 0,
                 "precision": 0.0,
                 "recall": 0.0
+            },
+            "cropped_performance": {
+                "f-score": 0,
+                "precision": 0,
+                "recall": 0.0
             }
         },
         {
             "filename": "239746-0211.jpg",
             "uncropped_performance": {
-                "f-score": 0.2857142857142857,
-                "precision": 0.3333333333333333,
-                "recall": 0.25
+                "f-score": 0.5714285714285714,
+                "precision": 0.6666666666666666,
+                "recall": 0.5
+            },
+            "cropped_performance": {
+                "f-score": 0,
+                "precision": 0,
+                "recall": 0.0
             }
         },
         {
             "filename": "239746-0207.jpg",
             "uncropped_performance": {
+                "f-score": 0.2222222222222222,
+                "precision": 0.2,
+                "recall": 0.25
+            },
+            "cropped_performance": {
                 "f-score": 0,
-                "precision": 0.0,
+                "precision": 0,
                 "recall": 0.0
             }
         },
         {
             "filename": "239746-0213.jpg",
             "uncropped_performance": {
+                "f-score": 0.5714285714285714,
+                "precision": 0.6666666666666666,
+                "recall": 0.5
+            },
+            "cropped_performance": {
                 "f-score": 0,
-                "precision": 0.0,
+                "precision": 0,
                 "recall": 0.0
             }
         },
         {
             "filename": "239746-0039.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.5,
+                "precision": 1.0,
+                "recall": 0.3333333333333333
+            },
+            "cropped_performance": {
+                "f-score": 0.5,
+                "precision": 1.0,
+                "recall": 0.3333333333333333
             }
         },
         {
             "filename": "239746-0038.jpg",
             "uncropped_performance": {
+                "f-score": 0.2857142857142857,
+                "precision": 1.0,
+                "recall": 0.16666666666666666
+            },
+            "cropped_performance": {
                 "f-score": 0,
-                "precision": 0.0,
+                "precision": 0,
                 "recall": 0.0
             }
         },
         {
             "filename": "239746-0212.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.2857142857142857,
+                "precision": 0.3333333333333333,
+                "recall": 0.25
+            },
+            "cropped_performance": {
+                "f-score": 0.5,
+                "precision": 0.5,
+                "recall": 0.5
             }
         },
         {
             "filename": "239746-0206.jpg",
             "uncropped_performance": {
+                "f-score": 0,
+                "precision": 0.0,
+                "recall": 0.0
+            },
+            "cropped_performance": {
                 "f-score": 0,
                 "precision": 0.0,
                 "recall": 0.0
@@ -254,21 +409,36 @@
                 "f-score": 0,
                 "precision": 0.0,
                 "recall": 0.0
-            }
-        },
-        {
-            "filename": "239746-0216.jpg",
-            "uncropped_performance": {
+            },
+            "cropped_performance": {
                 "f-score": 0,
                 "precision": 0.0,
                 "recall": 0.0
             }
         },
         {
+            "filename": "239746-0216.jpg",
+            "uncropped_performance": {
+                "f-score": 0.2222222222222222,
+                "precision": 0.25,
+                "recall": 0.2
+            },
+            "cropped_performance": {
+                "f-score": 0.5714285714285714,
+                "precision": 1.0,
+                "recall": 0.4
+            }
+        },
+        {
             "filename": "239746-0028.jpg",
             "uncropped_performance": {
+                "f-score": 0.2857142857142857,
+                "precision": 1.0,
+                "recall": 0.16666666666666666
+            },
+            "cropped_performance": {
                 "f-score": 0,
-                "precision": 0.0,
+                "precision": 0,
                 "recall": 0.0
             }
         },
@@ -278,19 +448,34 @@
                 "f-score": 0,
                 "precision": 0.0,
                 "recall": 0.0
+            },
+            "cropped_performance": {
+                "f-score": 0,
+                "precision": 0,
+                "recall": 0.0
             }
         },
         {
             "filename": "239746-0029.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.5714285714285714,
+                "precision": 1.0,
+                "recall": 0.4
+            },
+            "cropped_performance": {
+                "f-score": 0.75,
+                "precision": 1.0,
+                "recall": 0.6
             }
         },
         {
             "filename": "239746-0217.jpg",
             "uncropped_performance": {
+                "f-score": 0,
+                "precision": 0,
+                "recall": 0.0
+            },
+            "cropped_performance": {
                 "f-score": 0,
                 "precision": 0,
                 "recall": 0.0
@@ -302,6 +487,11 @@
                 "f-score": 0,
                 "precision": 0.0,
                 "recall": 0.0
+            },
+            "cropped_performance": {
+                "f-score": 0,
+                "precision": 0,
+                "recall": 0.0
             }
         },
         {
@@ -310,11 +500,21 @@
                 "f-score": 0,
                 "precision": 0.0,
                 "recall": 0.0
+            },
+            "cropped_performance": {
+                "f-score": 0,
+                "precision": 0,
+                "recall": 0.0
             }
         },
         {
             "filename": "239746-0201.jpg",
             "uncropped_performance": {
+                "f-score": 0,
+                "precision": 0.0,
+                "recall": 0.0
+            },
+            "cropped_performance": {
                 "f-score": 0,
                 "precision": 0.0,
                 "recall": 0.0
@@ -326,19 +526,34 @@
                 "f-score": 0,
                 "precision": 0.0,
                 "recall": 0.0
+            },
+            "cropped_performance": {
+                "f-score": 0.25,
+                "precision": 0.25,
+                "recall": 0.25
             }
         },
         {
             "filename": "239746-0214.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.75,
+                "precision": 1.0,
+                "recall": 0.6
+            },
+            "cropped_performance": {
+                "f-score": 0.6666666666666666,
+                "precision": 0.75,
+                "recall": 0.6
             }
         },
         {
             "filename": "239746-0219.jpg",
             "uncropped_performance": {
+                "f-score": 0.5714285714285714,
+                "precision": 0.6666666666666666,
+                "recall": 0.5
+            },
+            "cropped_performance": {
                 "f-score": 0,
                 "precision": 0.0,
                 "recall": 0.0
@@ -350,45 +565,75 @@
                 "f-score": 0,
                 "precision": 0.0,
                 "recall": 0.0
+            },
+            "cropped_performance": {
+                "f-score": 0.75,
+                "precision": 1.0,
+                "recall": 0.6
             }
         },
         {
             "filename": "239746-0027.jpg",
             "uncropped_performance": {
-                "f-score": 0.2857142857142857,
-                "precision": 0.5,
-                "recall": 0.2
+                "f-score": 0.5714285714285714,
+                "precision": 1.0,
+                "recall": 0.4
+            },
+            "cropped_performance": {
+                "f-score": 0,
+                "precision": 0,
+                "recall": 0.0
             }
         },
         {
             "filename": "239746-0026.jpg",
             "uncropped_performance": {
+                "f-score": 0.3333333333333333,
+                "precision": 1.0,
+                "recall": 0.2
+            },
+            "cropped_performance": {
                 "f-score": 0,
-                "precision": 0.0,
+                "precision": 0,
                 "recall": 0.0
             }
         },
         {
             "filename": "239746-0032.jpg",
             "uncropped_performance": {
+                "f-score": 0.5,
+                "precision": 1.0,
+                "recall": 0.3333333333333333
+            },
+            "cropped_performance": {
                 "f-score": 0,
-                "precision": 0.0,
+                "precision": 0,
                 "recall": 0.0
             }
         },
         {
             "filename": "239746-0218.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.6666666666666666,
+                "precision": 1.0,
+                "recall": 0.5
+            },
+            "cropped_performance": {
+                "f-score": 0.2857142857142857,
+                "precision": 0.3333333333333333,
+                "recall": 0.25
             }
         },
         {
             "filename": "239746-0024.jpg",
             "uncropped_performance": {
+                "f-score": 0.4,
+                "precision": 1.0,
+                "recall": 0.25
+            },
+            "cropped_performance": {
                 "f-score": 0,
-                "precision": 0.0,
+                "precision": 0,
                 "recall": 0.0
             }
         },
@@ -398,6 +643,11 @@
                 "f-score": 0,
                 "precision": 0.0,
                 "recall": 0.0
+            },
+            "cropped_performance": {
+                "f-score": 0,
+                "precision": 0,
+                "recall": 0.0
             }
         },
         {
@@ -406,46 +656,76 @@
                 "f-score": 0,
                 "precision": 0.0,
                 "recall": 0.0
+            },
+            "cropped_performance": {
+                "f-score": 0,
+                "precision": 0,
+                "recall": 0.0
             }
         },
         {
             "filename": "239746-0019.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.5714285714285714,
+                "precision": 1.0,
+                "recall": 0.4
+            },
+            "cropped_performance": {
+                "f-score": 0.75,
+                "precision": 1.0,
+                "recall": 0.6
             }
         },
         {
             "filename": "239746-0031.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.2857142857142857,
+                "precision": 0.5,
+                "recall": 0.2
+            },
+            "cropped_performance": {
+                "f-score": 0.75,
+                "precision": 1.0,
+                "recall": 0.6
             }
         },
         {
             "filename": "239746-0025.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.5714285714285714,
+                "precision": 1.0,
+                "recall": 0.4
+            },
+            "cropped_performance": {
+                "f-score": 0.75,
+                "precision": 1.0,
+                "recall": 0.6
             }
         },
         {
             "filename": "239746-0021.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.5714285714285714,
+                "precision": 1.0,
+                "recall": 0.4
+            },
+            "cropped_performance": {
+                "f-score": 0.75,
+                "precision": 1.0,
+                "recall": 0.6
             }
         },
         {
             "filename": "239746-0035.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.2857142857142857,
+                "precision": 0.5,
+                "recall": 0.2
+            },
+            "cropped_performance": {
+                "f-score": 0.75,
+                "precision": 1.0,
+                "recall": 0.6
             }
         },
         {
@@ -454,11 +734,21 @@
                 "f-score": 0,
                 "precision": 0.0,
                 "recall": 0.0
+            },
+            "cropped_performance": {
+                "f-score": 0,
+                "precision": 0,
+                "recall": 0.0
             }
         },
         {
             "filename": "239746-0020.jpg",
             "uncropped_performance": {
+                "f-score": 0,
+                "precision": 0,
+                "recall": 0.0
+            },
+            "cropped_performance": {
                 "f-score": 0,
                 "precision": 0,
                 "recall": 0.0
@@ -470,6 +760,11 @@
                 "f-score": 0,
                 "precision": 0.0,
                 "recall": 0.0
+            },
+            "cropped_performance": {
+                "f-score": 0,
+                "precision": 0.0,
+                "recall": 0.0
             }
         },
         {
@@ -478,43 +773,73 @@
                 "f-score": 0,
                 "precision": 0.0,
                 "recall": 0.0
+            },
+            "cropped_performance": {
+                "f-score": 0,
+                "precision": 0.0,
+                "recall": 0.0
             }
         },
         {
             "filename": "239746-0036.jpg",
             "uncropped_performance": {
+                "f-score": 0.5,
+                "precision": 1.0,
+                "recall": 0.3333333333333333
+            },
+            "cropped_performance": {
                 "f-score": 0,
-                "precision": 0.0,
+                "precision": 0,
                 "recall": 0.0
             }
         },
         {
             "filename": "239746-0022.jpg",
             "uncropped_performance": {
+                "f-score": 0.5714285714285714,
+                "precision": 1.0,
+                "recall": 0.4
+            },
+            "cropped_performance": {
                 "f-score": 0,
-                "precision": 0.0,
+                "precision": 0,
                 "recall": 0.0
             }
         },
         {
             "filename": "239746-0023.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.3333333333333333,
+                "precision": 0.5,
+                "recall": 0.25
+            },
+            "cropped_performance": {
+                "f-score": 0.4,
+                "precision": 1.0,
+                "recall": 0.25
             }
         },
         {
             "filename": "239746-0037.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.5714285714285714,
+                "precision": 1.0,
+                "recall": 0.4
+            },
+            "cropped_performance": {
+                "f-score": 0.75,
+                "precision": 1.0,
+                "recall": 0.6
             }
         },
         {
             "filename": "239746-0221.jpg",
             "uncropped_performance": {
+                "f-score": 0,
+                "precision": 0.0,
+                "recall": 0.0
+            },
+            "cropped_performance": {
                 "f-score": 0,
                 "precision": 0.0,
                 "recall": 0.0
@@ -526,21 +851,36 @@
                 "f-score": 0,
                 "precision": 0,
                 "recall": 0.0
+            },
+            "cropped_performance": {
+                "f-score": 0,
+                "precision": 0,
+                "recall": 0.0
             }
         },
         {
             "filename": "239746-0124.jpg",
             "uncropped_performance": {
+                "f-score": 0.75,
+                "precision": 1.0,
+                "recall": 0.6
+            },
+            "cropped_performance": {
                 "f-score": 0,
-                "precision": 0.0,
+                "precision": 0,
                 "recall": 0.0
             }
         },
         {
             "filename": "239746-0130.jpg",
             "uncropped_performance": {
+                "f-score": 0.6666666666666666,
+                "precision": 1.0,
+                "recall": 0.5
+            },
+            "cropped_performance": {
                 "f-score": 0,
-                "precision": 0.0,
+                "precision": 0,
                 "recall": 0.0
             }
         },
@@ -550,14 +890,24 @@
                 "f-score": 0,
                 "precision": 0.0,
                 "recall": 0.0
+            },
+            "cropped_performance": {
+                "f-score": 0,
+                "precision": 0,
+                "recall": 0.0
             }
         },
         {
             "filename": "239746-0050.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.3333333333333333,
+                "precision": 0.5,
+                "recall": 0.25
+            },
+            "cropped_performance": {
+                "f-score": 0.4,
+                "precision": 1.0,
+                "recall": 0.25
             }
         },
         {
@@ -566,77 +916,127 @@
                 "f-score": 0,
                 "precision": 0.0,
                 "recall": 0.0
+            },
+            "cropped_performance": {
+                "f-score": 0,
+                "precision": 0,
+                "recall": 0.0
             }
         },
         {
             "filename": "239746-0045.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.5714285714285714,
+                "precision": 1.0,
+                "recall": 0.4
+            },
+            "cropped_performance": {
+                "f-score": 0.75,
+                "precision": 1.0,
+                "recall": 0.6
             }
         },
         {
             "filename": "239746-0051.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.5714285714285714,
+                "precision": 1.0,
+                "recall": 0.4
+            },
+            "cropped_performance": {
+                "f-score": 0.75,
+                "precision": 1.0,
+                "recall": 0.6
             }
         },
         {
             "filename": "239746-0119.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.6666666666666666,
+                "precision": 1.0,
+                "recall": 0.5
+            },
+            "cropped_performance": {
+                "f-score": 0.6666666666666666,
+                "precision": 1.0,
+                "recall": 0.5
             }
         },
         {
             "filename": "239746-0131.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.5714285714285714,
+                "precision": 0.6666666666666666,
+                "recall": 0.5
+            },
+            "cropped_performance": {
+                "f-score": 0.25,
+                "precision": 0.25,
+                "recall": 0.25
             }
         },
         {
             "filename": "239746-0125.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.4444444444444444,
+                "precision": 0.5,
+                "recall": 0.4
+            },
+            "cropped_performance": {
+                "f-score": 0.5714285714285714,
+                "precision": 1.0,
+                "recall": 0.4
             }
         },
         {
             "filename": "239746-0133.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.6666666666666666,
+                "precision": 1.0,
+                "recall": 0.5
+            },
+            "cropped_performance": {
+                "f-score": 0.25,
+                "precision": 0.25,
+                "recall": 0.25
             }
         },
         {
             "filename": "239746-0127.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.5714285714285714,
+                "precision": 0.6666666666666666,
+                "recall": 0.5
+            },
+            "cropped_performance": {
+                "f-score": 0.2857142857142857,
+                "precision": 0.3333333333333333,
+                "recall": 0.25
             }
         },
         {
             "filename": "239746-0047.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.6666666666666666,
+                "precision": 1.0,
+                "recall": 0.5
+            },
+            "cropped_performance": {
+                "f-score": 0.6666666666666666,
+                "precision": 1.0,
+                "recall": 0.5
             }
         },
         {
             "filename": "239746-0052.jpg",
             "uncropped_performance": {
+                "f-score": 0.6666666666666666,
+                "precision": 1.0,
+                "recall": 0.5
+            },
+            "cropped_performance": {
                 "f-score": 0,
-                "precision": 0.0,
+                "precision": 0,
                 "recall": 0.0
             }
         },
@@ -646,6 +1046,11 @@
                 "f-score": 0,
                 "precision": 0,
                 "recall": 0.0
+            },
+            "cropped_performance": {
+                "f-score": 0.2857142857142857,
+                "precision": 1.0,
+                "recall": 0.16666666666666666
             }
         },
         {
@@ -654,21 +1059,36 @@
                 "f-score": 0,
                 "precision": 0,
                 "recall": 0.0
-            }
-        },
-        {
-            "filename": "239746-0132.jpg",
-            "uncropped_performance": {
+            },
+            "cropped_performance": {
                 "f-score": 0,
                 "precision": 0.0,
                 "recall": 0.0
             }
         },
         {
+            "filename": "239746-0132.jpg",
+            "uncropped_performance": {
+                "f-score": 0.5714285714285714,
+                "precision": 0.6666666666666666,
+                "recall": 0.5
+            },
+            "cropped_performance": {
+                "f-score": 0,
+                "precision": 0,
+                "recall": 0.0
+            }
+        },
+        {
             "filename": "239746-0122.jpg",
             "uncropped_performance": {
+                "f-score": 0.6666666666666666,
+                "precision": 1.0,
+                "recall": 0.5
+            },
+            "cropped_performance": {
                 "f-score": 0,
-                "precision": 0.0,
+                "precision": 0,
                 "recall": 0.0
             }
         },
@@ -678,22 +1098,37 @@
                 "f-score": 0,
                 "precision": 0.0,
                 "recall": 0.0
+            },
+            "cropped_performance": {
+                "f-score": 0,
+                "precision": 0,
+                "recall": 0.0
             }
         },
         {
             "filename": "239746-0043.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.6666666666666666,
+                "precision": 1.0,
+                "recall": 0.5
+            },
+            "cropped_performance": {
+                "f-score": 0.6666666666666666,
+                "precision": 1.0,
+                "recall": 0.5
             }
         },
         {
             "filename": "239746-0123.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.6,
+                "precision": 1.0,
+                "recall": 0.42857142857142855
+            },
+            "cropped_performance": {
+                "f-score": 0.7272727272727273,
+                "precision": 1.0,
+                "recall": 0.5714285714285714
             }
         },
         {
@@ -702,22 +1137,37 @@
                 "f-score": 0,
                 "precision": 0.0,
                 "recall": 0.0
+            },
+            "cropped_performance": {
+                "f-score": 0.4,
+                "precision": 0.6666666666666666,
+                "recall": 0.2857142857142857
             }
         },
         {
             "filename": "239746-0121.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.6666666666666666,
+                "precision": 1.0,
+                "recall": 0.5
+            },
+            "cropped_performance": {
+                "f-score": 0.5714285714285714,
+                "precision": 0.6666666666666666,
+                "recall": 0.5
             }
         },
         {
             "filename": "239746-0135.jpg",
             "uncropped_performance": {
-                "f-score": 0,
-                "precision": 0.0,
-                "recall": 0.0
+                "f-score": 0.5,
+                "precision": 0.5,
+                "recall": 0.5
+            },
+            "cropped_performance": {
+                "f-score": 0.6666666666666666,
+                "precision": 1.0,
+                "recall": 0.5
             }
         },
         {
@@ -726,6 +1176,11 @@
                 "f-score": 0,
                 "precision": 0.0,
                 "recall": 0.0
+            },
+            "cropped_performance": {
+                "f-score": 0.75,
+                "precision": 1.0,
+                "recall": 0.6
             }
         },
         {
@@ -734,27 +1189,47 @@
                 "f-score": 0,
                 "precision": 0,
                 "recall": 0.0
+            },
+            "cropped_performance": {
+                "f-score": 0,
+                "precision": 0,
+                "recall": 0.0
             }
         },
         {
             "filename": "239746-0134.jpg",
             "uncropped_performance": {
+                "f-score": 0.5,
+                "precision": 0.5,
+                "recall": 0.5
+            },
+            "cropped_performance": {
                 "f-score": 0,
-                "precision": 0.0,
+                "precision": 0,
                 "recall": 0.0
             }
         },
         {
             "filename": "239746-0120.jpg",
             "uncropped_performance": {
+                "f-score": 0.5,
+                "precision": 0.5,
+                "recall": 0.5
+            },
+            "cropped_performance": {
                 "f-score": 0,
-                "precision": 0.0,
+                "precision": 0,
                 "recall": 0.0
             }
         },
         {
             "filename": "239746-0108.jpg",
             "uncropped_performance": {
+                "f-score": 0,
+                "precision": 0,
+                "recall": 0.0
+            },
+            "cropped_performance": {
                 "f-score": 0,
                 "precision": 0,
                 "recall": 0.0
