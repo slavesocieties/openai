@@ -22,6 +22,7 @@ def downscale_image(path_to_image):
         im.save(path_to_image)
         im.close()
 
+# TODO add logic to handle case with only junk crops
 def filter_blocks(blocks, coordinates):
     """Function to filter out noise blocks
 
@@ -166,8 +167,7 @@ def segmentation_driver(path_to_image, save_cropped_images=True, save_directory=
     if verbose:
         print("Layout analyzed.")
         if entry_blocks == None:
-            print("No entries found.")
-            return im_record
+            print("No entries found.")            
 
     if blocks_only:
         orig_img = Image.open(path_to_image)
@@ -226,6 +226,6 @@ def segmentation_driver(path_to_image, save_cropped_images=True, save_directory=
     
     return im_record
 
-"""import json
+import json
 with open("segmentation_test.json", "w") as f:
-    json.dump(segmentation_driver("images/239746-0013.jpg", display=True), f)"""
+    json.dump(segmentation_driver("images/239746-0111.jpg", display=True), f)
