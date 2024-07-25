@@ -22,7 +22,6 @@ def downscale_image(path_to_image):
         im.save(path_to_image)
         im.close()
 
-# TODO add logic to handle case with only junk crops
 def filter_blocks(blocks, coordinates):
     """Function to filter out noise blocks
 
@@ -47,6 +46,11 @@ def filter_blocks(blocks, coordinates):
     # Step 2: Filter out images with width at least 50 pixels larger or smaller than max_width
     entry_blocks = []
     entry_coords = []
+
+    # basic logic to handle image with noise blocks only
+    if max_width < .25 * img.width:
+        return entry_blocks, entry_coords
+
     for i, img in enumerate(blocks):
         if max_width - 50 <= img.width <= max_width + 50:
             entry_blocks.append(img)
@@ -228,4 +232,4 @@ def segmentation_driver(path_to_image, save_cropped_images=True, save_directory=
 
 import json
 with open("segmentation_test.json", "w") as f:
-    json.dump(segmentation_driver("images/239746-0111.jpg", display=True), f)
+    json.dump(segmentation_driver("E:/ssda-htr-data/239746/239746-0111.jpg", display=True), f)
