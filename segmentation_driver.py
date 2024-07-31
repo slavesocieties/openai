@@ -1,3 +1,4 @@
+
 import os
 from PIL import Image
 import numpy as np
@@ -46,11 +47,6 @@ def filter_blocks(blocks, coordinates):
     # Step 2: Filter out images with width at least 50 pixels larger or smaller than max_width
     entry_blocks = []
     entry_coords = []
-
-    # basic logic to handle image with noise blocks only
-    if max_width < .25 * img.width:
-        return entry_blocks, entry_coords
-
     for i, img in enumerate(blocks):
         if max_width - 50 <= img.width <= max_width + 50:
             entry_blocks.append(img)
@@ -112,7 +108,7 @@ def detect_internal_signature(image_array, num_consecutive_rows=100):
         
     return consecutive_sequences
 
-def segmentation_driver(path_to_image, save_cropped_images=True, save_directory="segmented", verbose=True, blocks_only=True, display=False):
+def segmentation_driver(path_to_image, save_cropped_images=True, save_directory="segmented", verbose=True, blocks_only=True, display=False, orig_coords=False):
     """
     Main function for image segmentation. Segments uncropped image into blocks and/or lines of text for manual or automated transcription.
 
@@ -171,26 +167,38 @@ def segmentation_driver(path_to_image, save_cropped_images=True, save_directory=
     if verbose:
         print("Layout analyzed.")
         if entry_blocks == None:
-            print("No entries found.")            
+            print("No entries found.")
+            return im_record
 
     if blocks_only:
         orig_img = Image.open(path_to_image)
         orig_img = orig_img.resize((960, 1280))
         orig_img = orig_img.rotate(angle, fillcolor=0)
 
-    path_to_image = path_to_image[path_to_image.rfind("/") + 1:]     
+    # Used to calculate the width and height ratios used to downscale the image to 960x1280. 
+    # This is used when we want to evaluate the performance of the segmentation
+    width, height = Image.open(path_to_image).size
+    width_ratio = width / 960
+    height_ratio = height / 1280
+
+    path_to_image = path_to_image[path_to_image.rfind("/") + 1:]   
+     
 
     for entry_id, block in enumerate(entry_blocks):                        
-        deg, block = rotate_block(block)         
+        deg, block = rotate_block(block)
         if not "image_id" in im_record:
             im_id = path_to_image[:path_to_image.find('.')]
             im_record["image_id"] = im_id
-            im_record["text"] = []                            
+            im_record["text"] = []
+            im_record["original texts"] = []                            
         if blocks_only:           
             im_record["text"].append({"segment_id": f"{'0' * (2 - len(str(entry_id + 1)))}{entry_id + 1}", "coords": [int(entry_coords[entry_id][0]), int(entry_coords[entry_id][1]), int(entry_coords[entry_id][2]), int(entry_coords[entry_id][3])]})            
                         
             orig_block = orig_img.crop(entry_coords[entry_id])
             
+            if orig_coords:
+                im_record["original texts"].append({"segment_id": f"{'0' * (2 - len(str(entry_id + 1)))}{entry_id + 1}", "coords": [int(entry_coords[entry_id][0] * height_ratio), int(entry_coords[entry_id][1] * width_ratio), int(entry_coords[entry_id][2] * height_ratio), int(entry_coords[entry_id][3] * width_ratio)]})
+
             if display:
                 orig_block.show()
             
@@ -232,4 +240,4 @@ def segmentation_driver(path_to_image, save_cropped_images=True, save_directory=
 
 import json
 with open("segmentation_test.json", "w") as f:
-    json.dump(segmentation_driver("E:/ssda-htr-data/239746/239746-0111.jpg", display=True), f)
+    json.dump(segmentation_driver("/Users/kevinchen/Desktop/SSDA/full size/239746-0021.jpg", display=True), f)
