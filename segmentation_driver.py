@@ -186,18 +186,20 @@ def segmentation_driver(path_to_image, save_cropped_images=True, save_directory=
 
     for entry_id, block in enumerate(entry_blocks):                        
         deg, block = rotate_block(block)
+        segment_id = f"{'0' * (2 - len(str(entry_id + 1)))}{entry_id + 1}"
         if not "image_id" in im_record:
             im_id = path_to_image[:path_to_image.find('.')]
             im_record["image_id"] = im_id
             im_record["text"] = []
-            im_record["original texts"] = []                            
+            if orig_coords:
+                im_record["original texts"] = []                            
         if blocks_only:           
-            im_record["text"].append({"segment_id": f"{'0' * (2 - len(str(entry_id + 1)))}{entry_id + 1}", "coords": [int(entry_coords[entry_id][0]), int(entry_coords[entry_id][1]), int(entry_coords[entry_id][2]), int(entry_coords[entry_id][3])]})            
+            im_record["text"].append({"segment_id": segment_id, "coords": [int(entry_coords[entry_id][0]), int(entry_coords[entry_id][1]), int(entry_coords[entry_id][2]), int(entry_coords[entry_id][3])]})            
                         
             orig_block = orig_img.crop(entry_coords[entry_id])
             
             if orig_coords:
-                im_record["original texts"].append({"segment_id": f"{'0' * (2 - len(str(entry_id + 1)))}{entry_id + 1}", "coords": [int(entry_coords[entry_id][0] * height_ratio), int(entry_coords[entry_id][1] * width_ratio), int(entry_coords[entry_id][2] * height_ratio), int(entry_coords[entry_id][3] * width_ratio)]})
+                im_record["original texts"].append({"segment_id": segment_id, "coords": [int(entry_coords[entry_id][0] * height_ratio), int(entry_coords[entry_id][1] * width_ratio), int(entry_coords[entry_id][2] * height_ratio), int(entry_coords[entry_id][3] * width_ratio)]})
 
             if display:
                 orig_block.show()
@@ -205,11 +207,9 @@ def segmentation_driver(path_to_image, save_cropped_images=True, save_directory=
             if save_cropped_images:            
                 deg, orig_block = rotate_block(orig_block, degree=deg)
                 orig_block = Image.fromarray(orig_block)                                   
-                orig_block.save(f"{save_directory}/{im_id}-color.jpg")                      
+                orig_block.save(f"{save_directory}/{im_id}-{segment_id}-color.jpg")                      
                 block = Image.fromarray(block)                        
-                block.save(f"{save_directory}/{im_id}-pooled.jpg")
-            
-            continue
+                block.save(f"{save_directory}/{im_id}-{segment_id}-pooled.jpg")           
         
         # TODO update for line-based segmentation
         """crop_pixels = find_pixels(block, 5000)        
@@ -236,8 +236,9 @@ def segmentation_driver(path_to_image, save_cropped_images=True, save_directory=
     if verbose and blocks_only and save_cropped_images:
         print(f"{len(im_record['text'])} blocks of text saved to {save_directory}.")        
     
+    #print(im_record)
     return im_record
 
-import json
+"""import json
 with open("segmentation_test.json", "w") as f:
-    json.dump(segmentation_driver("/Users/kevinchen/Desktop/SSDA/full size/239746-0021.jpg", display=True), f)
+    json.dump(segmentation_driver("/Users/kevinchen/Desktop/SSDA/full size/239746-0021.jpg", display=True), f)"""

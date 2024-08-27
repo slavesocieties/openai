@@ -429,9 +429,11 @@ def merge_records(x, y):
             x[key] = y[key]
         elif key in y:
             if type(x[key]) == list:
-                x[key].append(y[key])
+                if y[key] not in x[key]:
+                    x[key].append(y[key])
             else:
-                x[key] = [x[key], y[key]]
+                if x[key] != y[key]:
+                    x[key] = [x[key], y[key]]                
 
     if ("titles" in x) and ("titles" in y):
         for title in y["titles"]:

@@ -28,8 +28,8 @@ def actual_full_demo(image_id, bucket_name="ssda-openai-test", local_file_path="
     segments = segmentation_driver(local_file_path, display=True)
     entries = []
 
-    for segment in segments:
-        segment_id = segment["id"]
+    for segment in segments["text"]:
+        segment_id = f"{image_id}-{segment['segment_id']}"
         s3.upload_file(f"segmented/{segment_id}-color.jpg", bucket_name, f'{segment_id}-color.jpg', ExtraArgs={'ContentType': "image/jpeg"})
         s3.upload_file(f"segmented/{segment_id}-pooled.jpg", bucket_name, f'{segment_id}-pooled.jpg', ExtraArgs={'ContentType': "image/jpeg"})
         output = transcribe_block(segment_id)
@@ -64,8 +64,8 @@ def volume_demo(volume_id, image_bucket="ssda-openai-test", local_image_dir="ima
         local_file_path = f"{local_image_dir}/{image_file_name}"
         s3.download_file(image_bucket, image_file_name, local_file_path)
         segments = segmentation_driver(local_file_path)        
-        for segment in segments:
-            segment_id = segment["id"]
+        for segment in segments["text"]:
+            segment_id = f'{image_file_name[:image_file_name.find(".")]}-{segment["segment_id"]}'
             s3.upload_file(f"segmented/{segment_id}-color.jpg", image_bucket, f'{segment_id}-color.jpg', ExtraArgs={'ContentType': "image/jpeg"})
             s3.upload_file(f"segmented/{segment_id}-pooled.jpg", image_bucket, f'{segment_id}-pooled.jpg', ExtraArgs={'ContentType': "image/jpeg"})
             output = transcribe_block(segment_id)
