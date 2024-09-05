@@ -9,3 +9,4 @@ images/
 output/
 masks/
 *.png
+.DS_Store
