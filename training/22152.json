@@ -25,7 +25,7 @@
                        "id": "P02",
                        "name": "Aleja Pérez", 
                        "origin": "Matanzas",
-                       "phenotype": "morena",
+                       "phenotype": "moreno",
                        "free": true,
                        "relationships": [
                         {
@@ -306,7 +306,7 @@
                         "id":"P03",
                         "name": "Modesta",
                         "ethnicity": "criolla",
-                        "phenotype":"morena",
+                        "phenotype":"moreno",
                         "relationships":[
                             {
                                 "related_person":"P04",
@@ -925,7 +925,125 @@
         },
         {
             "id": "0032-02",
-            "raw": "Lúnes dies y nueve de Mayo de mil ochocientos setenta y tres: yo Presbítero Dn Santiago Serra, Cura Párroco, Vicario foráneo interino de esta Yglesia de Término de San Cárlos de Matánzas, bauticé solemnemente y puse los sántos óleos á una párvula parda, que nació el dia doce de Diciembre último, hija de padre no conocido y de la de igual clase Rita, natural de Alacranes y vecina de esta feligresía, esclava de Dn Felipe Sicre; nieta materna de María de Jesus Olano: y abuelo no espresado: en dicha párvula ejercí las sagradas préces y ceremónias y le puse por nombre Maria Rita Guadalupe: la cual es libre por beneficio de la Ley, sancionada por las Córtes constituyentes de la Nacion, en veinte y tres de Junio de mil ochocientos setenta años, comunicada con fecha cuatro de Julio del propio, al Escelentisimo Señor Gobernador Superior Político de esta Ysla, publicada en la Gaceta Oficial correspondiente al Sábado primero de Octubre del referido año: fueron sus padrinos D. Domingo Veulens y Da Regina del propio apellido, á quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé. Sant. Serra"
+            "raw": "Lúnes dies y nueve de Mayo de mil ochocientos setenta y tres: yo Presbítero Dn Santiago Serra, Cura Párroco, Vicario foráneo interino de esta Yglesia de Término de San Cárlos de Matánzas, bauticé solemnemente y puse los sántos óleos á una párvula parda, que nació el dia doce de Diciembre último, hija de padre no conocido y de la de igual clase Rita, natural de Alacranes y vecina de esta feligresía, esclava de Dn Felipe Sicre; nieta materna de María de Jesus Olano: y abuelo no espresado: en dicha párvula ejercí las sagradas préces y ceremónias y le puse por nombre Maria Rita Guadalupe: la cual es libre por beneficio de la Ley, sancionada por las Córtes constituyentes de la Nacion, en veinte y tres de Junio de mil ochocientos setenta años, comunicada con fecha cuatro de Julio del propio, al Escelentisimo Señor Gobernador Superior Político de esta Ysla, publicada en la Gaceta Oficial correspondiente al Sábado primero de Octubre del referido año: fueron sus padrinos D. Domingo Veulens y Da Regina del propio apellido, á quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé. Sant. Serra",
+            "normalized": "Lunes, diecinueve de mayo de mil ochocientos setenta y tres, yo presbitero Don Santiago Serra, cura párroco vicario foráneo interino de esta iglesia de término de San Carlos de Matanzas, bauticé solemnemente y puse los santos óleos a una párvula parda, que nació el día doce de diciembre último, hija de padre no conocido y de la de igual clase Rita, natural de Alacranes y vecina de esta feligresia, esclava de Don Felipe Sicre; nieta materna de María de Jesús Olano y abuelo no expresado. En dicha párvula ejercí las sagradas preces y ceremonias y le puse por nombre María Rita Guadalupe, la cual es libre por beneficio de la ley, sancionada por las cortes constituyentes de la nación, en veintitrés de junio de mil ochocientos setenta años, comunicada con fecha cuatro de julio del propio año, al escelentísimo señor gobernador superior político de esta isla, publicada en la Gaceta Oficial correspondiente al sábado, primero de octubre del referido año. Fueron sus padrinos Don Domingo Veulens y Doña Regina del propio apellido, a quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé. Santiago Serra",
+            "data":{
+                "people":[
+                    {
+                        "id":"P01",
+                        "name":"Santiago Serra",
+                        "titles":[
+                            "Don"
+                        ],
+                        "occupation":"cleric"
+                    },
+                    {
+                        "id":"P02",
+                        "name": "Rita",
+                        "origin": "Alacranes",
+                        "free":false,
+                        "relationships":[
+                            {
+                                "related_person":"P03",
+                                "relationship_type": "enslaver"
+                            },
+                            {
+                                "related_person":"P04",
+                                "relationship_type":"parent"
+                            },
+                            {
+                                "related_person":"P05",
+                                "relationship_type":"child"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P03",
+                        "name":"Felipe Sicre",
+                        "titles":[
+                            "Don"
+                        ],
+                        "relationships":[
+                            {
+                                "related_person":"P02",
+                                "relationship_type":"slave"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P04",
+                        "name":"María de Jesús Olano",
+                        "relationships":[
+                            {
+                                "related_person":"P02",
+                                "relationship_type":"child"
+                            },
+                            {
+                                "related_person":"P05",
+                                "relationship_type":"grandchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P05",
+                        "name": "María Rita Guadalupe",
+                        "age":"infant",
+                        "phenotype":"pardo",
+                        "free":true,
+                        "relationships":[
+                            {
+                                "related_person":"P02",
+                                "relationship_type":"parent"
+                            },
+                            {
+                                "related_person":"P04",
+                                "relationship_type":"grandparent"
+                            },
+                            {
+                                "related_person":"P06",
+                                "relationship_type":"godparent"
+                            },
+                            {
+                                "related_person":"P07",
+                                "relationship_type":"godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P06",
+                        "name":"Domingo Veulens",
+                        "titles":[
+                            "Don"
+                        ],
+                        "relationships":[
+                            {
+                                "related_person":"P05",
+                                "relationship_type":"godchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P07",
+                        "name":"Regina Veulens",
+                        "titles":[
+                            "Doña"
+                        ],
+                        "relationships":[
+                            {
+                                "related_person":"P05",
+                                "relationship_type":"godchild"
+                            }
+                        ]
+                    }
+                ],
+                "events":[
+                    {
+                        "type":"baptism",
+                        "principal":"P05",
+                        "date": "1873-05-19"
+                    }
+                ]
+            }
         },
         {
             "id": "0032-03",
