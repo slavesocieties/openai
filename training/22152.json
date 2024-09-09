@@ -109,6 +109,7 @@
                     },
                     {
                         "id": "P06",
+                        "name": "José Timoteo Pujadas",
                         "relationships":[
                             {
                                 "related_person":"P05",
@@ -118,6 +119,7 @@
                     },
                     {
                         "id": "P07",
+                        "name": "Leonarda Peñalver",
                         "relationships":[
                             {
                                 "related_person": "P05",
@@ -142,7 +144,16 @@
         },
         {
             "id": "0001-02",
-            "raw": "Lunes trece de Enero de mil ochocientos setenta y tres: yo Presbitero Don Santiago Serra, cura párroco, vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas bauticé solemnemente y puse los santos óleos á un párvulo pardo, que nació el dia diez de Diciembre último, hijo de padre no conocido y de Rufina Domé, natural y vecina de esta feligresía; nieto materno de José y de Maria del Carmen Domé; esclava la madre de Don Eugenio Ysla: en dicho párvulo ejercí las sagradas preces y ceremonias y le puse por nombre José Francisco: el cual es libre por beneficio de la ley, sancionada por las cortes constituyentes de la Nacion, en veinte y tres de Junio de mil ochocientos setenta años, comunicada con fecha cuatro de Julio del propio al Escelentisimo Señor Gobernador Superior Político de esta Ysla, publicada en la Gaceta Oficial, correspondiente al Sábado primero de Octubre del referido año: fueron sus padrinos Don Victoriano Polasco Abat y Doña Carmen Piñeiro y Galiano, á quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo"
+            "raw": "Lunes trece de Enero de mil ochocientos setenta y tres: yo Presbitero Don Santiago Serra, cura párroco, vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas bauticé solemnemente y puse los santos óleos á un párvulo pardo, que nació el dia diez de Diciembre último, hijo de padre no conocido y de Rufina Domé, natural y vecina de esta feligresía; nieto materno de José y de Maria del Carmen Domé; esclava la madre de Don Eugenio Ysla: en dicho párvulo ejercí las sagradas preces y ceremonias y le puse por nombre José Francisco: el cual es libre por beneficio de la ley, sancionada por las cortes constituyentes de la Nacion, en veinte y tres de Junio de mil ochocientos setenta años, comunicada con fecha cuatro de Julio del propio al Escelentisimo Señor Gobernador Superior Político de esta Ysla, publicada en la Gaceta Oficial, correspondiente al Sábado primero de Octubre del referido año: fueron sus padrinos Don Victoriano Polasco Abat y Doña Carmen Piñeiro y Galiano, á quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo",
+            "normalized": "Lunes trece de enero de mil ochocientos setenta y tres, yo Presbitero Don Santiago Serra, cure párroco y vicario ",
+            "data": {
+                "people": [
+
+                ],
+                "events": [
+
+                ]
+            }
         },
         {
             "id": "0001-03",
