@@ -21,7 +21,113 @@
         },
         {
             "id": "0014-02",
-            "raw": "Domingo, día veinte y quatro de Noviembre de Mil Setecientos Noventa y Tres. Yo Don Miguel O'Reilly Teniente de Cura Beneficiado, Vicario, y Juez Eclesiástico Auxiliar de esta Yglesia parroquial, y provincia de San Agustín de la Florida Oriental. Baptisé y puse los santos oleos a una niña libre de color, morena, que nacio el dia veinte y seis de Septiembre del presente año, hija natural de los Negros libres Andres Camel, y Eva Fish, ambos Naturales de Nueva York, y en ella exerci las sacras Ceremonias, y preces de nuestra Santa madre Iglesia, y la puse por nombre Maria Tere sa. fueron sus padrinos Francisco Huiten, y Andrea Ortigas ambos morenos y vecinos de esta Ciu dad, les advertí el parentesco espiritual, y demás obligaciones, y lo firmé en dicho dia, mes y año."
+            "raw": "Domingo, día veinte y quatro de Noviembre de Mil Setecientos Noventa y Tres. Yo Don Miguel O'Reilly Teniente de Cura Beneficiado, Vicario, y Juez Eclesiástico Auxiliar de esta Yglesia parroquial, y provincia de San Agustín de la Florida Oriental. Baptisé y puse los santos oleos a una niña libre de color, morena, que nacio el dia veinte y seis de Septiembre del presente año, hija natural de los Negros libres Andres Camel, y Eva Fish, ambos Naturales de Nueva York, y en ella exerci las sacras Ceremonias, y preces de nuestra Santa madre Iglesia, y la puse por nombre Maria Tere sa. fueron sus padrinos Francisco Huiten, y Andrea Ortigas ambos morenos y vecinos de esta Ciu dad, les advertí el parentesco espiritual, y demás obligaciones, y lo firmé en dicho dia, mes y año.",
+            "normalized": "Domingo, día veinticuatro de noviembre de mil setecientos noventa y tres, yo Don Miguel O'Reilly, teniente de cura beneficiado vicario y juez eclesiástico auxiliar de esta yglesia parroquial y provincia de San Agustín de la Florida Oriental, bauticé y puse los santos óleos a una niña libre de color morena, que nació el día veintseis de septiembre del presente año, hija natural de los negros libres Andrés Camel y Eva Fish, ambos naturales de Nueva York, y en ella ejercí las sacras ceremonias y preces de nuestra Santa Madre Iglesia, y la puse por nombre Maria Teresa. Fueron sus padrinos Francisco Huiten y Andrea Ortigas, ambos morenos y vecinos de esta ciudad, les advertí el parentesco espiritual, y demás obligaciones, y lo firmé en dicho día, mes, y año.",
+            "data": {
+                "people": [
+                    {
+                        "id":"P01",
+                        "name": "Miguel O'Reilly",
+                        "titles":[
+                            "Don"
+                        ],
+                        "occupation": "cleric"
+                    },
+                    {
+                        "id":"P02",
+                        "name": "Andrés Camel",
+                        "phenotype": "negro",
+                        "free": true,
+                        "origin": "Nueva York",
+                        "relationships":[
+                            {
+                                "related_person":"P03",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person":"P04",
+                                "relationship_type":"child"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P03",
+                        "name": "Eva Fish",
+                        "phenotype":"negro",
+                        "free":true,
+                        "origin":"Nueva York",
+                        "relationships":[
+                            {
+                                "related_person":"P02",
+                                "relationship_type":"spouse"
+                            },
+                            {
+                                "related_person":"P04",
+                                "relationship_type":"child"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P04",
+                        "name": "Maria Teresa",
+                        "phenotype": "moreno",
+                        "free":true,
+                        "legitimate": true,
+                        "relationships":[
+                            {
+                                "related_person":"P02",
+                                "relationship_type":"parent"
+                            },
+                            {
+                                "related_person":"P03",
+                                "relationship_type":"parent"
+                            },
+                            {
+                                "related_person":"P05",
+                                "relationship_type":"godparent"
+                            },
+                            {
+                                "related_person":"P06",
+                                "relationship_type":"godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P05",
+                        "name": "Francisco Huiten",
+                        "phenotype":"moreno",
+                        "relationships":[
+                            {
+                                "related_person":"P04",
+                                "relationship_type":"godchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P06",
+                        "name": "Andrea Ortigas",
+                        "phenotype":"moreno",
+                        "relationships":[
+                            {
+                                "related_person":"P04",
+                                "relationship_type":"godchild"
+                            }
+                        ]
+                    }
+                ],
+                "events":[
+                    {
+                        "type":"baptism",
+                        "principal":"P04",
+                        "date":"1793-11-24"
+                    },
+                    {
+                        "type":"birth",
+                        "principal":"P04",
+                        "date":"1793-09-26"
+                    }
+                ]
+            }
         },
         {
             "id": "0015-01",
@@ -197,7 +303,69 @@
         },
         {
             "id": "0036-02",
-            "raw": "Lunes, dia veinte y tres de Junio de Mil Se tecientos Noventa y quatro. Yo Don Miguel O Reilly Teniente de Cura Beneficiado y Vicario y Juez Eclesiás tico de esta Yglesia parroquial, y provin cia de San Agustin de la Florida Oriental. Baptisé y puse los santos oleos á una Negra como de veinte y seis años de edad Natural de la America del Norte, hija de padres no conoscidos y esclava de Doña Josefa Espinosa,; y en ella exerci las sacras Ceremonias, y preces de nuestra santa madre Iglesia, y le puse por nom bre Maria Matilda fue su madrina Maria de Luz ruiz morena libre, y vecina de esta plaza á quien adver tí el parentesco espiritual, y demás obligaciones, y lo firmé en dicho día mes y año."
+            "raw": "Lunes, dia veinte y tres de Junio de Mil Se tecientos Noventa y quatro. Yo Don Miguel O Reilly Teniente de Cura Beneficiado y Vicario y Juez Eclesiás tico de esta Yglesia parroquial, y provin cia de San Agustin de la Florida Oriental. Baptisé y puse los santos oleos á una Negra como de veinte y seis años de edad Natural de la America del Norte, hija de padres no conoscidos y esclava de Doña Josefa Espinosa,; y en ella exerci las sacras Ceremonias, y preces de nuestra santa madre Iglesia, y le puse por nom bre Maria Matilda fue su madrina Maria de Luz ruiz morena libre, y vecina de esta plaza á quien adver tí el parentesco espiritual, y demás obligaciones, y lo firmé en dicho día mes y año.",
+            "normalized": "Lunes, día veintitrés de junio de mil setecientos noventa y cuatro, yo Don Miguel O'Reilly, teniente cura beneficiao y vicario y juez eclesiástico de esta iglesia parroquial y provincia de San Agustín de la Florida Oriental, bauticé y puse los santos óleos a una negra como de veintiseis años de edad, natural de la América del Norte, hija de padres no conocidos y esclava de Doña Josefa Espinosa, y en ella ejercí las sacras ceremonias y preces de nuestra Santa Madre Iglesia, y le puse por nombre Maria Matilda. Fue su madrina Maria de Lus Ruiz, morena libre y vecina de esta plaza quien advertí el parentesco espiritual y demás obligaciones, y lo firmé en dicho día, mes, y año.",
+            "data":{
+                "people":[
+                    {
+                        "id":"P01",
+                        "name":"Miguel O'Reilly",
+                        "titles":[
+                            "Don"
+                        ],
+                        "occupation":"cleric"
+                    },
+                    {
+                        "id":"P02",
+                        "name": "Josefa Espinosa",
+                        "titles":[
+                            "Doña"
+                        ],
+                        "relationships":[
+                            {
+                                "related_person": "P03",
+                                "relationship_type":"slave"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P03",
+                        "name": "Maria Matilda",
+                        "age": "adult",
+                        "origin": "América del Norte",
+                        "phenotype":"negro",
+                        "free":false,
+                        "relationships":[
+                            {
+                                "related_person":"P02",
+                                "relationship_type":"enslaver"
+                            },
+                            {
+                                "related_person":"P04",
+                                "relationship_type":"godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P04",
+                        "phenotype": "moreno",
+                        "free":true,
+                        "relationships":[
+                            {
+                                "related_person":"P03",
+                                "relationship_type":"godchild"
+                            }
+                        ]
+                    }
+                ],
+                "events":[
+                    {
+                        "type":"baptism",
+                        "principal":"P03",
+                        "date": "1794-06-23"
+                    }
+                ]
+            }
         },
         {
             "id": "0037-01",
@@ -845,7 +1013,100 @@
         },
         {
             "id": "0109-02",
-            "raw": "Lunes dia veinte y uno de Mayo de mil sete cientos noventa y ocho. Yo Don Miguel OReilly Cura beneficiado, Vicario y Juez Eclesiastico de esta Yglesia parroquial, Plaza y Provincia de San Agus tin de la Florida Ol. Baptizé y puse los santos oleos á una Niña de color parda, que nació el día diez y seis del presente mes, hija de Padre no conocido, y de Maria del Carmen morena natural de la Costa de Gui nea y esclava del Teniente Coronel, e Yngeniero Don Pe dro Díaz Berrio; y en él exerci las peculiares sacras cere monias, y preces de nuestra santa madre Yglesia, y la puse por nombre Ubalda Juana Nepomucena: fue su madrina Rita, morena esclava esclava del dicho Don Pedro: le advertí el Parentesco espiritual y demás obligaciones y lo firmé en dicho dia mez, y año."
+            "raw": "Lunes dia veinte y uno de Mayo de mil sete cientos noventa y ocho. Yo Don Miguel OReilly Cura beneficiado, Vicario y Juez Eclesiastico de esta Yglesia parroquial, Plaza y Provincia de San Agus tin de la Florida Ol. Baptizé y puse los santos oleos á una Niña de color parda, que nació el día diez y seis del presente mes, hija de Padre no conocido, y de Maria del Carmen morena natural de la Costa de Gui nea y esclava del Teniente Coronel, e Yngeniero Don Pe dro Díaz Berrio; y en él exerci las peculiares sacras cere monias, y preces de nuestra santa madre Yglesia, y la puse por nombre Ubalda Juana Nepomucena: fue su madrina Rita, morena esclava esclava del dicho Don Pedro: le advertí el Parentesco espiritual y demás obligaciones y lo firmé en dicho dia mez, y año.",
+            "normalized": "Lunes, día veintiuno de mayo de mil setecientos noventa y ocho. Yo Don Miguel O'Reilly cura beneficiado vicario y juez eclesiástico de esta iglesia parroquial, plaza y provincia de San Agustín de la Florida Oriental, bapticé y puse los santos óleos a una niña de color parda que nació el día dieciséis del presente mes. Hija de padre no conocido y de Maria del Carmen, natural de la Costa de Guinea y esclava del teniente coronel e ingeniero Don Pedro Díaz Berrío, y en él ejercí las peculiares sacras ceremonias y preces de nuestra santa madre iglesia, y la puse por nombre Ubalda Juana Nepomucena. Fue su madrina Rita, morena esclava del dicho Don Pedro, le advertí el parentesco espiritual y demás obligaciones, y lo firmé en dicho día, mes, y año.", 
+            "data":{
+                "people":[
+                    {
+                        "id": "P01",
+                        "name":"Miguel O'Reilly",
+                        "titles":[
+                            "Don"
+                        ],
+                        "occupation":"cleric"
+                    },
+                    {
+                        "id":"P02",
+                        "name": "Maria del Carmen",
+                        "origin":"Guinea",
+                        "phenotype":"moreno",
+                        "free":false,
+                        "relationships":[
+                            {
+                                "related_person":"P03",
+                                "relationship_type":"enslaver"
+                            },
+                            {
+                                "related_person":"P04",
+                                "relationship_type":"child"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P03",
+                        "name":"Pedro Díaz Berrío",
+                        "titles":[
+                            "Don"
+                        ],
+                        "rank": "Lieutenant colonel",
+                        "occupation":"engineer",
+                        "relationships":[
+                            {
+                                "related_person":"P02",
+                                "relationship_type":"slave"
+                            },
+                            {
+                                "related_person":"P05",
+                                "relationship_type":"slave"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P04",
+                        "name":"Ubalda Juana Nepomucena",
+                        "phenotype":"pardo",
+                        "age":"infant",
+                        "relationships":[
+                            {
+                                "related_person":"P02",
+                                "relationship_type":"parent"
+                            },
+                            {
+                                "related_person":"P05",
+                                "relationship_type":"godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P05",
+                        "name":"Rita",
+                        "phenotype":"moreno",
+                        "free":false,
+                        "relationships":[
+                            {
+                                "related_person":"P03",
+                                "relationship_type":"enslaver"
+                            },
+                            {
+                                "related_person":"P04",
+                                "relationship_type":"godchild"
+                            }
+                        ]
+                    }
+                ],
+                "events":[
+                    {
+                        "type":"baptism",
+                        "principal":"P04",
+                        "date":"1798-05-21"
+                    },
+                    {
+                        "type":"birth",
+                        "principal":"P04",
+                        "date":"1798-05-16"
+                    }
+                ]
+            }
         },
         {
             "id": "0110-01",
