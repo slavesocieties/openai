@@ -1,0 +1,370 @@
+{
+    "type": "baptism",
+    "country": "Colombia",
+    "state": "Bolivar",
+    "city": "Colombia",
+    "institution": "A Church",
+    "id": 790001,
+    "title": "Juanjo's Book",
+    "entries": [
+        {
+            "id": "0048-01",
+            "text": "En el día del mes de junio de mil setecientos noventa y dos años, yo Don Luis Grasis, teniente de esta Santa Iglesia Catedral, bauticé solemnemente a María Antonia, hija de Tomás Lisaldo. Fue su padrino, y firmo como tal, Juan Grasis."
+        },
+        {
+            "id": "0048-02",
+            "text": "En la ciudad de San Agustín, en siete y seis de octubre de mil setecientos noventa y ocho años, yo el Br. Don Ignacio de Labadia (..ialba), teniente cura de esta Santa Iglesia Catedral, bauticé solemnemente y puse óleos y crisma a Joseph, hijo natural de Maria de la Candelaria. Fue su padrino Joseph de Montenedoca. Lo p. cura."
+        },
+        {
+            "id": "0048-03",
+            "text": "... Trinidad de los Santos Domingo en veinte y cinco de diciembre de mil setecientos noventa y ocho años. Yo el Reverendo Padre Fray Ignacio del Laboratorio y Auxili... catedral, bauticé solemnemente con los santos óleos y crisma a Julián, hijo natural de Bernarda, virgen esclava de Doña Juana...is. Fue su padrino Felipe de Albur... y lo firmé. B. P. {Multinomial} ...\n\n(Note: Certain parts of the transcription provided are incomplete or contain ellipses indicating missing or unclear text. These segments are reproduced as closely as possible to the original given text.)"
+        },
+        {
+            "id": "0048-04",
+            "text": "En la ciudad de Santo Domingo, el primero día de abril de mil setecientos noventa y ocho años, yo, R.P.D. Don Ignacio de Ribadeneyra, cura teniente de dicha Santa Iglesia Catedral, puse óleo y crisma a Solomon Macalino, hijo de la Iglesia, por haberse echado agua en casa por riesgo de vida el Bachiller Fray Diego Farias, religioso de Nuestra Señora del Carmen. Fue su padrino Don Damian del Castillo Torquemada."
+        },
+        {
+            "id": "0048-05",
+            "text": "En la ciudad de San Domingo, en primavera, ocho de marzo del año de mil setecientos noventa y ocho. Yo, Don Ignacio Pimentel, Administrador de Santos de la Santa Iglesia Catedral, bauticé solemnemente a Mariana, hija legítima del señor Ximenez y de la señora María de Conversa. Su padrino fue el señor mayor Conde del Señor San Pedro."
+        }
+    ],
+    "people": [
+        {
+            "id": "790001-P00001",
+            "name": "Luis Grasis",
+            "titles": [
+                "Don"
+            ],
+            "occupation": "cleric",
+            "military_rank": "Lieutenant",
+            "mentions": "0048-01"
+        },
+        {
+            "id": "790001-P00002",
+            "name": "Tomás Lisaldo",
+            "relationships": [
+                {
+                    "related_person": "790001-P00003",
+                    "relationship_type": "parent"
+                }
+            ],
+            "mentions": "0048-01"
+        },
+        {
+            "id": "790001-P00003",
+            "name": "María Antonia",
+            "relationships": [
+                {
+                    "related_person": "790001-P00002",
+                    "relationship_type": "child"
+                },
+                {
+                    "related_person": "790001-P00004",
+                    "relationship_type": "godparent"
+                }
+            ],
+            "mentions": "0048-01"
+        },
+        {
+            "id": "790001-P00004",
+            "name": "Juan Grasis",
+            "relationships": [
+                {
+                    "related_person": "790001-P00003",
+                    "relationship_type": "godchild"
+                }
+            ],
+            "mentions": "0048-01"
+        },
+        {
+            "id": "790001-P00005",
+            "name": "Ignacio de Labadia",
+            "titles": [
+                "Don",
+                "Br."
+            ],
+            "mentions": "0048-02"
+        },
+        {
+            "id": "790001-P00006",
+            "name": "Joseph",
+            "legitimate": false,
+            "relationships": [
+                {
+                    "related_person": "790001-P00007",
+                    "relationship_type": "parent"
+                },
+                {
+                    "related_person": "790001-P00008",
+                    "relationship_type": "godparent"
+                }
+            ],
+            "mentions": "0048-02"
+        },
+        {
+            "id": "790001-P00007",
+            "name": "Maria de la Candelaria",
+            "relationships": [
+                {
+                    "related_person": "790001-P00006",
+                    "relationship_type": "child"
+                }
+            ],
+            "mentions": "0048-02"
+        },
+        {
+            "id": "790001-P00008",
+            "name": "Joseph de Montenedoca",
+            "relationships": [
+                {
+                    "related_person": "790001-P00006",
+                    "relationship_type": "godchild"
+                }
+            ],
+            "mentions": "0048-02"
+        },
+        {
+            "id": "790001-P00009",
+            "name": "Fray Ignacio del Laboratorio y Auxili",
+            "titles": [
+                "Reverendo Padre",
+                "Fray"
+            ],
+            "occupation": "cleric",
+            "mentions": "0048-03"
+        },
+        {
+            "id": "790001-P00010",
+            "name": "Julian",
+            "legitimate": false,
+            "free": false,
+            "relationships": [
+                {
+                    "related_person": "790001-P00011",
+                    "relationship_type": "parent"
+                },
+                {
+                    "related_person": "790001-P00012",
+                    "relationship_type": "enslaver"
+                },
+                {
+                    "related_person": "790001-P00013",
+                    "relationship_type": "godparent"
+                }
+            ],
+            "mentions": "0048-03"
+        },
+        {
+            "id": "790001-P00011",
+            "name": "Bernarda",
+            "phenotype": "negro",
+            "free": false,
+            "relationships": [
+                {
+                    "related_person": "790001-P00010",
+                    "relationship_type": "child"
+                },
+                {
+                    "related_person": "790001-P00012",
+                    "relationship_type": "enslaver"
+                }
+            ],
+            "mentions": "0048-03"
+        },
+        {
+            "id": "790001-P00012",
+            "name": "Juana",
+            "titles": [
+                "Doña"
+            ],
+            "relationships": [
+                {
+                    "related_person": "790001-P00011",
+                    "relationship_type": "slave"
+                },
+                {
+                    "related_person": "790001-P00010",
+                    "relationship_type": "enslaver"
+                }
+            ],
+            "mentions": "0048-03"
+        },
+        {
+            "id": "790001-P00013",
+            "name": "Felipe de Albur",
+            "relationships": [
+                {
+                    "related_person": "790001-P00010",
+                    "relationship_type": "godchild"
+                }
+            ],
+            "mentions": "0048-03"
+        },
+        {
+            "id": "790001-P00014",
+            "name": "Ignacio de Ribadeneyra",
+            "titles": [
+                "R.P.D.",
+                "Don"
+            ],
+            "occupation": "cleric",
+            "mentions": "0048-04"
+        },
+        {
+            "id": "790001-P00015",
+            "name": "Solomon Macalino",
+            "relationships": [
+                {
+                    "related_person": "790001-P00016",
+                    "relationship_type": "parent"
+                },
+                {
+                    "related_person": "790001-P00017",
+                    "relationship_type": "godparent"
+                }
+            ],
+            "mentions": "0048-04"
+        },
+        {
+            "id": "790001-P00016",
+            "name": "Diego Farias",
+            "titles": [
+                "Bachiller",
+                "Fray"
+            ],
+            "occupation": "cleric",
+            "relationships": [
+                {
+                    "related_person": "790001-P00015",
+                    "relationship_type": "child"
+                }
+            ],
+            "mentions": "0048-04"
+        },
+        {
+            "id": "790001-P00017",
+            "name": "Damian del Castillo Torquemada",
+            "titles": [
+                "Don"
+            ],
+            "relationships": [
+                {
+                    "related_person": "790001-P00015",
+                    "relationship_type": "godchild"
+                }
+            ],
+            "mentions": "0048-04"
+        },
+        {
+            "id": "790001-P00018",
+            "name": "Ignacio Pimentel",
+            "titles": [
+                "Don"
+            ],
+            "occupation": "cleric",
+            "mentions": "0048-05"
+        },
+        {
+            "id": "790001-P00019",
+            "name": "Ximenez",
+            "titles": [
+                "Señor"
+            ],
+            "relationships": [
+                {
+                    "related_person": "790001-P00020",
+                    "relationship_type": "spouse"
+                },
+                {
+                    "related_person": "790001-P00021",
+                    "relationship_type": "parent"
+                }
+            ],
+            "mentions": "0048-05"
+        },
+        {
+            "id": "790001-P00020",
+            "name": "María de Conversa",
+            "titles": [
+                "Señora"
+            ],
+            "relationships": [
+                {
+                    "related_person": "790001-P00019",
+                    "relationship_type": "spouse"
+                },
+                {
+                    "related_person": "790001-P00021",
+                    "relationship_type": "parent"
+                }
+            ],
+            "mentions": "0048-05"
+        },
+        {
+            "id": "790001-P00021",
+            "name": "Mariana",
+            "legitimate": true,
+            "relationships": [
+                {
+                    "related_person": "790001-P00019",
+                    "relationship_type": "parent"
+                },
+                {
+                    "related_person": "790001-P00020",
+                    "relationship_type": "parent"
+                },
+                {
+                    "related_person": "790001-P00022",
+                    "relationship_type": "godparent"
+                }
+            ],
+            "mentions": "0048-05"
+        },
+        {
+            "id": "790001-P00022",
+            "name": "Conde del Señor San Pedro",
+            "titles": [
+                "Señor Mayor"
+            ],
+            "relationships": [
+                {
+                    "related_person": "790001-P00021",
+                    "relationship_type": "godchild"
+                }
+            ],
+            "mentions": "0048-05"
+        }
+    ],
+    "events": [
+        {
+            "type": "baptism",
+            "principal": "790001-P00003",
+            "date": "1792-06",
+            "id": "0048-01-E00"
+        },
+        {
+            "type": "baptism",
+            "principal": "790001-P00006",
+            "date": "1798-10-06",
+            "id": "0048-02-E00"
+        },
+        {
+            "type": "baptism",
+            "principal": "790001-P00010",
+            "date": "1798-12-25",
+            "id": "0048-03-E00"
+        },
+        {
+            "type": "baptism",
+            "principal": "790001-P00015",
+            "date": "1798-04-01",
+            "id": "0048-04-E00"
+        },
+        {
+            "type": "baptism",
+            "principal": "790001-P00021",
+            "date": "1798-03-08",
+            "id": "0048-05-E00"
+        }
+    ]
+}

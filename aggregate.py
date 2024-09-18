@@ -96,6 +96,9 @@ def aggregate_entry_records(path_to_entry_records, output_path=None):
                 volume["people"].append(person)
 
         #adds entry info the person ids that appear in events, assigns unique ids to events
+        if "events" not in entry["data"]:
+            continue
+        
         for index, event in enumerate(entry["data"]["events"]):
             if "principal" in event:
                 event["principal"] = f"{entry['id']}-{event['principal']}"

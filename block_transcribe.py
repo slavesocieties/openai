@@ -81,18 +81,23 @@ def transcribe_block(id, instructions_path="instructions.json", examples_path="h
                     ]
 			    }
 			)
-	
-	response = client.chat.completions.create(
-		model="gpt-4o",	
-		messages = conversation
-	)
-
-	print(f"{id} transcribed.")
+	try:
+		response = client.chat.completions.create(
+			model="gpt-4o",	
+			messages = conversation
+		)
+		print(f"{id} transcribed.")
+	except:
+		print(f"Failed to transcribe {id}.")
+		return None
 
 	return response.choices[0].message.content
 
 def build_entry(gpt_output):
-	gpt_output = json.loads(gpt_output)
+	try:
+		gpt_output = json.loads(gpt_output)
+	except:
+		return False
 	entry = {"id": gpt_output["id"]}
 	text = ""
 	for index, line in enumerate(gpt_output["lines"]):
