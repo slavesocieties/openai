@@ -1,0 +1,328 @@
+{
+    "type": "baptism",
+    "country": "Colombia",
+    "state": "Bolivar",
+    "city": "Colombia",
+    "institution": "A Church",
+    "id": 790001,
+    "title": "Juanjo's Book",
+    "entries": [
+        {
+            "id": "0048-01",
+            "text": "Yo, día dos del mes de junio de mil setecientos noventa y dos, Fray de San Juan Laranio, comisionado regente, con mi cédula de la Iglesia Catedral, bauticé solemnemente a María de los Ángeles, hija de los señores Lorenzo y Lucia. Fue su padrino el primo Alonso de Lara."
+        },
+        {
+            "id": "0048-02",
+            "text": "En la ciudad de Santo Domingo, en veintiséis de noviembre de mil setecientos noventa y ocho años, yo el Br. Don Ignacio de Labastida, presbítero, cura de esta Santa Iglesia Catedral, bauticé solemnemente, puse óleo y crisma a Joseph, hijo natural de María de la Candelaria. Fue su padrino Joseph de Monserosca. Lo firmo Ignacio de Labastida."
+        },
+        {
+            "id": "0048-03",
+            "text": "... test, noventa y ocho años. Yo el Bachiller Doctor Ignacio del Albatola y Águila, licenciado en ... de esta Santa Iglesia Catedral, bauticé solemnemente y puse los santos óleos y crisma a Julián, hijo natural de Bernard... ultra. ... Don Tomás Vianes; fue su padrino Felipe de Alvar... y Sanz. ... ..."
+        },
+        {
+            "id": "0048-04",
+            "text": "En la ciudad de Santo Domingo, en primero de octubre de mil setecientos noventa y ocho años, yo, el Reverendo Padre Don Ignacio de Ayala, administré en dicha Santa Iglesia Catedral. Hice de nuevo solemnemente hijo de la Iglesia, por haberle echado agua en casa por peligro de vida el Padre Fray Diego, fraile religioso de Nuestra Señora. Esta misma ceremonia fue realizada y su padrino fue Don Damian del Castillo Torquemada."
+        },
+        {
+            "id": "0048-05",
+            "text": "En la ciudad de Santo Domingo en Frima (?), a los __ de enero de mil setecientos noventa y ocho años: yo, el bachiller Don Ignacio de la Barbasola y Navas, teniente cura de una Santa Iglesia Catedral, bauticé solemnemente, puse óleos y crisma a Hiamarina, hija legítima de Benito Ximines, no casado, y de Josefa de Amenes, su legítima mujer. Fue su padrino el Alférez Hamiliel del Rosario. Fe. Yo, Supero."
+        }
+    ],
+    "people": [
+        {
+            "id": "790001-P00001",
+            "name": "San Juan Laranio",
+            "titles": [
+                "Fray"
+            ],
+            "occupation": "cleric",
+            "mentions": "0048-01"
+        },
+        {
+            "id": "790001-P00002",
+            "name": "María de los Ángeles",
+            "relationships": [
+                {
+                    "related_person": "790001-P00003",
+                    "relationship_type": "parent"
+                },
+                {
+                    "related_person": "790001-P00004",
+                    "relationship_type": "parent"
+                },
+                {
+                    "related_person": "790001-P00005",
+                    "relationship_type": "godparent"
+                }
+            ],
+            "mentions": "0048-01"
+        },
+        {
+            "id": "790001-P00003",
+            "name": "Lorenzo",
+            "relationships": [
+                {
+                    "related_person": "790001-P00002",
+                    "relationship_type": "child"
+                }
+            ],
+            "mentions": "0048-01"
+        },
+        {
+            "id": "790001-P00004",
+            "name": "Lucia",
+            "relationships": [
+                {
+                    "related_person": "790001-P00002",
+                    "relationship_type": "child"
+                }
+            ],
+            "mentions": "0048-01"
+        },
+        {
+            "id": "790001-P00005",
+            "name": "Alonso de Lara",
+            "relationships": [
+                {
+                    "related_person": "790001-P00002",
+                    "relationship_type": "godchild"
+                }
+            ],
+            "mentions": "0048-01"
+        },
+        {
+            "id": "790001-P00006",
+            "name": "Ignacio de Labastida",
+            "titles": [
+                "Don",
+                "Br."
+            ],
+            "occupation": "cleric",
+            "mentions": "0048-02"
+        },
+        {
+            "id": "790001-P00007",
+            "name": "Joseph",
+            "legitimate": false,
+            "relationships": [
+                {
+                    "related_person": "790001-P00008",
+                    "relationship_type": "parent"
+                },
+                {
+                    "related_person": "790001-P00009",
+                    "relationship_type": "godparent"
+                }
+            ],
+            "mentions": "0048-02"
+        },
+        {
+            "id": "790001-P00008",
+            "name": "María de la Candelaria",
+            "relationships": [
+                {
+                    "related_person": "790001-P00007",
+                    "relationship_type": "child"
+                }
+            ],
+            "mentions": "0048-02"
+        },
+        {
+            "id": "790001-P00009",
+            "name": "Joseph de Monserosca",
+            "relationships": [
+                {
+                    "related_person": "790001-P00007",
+                    "relationship_type": "godchild"
+                }
+            ],
+            "mentions": "0048-02"
+        },
+        {
+            "id": "790001-P00010",
+            "name": "Ignacio del Albatola y Águila",
+            "titles": [
+                "Bachiller",
+                "Doctor"
+            ],
+            "occupation": "cleric",
+            "mentions": "0048-03"
+        },
+        {
+            "id": "790001-P00011",
+            "name": "Julián",
+            "legitimate": false,
+            "relationships": [
+                {
+                    "related_person": "790001-P00012",
+                    "relationship_type": "parent"
+                },
+                {
+                    "related_person": "790001-P00013",
+                    "relationship_type": "godparent"
+                }
+            ],
+            "mentions": "0048-03"
+        },
+        {
+            "id": "790001-P00012",
+            "name": "Bernard",
+            "mentions": "0048-03"
+        },
+        {
+            "id": "790001-P00013",
+            "name": "Felipe de Alvar... y Sanz",
+            "relationships": [
+                {
+                    "related_person": "790001-P00011",
+                    "relationship_type": "godchild"
+                }
+            ],
+            "mentions": "0048-03"
+        },
+        {
+            "id": "790001-P00014",
+            "name": "Ignacio de Ayala",
+            "titles": [
+                "Reverendo Padre",
+                "Don"
+            ],
+            "occupation": "cleric",
+            "mentions": "0048-04"
+        },
+        {
+            "id": "790001-P00015",
+            "name": "Diego",
+            "titles": [
+                "Fray"
+            ],
+            "occupation": "cleric",
+            "relationships": [
+                {
+                    "related_person": "790001-P00016",
+                    "relationship_type": "parent"
+                }
+            ],
+            "mentions": "0048-04"
+        },
+        {
+            "id": "790001-P00016",
+            "name": "Don Damian del Castillo Torquemada",
+            "titles": [
+                "Don"
+            ],
+            "relationships": [
+                {
+                    "related_person": "790001-P00014",
+                    "relationship_type": "godchild"
+                }
+            ],
+            "mentions": "0048-04"
+        },
+        {
+            "id": "790001-P00017",
+            "name": "Ignacio de la Barbasola y Navas",
+            "titles": [
+                "Don",
+                "Bachiller"
+            ],
+            "occupation": "cleric",
+            "mentions": "0048-05"
+        },
+        {
+            "id": "790001-P00018",
+            "name": "Hiamarina",
+            "legitimate": true,
+            "relationships": [
+                {
+                    "related_person": "790001-P00019",
+                    "relationship_type": "parent"
+                },
+                {
+                    "related_person": "790001-P00020",
+                    "relationship_type": "parent"
+                },
+                {
+                    "related_person": "790001-P00021",
+                    "relationship_type": "godparent"
+                }
+            ],
+            "mentions": "0048-05"
+        },
+        {
+            "id": "790001-P00019",
+            "name": "Benito Ximines",
+            "relationships": [
+                {
+                    "related_person": "790001-P00018",
+                    "relationship_type": "child"
+                },
+                {
+                    "related_person": "790001-P00020",
+                    "relationship_type": "spouse"
+                }
+            ],
+            "mentions": "0048-05"
+        },
+        {
+            "id": "790001-P00020",
+            "name": "Josefa de Amenes",
+            "relationships": [
+                {
+                    "related_person": "790001-P00018",
+                    "relationship_type": "child"
+                },
+                {
+                    "related_person": "790001-P00019",
+                    "relationship_type": "spouse"
+                }
+            ],
+            "mentions": "0048-05"
+        },
+        {
+            "id": "790001-P00021",
+            "name": "Hamiliel del Rosario",
+            "titles": [
+                "Alférez"
+            ],
+            "relationships": [
+                {
+                    "related_person": "790001-P00018",
+                    "relationship_type": "godchild"
+                }
+            ],
+            "mentions": "0048-05"
+        }
+    ],
+    "events": [
+        {
+            "type": "baptism",
+            "principal": "790001-P00002",
+            "date": "1792-06-02",
+            "id": "0048-01-E00"
+        },
+        {
+            "type": "baptism",
+            "principal": "790001-P00007",
+            "date": "1798-11-26",
+            "id": "0048-02-E00"
+        },
+        {
+            "type": "baptism",
+            "principal": "790001-P00011",
+            "id": "0048-03-E00"
+        },
+        {
+            "type": "baptism",
+            "principal": "790001-P00016",
+            "date": "1798-10-01",
+            "id": "0048-04-E00"
+        },
+        {
+            "type": "baptism",
+            "principal": "790001-P00018",
+            "date": "1798-01-__",
+            "id": "0048-05-E00"
+        }
+    ]
+}

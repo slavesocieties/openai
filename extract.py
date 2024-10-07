@@ -46,6 +46,18 @@ def extract_data_from_volume(volume_record_path, instructions_path, training_dat
     
     for x, entry in enumerate(data["entries"]):
         info = extract_data_from_entry(entry, volume_metadata, examples, instructions)
+
+        def load_extracted_data(info):
+            try:
+                json.loads(info)                
+            except:
+                return False
+            
+            return True
+
+        while not load_extracted_data(info):
+            info = extract_data_from_entry(entry, volume_metadata, examples, instructions)
+        
         data["entries"][x]["data"] = json.loads(info)    
     
     if output_path != None:    

@@ -68,8 +68,8 @@ def aggregate_entry_records(path_to_entry_records, output_path=None):
         volume["entries"].append({"id": entry["id"], "text": entry["normalized"]})
 
         for key in ["people", "events"]:
-            if key not in entry:
-                entry[key] = ""        
+            if key not in entry['data']:
+                entry['data'][key] = ""        
         
         #adds entry info to each person id so that it is unique at the volume level
         for person in entry["data"]["people"]:
@@ -96,6 +96,9 @@ def aggregate_entry_records(path_to_entry_records, output_path=None):
                 volume["people"].append(person)
 
         #adds entry info the person ids that appear in events, assigns unique ids to events
+        if "events" not in entry["data"]:
+            continue
+        
         for index, event in enumerate(entry["data"]["events"]):
             if "principal" in event:
                 event["principal"] = f"{entry['id']}-{event['principal']}"
