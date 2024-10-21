@@ -46,7 +46,7 @@ def actual_full_demo(image_id, bucket_name="ssda-openai-test", local_file_path="
     process_transcription(f"testing/{volume_id}_full_demo_transcription.json", "instructions.json", "training_data.json",
                           training_keywords = {"type": "baptism", "country": "Cuba"}, mode = "and", out_path = f"testing/{volume_id}_full_demo_output.json")
     
-actual_full_demo("790001-0048")
+actual_full_demo("239746-0088")
 
 def volume_demo(volume_id, image_bucket="ssda-openai-test", local_image_dir="images"):
     volume_metadata = load_volume_metadata(volume_id)

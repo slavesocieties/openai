@@ -1,0 +1,51 @@
+{
+    "name": "ssda_nlp",
+    "strict": true,
+    "schema": {
+        "type": "object",
+        "properties": {
+            "data": {
+                "type": "object",
+                "properties": {
+                    "people": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                
+                            }
+                        }                        
+                    },
+                    "events": {
+                        "type": "array",
+                        "items": {
+                            "type": "object",
+                            "properties": {
+                                "type": {
+                                    "type": "string",
+                                    "description": "The type of event, usually either “baptism”, “marriage”, “burial”, or “birth”.",
+                                    "enum": ["baptism", "marriage", "burial", "birth"]
+                                },
+                                "principal": {
+                                    "type": "array",
+                                    "items": {
+                                        "type": "string",
+                                        "description": "The unique identifier(s) assigned to the person(s) who the sacrament is being performed on/for. For baptisms, burials, and births this will be a single identifier, but for marriages it will be a two identifiers." 
+                                    }
+                                },
+                                "date": {
+                                    "type": ["string", "null"],
+                                    "description": "The date when the event took place. Represent dates in a YYYY-MM-DD format. If a complete date is not available, include as much information as possible."
+                                }
+                            },
+                            "required": ["type", "principal", "date"],
+                            "additionalProperties": false
+                        }
+                    }
+                },
+                "required": ["people", "events"],
+                "additionalProperties": false
+            }
+        }
+    }
+}

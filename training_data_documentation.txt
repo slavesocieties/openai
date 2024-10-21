@@ -78,7 +78,7 @@ Field: type
 Content: The type of event, usually either “baptism”, “marriage”, “burial”, or “birth”.
 
 Field: principal(s)
-Content: The unique identifier(s) assigned to the person(s) who the sacrament is being performed on/for. For baptisms, burials, and births this will be a single identifier, but for marriages it will be a list of two identifiers.
+Content: The unique identifier(s) assigned to the person(s) who the sacrament is being performed on/for. For baptisms, burials, and births this will be a single identifier, but for marriages it will be a two identifiers.
 
 Field: date
 Content: The date when the event took place. Represent dates in a YYYY-MM-DD format. If a complete date is not available, include as much information as possible.
