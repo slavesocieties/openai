@@ -77,10 +77,14 @@
                                                 "definition": "What the other person is *to* this person. For example, if the normalized text describes the person with id P03 as 'hija de' the person with id P05, P05 would be recorded as 'parent' in P03's record and P03 would be recorded as 'child' in P05's record.",
                                                 "enum": ["parent", "child", "enslaver", "slave", "spouse", "godparent", "godchild"]
                                             }
-                                        }
+                                        },
+                                        "required": ["related_person", "relationship_type"],
+                                        "additionalProperties": false
                                     }
                                 }
-                            }
+                            },
+                            "required": ["id", "name", "titles", "rank", "origin", "ethnicity", "age", "legitimate", "occupation", "phenotype", "free", "relationships"],
+                            "additionalProperties": false
                         }                        
                     },
                     "events": {
