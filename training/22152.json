@@ -9,8 +9,8 @@
     "entries": [
         {
             "id": "0001-01",
-            "raw": "Sábado once de Enero de mil ochocientos setenta y tres yo Presbitero Don Santiago Serra , cura párroco, vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas, bauticé solemnemente y puse los santos óleos á una párvula, que nació el dia doce de Septiembre último, hija de padre no conocido y de la morena libre Aleja Peres, natural y vecina de esta feligresía; nieta materna de Telesforo y de Francisca Sanches: en dicha párvula ejercí las sagradas preces y ceremonias y le puse por nombre Maria Leoncia: fueron sus padrinos José Timoteo Pujadas y Leonarda Peñalver, a quienes advertí el parentesco espiritual y obligaciones que contrajeron y lo firmé",
-            "normalized": "Sábado once de enero de mil ochocientos setenta y tres, yo Presbítero Don Santiago Serra, cura párroco y vicario foráneo interino de esta iglesia de Término de San Carlos de Matanzas, bauticé solemnemente y puse los santos óleos a una parvula que nació el dia doce de septiembre último, hija de padre no conocido y de la morena libre Aleja Pérez, natural y vecina de esta feligresía, nieta materna de Telesforo y de Francisca Sánchez. En dicha parvula ejercí las sagradas preces y ceremonias, y le puse por nombre Maria Leoncia. Fueron sus padrinos José Timoteo Pujadas y Leonarda Peñalver, a quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé",
+            "raw": "Sábado once de Enero de mil ochocientos setenta y tres yo Presbitero Don Santiago Serra , cura párroco, vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas, bauticé solemnemente y puse los santos óleos á una párvula, que nació el dia doce de Septiembre último, hija de padre no conocido y de la morena libre Aleja Peres, natural y vecina de esta feligresía; nieta materna de Telesforo y de Francisca Sanches: en dicha párvula ejercí las sagradas preces y ceremonias y le puse por nombre Maria Leoncia: fueron sus padrinos José Timoteo Pujadas y Leonarda Peñalver, a quienes advertí el parentesco espiritual y obligaciones que contrajeron y lo firmé Santiago Serra",
+            "normalized": "Sábado once de enero de mil ochocientos setenta y tres, yo Presbítero Don Santiago Serra, cura párroco y vicario foráneo interino de esta iglesia de Término de San Carlos de Matanzas, bauticé solemnemente y puse los santos óleos a una parvula que nació el dia doce de septiembre último, hija de padre no conocido y de la morena libre Aleja Pérez, natural y vecina de esta feligresía, nieta materna de Telesforo y de Francisca Sánchez. En dicha parvula ejercí las sagradas preces y ceremonias, y le puse por nombre Maria Leoncia. Fueron sus padrinos José Timoteo Pujadas y Leonarda Peñalver, a quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé Santiago Serra",
             "data": {
                 "people": [
                     {
@@ -144,32 +144,663 @@
         },
         {
             "id": "0001-02",
-            "raw": "Lunes trece de Enero de mil ochocientos setenta y tres: yo Presbitero Don Santiago Serra, cura párroco, vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas bauticé solemnemente y puse los santos óleos á un párvulo pardo, que nació el dia diez de Diciembre último, hijo de padre no conocido y de Rufina Domé, natural y vecina de esta feligresía; nieto materno de José y de Maria del Carmen Domé; esclava la madre de Don Eugenio Ysla: en dicho párvulo ejercí las sagradas preces y ceremonias y le puse por nombre José Francisco: el cual es libre por beneficio de la ley, sancionada por las cortes constituyentes de la Nacion, en veinte y tres de Junio de mil ochocientos setenta años, comunicada con fecha cuatro de Julio del propio al Escelentisimo Señor Gobernador Superior Político de esta Ysla, publicada en la Gaceta Oficial, correspondiente al Sábado primero de Octubre del referido año: fueron sus padrinos Don Victoriano Polasco Abat y Doña Carmen Piñeiro y Galiano, á quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo",
-            "normalized": "Lunes trece de enero de mil ochocientos setenta y tres, yo Presbitero Don Santiago Serra, cure párroco y vicario ",
+            "raw": "Lunes trece de Enero de mil ochocientos setenta y tres: yo Presbitero Don Santiago Serra, cura párroco, vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas bauticé solemnemente y puse los santos óleos á un párvulo pardo, que nació el dia diez de Diciembre último, hijo de padre no conocido y de Rufina Domé, natural y vecina de esta feligresía; nieto materno de José y de Maria del Carmen Domé; esclava la madre de Don Eugenio Ysla: en dicho párvulo ejercí las sagradas preces y ceremonias y le puse por nombre José Francisco: el cual es libre por beneficio de la ley, sancionada por las cortes constituyentes de la Nacion, en veinte y tres de Junio de mil ochocientos setenta años, comunicada con fecha cuatro de Julio del propio al Escelentisimo Señor Gobernador Superior Político de esta Ysla, publicada en la Gaceta Oficial, correspondiente al Sábado primero de Octubre del referido año: fueron sus padrinos Don Victoriano Polasco Abat y Doña Carmen Piñeiro y Galiano, á quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé Santiago Serra",
+            "normalized": "Lunes trece de enero de mil ochocientos setenta y tres, yo Presbitero Don Santiago Serra, cure párroco y vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas, bauticé solemnemente y puse los santos óleos á un párvulo pardo, que nació el dia diez de diciembre último, hijo de padre no conocido y de Rufina Domé, natural y vecina de esta feligresía, nieto materno de José y de Maria del Carmen Domé, esclava de Don Eugenio Ysla. En dicho párvulo ejercí las sagradas preces y ceremonias y le puse por nombre José Francisco, el cual es libre por beneficio de la ley, sancionada por las cortes constituyentes de la Nacion, en veinte y tres de junio de mil ochocientos setenta años, comunicada con fecha cuatro de julio del propio al Escelentisimo Señor Gobernador Superior Político de esta Ysla, publicada en la Gaceta Oficial, correspondiente al sábado primero de octubre del referido año. Fueron sus padrinos Don Victoriano Polasco Abat y Doña Carmen Piñeiro y Galiano, á quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé Santiago Serra",
             "data": {
                 "people": [
+                    {
+                        "id": "P01",
+                        "name": "Santiago Serra",
+                        "title": 
+                        [
+                            "Don"
+                        ], 
+                        "occupation": "cleric"
+                    },
+                    {
+                        "id": "P02",
+                        "name": "Rufina Domé",
+                        "origin": "Matanzas",
+                        "free": "false",
+                        "relationships":[
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "enslaver"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "child"
+                            }
+                        ] 
+                    },
+                    {
+                        "id": "P03",
+                        "name": "José del Carmen Domé",
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "child"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "grandchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P04",
+                        "name": "Maria del Carmen Domé",
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "child"
+                            },
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "grandchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P05",
+                        "name": "Eugenio Ysla",
+                        "title":[
+                            "Don"
+                        ],
+                        "relationships":[
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "slave"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P06",
+                        "name":"José Francisco",
+                        "phenotype":"pardo",
+                        "free":"true",
+                        "relationships":[
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "parent" 
+                            },
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "grandparent"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "grandparent"
+                            },
+                            {
+                                "related_person": "P08",
+                                "relationship_type": "godparent"
+                            },
+                            {
+                                "related_person": "P09",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P07",
+                        "title": [
+                            "Escelentisimo Señor Gobernador Superior Político"
+                        ]
+                    },
+                    {
+                        "id": "P08",
+                        "name": "Victoriano Polasco Abat",
+                        "title": [
+                            "Don"
+                        ],
+                        "relationships":[
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "godchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P09",
+                        "name": "Doña Carmen Piñeiro y Galiano",
+                        "relationships":[
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "godchild"
+                            }
+                        ]
+                    }
 
                 ],
                 "events": [
+                    {
+                        "type": "baptism",
+                        "principal": "P06",
+                        "date": "1873-01-13"
+                    },
+                    {
+                        "type": "birth",
+                        "principal": "P06",
+                        "date": "1872-12-10"
+                    }
 
                 ]
             }
         },
         {
             "id": "0001-03",
-            "raw": "Lunes trece de Enero de mil ochocientos setenta y tres: yo Presbitero Don Santiago Serra, cura párroco vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas bauticé solemnemente y puse los santos óleos á un párvulo pardo, que nació el dia treinta de Julio último, hijo de padre no conocido y de Maria de Jesus, natural y vecina de esta feligresía esclava de Don Tomas Pintado, se ignora el nombre de sus abuelos maternos en dicha párvulo ejercí las sagradas preces y ceremonias y le puse por nombre Juan Antonio: el cual es libre por beneficio de la ley sancionada por las cortes constituyentes de la Nacion en veinte y tres de Junio de mil ochocientos setenta años, comunicada con fecha cuatro de Julio del propio al Esclentisimo Señor Gobernador Superior Político de esta Ysla, publicada con fecha cuatro de Julio del propio año en la Gaceta Oficial correspondiente al Sábado primero de Octubre del referido año: fueron sus padrinos Ramon Rosquin y Catalina Giraud a quienes advertí el parentesco espiritual y obligaciones que contrajeron y lo firmé Testado con fecha cuatro de Julio del propio año no vale Santiago Serra"
+            "raw": "Lunes trece de Enero de mil ochocientos setenta y tres: yo Presbitero Don Santiago Serra, cura párroco vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas bauticé solemnemente y puse los santos óleos á un párvulo pardo, que nació el dia treinta de Julio último, hijo de padre no conocido y de Maria de Jesus, natural y vecina de esta feligresía esclava de Don Tomas Pintado, se ignora el nombre de sus abuelos maternos en dicha párvulo ejercí las sagradas preces y ceremonias y le puse por nombre Juan Antonio: el cual es libre por beneficio de la ley sancionada por las cortes constituyentes de la Nacion en veinte y tres de Junio de mil ochocientos setenta años, comunicada con fecha cuatro de Julio del propio al Esclentisimo Señor Gobernador Superior Político de esta Ysla, publicada con fecha cuatro de Julio del propio año en la Gaceta Oficial correspondiente al Sábado primero de Octubre del referido año: fueron sus padrinos Ramon Rosquin y Catalina Giraud a quienes advertí el parentesco espiritual y obligaciones que contrajeron y lo firmé Testado con fecha cuatro de Julio del propio año no vale Santiago Serra",
+            "normalized": "Lunes trece de enero de mil ochocientos setenta y tres, yo Presibtero Don Santiago Serra, cure párroco y vicaro foráneo interino de esta iglesia de Término de San Cárlos de Matánzas, bauticé solemente y puse los santo óleos á un párvulo pardo, que nació el dia treinta de julio último, hijo de padre no conocido y de Maria de Jesus, natural y vecina de esta feligresía, esclava de Don Tomas Pintado, se ignora el normbre de sus abuelos maternos. En dicha párvulo ejercí las sagradas preces y ceremonias y le puse por nombre Juan Antonio, el cual es libre por beneficio de la ley, sancionada por las coretes contituyentes de la Nacion, en veinte y tres de junio de mil ochocientos setenta años, comunicada con fecha cuatro de julio de propio al Esclentisimo Señor Gobernador Superior Político de esta Ysla, publicada con fecha cuatro de julio del propio año en la Gaceta Oficial correspondiente al sábado primero de octubre del referido año. Fueron sus padrinos Ramon Rosquin y Catalina Giraud, a quienes advertí el parerntesco espiritual y obligaciones que contrajeron y lo firmé. Testado. Con fecha cuatro de julio del propio año. No vale. Santiago Serra ",
+            "data": {
+                "people": [
+                    {
+                        "id": "P01",
+                        "name": "Santiago Serra",
+                        "title": 
+                        [
+                            "Don"
+                        ], 
+                        "occupation": "cleric"
+                    },
+                    {
+                        "id": "P02",
+                        "name": "Maria de Jesus",
+                        "origin": "Matanzas",
+                        "free": "false",
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "enslaver"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "child"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P03",
+                        "name": "Tomas Pintado",
+                        "title":[
+                            "Don"
+                        ],
+                        "relationships":[
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "slave"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P04",
+                        "name": "Juan Antonio",
+                        "free": "true",
+                        "relationships":[
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "godparent"
+                            },
+                            {
+                                "related_person": "P07",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P05",
+                        "title":[
+                            "Esclentisimo Señor Gobernador Superior Político"
+                        ] 
+                    },
+                    {
+                        "id": "P06",
+                        "name": "Ramon Rosquin",
+                        "relationships":[
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "godchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P07",
+                        "name": "Catalina Giraud",
+                        "relationships":[
+                            {
+                                "related_person":"P04",
+                                "relationship_type": "godchild"
+                            }
+                        ]
+                    }
+                ],
+                    "events":[
+                        {
+                            "type":"baptism",
+                            "principal": "P04",
+                            "date": "1873-01-13"
+                        },
+                        {
+                            "type":"birth",
+                            "principal":"P04",
+                            "date": "1872-07-30"
+                        }
+                    ]
+            }
         },
         {
             "id": "0001-04",
-            "raw": "Jueves diez y seis de Enero de mil ochocientos setenta y tres: yo Presbitero Don Santiago Serra, cura párroco vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas bauticé solemnemente y puse los santos óleos á un párvulo que nació el dia diez de los corrientes hijo legítimo de Rufino Sequeira natural de esta y de Matilde Silva natural de la Havana y vecinos Linda de esta feligresía; nieto paterno de José y de Belen Sequeira y materno de Pio y de Rosario Marias en dicho párvulo ejercí las sagradas preces y ceremonias y le puse por nombre José Gonsalo Nicanor: fueron sus padrinos Cristobal Roque y Asuncion Armono, a quienes advertí el parentesco espiritual y obligaciones que contrajeron y lo firmé Santiago Serra"
+            "raw": "Jueves diez y seis de Enero de mil ochocientos setenta y tres: yo Presbitero Don Santiago Serra, cura párroco vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas bauticé solemnemente y puse los santos óleos á un párvulo que nació el dia diez de los corrientes hijo legítimo de Rufino Sequeira natural de esta y de Matilde Silva natural de la Havana y vecinos Linda de esta feligresía; nieto paterno de José y de Belen Sequeira y materno de Pio y de Rosario Marias en dicho párvulo ejercí las sagradas preces y ceremonias y le puse por nombre José Gonsalo Nicanor: fueron sus padrinos Cristobal Roque y Asuncion Armono, a quienes advertí el parentesco espiritual y obligaciones que contrajeron y lo firmé Santiago Serra",
+            "normalized": "Jueves diez y seis de enero de mil ochocientos setenta y tres, yo Presbitero Don Santiago Serra, cura párroco vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas bauticé solemnemente y puse los santos óleos á un párvulo, que nació el dia diez de los corrientes, hijo legítimo de Rufino Sequeira natural de esta y de Matilde Silva natural de la Havana y vecinos linda de esta feligresía, nieto paterno de José y de Belen Sequeira y materno de Pio y de Rosario Marias. En dicho párvulo ejercí las sagradas preces y ceremonias y le puse por nombre José Gonsalo Nicanor. Fueron sus padrinos Cristobal Roque y Asuncion Armono, a quienes advertí el parentesco espiritual y obligaciones que contrajeron y lo firmé. Santiago Serra",
+            "data":{
+                "people":[
+                    {
+                        "id": "P01",
+                        "name": "Santiago Serra",
+                        "title":[
+                            "Don"
+                        ],
+                        "occupation":"cleric"
+                    },
+                    {
+                        "id": "P02",
+                        "name": "Rufino Sequeira",
+                        "origin": "Matanzas",
+                        "relationships":[
+                            {
+                                "related_person": "P03",
+                                "relationship_type":"spouse"
+                            },
+                            {
+                                "related_person":"P04",
+                                "relationship_type":"parent"
+                            },
+                            {
+                                "related_person":"P05",
+                                "relationship_type":"parent"
+                            },
+                            {
+                                "related_person":"P08",
+                                "relationship_type":"child"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P03",
+                        "name":"Matilde Silva",
+                        "origin": "Havana",
+                        "relationships":[
+                            {
+                                "related_person": "P02",
+                                "relationship_type":"spouse"
+                            },
+                            {
+                                "related_person":"P06",
+                                "relationship_type":"parent"
+                            },
+                            {
+                                "related_person":"P07",
+                                "relationship_type":"parent"
+                            },
+                            {
+                                "related_person":"P08",
+                                "relationship_type":"child"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P04",
+                        "name": "Jose Sequeira",
+                        "relationships":[
+                            {
+                                "related_person":"P02",
+                                "relationship_type":"child"
+                            },
+                            {
+                                "related_person":"P05",
+                                "relationship_type":"spouse"
+                            },
+                            {
+                                "related_person":"P08",
+                                "relationship_type":"grandchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P05",
+                        "name": "Belen Sequeira",
+                        "relationships":[
+                            {
+                                "related_person":"P02",
+                                "relationship_type":"child"
+                            },
+                            {
+                                "related_person":"P04",
+                                "relationship_type":"spouse"
+                            },
+                            {
+                                "related_person":"P08",
+                                "relationship_type":"grandchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P06",
+                        "name":"Pio Marias",
+                        "relationships":[
+                            {
+                                "related_person": "P03",
+                                "relationship_type":"child"
+                            },
+                            {
+                                "related_person":"P07",
+                                "relationship_type":"spouse"
+                            },
+                            {
+                                "related_person":"P08",
+                                "relationship_type": "grandchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P07",
+                        "name": "Rosario Marias",
+                        "relationships":[
+                            {
+                                "related_person":"P03",
+                                "relationship_type": "child"
+                            },
+                            {
+                                "related_person":"P06",
+                                "relationship_type":"spouse"
+                            },
+                            {
+                                "related_person":"P08",
+                                "relationship_type":"grandchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P08",
+                        "name": "José Gonsalo Nicanor",
+                        "relationships":[
+                            {
+                                "related_person":"P02",
+                                "relationship_type":"parent"
+                            },
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person":"P04",
+                                "relationship_type":"grandparent"
+                            },
+                            {
+                                 "related_person":"P05",
+                                "relationship_type":"grandparent"
+                            },
+                            {
+                                 "related_person":"P06",
+                                "relationship_type":"grandparent"
+                            },
+                            {
+                                 "related_person":"P07",
+                                "relationship_type":"grandparent"
+                            },
+                            {
+                                "related_person":"P09",
+                                "relationship_type":"godparent"
+                            },
+                            {
+                                "related_person":"P10",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P09",
+                        "name": "Cristobal Roque",
+                        "relationships":[
+                            {
+                                "related_person": "P08",
+                                "relationship_type": "godchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P10",
+                        "name": "Asuncion Armono",
+                        "relationships":[
+                            {
+                                "related_person": "P08",
+                                "relationship_type": "godchild"
+                            }
+                        ]
+                    }
+                ],
+                "events":[
+                    {
+                        "type":"baptism",
+                        "principal":"P08",
+                        "date":"1873-01-17"
+                    },
+                    {
+                        "type":"birth",
+                        "principal":"P08",
+                        "date":"1873-01-10"
+                    }
+                ]
+            }
         },
         {
             "id": "0001-05",
-            "raw": "Jueves diez y seis de Enero de mil ochocientos setenta y tres: yo Presbitero Don Santiago Serra, cura párroco vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas bauticé solemnemente y puse los santos óleos á una párvula parda que nació el dia seis de Octubre último, hija de padre no conocido y de la de igual clase y de condicion libre Escolástica Guillerma Lopes natural y vecina de esta feligresía; nieta materna de Trinidad Acuña y abuelo no espresado, en dicha párvula ejercí las sagradas preces y ceremonias y le puse por nombre Maria Luisa del Rosario: fue su madrina Doña Casilda Orgen y en su nombre y representacion Ana Galceran, á quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé"
+            "raw": "Jueves diez y seis de Enero de mil ochocientos setenta y tres: yo Presbitero Don Santiago Serra, cura párroco vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas bauticé solemnemente y puse los santos óleos á una párvula parda que nació el dia seis de Octubre último, hija de padre no conocido y de la de igual clase y de condicion libre Escolástica Guillerma Lopes natural y vecina de esta feligresía; nieta materna de Trinidad Acuña y abuelo no espresado, en dicha párvula ejercí las sagradas preces y ceremonias y le puse por nombre Maria Luisa del Rosario: fue su madrina Doña Casilda Orgen y en su nombre y representacion Ana Galceran, á quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé",
+            "normalized":"Jueves diez y seis de enero de mil ochocientos setenta y tres, yo Presbitero Don Santiago Serra, cura párroco vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas, bauticé solemnemente y puse los santos óleos á una párvula parda que nació el dia seis de octubre último, hija de padre no conocido y de la de igual clase y de condicion libre Escolástica Guillerma Lopes, natural y vecina de esta feligresía, nieta materna de Trinidad Acuña y abuelo no espresado. En dicha párvula ejercí las sagradas preces y ceremonias y le puse por nombre Maria Luisa del Rosario. Fue su madrina Doña Casilda Orgen y en su nombre y representacion Ana Galceran, á quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé Santiago Serra",
+            "data":{
+                "people":[
+                    {
+                        "id":"P01",
+                        "name":"Santiago Serra",
+                        "title":[
+                            "Don"
+                        ],
+                        "occupation":"cleric"
+                    },
+                    {
+                        "id":"P02",
+                        "name":"Escolástica Guillerma Lopes",
+                        "free":"true",
+                        "origin":"Matanzas",
+                        "relationships":[
+                            {
+                                "related_person":"P04",
+                                "relationship_type":"child"
+                            },
+                            {
+                                "related_person":"P03",
+                                "relationship_type":"parent"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P03",
+                        "name":"Trinidad Acuña",
+                        "relationships":[
+                            {
+                                "related_person":"P02",
+                                "relationship_type":"child"
+                            },
+                            {
+                                "related_person":"P04",
+                                "relationship_type":"grandchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P04",
+                        "name":"Maria Luisa del Rosario",
+                        "free":"true",
+                        "relationships":[
+                            {
+                                "related_person":"P02",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person":"P03",
+                                "relationship_type":"grandparent"
+                            },
+                            {
+                                "related_person":"P05",
+                                "relationship_type":"godparent"
+                            }
+                        ]
+
+                    },
+                    {
+                        "id":"P05",
+                        "name":"Doña Casilda Orgen",
+                        "relationships":[
+                            {
+                                "related_person":"P04",
+                                "relationship_type":"godchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P06",
+                        "name": "Ana Galceran",
+                        "relationships":[
+                            {
+                                "related_person":"P04",
+                                "relationship_type":"godchild"
+                            }
+                        ]
+                    }
+                ],                
+                    "events": [
+                        {
+                            "type": "baptism",
+                            "principal":"P03",
+                            "date": "1873-01-16"
+                        },
+                        {
+                            "type": "birth",
+                            "principal":"P03",
+                            "date":"1872-10-06"
+                        }
+                    ]
+                
+            }
         },
         {
             "id": "0002-01",
-            "raw": "Viernes diez y siete de Enero de mil ochocientos setenta y tres; yo Presbitero Don Santiago Serra, cura párroco vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas bauticé solemnemente y puse los santos óleos á un párvulo, que nació el dia diez de Noviembre último, hijo de padre no conocido y de Gabriela Silbeira, natural y vecina de esta feligresía, y de condicion libre; nieto materno de Antonio y de Juliana Moreña: en dicho párvulo ejercí las sagradas preces y ceremonias y le puse por nombre Andres: fueron sus padrinos Juan Rodir y Marina Plar, a quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo fir"
+            "raw": "Viernes diez y siete de Enero de mil ochocientos setenta y tres; yo Presbitero Don Santiago Serra, cura párroco vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas bauticé solemnemente y puse los santos óleos á un párvulo, que nació el dia diez de Noviembre último, hijo de padre no conocido y de Gabriela Silbeira, natural y vecina de esta feligresía, y de condicion libre; nieto materno de Antonio y de Juliana Moreña: en dicho párvulo ejercí las sagradas preces y ceremonias y le puse por nombre Andres: fueron sus padrinos Juan Rodir y Marina Plar, a quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo fir",
+            "normalized":"Viernes diez y siete de enero de mil ochocientos setenta y tres, yo Presbitero Don Santiago Serra, cura párroco vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas, bauticé solemnemente y puse los santos óleos á un párvulo que nació el dia diez de noviembre último, hijo de padre no conocido y de Gabriela Silbeira, natural y vecina de esta feligresía y de condicion libre, nieto materno de Antonio y de Juliana Moreña. En dicho párvulo ejercí las sagradas preces y ceremonias y le puse por nombre Andres. Fueron sus padrinos Juan Rodir y Marina Plar, a quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firme Santiago Serra",
+            "data":{
+                "people":[
+                    {
+                        "id":"P01",
+                        "name": "Santiago Serra",
+                        "title":[
+                            "Don"
+                        ],
+                        "occupation":"cleric"
+                    },
+                    {
+                        "id":"P02",
+                        "name":"Gabriela Silbeira",
+                        "free":"true",
+                        "relationships":[
+                            {
+                                "related_person":"P03",
+                                "relationship_type":"parent"
+                            },
+                            {
+                                "related_person":"P04",
+                                "relationship_type":"parent"
+                            },
+                            {
+                                "related_person":"P05",
+                                "relationship_type":"child"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P03",
+                        "name":"Antonio Moreña",
+                        "relationships":[
+                            {
+                                "related_person":"P02",
+                                "relationship_type":"child"
+                            },
+                            {
+                                "related_person":"P05",
+                                "relationship_type":"grandchild"
+                            },
+                            {
+                                "related_person"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P04",
+                        "name":"Juliana Moreña",
+                        "relationships":[
+                            {
+                                "related_person":"P02"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P05",
+                        "name":"Andres",
+                        "relationships":[
+                            {
+                                "related_person":"P02"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P06",
+                        "name":"Juan Rodir",
+                        "relationships":[
+                            {
+                                "related_person":"P05"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P07",
+                        "name":"Marina Plar",
+                        "relationships":[
+                            {
+                                "related_person":"P05"
+                            }
+                        ]
+                    }
+                ]
+            }
         },
         {
             "id": "0002-02",
