@@ -9,8 +9,10 @@ representation of a json document containing extracted content.
 from openai import OpenAI    
 import json
 from utility import *
+from schema import schema
+import re
 
-def extract_data_from_volume(volume_record_path, instructions_path, training_data_path, keywords = None, match_mode = "or", max_shots = 1000, output_path = None):
+def extract_data_from_volume(volume_record_path, instructions_path, training_data_path, keywords = None, match_mode = "or", max_shots = 1000, output_path = None, log_prefix = ""):
     """Extracts content from a series of transcribed entries from a historical document.
 
     Args:
@@ -36,6 +38,8 @@ def extract_data_from_volume(volume_record_path, instructions_path, training_dat
         out_path (str, optional): path to output volume record with extracted content to; volume
         record will not be saved if this is not included
 
+        log_prefix (str, optional): a directory to log failed relationships (ending with /)
+
     Returns:
         Dict containing volume record and extracted content. 
     """
@@ -45,18 +49,18 @@ def extract_data_from_volume(volume_record_path, instructions_path, training_dat
     instructions = collect_instructions(instructions_path, volume_metadata, "extraction")
     
     for x, entry in enumerate(data["entries"]):
-        info = extract_data_from_entry(entry, volume_metadata, examples, instructions)
+        info = extract_data_from_entry(entry, volume_metadata, examples, instructions, log_prefix=log_prefix)
 
         def load_extracted_data(info):
             try:
-                json.loads(info)                
+                json.loads(info)                  
             except:
                 return False
             
             return True
 
         while not load_extracted_data(info):
-            info = extract_data_from_entry(entry, volume_metadata, examples, instructions)
+            info = extract_data_from_entry(entry, volume_metadata, examples, instructions, log_prefix=log_prefix)
         
         data["entries"][x]["data"] = json.loads(info)    
     
@@ -66,7 +70,7 @@ def extract_data_from_volume(volume_record_path, instructions_path, training_dat
 
     return data
 
-def extract_data_from_entry(entry, volume_metadata, examples, instructions):
+def extract_data_from_entry(entry, volume_metadata, examples, instructions, log_prefix= ""):
     """Extracts content from a single transcribed entry from a historical document.
 
     Args:
@@ -78,6 +82,8 @@ def extract_data_from_entry(entry, volume_metadata, examples, instructions):
         examples (list): training data to be used to fine-tune model
 
         instructions (list): instructions to be passed to model as system messages
+
+        log_prefix (str, optional): a directory to log failed relationships (ending with /)
 
     Returns:
         str representation of a json document containing extracted content 
@@ -120,11 +126,74 @@ def extract_data_from_entry(entry, volume_metadata, examples, instructions):
         }
     )
     
+   
     #generate response from llm
     response = client.chat.completions.create(
-        model="gpt-4o",
-        response_format={"type": "json_object"},
-        messages = conversation        
+        model="gpt-4o-2024-08-06",
+        messages = conversation,
+        response_format= schema
     )
+    
+    # check if the relationships and Ids are valid, and remove relationships to non-existant people
+    init_result = response.choices[0].message.content
+    result, valid = log_failed_relationships(init_result)
 
-    return response.choices[0].message.content
+    # log the initial json with invalid relationships
+    if not valid:
+        cur_entry = entry
+        cur_entry["data"] = json.loads(init_result)
+        if os.path.exists(f"{log_prefix}invalid_relationships.json"):
+            with open(f"{log_prefix}invalid_relationships.json", "r") as f:
+                data = json.load(f)
+                data["entries"].append(cur_entry)
+        else:
+            data = {}
+            data["entries"] = [cur_entry] 
+        with open(f"{log_prefix}invalid_relationships.json", "w") as f:
+            json.dump(data, f)
+            
+    return result
+
+
+def log_failed_relationships(data):
+    """Logs any entries with invalid relationships.
+
+    Args:
+        data (string): json string response from the model
+
+    Returns:
+        tuple of (str, boolean) where the first element is a json string with no relationships to non-existant people 
+    """    
+    reciprocal_rels = {"parent": "child", "child": "parent", 
+                       "enslaver": "slave", "slave": "enslaver", 
+                       "spouse": "spouse",
+                       "godparent": "godchild", "godchild": "godparent"}
+
+    json_str = fr'{data}'
+    data = dict(json.loads(json_str))
+
+    ids = [p['id'] for p in data['people']]
+
+    valid = True
+
+    relationships = {}
+    for p in data['people']:
+        if not re.match(r"^P\d{2}$", p["id"]):
+            valid = False
+        relationships[p['id']] = {}
+        for r in p['relationships']:
+            relationships[p['id']][r['related_person']] = [r['relationship_type']  for r in p['relationships']]
+        p['relationships'] = [r for r in p['relationships'] if r['related_person'] in ids]
+    
+    for p1 in relationships:
+        for p2, rel in p.items():
+            if p2 not in relationships or relationships[p2][p1] !=  reciprocal_rels[rel]:
+                valid = False
+
+    valid_principals = [e for e in data['events'] if 'principal' in e and e['principal'] in ids]
+    data['events'] = valid_principals
+    for e in data['events']:
+        if 'principal' in e and e['principal'] not in ids:
+            valid = False
+    
+    return json.dumps(data), valid
