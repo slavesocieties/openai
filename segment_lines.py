@@ -71,7 +71,7 @@ def segment_lines(data, crop_pixels, file_name, entry_id, save_dir="segmented"):
             idx = str(count + 1)
 
         #tmp_img.save("./segmented/"+file_name+"/"+file_name+'-'+idx+'.jpg')
-        im_id = f"{file_name[:file_name.find('.')]}-{entry_id}-{idx}"
+        im_id = f"{file_name[:file_name.find('.')]}-{entry_id}-{idx}"        
         tmp_img.save(f"{save_dir}/{im_id}.jpg")
         segments.append({"id": im_id, "coords": [left, top, right, bottom]})        
         count += 1        

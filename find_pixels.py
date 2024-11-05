@@ -17,9 +17,9 @@ def find_pixels(data, prominance):
     crop_pixels : list
         list of indices indicate where to crop the image
     """
-    pixel_counts = np.sum(data, axis=1, keepdims=True) #sum pixels along the horizontal axis
+    pixel_counts = np.sum(data, axis=1, keepdims=True) #sum pixels along the horizontal axis    
     array = []
-    for val in pixel_counts: #flatten the numpy array
+    for val in pixel_counts: #flatten the numpy array        
         array.append(val[0])
     crop_pixels = scipy.signal.find_peaks(array, prominence=prominance)[0] #find pixel boundaries    
     return crop_pixels

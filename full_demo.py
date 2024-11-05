@@ -18,7 +18,7 @@ def process_image(image_id):
 def actual_full_demo(image_id, bucket_name="ssda-openai-test", local_file_path="images"):
 
     # Create an S3 client
-    s3 = boto3.client('s3')    
+    s3 = boto3.client('s3')
     
     # Download the file
     s3_file_key = f"{image_id}.jpg"
