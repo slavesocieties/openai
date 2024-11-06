@@ -18,11 +18,28 @@
                         "titles": [
                             "Don"
                         ],
-                        "occupation": "cleric"
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": "cleric",
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": []
                     },
                     {
                         "id": "P02",
                         "name": "Juan Vives",                        
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P03",
@@ -33,9 +50,13 @@
                     {
                         "id": "P03",
                         "name": "Dominga",
+                        "titles": [],
+                        "rank": null,
                         "origin": "Africa",
                         "ethnicity": "Carabalí",
                         "age": "adult",
+                        "legitimate": null,
+                        "occupation": null,
                         "phenotype": "negro",
                         "free": false,
                         "relationships": [
@@ -52,6 +73,15 @@
                     {
                         "id": "P04",
                         "name": "Isabel",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P03",
@@ -63,7 +93,9 @@
                 "events": [
                     {
                         "type": "baptism",
-                        "principal": "P03",
+                        "principal": [
+                            "P03"
+                        ],
                         "date": "1840-07-19"
                     }
                 ]
@@ -87,12 +119,26 @@
                         "titles": [
                             "Don"
                         ],
-                        "occupation": "cleric"
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": "cleric",
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": []
                     },
                     {
                         "id": "P02",
                         "name": "Julian",
+                        "titles": [],
+                        "rank": null,
                         "origin": "Guinea",
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
                         "phenotype": "moreno",
                         "free": false,
                         "relationships": [
@@ -113,7 +159,13 @@
                     {
                         "id": "P03",
                         "name": "Sabina",
+                        "titles": [],
+                        "rank": null,
                         "origin": "Guinea",
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
                         "phenotype": "moreno",
                         "free": false,
                         "relationships": [
@@ -137,6 +189,14 @@
                         "titles": [
                             "Don"
                         ],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -151,8 +211,14 @@
                     {
                         "id": "P05",
                         "name": "Antonia",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
                         "age": "infant",
                         "legitimate": true,
+                        "occupation": null,
+                        "phenotype": null,
                         "free": true,
                         "relationships": [
                             {
@@ -172,6 +238,15 @@
                     {
                         "id": "P06",
                         "name": "Budesiceda",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P05",
@@ -183,12 +258,16 @@
                 "events": [
                     {
                         "type": "baptism",
-                        "principal": "P05",
+                        "principal": [
+                            "P05"
+                        ],
                         "date": "1839-10-17"
                     },
                     {
                         "type": "birth",
-                        "principal": "P05",
+                        "principal": [
+                            "P05"
+                        ],
                         "date": "1837-06-13"
                     }
                 ]
@@ -212,11 +291,26 @@
                         "titles": [
                             "Don"
                         ],
-                        "occupation": "cleric"
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": "cleric",
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": []
                     },
                     {
                         "id": "P02",
                         "name": "Sebastian",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
                         "phenotype": "negro",
                         "free": false,
                         "relationships": [
@@ -237,6 +331,13 @@
                     {
                         "id": "P03",
                         "name": "Jucina",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
                         "phenotype": "negro",
                         "free": false,
                         "relationships": [
@@ -257,6 +358,15 @@
                     {
                         "id": "P04",
                         "name": "Jose Corras",                        
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -271,7 +381,15 @@
                     {
                         "id": "P05",
                         "name": "Merced",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
                         "age": "infant",
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -293,7 +411,14 @@
                         "titles": [
                             "Doña"
                         ],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
                         "phenotype": "pardo",
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P05",
@@ -305,12 +430,16 @@
                 "events": [
                     {
                         "type": "baptism",
-                        "principal": "P04",
+                        "principal": [
+                            "P04"
+                        ],
                         "date": "1839-10-16"
                     },
                     {
                         "type": "birth",
-                        "principal": "P04",
+                        "principal": [
+                            "P04"
+                        ],
                         "date": "1838-09-24"
                     }
                 ]
@@ -322,7 +451,7 @@
             "country": "United States",
             "state": "New Mexico",
             "city": "Isleta Pueblo",
-            "institution": "San Agustín de la Isleta",            
+            "institution": "San Agustín de la Isleta",
             "id": 7548705,
             "raw": "En esta Mission de San Augustin de la Ysleta en treinta y uno de marzo de mil seteçientos y quarenta y ocho años baptise solemnemente a Diego apache de nacion fue su madrina Gregoria para que conste lo firme ut supra.",
             "normalized": "En esta Misión de San Agustín de la Ysleta, en treinta y uno de marzo de mil setecientos cuarenta y ocho años, bauticé solemnemente a Diego, apache de nación. Su madrina fue Gregoria, para que conste, lo firmé ut supra.",
@@ -331,7 +460,15 @@
                     {
                         "id": "P01",
                         "name": "Diego",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
                         "ethnicity": "Apache",
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -342,6 +479,15 @@
                     {
                         "id": "P02",
                         "name": "Gregoria",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P01",
@@ -353,7 +499,9 @@
                 "events": [
                     {
                         "type": "baptism",
-                        "principal": "P01",
+                        "principal": [
+                            "P01"
+                        ],
                         "date": "1748-03-31"
                     }
                 ]
@@ -374,7 +522,15 @@
                     {
                         "id": "P01",
                         "name": "Juan Domingo",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
                         "legitimate": true,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -397,6 +553,15 @@
                     {
                         "id": "P02",
                         "name": "Andrés",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P01",
@@ -411,6 +576,15 @@
                     {
                         "id": "P03",
                         "name": "Pascuala",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P01",
@@ -425,6 +599,15 @@
                     {
                         "id": "P04",
                         "name": "Joseph Marcos",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P01",
@@ -435,6 +618,15 @@
                     {
                         "id": "P05",
                         "name": "Francisca",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P01",
@@ -446,7 +638,9 @@
                 "events": [
                     {
                         "type": "baptism",
-                        "principal": "P05",
+                        "principal": [
+                            "P05"
+                        ],
                         "date": "1750-08-09"
                     }
                 ]
@@ -467,7 +661,15 @@
                     {
                         "id": "P01",
                         "name": "Maria Antonia",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
                         "legitimate": false,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -482,6 +684,15 @@
                     {
                         "id": "P02",
                         "name": "Juan Antonio Chabes",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P01",
@@ -492,6 +703,15 @@
                     {
                         "id": "P03",
                         "name": "Manuela Romero",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P01",
@@ -503,7 +723,9 @@
                 "events": [
                     {
                         "type": "baptism",
-                        "principal": "P03",
+                        "principal": [
+                            "P03"
+                        ],
                         "date": "1753-06-27"
                     }
                 ]
@@ -525,14 +747,31 @@
                         "id": "P01",
                         "name": "Nicolás Geronimo",
                         "titles": [
-                            "señor", "Vicario"
+                            "señor",
+                            "Vicario"
                         ],
-                        "occupation": "cleric"
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": "cleric",
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": []
                     },
                     {
                         "id": "P02",
                         "name": "Juan Díaz",
+                        "titles": [],
+                        "rank": null,
                         "origin": "Setúbal",
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P03",
@@ -551,6 +790,15 @@
                     {
                         "id": "P03",
                         "name": "Ana de Zamora",                        
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -573,6 +821,15 @@
                     {
                         "id": "P04",
                         "name": "Francisco de Zamora",                        
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P03",
@@ -582,7 +839,16 @@
                     },
                     {
                         "id": "P05",
-                        "name": "Julián Hernández",                        
+                        "name": "Julián Hernández",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -600,7 +866,16 @@
                     },
                     {
                         "id": "P06",
-                        "name": "Isabel Velázquez",                        
+                        "name": "Isabel Velázquez",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -620,8 +895,9 @@
                 "events": [
                     {
                         "type": "marriage",
-                        "principals": [
-                            "P02", "P03"
+                        "principal": [
+                            "P02",
+                            "P03"
                         ],
                         "date": "1584-07-23"
                     }
@@ -644,13 +920,31 @@
                         "id": "P01",
                         "name": "Nicolás Geronimo",
                         "titles": [
-                            "señor", "Vicario"
+                            "señor",
+                            "Vicario"
                         ],
-                        "occupation": "cleric"
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": "cleric",
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": []
                     },
                     {
                         "id": "P02",
                         "name": "Diego Albites",                        
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P03",
@@ -669,6 +963,15 @@
                     {
                         "id": "P03",
                         "name": "Francisca Hurtada",                        
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -690,7 +993,16 @@
                     },
                     {
                         "id": "P04",
-                        "name": "Manuel Díaz",                        
+                        "name": "Manuel Díaz",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P03",
@@ -700,7 +1012,16 @@
                     },
                     {
                         "id": "P05",
-                        "name": "Francisco Ximénez",                        
+                        "name": "Francisco Ximénez",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -722,6 +1043,14 @@
                         "titles": [
                             "Doña"
                         ],                        
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -741,8 +1070,9 @@
                 "events": [
                     {
                         "type": "marriage",
-                        "principals": [
-                            "P02", "P03"
+                        "principal": [
+                            "P02",
+                            "P03"
                         ],
                         "date": "1584-07-25"
                     }
@@ -765,13 +1095,31 @@
                         "id": "P01",
                         "name": "Nicolás Geronimo",
                         "titles": [
-                            "señor", "Vicario"
+                            "señor",
+                            "Vicario"
                         ],
-                        "occupation": "cleric"
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": "cleric",
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": []
                     },
                     {
                         "id": "P02",
                         "name": "Juan Peres Esturiano",                        
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P03",
@@ -790,6 +1138,15 @@
                     {
                         "id": "P03",
                         "name": "Mariana de la Aia",                        
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -816,6 +1173,15 @@
                     {
                         "id": "P04",
                         "name": "Diego de la Aia",                        
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P03",
@@ -829,7 +1195,16 @@
                     },
                     {
                         "id": "P05",
-                        "name": "Cecilia de Arestaça",                        
+                        "name": "Cecilia de Arestaça",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P03",
@@ -847,6 +1222,14 @@
                         "titles": [
                             "Alcalde"
                         ],                        
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -868,6 +1251,14 @@
                         "titles": [
                             "Doña"
                         ],                        
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -887,8 +1278,9 @@
                 "events": [
                     {
                         "type": "marriage",
-                        "principals": [
-                            "P02", "P03"
+                        "principal": [
+                            "P02",
+                            "P03"
                         ],
                         "date": "1584-10-22"
                     }
@@ -910,11 +1302,29 @@
                     {
                         "id": "P01",
                         "name": "Antonio Zapata",                        
-                        "occupation": "cleric"
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": "cleric",
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": []
                     },
                     {
                         "id": "P02",
                         "name": "Manuel Anchico",                        
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P03",
@@ -928,7 +1338,16 @@
                     },
                     {
                         "id": "P03",
-                        "name": "Juan Martín",                        
+                        "name": "Juan Martín",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -939,6 +1358,15 @@
                     {
                         "id": "P04",
                         "name": "Cristina Angola",                        
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -952,7 +1380,16 @@
                     },
                     {
                         "id": "P05",
-                        "name": "María de las Nieves",                        
+                        "name": "María de las Nieves",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
                         "relationships": [                            
                             {
                                 "related_person": "P04",
@@ -962,27 +1399,1677 @@
                     },
                     {
                         "id": "P06",
-                        "name": "Juan Pérez Barbero"
+                        "name": "Juan Pérez Barbero",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": []
                     },
                     {
                         "id": "P07",
-                        "name": "Cristóbal de Zamora"
+                        "name": "Cristóbal de Zamora",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": []
                     },
                     {
                         "id": "P08",
-                        "name": "Gerónimo Ros"
+                        "name": "Gerónimo Ros",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": []
                     }
                 ],
                 "events": [
                     {
                         "type": "marriage",
-                        "principals": [
-                            "P02", "P03"
-                        ],
-                        "witnesses": [
-                            "P06", "P07", "P08"
+                        "principal": [
+                            "P02",
+                            "P03"
                         ],
                         "date": "1584-10-22"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "baptism",
+            "language": "Spanish",
+            "country": "Cuba",
+            "state": "Matánzas",
+            "city": "Matánzas",
+            "institution": "Catedral de San Borromeo",
+            "id": 22152,
+            "raw": "Sábado once de Enero de mil ochocientos setenta y tres yo Presbitero Don Santiago Serra , cura párroco, vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas, bauticé solemnemente y puse los santos óleos á una párvula, que nació el dia doce de Septiembre último, hija de padre no conocido y de la morena libre Aleja Peres, natural y vecina de esta feligresía; nieta materna de Telesforo y de Francisca Sanches: en dicha párvula ejercí las sagradas preces y ceremonias y le puse por nombre Maria Leoncia: fueron sus padrinos José Timoteo Pujadas y Leonarda Peñalver, a quienes advertí el parentesco espiritual y obligaciones que contrajeron y lo firmé Santiago Serra",
+            "normalized": "Sábado once de enero de mil ochocientos setenta y tres, yo Presbítero Don Santiago Serra, cura párroco y vicario foráneo interino de esta iglesia de Término de San Carlos de Matanzas, bauticé solemnemente y puse los santos óleos a una parvula que nació el dia doce de septiembre último, hija de padre no conocido y de la morena libre Aleja Pérez, natural y vecina de esta feligresía, nieta materna de Telesforo y de Francisca Sánchez. En dicha parvula ejercí las sagradas preces y ceremonias, y le puse por nombre Maria Leoncia. Fueron sus padrinos José Timoteo Pujadas y Leonarda Peñalver, a quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé Santiago Serra",
+            "data": {
+                "people": [
+                    {
+                        "id": "P01",
+                        "name": "Santiago Serra",
+                        "titles": [
+                            "Don"
+                        ],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": "cleric",
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": []
+                    },
+                    {
+                        "id": "P02",
+                        "name": "Aleja Pérez",
+                        "titles": [],
+                        "rank": null,
+                        "origin": "Matanzas",
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": "moreno",
+                        "free": true,
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "child"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P03",
+                        "name": "Telesforo",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "child"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "grandchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P04",
+                        "name": "Francisca Sánchez",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "child"
+                            },
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "grandchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P05",
+                        "name": "Maria Leoncia",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": "infant",
+                        "legitimate": false,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "grandparent"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "godparent"
+                            },
+                            {
+                                "related_person": "P07",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P06",
+                        "name": "José Timoteo Pujadas",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "godchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P07",
+                        "name": "Leonarda Peñalver",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "godchild"
+                            }
+                        ]
+                    }
+                ],
+                "events": [
+                    {
+                        "type": "baptism",
+                        "principal": [
+                            "P05"
+                        ],
+                        "date": "1873-01-11"
+                    },
+                    {
+                        "type": "birth",
+                        "principal": [
+                            "P05"
+                        ],
+                        "date": "1872-09-12"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "baptism",
+            "language": "Spanish",
+            "country": "Cuba",
+            "state": "Matánzas",
+            "city": "Matánzas",
+            "institution": "Catedral de San Borromeo",
+            "id": 22152,
+            "raw": "Jueves diez y seis de Enero de mil ochocientos setenta y tres: yo Presbitero Don Santiago Serra, cura párroco vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas bauticé solemnemente y puse los santos óleos á un párvulo que nació el dia diez de los corrientes hijo legítimo de Rufino Sequeira natural de esta y de Matilde Silva natural de la Havana y vecinos Linda de esta feligresía; nieto paterno de José y de Belen Sequeira y materno de Pio y de Rosario Marias en dicho párvulo ejercí las sagradas preces y ceremonias y le puse por nombre José Gonsalo Nicanor: fueron sus padrinos Cristobal Roque y Asuncion Armono, a quienes advertí el parentesco espiritual y obligaciones que contrajeron y lo firmé Santiago Serra",
+            "normalized": "Jueves diez y seis de enero de mil ochocientos setenta y tres, yo Presbitero Don Santiago Serra, cura párroco vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas bauticé solemnemente y puse los santos óleos á un párvulo, que nació el dia diez de los corrientes, hijo legítimo de Rufino Sequeira natural de esta y de Matilde Silva natural de la Havana y vecinos linda de esta feligresía, nieto paterno de José y de Belen Sequeira y materno de Pio y de Rosario Marias. En dicho párvulo ejercí las sagradas preces y ceremonias y le puse por nombre José Gonsalo Nicanor. Fueron sus padrinos Cristobal Roque y Asuncion Armono, a quienes advertí el parentesco espiritual y obligaciones que contrajeron y lo firmé. Santiago Serra",
+            "data": {
+                "people": [
+                    {
+                        "id": "P01",
+                        "name": "Santiago Serra",
+                        "title": [
+                            "Don"
+                        ],
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": "cleric",
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": []
+                    },
+                    {
+                        "id": "P02",
+                        "name": "Rufino Sequeira",
+                        "titles": [],
+                        "rank": null,
+                        "origin": "Matanzas",
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P08",
+                                "relationship_type": "child"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P03",
+                        "name": "Matilde Silva",
+                        "titles": [],
+                        "rank": null,
+                        "origin": "Havana",
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P07",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P08",
+                                "relationship_type": "child"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P04",
+                        "name": "Jose Sequeira",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "child"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P08",
+                                "relationship_type": "grandchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P05",
+                        "name": "Belen Sequeira",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "child"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P08",
+                                "relationship_type": "grandchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P06",
+                        "name": "Pio Marias",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "child"
+                            },
+                            {
+                                "related_person": "P07",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P08",
+                                "relationship_type": "grandchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P07",
+                        "name": "Rosario Marias",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "child"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P08",
+                                "relationship_type": "grandchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P08",
+                        "name": "José Gonsalo Nicanor",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "grandparent"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "grandparent"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "grandparent"
+                            },
+                            {
+                                "related_person": "P07",
+                                "relationship_type": "grandparent"
+                            },
+                            {
+                                "related_person": "P09",
+                                "relationship_type": "godparent"
+                            },
+                            {
+                                "related_person": "P10",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P09",
+                        "name": "Cristobal Roque",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P08",
+                                "relationship_type": "godchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P10",
+                        "name": "Asuncion Armono",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P08",
+                                "relationship_type": "godchild"
+                            }
+                        ]
+                    }
+                ],
+                "events": [
+                    {
+                        "type": "baptism",
+                        "principal": [
+                            "P08"
+                        ],
+                        "date": "1873-01-17"
+                    },
+                    {
+                        "type": "birth",
+                        "principal": [
+                            "P08"
+                        ],
+                        "date": "1873-01-10"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "baptism",
+            "language": "Spanish",
+            "country": "Cuba",
+            "state": "Matánzas",
+            "city": "Matánzas",
+            "institution": "Catedral de San Borromeo",
+            "id": 22152,
+            "raw": "Jueves diez y seis de Enero de mil ochocientos setenta y tres: yo Presbitero Don Santiago Serra, cura párroco vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas bauticé solemnemente y puse los santos óleos á una párvula parda que nació el dia seis de Octubre último, hija de padre no conocido y de la de igual clase y de condicion libre Escolástica Guillerma Lopes natural y vecina de esta feligresía; nieta materna de Trinidad Acuña y abuelo no espresado, en dicha párvula ejercí las sagradas preces y ceremonias y le puse por nombre Maria Luisa del Rosario: fue su madrina Doña Casilda Orgen y en su nombre y representacion Ana Galceran, á quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé",
+            "normalized": "Jueves diez y seis de enero de mil ochocientos setenta y tres, yo Presbitero Don Santiago Serra, cura párroco vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas, bauticé solemnemente y puse los santos óleos á una párvula parda que nació el dia seis de octubre último, hija de padre no conocido y de la de igual clase y de condicion libre Escolástica Guillerma Lopes, natural y vecina de esta feligresía, nieta materna de Trinidad Acuña y abuelo no espresado. En dicha párvula ejercí las sagradas preces y ceremonias y le puse por nombre Maria Luisa del Rosario. Fue su madrina Doña Casilda Orgen y en su nombre y representacion Ana Galceran, á quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé Santiago Serra",
+            "data": {
+                "people": [
+                    {
+                        "id": "P01",
+                        "name": "Santiago Serra",
+                        "title": [
+                            "Don"
+                        ],
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": "cleric",
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": []
+                    },
+                    {
+                        "id": "P02",
+                        "name": "Escolástica Guillerma Lopes",
+                        "titles": [],
+                        "rank": null,
+                        "origin": "Matanzas",
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": "true",
+                        "relationships": [
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "child"
+                            },
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "parent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P03",
+                        "name": "Trinidad Acuña",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "child"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "grandchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P04",
+                        "name": "Maria Luisa del Rosario",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": "true",
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "grandparent"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P05",
+                        "name": "Doña Casilda Orgen",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "godchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P06",
+                        "name": "Ana Galceran",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "godchild"
+                            }
+                        ]
+                    }
+                ],
+                "events": [
+                    {
+                        "type": "baptism",
+                        "principal": [
+                            "P03"
+                        ],
+                        "date": "1873-01-16"
+                    },
+                    {
+                        "type": "birth",
+                        "principal": [
+                            "P03"
+                        ],
+                        "date": "1872-10-06"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "baptism",
+            "language": "Spanish",
+            "country": "Cuba",
+            "state": "Matánzas",
+            "city": "Matánzas",
+            "institution": "Catedral de San Borromeo",
+            "id": 22152,
+            "raw": "Miércoles doce de Febrero de mil ochocientos setenta y tres: yo Presbitero Don Benito Valls y Martinez Teniente cura interino de esta iglesia de Término de San Cárlos de Matánzas y en ausencia ministerial del Señor cura párroco y vicario foráneo tambien interino de la misma Presbitero Don Santiago Serra, bauticé solemnemente y puse los santos óleos á una párvula parda, que nació el dia diez y seis de Agosto último, hija de padre no conocido y de la morena Modesta criolla y vecina de esta feligresía, esclava de Doña Maria del Rosario de Fuentes; nieta materna de Pablo Bruson y de Ysabel Andux: en dicha párvula ejercí las sagradas preces y ceremonias y le puse por nombre Margarita Amelia: la cual es libre por beneficio de la ley, sancionada por las cortes constituyentes de la Nacion, en veinte y tres de Junio de mil ochocientos setenta años, comunicada con fecha cuatro de Julio del propio, al Escelentisimo Señor Gobernador Superior Político de esta Ysla, publicada en la Gaceta Oficial correspondiente al Sábado primero de Octubre del referido año: fueron sus padrinos Don Antonio Sanches y Eduarda Andux, á quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé Santiago Serra",
+            "normalized": "Miércoles, doce de febrero de mil ochocientos setenta y tres, yo Presbítero Don Benito Valls y Martinez, teniente cura interino de esta iglesia de Término de San Cárlos de Matanzas, y en ausencia ministerial del Señor cura párroco y vicario foráneo también interino de la misma Presbítero Don Santiago Serra, bauticé solemnemente y puse los santos óleos a una párvula parda, que nació el dia dieciséis de agosto último, hija de padre no conocido y de la morena Modesta criolla, vecina de esta feligresia y esclava de Doña Maria del Rosario de Fuentes, nieta materna de Pablo Bruson y de Isabel Andux. En dicha párvula ejercí las sagradas, preces y ceremonias. Le puse por nombre Margarita Amelia, la cual es libre por beneficio de la ley, sancionada por las cortes constituyentes de la nación en veintitrés de junio de mil ochocientos setenta años, comunicada con fecha cuatro de julio del propio, al excelentísimo señor gobernador superior político de esta isla, publicada en la Gaceta Oficial correspondiente al sábado primero de octubre del referido año. Fueron sus padrinos Don Antonio Sánchez y Eduarda Andux, a quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé",
+            "data": {
+                "people": [
+                    {
+                        "id": "P01",
+                        "name": "Benito Valls y Martinez",
+                        "titles": [
+                            "Don"
+                        ],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": "cleric",
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": []
+                    },
+                    {
+                        "id": "P02",
+                        "name": "Santiago Serra",
+                        "titles": [
+                            "Don"
+                        ],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": "cleric",
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": []
+                    },
+                    {
+                        "id": "P03",
+                        "name": "Modesta",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": "criolla",
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": "moreno",
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "enslaver"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P07",
+                                "relationship_type": "child"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P04",
+                        "name": "Maria del Rosario de Fuentes",
+                        "titles": [
+                            "Doña"
+                        ],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "slave"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P05",
+                        "name": "Pablo Bruson",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "child"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P07",
+                                "relationship_type": "grandchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P06",
+                        "name": "Isabel Andux",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "child"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P07",
+                                "relationship_type": "grandchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P07",
+                        "name": "Margarita Amelia",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": "infant",
+                        "legitimate": false,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": true,
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "grandparent"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "grandparent"
+                            },
+                            {
+                                "related_person": "P08",
+                                "relationship_type": "godparent"
+                            },
+                            {
+                                "related_person": "P09",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P08",
+                        "name": "Antonio Sánchez",
+                        "titles": [
+                            "Don"
+                        ],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P07",
+                                "relationship_type": "godchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P09",
+                        "name": "Eduarda Andux",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P07",
+                                "relationship_type": "godchild"
+                            }
+                        ]
+                    }
+                ],
+                "events": [
+                    {
+                        "type": "baptism",
+                        "principal": [
+                            "P07"
+                        ],
+                        "date": "1873-02-12"
+                    },
+                    {
+                        "type": "birth",
+                        "principal": [
+                            "P07"
+                        ],
+                        "date": "1872-08-16"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "baptism",
+            "language": "Spanish",
+            "country": "Cuba",
+            "state": "Matánzas",
+            "city": "Matánzas",
+            "institution": "Catedral de San Borromeo",
+            "id": 22152,
+            "raw": "Sábado diez y nueve de Abril de mil ochocientos setenta y tres: yo Presbitero Don Santiago Serra, cura párroco, vicario, foráneo interino de esta iglesia de Término de San Cárlos de Matánzas, bauticé solemnemente y puse los santos óleos á un párvulo, que nació el dia veinte y dos de Diciembre último, hija legitimo de los pardos libres Manuel Carnera y de Dolores Carbó, el primero natural de Ceiba Mocha y la segunda natural de esta feligresía, de la que arriba son vecinos; nieto paterno de Esperanza Carriera y materno de Victoria Molins y abuelos no espresados: en dicho párvulo ejercí las sagradas preces y ceremonias y le puse por nombre Demetrio, Luis Alfonso: fueron sus padrinos Don Juan Luis Acosta y Doña Luisa de la Cabada, á quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé. Entre renglonesdevale.",
+            "normalized": "Sábado diez y nueve de abril de mil ochocientos setenta y tres, yo presbítero Don Santiago Serra, cura párroco, vicario, foráneo interino de esta iglesia de Término de San Cárlos de Matánzas, bauticé solemnemente y puse los santos óleos a un párvulo, que nació el día veintidós de diciembre último. Hijo legítimo de los pardos libres Manuel Carnera y de Dolores Carbo, el primero natural de Ceiba Mocha y la segunda natural de esta feligresia, de la que arriba son vecinos, y nieto paterno de Esperanza Carriera y materno de Victoria Molina y abuelos no espresados. En dicho párvulo ejercí las sagradas preces y ceremonias, y le puse por nombre Demetrio Luis Alfonso. Fueron sus padrinos Don Juan Luis Acosta y Doña Luisa de la Cabada, a quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé.",
+            "data": {
+                "people": [
+                    {
+                        "id": "P01",
+                        "name": "Santiago Serra",
+                        "titles": [
+                            "Don"
+                        ],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": "cleric",
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": []
+                    },
+                    {
+                        "id": "P02",
+                        "name": "Manuel Carnera",
+                        "titles": [],
+                        "rank": null,
+                        "origin": "Ceiba Mocha",
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": "pardo",
+                        "free": true,
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "child"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P03",
+                        "name": "Dolores Carbo",
+                        "titles": [],
+                        "rank": null,
+                        "origin": "Matanzas",
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": "pardo",
+                        "free": true,
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "child"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P04",
+                        "name": "Esperanza Carriera",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "child"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "grandchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P05",
+                        "name": "Victoria Molina",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "child"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "grandchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P06",
+                        "name": "Demetrio Luis Alfonso",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": "infant",
+                        "legitimate": true,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": true,
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "grandparent"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "grandparent"
+                            },
+                            {
+                                "related_person": "P07",
+                                "relationship_type": "godparent"
+                            },
+                            {
+                                "related_person": "P08",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P07",
+                        "name": "Juan Luis Acosta",
+                        "titles": [
+                            "Don"
+                        ],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "godchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P08",
+                        "name": "Luisa de la Cabada",
+                        "titles": [
+                            "Doña"
+                        ],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "godchild"
+                            }
+                        ]
+                    }
+                ],
+                "events": [
+                    {
+                        "type": "baptism",
+                        "principal": [
+                            "P06"
+                        ],
+                        "date": "1873-04-19"
+                    },
+                    {
+                        "type": "birth",
+                        "principal": [
+                            "P06"
+                        ],
+                        "date": "1872-12-22"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "baptism",
+            "language": "Spanish",
+            "country": "Cuba",
+            "state": "Matánzas",
+            "city": "Matánzas",
+            "institution": "Catedral de San Borromeo",
+            "id": 22152,
+            "raw": "Lúnes dies y nueve de Mayo de mil ochocientos setenta y tres: yo Presbítero Dn Santiago Serra, Cura Párroco, Vicario foráneo interino de esta Yglesia de Término de San Cárlos de Matánzas, bauticé solemnemente y puse los sántos óleos á una párvula parda, que nació el dia doce de Diciembre último, hija de padre no conocido y de la de igual clase Rita, natural de Alacranes y vecina de esta feligresía, esclava de Dn Felipe Sicre; nieta materna de María de Jesus Olano: y abuelo no espresado: en dicha párvula ejercí las sagradas préces y ceremónias y le puse por nombre Maria Rita Guadalupe: la cual es libre por beneficio de la Ley, sancionada por las Córtes constituyentes de la Nacion, en veinte y tres de Junio de mil ochocientos setenta años, comunicada con fecha cuatro de Julio del propio, al Escelentisimo Señor Gobernador Superior Político de esta Ysla, publicada en la Gaceta Oficial correspondiente al Sábado primero de Octubre del referido año: fueron sus padrinos D. Domingo Veulens y Da Regina del propio apellido, á quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé. Sant. Serra",
+            "normalized": "Lunes, diecinueve de mayo de mil ochocientos setenta y tres, yo presbitero Don Santiago Serra, cura párroco vicario foráneo interino de esta iglesia de término de San Carlos de Matanzas, bauticé solemnemente y puse los santos óleos a una párvula parda, que nació el día doce de diciembre último, hija de padre no conocido y de la de igual clase Rita, natural de Alacranes y vecina de esta feligresia, esclava de Don Felipe Sicre; nieta materna de María de Jesús Olano y abuelo no expresado. En dicha párvula ejercí las sagradas preces y ceremonias y le puse por nombre María Rita Guadalupe, la cual es libre por beneficio de la ley, sancionada por las cortes constituyentes de la nación, en veintitrés de junio de mil ochocientos setenta años, comunicada con fecha cuatro de julio del propio año, al escelentísimo señor gobernador superior político de esta isla, publicada en la Gaceta Oficial correspondiente al sábado, primero de octubre del referido año. Fueron sus padrinos Don Domingo Veulens y Doña Regina del propio apellido, a quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé. Santiago Serra",
+            "data": {
+                "people": [
+                    {
+                        "id": "P01",
+                        "name": "Santiago Serra",
+                        "titles": [
+                            "Don"
+                        ],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": "cleric",
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": []
+                    },
+                    {
+                        "id": "P02",
+                        "name": "Rita",
+                        "titles": [],
+                        "rank": null,
+                        "origin": "Alacranes",
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": false,
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "enslaver"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "child"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P03",
+                        "name": "Felipe Sicre",
+                        "titles": [
+                            "Don"
+                        ],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "slave"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P04",
+                        "name": "María de Jesús Olano",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "child"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "grandchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P05",
+                        "name": "María Rita Guadalupe",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": "infant",
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": "pardo",
+                        "free": true,
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "grandparent"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "godparent"
+                            },
+                            {
+                                "related_person": "P07",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P06",
+                        "name": "Domingo Veulens",
+                        "titles": [
+                            "Don"
+                        ],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "godchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P07",
+                        "name": "Regina Veulens",
+                        "titles": [
+                            "Doña"
+                        ],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "godchild"
+                            }
+                        ]
+                    }
+                ],
+                "events": [
+                    {
+                        "type": "baptism",
+                        "principal": [
+                            "P05"
+                        ],
+                        "date": "1873-05-19"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "baptism",
+            "language": "Spanish",
+            "country": "United States",
+            "state": "Florida",
+            "city": "St. Augustine",
+            "institution": "Archives of the Diocese of St. Augustine",
+            "id": 239746,
+            "raw": "Domingo, día veinte y quatro de Noviembre de Mil Setecientos Noventa y Tres. Yo Don Miguel O'Reilly Teniente de Cura Beneficiado, Vicario, y Juez Eclesiástico Auxiliar de esta Yglesia parroquial, y provincia de San Agustín de la Florida Oriental. Baptisé y puse los santos oleos a una niña libre de color, morena, que nacio el dia veinte y seis de Septiembre del presente año, hija natural de los Negros libres Andres Camel, y Eva Fish, ambos Naturales de Nueva York, y en ella exerci las sacras Ceremonias, y preces de nuestra Santa madre Iglesia, y la puse por nombre Maria Tere sa. fueron sus padrinos Francisco Huiten, y Andrea Ortigas ambos morenos y vecinos de esta Ciu dad, les advertí el parentesco espiritual, y demás obligaciones, y lo firmé en dicho dia, mes y año.",
+            "normalized": "Domingo, día veinticuatro de noviembre de mil setecientos noventa y tres, yo Don Miguel O'Reilly, teniente de cura beneficiado vicario y juez eclesiástico auxiliar de esta yglesia parroquial y provincia de San Agustín de la Florida Oriental, bauticé y puse los santos óleos a una niña libre de color morena, que nació el día veintseis de septiembre del presente año, hija natural de los negros libres Andrés Camel y Eva Fish, ambos naturales de Nueva York, y en ella ejercí las sacras ceremonias y preces de nuestra Santa Madre Iglesia, y la puse por nombre Maria Teresa. Fueron sus padrinos Francisco Huiten y Andrea Ortigas, ambos morenos y vecinos de esta ciudad, les advertí el parentesco espiritual, y demás obligaciones, y lo firmé en dicho día, mes, y año.",
+            "data": {
+                "people": [
+                    {
+                        "id": "P01",
+                        "name": "Miguel O'Reilly",
+                        "titles": [
+                            "Don"
+                        ],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": "cleric",
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": []
+                    },
+                    {
+                        "id": "P02",
+                        "name": "Andrés Camel",
+                        "titles": [],
+                        "rank": null,
+                        "origin": "Nueva York",
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": "negro",
+                        "free": true,
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "child"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P03",
+                        "name": "Eva Fish",
+                        "titles": [],
+                        "rank": null,
+                        "origin": "Nueva York",
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": "negro",
+                        "free": true,
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "child"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P04",
+                        "name": "Maria Teresa",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": true,
+                        "occupation": null,
+                        "phenotype": "moreno",
+                        "free": true,
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "godparent"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P05",
+                        "name": "Francisco Huiten",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": "moreno",
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "godchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P06",
+                        "name": "Andrea Ortigas",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": "moreno",
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "godchild"
+                            }
+                        ]
+                    }
+                ],
+                "events": [
+                    {
+                        "type": "baptism",
+                        "principal": [
+                            "P04"
+                        ],
+                        "date": "1793-11-24"
+                    },
+                    {
+                        "type": "birth",
+                        "principal": [
+                            "P04"
+                        ],
+                        "date": "1793-09-26"
+                    }
+                ]
+            }
+        },
+        {
+            "type": "baptism",
+            "language": "Spanish",
+            "country": "United States",
+            "state": "Florida",
+            "city": "St. Augustine",
+            "institution": "Archives of the Diocese of St. Augustine",
+            "id": 239746,
+            "raw": "Lunes dia veinte y uno de Mayo de mil sete cientos noventa y ocho. Yo Don Miguel OReilly Cura beneficiado, Vicario y Juez Eclesiastico de esta Yglesia parroquial, Plaza y Provincia de San Agus tin de la Florida Ol. Baptizé y puse los santos oleos á una Niña de color parda, que nació el día diez y seis del presente mes, hija de Padre no conocido, y de Maria del Carmen morena natural de la Costa de Gui nea y esclava del Teniente Coronel, e Yngeniero Don Pe dro Díaz Berrio; y en él exerci las peculiares sacras cere monias, y preces de nuestra santa madre Yglesia, y la puse por nombre Ubalda Juana Nepomucena: fue su madrina Rita, morena esclava esclava del dicho Don Pedro: le advertí el Parentesco espiritual y demás obligaciones y lo firmé en dicho dia mez, y año.",
+            "normalized": "Lunes, día veintiuno de mayo de mil setecientos noventa y ocho. Yo Don Miguel O'Reilly cura beneficiado vicario y juez eclesiástico de esta iglesia parroquial, plaza y provincia de San Agustín de la Florida Oriental, bapticé y puse los santos óleos a una niña de color parda que nació el día dieciséis del presente mes. Hija de padre no conocido y de Maria del Carmen, natural de la Costa de Guinea y esclava del teniente coronel e ingeniero Don Pedro Díaz Berrío, y en él ejercí las peculiares sacras ceremonias y preces de nuestra santa madre iglesia, y la puse por nombre Ubalda Juana Nepomucena. Fue su madrina Rita, morena esclava del dicho Don Pedro, le advertí el parentesco espiritual y demás obligaciones, y lo firmé en dicho día, mes, y año.",
+            "data": {
+                "people": [
+                    {
+                        "id": "P01",
+                        "name": "Miguel O'Reilly",
+                        "titles": [
+                            "Don"
+                        ],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": "cleric",
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": []
+                    },
+                    {
+                        "id": "P02",
+                        "name": "Maria del Carmen",
+                        "titles": [],
+                        "rank": null,
+                        "origin": "Guinea",
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": "moreno",
+                        "free": false,
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "enslaver"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "child"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P03",
+                        "name": "Pedro Díaz Berrío",
+                        "titles": [
+                            "Don"
+                        ],
+                        "rank": "Lieutenant colonel",
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": "engineer",
+                        "phenotype": null,
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "slave"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "slave"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P04",
+                        "name": "Ubalda Juana Nepomucena",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": "infant",
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": "pardo",
+                        "free": null,
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P05",
+                        "name": "Rita",
+                        "titles": [],
+                        "rank": null,
+                        "origin": null,
+                        "ethnicity": null,
+                        "age": null,
+                        "legitimate": null,
+                        "occupation": null,
+                        "phenotype": "moreno",
+                        "free": false,
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "enslaver"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "godchild"
+                            }
+                        ]
+                    }
+                ],
+                "events": [
+                    {
+                        "type": "baptism",
+                        "principal": [
+                            "P04"
+                        ],
+                        "date": "1798-05-21"
+                    },
+                    {
+                        "type": "birth",
+                        "principal": [
+                            "P04"
+                        ],
+                        "date": "1798-05-16"
                     }
                 ]
             }
