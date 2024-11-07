@@ -18,28 +18,11 @@
                         "titles": [
                             "Don"
                         ],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": "cleric",
-                        "phenotype": null,
-                        "free": null,
-                        "relationships": []
+                        "occupation": "cleric"
                     },
                     {
                         "id": "P02",
-                        "name": "Juan Vives",                        
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
+                        "name": "Juan Vives",
                         "relationships": [
                             {
                                 "related_person": "P03",
@@ -50,13 +33,9 @@
                     {
                         "id": "P03",
                         "name": "Dominga",
-                        "titles": [],
-                        "rank": null,
                         "origin": "Africa",
                         "ethnicity": "Carabalí",
                         "age": "adult",
-                        "legitimate": null,
-                        "occupation": null,
                         "phenotype": "negro",
                         "free": false,
                         "relationships": [
@@ -73,15 +52,6 @@
                     {
                         "id": "P04",
                         "name": "Isabel",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P03",
@@ -119,26 +89,12 @@
                         "titles": [
                             "Don"
                         ],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": "cleric",
-                        "phenotype": null,
-                        "free": null,
-                        "relationships": []
+                        "occupation": "cleric"
                     },
                     {
                         "id": "P02",
                         "name": "Julian",
-                        "titles": [],
-                        "rank": null,
                         "origin": "Guinea",
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
                         "phenotype": "moreno",
                         "free": false,
                         "relationships": [
@@ -159,13 +115,7 @@
                     {
                         "id": "P03",
                         "name": "Sabina",
-                        "titles": [],
-                        "rank": null,
                         "origin": "Guinea",
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
                         "phenotype": "moreno",
                         "free": false,
                         "relationships": [
@@ -189,14 +139,6 @@
                         "titles": [
                             "Don"
                         ],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -211,14 +153,8 @@
                     {
                         "id": "P05",
                         "name": "Antonia",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
                         "age": "infant",
                         "legitimate": true,
-                        "occupation": null,
-                        "phenotype": null,
                         "free": true,
                         "relationships": [
                             {
@@ -238,15 +174,6 @@
                     {
                         "id": "P06",
                         "name": "Budesiceda",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P05",
@@ -291,26 +218,11 @@
                         "titles": [
                             "Don"
                         ],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": "cleric",
-                        "phenotype": null,
-                        "free": null,
-                        "relationships": []
+                        "occupation": "cleric"
                     },
                     {
                         "id": "P02",
                         "name": "Sebastian",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
                         "phenotype": "negro",
                         "free": false,
                         "relationships": [
@@ -331,13 +243,6 @@
                     {
                         "id": "P03",
                         "name": "Jucina",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
                         "phenotype": "negro",
                         "free": false,
                         "relationships": [
@@ -357,16 +262,7 @@
                     },
                     {
                         "id": "P04",
-                        "name": "Jose Corras",                        
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
+                        "name": "Jose Corras",
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -381,15 +277,7 @@
                     {
                         "id": "P05",
                         "name": "Merced",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
                         "age": "infant",
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -411,14 +299,7 @@
                         "titles": [
                             "Doña"
                         ],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
                         "phenotype": "pardo",
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P05",
@@ -460,15 +341,7 @@
                     {
                         "id": "P01",
                         "name": "Diego",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
                         "ethnicity": "Apache",
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -479,15 +352,6 @@
                     {
                         "id": "P02",
                         "name": "Gregoria",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P01",
@@ -522,15 +386,7 @@
                     {
                         "id": "P01",
                         "name": "Juan Domingo",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
                         "legitimate": true,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -553,15 +409,6 @@
                     {
                         "id": "P02",
                         "name": "Andrés",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P01",
@@ -570,21 +417,12 @@
                             {
                                 "related_person": "P03",
                                 "relationship_type": "spouse"
-                            }                            
+                            }
                         ]
                     },
                     {
                         "id": "P03",
                         "name": "Pascuala",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P01",
@@ -599,15 +437,6 @@
                     {
                         "id": "P04",
                         "name": "Joseph Marcos",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P01",
@@ -618,15 +447,6 @@
                     {
                         "id": "P05",
                         "name": "Francisca",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P01",
@@ -661,15 +481,7 @@
                     {
                         "id": "P01",
                         "name": "Maria Antonia",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
                         "legitimate": false,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -684,15 +496,6 @@
                     {
                         "id": "P02",
                         "name": "Juan Antonio Chabes",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P01",
@@ -703,22 +506,13 @@
                     {
                         "id": "P03",
                         "name": "Manuela Romero",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P01",
                                 "relationship_type": "godchild"
                             }
                         ]
-                    }                    
+                    }
                 ],
                 "events": [
                     {
@@ -731,14 +525,14 @@
                 ]
             }
         },
-        {        
+        {
             "type": "marriage",
             "language": "Spanish",
             "country": "Cuba",
             "state": "La Habana",
             "city": "Havana",
             "institution": "Catedral de la Habana",
-            "id": 6517,            
+            "id": 6517,
             "raw": "En beynte y tres dias del dho dicho mes de julio del dho año de 1584 aso el Ser Vico nicolas jermo desposo y belo a juan diaz natural de setubal y a ana de çamora hija de franco de çamora fueron sus padrinos julian hernandes y ysabel belasques su mujer doy fe dello",
             "normalized": "En veintitrés días del mismo mes de julio del mismo año de 1584, el señor Vicario Nicolás Geronimo desposó y veló a Juan Díaz, natural de Setúbal, y a Ana de Zamora, hija de Francisco de Zamora. Fueron sus padrinos Julián Hernández y Isabel Velázquez, su mujer. Doy fe de ello.",
             "data": {
@@ -750,28 +544,12 @@
                             "señor",
                             "Vicario"
                         ],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": "cleric",
-                        "phenotype": null,
-                        "free": null,
-                        "relationships": []
+                        "occupation": "cleric"
                     },
                     {
                         "id": "P02",
                         "name": "Juan Díaz",
-                        "titles": [],
-                        "rank": null,
                         "origin": "Setúbal",
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P03",
@@ -789,16 +567,7 @@
                     },
                     {
                         "id": "P03",
-                        "name": "Ana de Zamora",                        
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
+                        "name": "Ana de Zamora",
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -820,16 +589,7 @@
                     },
                     {
                         "id": "P04",
-                        "name": "Francisco de Zamora",                        
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
+                        "name": "Francisco de Zamora",
                         "relationships": [
                             {
                                 "related_person": "P03",
@@ -840,15 +600,6 @@
                     {
                         "id": "P05",
                         "name": "Julián Hernández",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -867,15 +618,6 @@
                     {
                         "id": "P06",
                         "name": "Isabel Velázquez",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -904,7 +646,7 @@
                 ]
             }
         },
-        {        
+        {
             "type": "marriage",
             "language": "Spanish",
             "country": "Cuba",
@@ -923,28 +665,11 @@
                             "señor",
                             "Vicario"
                         ],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": "cleric",
-                        "phenotype": null,
-                        "free": null,
-                        "relationships": []
+                        "occupation": "cleric"
                     },
                     {
                         "id": "P02",
-                        "name": "Diego Albites",                        
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
+                        "name": "Diego Albites",
                         "relationships": [
                             {
                                 "related_person": "P03",
@@ -962,16 +687,7 @@
                     },
                     {
                         "id": "P03",
-                        "name": "Francisca Hurtada",                        
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
+                        "name": "Francisca Hurtada",
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -994,15 +710,6 @@
                     {
                         "id": "P04",
                         "name": "Manuel Díaz",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P03",
@@ -1013,15 +720,6 @@
                     {
                         "id": "P05",
                         "name": "Francisco Ximénez",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -1042,15 +740,7 @@
                         "name": "María de Mendoza",
                         "titles": [
                             "Doña"
-                        ],                        
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
+                        ],
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -1079,14 +769,14 @@
                 ]
             }
         },
-        {        
+        {
             "type": "marriage",
             "language": "Spanish",
             "country": "Cuba",
             "state": "La Habana",
             "city": "Havana",
             "institution": "Catedral de la Habana",
-            "id": 6517,            
+            "id": 6517,
             "raw": "lunes que se contaron beynte y dos dias del mes de otubre del dho año de 1584 años el Ser Vico nicolas jermo desposo y belo a juan peres esturiano y a mariana de la aia hija de dio diego de la aia y de cecilia de arestaça su mujer fueron su padrinos el ser Alcayde diego fernandez de quiñones y doña maria de sotolongo doy fe dello yo",
             "normalized": "Lunes que se contaron veintidós días del mes de octubre del año de 1584, el señor Vicario Nicolás Geronimo desposó y veló a Juan Peres Esturiano y a Mariana de la Aia, hija de Diego de la Aia y de Cecilia de Arestaça, su mujer. Fueron sus padrinos el señor Alcalde Diego Fernández de Quiñones y Doña María de Sotolongo. Doy fe de ello yo.",
             "data": {
@@ -1098,28 +788,11 @@
                             "señor",
                             "Vicario"
                         ],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": "cleric",
-                        "phenotype": null,
-                        "free": null,
-                        "relationships": []
+                        "occupation": "cleric"
                     },
                     {
                         "id": "P02",
-                        "name": "Juan Peres Esturiano",                        
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
+                        "name": "Juan Peres Esturiano",
                         "relationships": [
                             {
                                 "related_person": "P03",
@@ -1137,16 +810,7 @@
                     },
                     {
                         "id": "P03",
-                        "name": "Mariana de la Aia",                        
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
+                        "name": "Mariana de la Aia",
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -1172,16 +836,7 @@
                     },
                     {
                         "id": "P04",
-                        "name": "Diego de la Aia",                        
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
+                        "name": "Diego de la Aia",
                         "relationships": [
                             {
                                 "related_person": "P03",
@@ -1196,15 +851,6 @@
                     {
                         "id": "P05",
                         "name": "Cecilia de Arestaça",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P03",
@@ -1221,15 +867,7 @@
                         "name": "Diego Fernández de Quiñones",
                         "titles": [
                             "Alcalde"
-                        ],                        
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
+                        ],
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -1250,15 +888,7 @@
                         "name": "María de Sotolongo",
                         "titles": [
                             "Doña"
-                        ],                        
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
+                        ],
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -1287,44 +917,26 @@
                 ]
             }
         },
-        {        
+        {
             "type": "marriage",
             "language": "Spanish",
             "country": "Cuba",
             "state": "La Habana",
             "city": "Havana",
             "institution": "Catedral de la Habana",
-            "id": 6517,            
+            "id": 6517,
             "raw": "en 12 de octubre de 1618 aso yo anto çapata cura en la sta ygla mor desta ciudad de la havana despose con licencia de su sa segun orden de la sta madre yglesia a manuel anchico esclavo de jua martin y a cristina angola esclava de ma de las nieves siendo tos juo perez barvero y xpoval de samora y germo Ros criados de su sa y se velaron los dhos en 14 del dho mes y año ffo ut supra",
             "normalized": "En 12 de octubre de 1618 años, yo Antonio Zapata, cura en la Santa Iglesia Mayor de esta ciudad de La Habana, desposé con licencia de su santidad, según orden de la Santa Madre Iglesia, a Manuel Anchico, esclavo de Juan Martín, y a Cristina Angola, esclava de María de las Nieves. Fueron testigos Juan Pérez Barbero, Cristóbal de Zamora, y Gerónimo Ros, criados de su santidad. Los desposados se velaron el 14 del mismo mes y año. Fue así.",
             "data": {
                 "people": [
                     {
                         "id": "P01",
-                        "name": "Antonio Zapata",                        
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": "cleric",
-                        "phenotype": null,
-                        "free": null,
-                        "relationships": []
+                        "name": "Antonio Zapata",
+                        "occupation": "cleric"
                     },
                     {
                         "id": "P02",
-                        "name": "Manuel Anchico",                        
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
+                        "name": "Manuel Anchico",
                         "relationships": [
                             {
                                 "related_person": "P03",
@@ -1339,15 +951,6 @@
                     {
                         "id": "P03",
                         "name": "Juan Martín",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -1357,16 +960,7 @@
                     },
                     {
                         "id": "P04",
-                        "name": "Cristina Angola",                        
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
+                        "name": "Cristina Angola",
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -1381,16 +975,7 @@
                     {
                         "id": "P05",
                         "name": "María de las Nieves",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
-                        "relationships": [                            
+                        "relationships": [
                             {
                                 "related_person": "P04",
                                 "relationship_type": "slave"
@@ -1399,45 +984,15 @@
                     },
                     {
                         "id": "P06",
-                        "name": "Juan Pérez Barbero",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
-                        "relationships": []
+                        "name": "Juan Pérez Barbero"
                     },
                     {
                         "id": "P07",
-                        "name": "Cristóbal de Zamora",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
-                        "relationships": []
+                        "name": "Cristóbal de Zamora"
                     },
                     {
                         "id": "P08",
-                        "name": "Gerónimo Ros",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
-                        "relationships": []
+                        "name": "Gerónimo Ros"
                     }
                 ],
                 "events": [
@@ -1470,26 +1025,12 @@
                         "titles": [
                             "Don"
                         ],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": "cleric",
-                        "phenotype": null,
-                        "free": null,
-                        "relationships": []
+                        "occupation": "cleric"
                     },
                     {
                         "id": "P02",
                         "name": "Aleja Pérez",
-                        "titles": [],
-                        "rank": null,
                         "origin": "Matanzas",
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
                         "phenotype": "moreno",
                         "free": true,
                         "relationships": [
@@ -1510,15 +1051,6 @@
                     {
                         "id": "P03",
                         "name": "Telesforo",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -1537,15 +1069,6 @@
                     {
                         "id": "P04",
                         "name": "Francisca Sánchez",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -1564,15 +1087,8 @@
                     {
                         "id": "P05",
                         "name": "Maria Leoncia",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
                         "age": "infant",
                         "legitimate": false,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -1599,15 +1115,6 @@
                     {
                         "id": "P06",
                         "name": "José Timoteo Pujadas",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P05",
@@ -1618,15 +1125,6 @@
                     {
                         "id": "P07",
                         "name": "Leonarda Peñalver",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P05",
@@ -1668,32 +1166,15 @@
                     {
                         "id": "P01",
                         "name": "Santiago Serra",
-                        "title": [
+                        "titles": [
                             "Don"
                         ],
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": "cleric",
-                        "phenotype": null,
-                        "free": null,
-                        "relationships": []
+                        "occupation": "cleric"
                     },
                     {
                         "id": "P02",
                         "name": "Rufino Sequeira",
-                        "titles": [],
-                        "rank": null,
                         "origin": "Matanzas",
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P03",
@@ -1716,15 +1197,7 @@
                     {
                         "id": "P03",
                         "name": "Matilde Silva",
-                        "titles": [],
-                        "rank": null,
                         "origin": "Havana",
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -1747,15 +1220,6 @@
                     {
                         "id": "P04",
                         "name": "Jose Sequeira",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -1774,15 +1238,6 @@
                     {
                         "id": "P05",
                         "name": "Belen Sequeira",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -1801,15 +1256,6 @@
                     {
                         "id": "P06",
                         "name": "Pio Marias",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P03",
@@ -1828,15 +1274,6 @@
                     {
                         "id": "P07",
                         "name": "Rosario Marias",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P03",
@@ -1855,15 +1292,6 @@
                     {
                         "id": "P08",
                         "name": "José Gonsalo Nicanor",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -1902,15 +1330,6 @@
                     {
                         "id": "P09",
                         "name": "Cristobal Roque",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P08",
@@ -1921,15 +1340,6 @@
                     {
                         "id": "P10",
                         "name": "Asuncion Armono",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P08",
@@ -1971,31 +1381,15 @@
                     {
                         "id": "P01",
                         "name": "Santiago Serra",
-                        "title": [
+                        "titles": [
                             "Don"
                         ],
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": "cleric",
-                        "phenotype": null,
-                        "free": null,
-                        "relationships": []
+                        "occupation": "cleric"
                     },
                     {
                         "id": "P02",
                         "name": "Escolástica Guillerma Lopes",
-                        "titles": [],
-                        "rank": null,
                         "origin": "Matanzas",
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
                         "free": "true",
                         "relationships": [
                             {
@@ -2011,15 +1405,6 @@
                     {
                         "id": "P03",
                         "name": "Trinidad Acuña",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -2034,14 +1419,6 @@
                     {
                         "id": "P04",
                         "name": "Maria Luisa del Rosario",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
                         "free": "true",
                         "relationships": [
                             {
@@ -2061,15 +1438,6 @@
                     {
                         "id": "P05",
                         "name": "Doña Casilda Orgen",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P04",
@@ -2080,15 +1448,6 @@
                     {
                         "id": "P06",
                         "name": "Ana Galceran",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P04",
@@ -2133,15 +1492,7 @@
                         "titles": [
                             "Don"
                         ],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": "cleric",
-                        "phenotype": null,
-                        "free": null,
-                        "relationships": []
+                        "occupation": "cleric"
                     },
                     {
                         "id": "P02",
@@ -2149,28 +1500,13 @@
                         "titles": [
                             "Don"
                         ],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": "cleric",
-                        "phenotype": null,
-                        "free": null,
-                        "relationships": []
+                        "occupation": "cleric"
                     },
                     {
                         "id": "P03",
                         "name": "Modesta",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
                         "ethnicity": "criolla",
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
                         "phenotype": "moreno",
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P04",
@@ -2196,14 +1532,6 @@
                         "titles": [
                             "Doña"
                         ],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P03",
@@ -2214,15 +1542,6 @@
                     {
                         "id": "P05",
                         "name": "Pablo Bruson",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P03",
@@ -2241,15 +1560,6 @@
                     {
                         "id": "P06",
                         "name": "Isabel Andux",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P03",
@@ -2268,14 +1578,8 @@
                     {
                         "id": "P07",
                         "name": "Margarita Amelia",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
                         "age": "infant",
                         "legitimate": false,
-                        "occupation": null,
-                        "phenotype": null,
                         "free": true,
                         "relationships": [
                             {
@@ -2306,14 +1610,6 @@
                         "titles": [
                             "Don"
                         ],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P07",
@@ -2324,15 +1620,6 @@
                     {
                         "id": "P09",
                         "name": "Eduarda Andux",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P07",
@@ -2377,26 +1664,12 @@
                         "titles": [
                             "Don"
                         ],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": "cleric",
-                        "phenotype": null,
-                        "free": null,
-                        "relationships": []
+                        "occupation": "cleric"
                     },
                     {
                         "id": "P02",
                         "name": "Manuel Carnera",
-                        "titles": [],
-                        "rank": null,
                         "origin": "Ceiba Mocha",
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
                         "phenotype": "pardo",
                         "free": true,
                         "relationships": [
@@ -2417,13 +1690,7 @@
                     {
                         "id": "P03",
                         "name": "Dolores Carbo",
-                        "titles": [],
-                        "rank": null,
                         "origin": "Matanzas",
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
                         "phenotype": "pardo",
                         "free": true,
                         "relationships": [
@@ -2444,15 +1711,6 @@
                     {
                         "id": "P04",
                         "name": "Esperanza Carriera",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -2467,15 +1725,6 @@
                     {
                         "id": "P05",
                         "name": "Victoria Molina",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P03",
@@ -2490,14 +1739,8 @@
                     {
                         "id": "P06",
                         "name": "Demetrio Luis Alfonso",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
                         "age": "infant",
                         "legitimate": true,
-                        "occupation": null,
-                        "phenotype": null,
                         "free": true,
                         "relationships": [
                             {
@@ -2532,14 +1775,6 @@
                         "titles": [
                             "Don"
                         ],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P06",
@@ -2553,14 +1788,6 @@
                         "titles": [
                             "Doña"
                         ],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P06",
@@ -2605,27 +1832,12 @@
                         "titles": [
                             "Don"
                         ],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": "cleric",
-                        "phenotype": null,
-                        "free": null,
-                        "relationships": []
+                        "occupation": "cleric"
                     },
                     {
                         "id": "P02",
                         "name": "Rita",
-                        "titles": [],
-                        "rank": null,
                         "origin": "Alacranes",
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
                         "free": false,
                         "relationships": [
                             {
@@ -2648,14 +1860,6 @@
                         "titles": [
                             "Don"
                         ],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -2666,15 +1870,6 @@
                     {
                         "id": "P04",
                         "name": "María de Jesús Olano",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -2689,13 +1884,7 @@
                     {
                         "id": "P05",
                         "name": "María Rita Guadalupe",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
                         "age": "infant",
-                        "legitimate": null,
-                        "occupation": null,
                         "phenotype": "pardo",
                         "free": true,
                         "relationships": [
@@ -2723,14 +1912,6 @@
                         "titles": [
                             "Don"
                         ],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P05",
@@ -2744,14 +1925,6 @@
                         "titles": [
                             "Doña"
                         ],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P05",
@@ -2789,26 +1962,12 @@
                         "titles": [
                             "Don"
                         ],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": "cleric",
-                        "phenotype": null,
-                        "free": null,
-                        "relationships": []
+                        "occupation": "cleric"
                     },
                     {
                         "id": "P02",
                         "name": "Andrés Camel",
-                        "titles": [],
-                        "rank": null,
                         "origin": "Nueva York",
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
                         "phenotype": "negro",
                         "free": true,
                         "relationships": [
@@ -2825,13 +1984,7 @@
                     {
                         "id": "P03",
                         "name": "Eva Fish",
-                        "titles": [],
-                        "rank": null,
                         "origin": "Nueva York",
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
                         "phenotype": "negro",
                         "free": true,
                         "relationships": [
@@ -2848,13 +2001,7 @@
                     {
                         "id": "P04",
                         "name": "Maria Teresa",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
                         "legitimate": true,
-                        "occupation": null,
                         "phenotype": "moreno",
                         "free": true,
                         "relationships": [
@@ -2879,15 +2026,7 @@
                     {
                         "id": "P05",
                         "name": "Francisco Huiten",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
                         "phenotype": "moreno",
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P04",
@@ -2898,15 +2037,7 @@
                     {
                         "id": "P06",
                         "name": "Andrea Ortigas",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
                         "phenotype": "moreno",
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P04",
@@ -2951,26 +2082,12 @@
                         "titles": [
                             "Don"
                         ],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": "cleric",
-                        "phenotype": null,
-                        "free": null,
-                        "relationships": []
+                        "occupation": "cleric"
                     },
                     {
                         "id": "P02",
                         "name": "Maria del Carmen",
-                        "titles": [],
-                        "rank": null,
                         "origin": "Guinea",
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
                         "phenotype": "moreno",
                         "free": false,
                         "relationships": [
@@ -2991,13 +2108,7 @@
                             "Don"
                         ],
                         "rank": "Lieutenant colonel",
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
                         "occupation": "engineer",
-                        "phenotype": null,
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -3012,15 +2123,8 @@
                     {
                         "id": "P04",
                         "name": "Ubalda Juana Nepomucena",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
                         "age": "infant",
-                        "legitimate": null,
-                        "occupation": null,
                         "phenotype": "pardo",
-                        "free": null,
                         "relationships": [
                             {
                                 "related_person": "P02",
@@ -3035,13 +2139,6 @@
                     {
                         "id": "P05",
                         "name": "Rita",
-                        "titles": [],
-                        "rank": null,
-                        "origin": null,
-                        "ethnicity": null,
-                        "age": null,
-                        "legitimate": null,
-                        "occupation": null,
                         "phenotype": "moreno",
                         "free": false,
                         "relationships": [

@@ -9,7 +9,7 @@ representation of a json document containing extracted content.
 from openai import OpenAI    
 import json
 from utility import *
-from schema import schema
+# from schema import schema
 import re
 
 def extract_data_from_volume(volume_record_path, instructions_path, training_data_path, keywords = None, match_mode = "or", max_shots = 1000, output_path = None, log_prefix = ""):
@@ -70,7 +70,7 @@ def extract_data_from_volume(volume_record_path, instructions_path, training_dat
 
     return data
 
-def extract_data_from_entry(entry, volume_metadata, examples, instructions, log_prefix= ""):
+def extract_data_from_entry(entry, volume_metadata, examples, instructions, log_fails=False, log_prefix=""):
     """Extracts content from a single transcribed entry from a historical document.
 
     Args:
@@ -130,27 +130,30 @@ def extract_data_from_entry(entry, volume_metadata, examples, instructions, log_
     #generate response from llm
     response = client.chat.completions.create(
         model="gpt-4o-2024-08-06",
-        messages = conversation,
-        response_format= schema
+        response_format={"type": "json_object"},
+        messages = conversation        
     )
-    
-    # check if the relationships and Ids are valid, and remove relationships to non-existant people
-    init_result = response.choices[0].message.content
-    result, valid = log_failed_relationships(init_result)
 
-    # log the initial json with invalid relationships
-    if not valid:
-        cur_entry = entry
-        cur_entry["data"] = json.loads(init_result)
-        if os.path.exists(f"{log_prefix}invalid_relationships.json"):
-            with open(f"{log_prefix}invalid_relationships.json", "r") as f:
-                data = json.load(f)
-                data["entries"].append(cur_entry)
-        else:
-            data = {}
-            data["entries"] = [cur_entry] 
-        with open(f"{log_prefix}invalid_relationships.json", "w") as f:
-            json.dump(data, f)
+    result = response.choices[0].message.content
+    
+    if log_fails:
+        # check if the relationships and Ids are valid, and remove relationships to non-existant people
+        init_result = response.choices[0].message.content
+        result, valid = log_failed_relationships(init_result)
+
+        # log the initial json with invalid relationships
+        if not valid:
+            cur_entry = entry
+            cur_entry["data"] = json.loads(init_result)
+            if os.path.exists(f"{log_prefix}invalid_relationships.json"):
+                with open(f"{log_prefix}invalid_relationships.json", "r") as f:
+                    data = json.load(f)
+                    data["entries"].append(cur_entry)
+            else:
+                data = {}
+                data["entries"] = [cur_entry] 
+            with open(f"{log_prefix}invalid_relationships.json", "w") as f:
+                json.dump(data, f)
             
     return result
 
@@ -170,7 +173,11 @@ def log_failed_relationships(data):
                        "godparent": "godchild", "godchild": "godparent"}
 
     json_str = fr'{data}'
-    data = dict(json.loads(json_str))
+    try:
+        data = dict(json.loads(json_str))
+    except:
+        print("Invalid JSON encountered.")
+        return json.dumps(data), False
 
     ids = [p['id'] for p in data['people']]
 
