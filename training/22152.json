@@ -151,7 +151,7 @@
                     {
                         "id": "P01",
                         "name": "Santiago Serra",
-                        "title": 
+                        "titles": 
                         [
                             "Don"
                         ], 
@@ -220,7 +220,7 @@
                     {
                         "id": "P05",
                         "name": "Eugenio Ysla",
-                        "title":[
+                        "titles":[
                             "Don"
                         ],
                         "relationships":[
@@ -260,14 +260,14 @@
                     },
                     {
                         "id": "P07",
-                        "title": [
+                        "titles": [
                             "Escelentisimo Señor Gobernador Superior Político"
                         ]
                     },
                     {
                         "id": "P08",
                         "name": "Victoriano Polasco Abat",
-                        "title": [
+                        "titles": [
                             "Don"
                         ],
                         "relationships":[
@@ -313,7 +313,7 @@
                     {
                         "id": "P01",
                         "name": "Santiago Serra",
-                        "title": 
+                        "titles": 
                         [
                             "Don"
                         ], 
@@ -338,7 +338,7 @@
                     {
                         "id": "P03",
                         "name": "Tomas Pintado",
-                        "title":[
+                        "titles":[
                             "Don"
                         ],
                         "relationships":[
@@ -369,7 +369,7 @@
                     },
                     {
                         "id": "P05",
-                        "title":[
+                        "titles":[
                             "Esclentisimo Señor Gobernador Superior Político"
                         ] 
                     },
@@ -417,7 +417,7 @@
                     {
                         "id": "P01",
                         "name": "Santiago Serra",
-                        "title":[
+                        "titles":[
                             "Don"
                         ],
                         "occupation":"cleric"
@@ -622,7 +622,7 @@
                     {
                         "id":"P01",
                         "name":"Santiago Serra",
-                        "title":[
+                        "titles":[
                             "Don"
                         ],
                         "occupation":"cleric"
@@ -722,7 +722,7 @@
                     {
                         "id":"P01",
                         "name": "Santiago Serra",
-                        "title":[
+                        "titles":[
                             "Don"
                         ],
                         "occupation":"cleric"
