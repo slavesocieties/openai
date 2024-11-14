@@ -143,7 +143,8 @@ def aggregate_entry_records(path_to_entry_records, output_path=None):
     #applies volume-level unique ids to event records
     for i, event in enumerate(volume["events"]):
         if "principal" in event:
-            volume["events"][i]["principal"] = id_map[volume["events"][i]["principal"]]
+            volume["events"][i]["principal"] = volume["events"][i]["principal"].replace('[', '').replace(']', '').replace("'","")
+            volume["events"][i]["principal"] = id_map[volume["events"][i]["principal"]]            
         elif "principals" in event:
             volume["events"][i]["principals"] = [id_map[volume["events"][i]["principals"][0]], id_map[volume["events"][i]["principals"][1]]]
         elif "witnesses" in event:
