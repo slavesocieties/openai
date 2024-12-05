@@ -96,7 +96,7 @@
                 "extraction"
             ],
             "sequence": 11,
-            "text": "These records will sometimes contain information about relationships between people. Relationships exist as matched pairs such as `parent` and `child`, `enslaver` and `slave`, `spouse` and `spouse`, and `godparent` and `godchild`. Each relationship should be recorded as a dictionary with two keys. The value of the first key, `related_person`, should be the unique identifier assigned to the related person. IMPORTANT: The value of the second key, `relationship_type`, should be what the related person is to the person who's record you're currently writing. For example, if P01 is the child of P03, then the `relationship_type` associated with P03 in the record for P01 would be `parent`."
+            "text": "These records will sometimes contain information about relationships between people. Relationships exist as matched pairs such as `parent` and `child`, `enslaver` and `slave`, `spouse` and `spouse`, and `godparent` and `godchild`. Each relationship should be recorded as a dictionary with two keys. The value of the first key, `related_person`, should be the unique identifier assigned to the related person. IMPORTANT: The value of the second key, `relationship_type`, should be what the related person is to the person who's record you're currently writing. For example, if P01 is the child of P03, then the `relationship_type` associated with P03 in the record for P01 would be `parent`, and the `relationship_type` associated with P01 in the record for P03 would be `child`."
         },
         {
             "cases": [
@@ -110,7 +110,7 @@
                 "extraction", "marriage"
             ],
             "sequence": 12,
-            "text": "Marriage registers will contain information about one or more marriages. For each marriage, record the type of the event (`marriage`), the unique identifiers assigned to the principals (the people who were married), the unique identifiers assigned to any witness who are mentioned, and the date when the marriage took place. Represent dates in a YYYY-MM-DD format. If you can't find a complete date, include as much information as possible."
+            "text": "Marriage registers will contain information about one or more marriages. For each marriage, record the type of the event (`marriage`), the unique identifiers assigned to the principals (the people who were married), and the date when the marriage took place. Represent dates in a YYYY-MM-DD format. If you can't find a complete date, include as much information as possible."
         },
         {
             "cases": [
