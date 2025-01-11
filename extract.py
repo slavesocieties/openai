@@ -51,18 +51,8 @@ def extract_data_from_volume(volume_record_path, instructions_path, training_dat
     for x, entry in enumerate(data["entries"]):
         info = extract_data_from_entry(entry, volume_metadata, examples, instructions, log_prefix=log_prefix)
 
-        def load_extracted_data(info):
-            try:
-                json.loads(info)                  
-            except:
-                return False
-            
-            return True
-
-        while not load_extracted_data(info):
-            info = extract_data_from_entry(entry, volume_metadata, examples, instructions, log_prefix=log_prefix)
-        
-        data["entries"][x]["data"] = json.loads(info)    
+        if len(info) > 0:
+            data["entries"][x]["data"] = json.loads(info)    
     
     if output_path != None:    
         with open(output_path, "w", encoding="utf-8") as f:
@@ -70,7 +60,7 @@ def extract_data_from_volume(volume_record_path, instructions_path, training_dat
 
     return data
 
-def extract_data_from_entry(entry, volume_metadata, examples, instructions, log_fails=False, log_prefix=""):
+def extract_data_from_entry(entry, volume_metadata, examples, instructions, log_fails=True, log_prefix=""):
     """Extracts content from a single transcribed entry from a historical document.
 
     Args:
@@ -134,29 +124,72 @@ def extract_data_from_entry(entry, volume_metadata, examples, instructions, log_
         messages = conversation        
     )
 
-    result = response.choices[0].message.content
+    # result = response.choices[0].message.content
     
     if log_fails:
-        # check if the relationships and Ids are valid, and remove relationships to non-existant people
         init_result = response.choices[0].message.content
-        result, valid = log_failed_relationships(init_result)
 
-        # log the initial json with invalid relationships
-        if not valid:
-            cur_entry = entry
-            cur_entry["data"] = json.loads(init_result)
-            if os.path.exists(f"{log_prefix}invalid_relationships.json"):
-                with open(f"{log_prefix}invalid_relationships.json", "r") as f:
-                    data = json.load(f)
-                    data["entries"].append(cur_entry)
-            else:
-                data = {}
-                data["entries"] = [cur_entry] 
-            with open(f"{log_prefix}invalid_relationships.json", "w") as f:
-                json.dump(data, f)
-            
+        # log invalid jsons
+        if not check_valid_json(init_result) or 'people' not in init_result:
+            log_failure(f"{log_prefix}invalid_jsons.json", init_result, entry)
+            return ""
+        
+        # log invalid people
+        people_result, people_valid = log_failed_people(init_result)
+        if not people_valid:
+            log_failure(f"{log_prefix}invalid_people.json", init_result, entry)
+        
+        # log invalid events
+        event_result, people_valid = log_failed_people(people_result)
+        if not people_valid:
+            log_failure(f"{log_prefix}invalid_events.json", people_result, entry)
+
+        # log invalid relationships
+        rel_result, rel_valid = log_failed_relationships(event_result)
+        if not rel_valid:
+            log_failure(f"{log_prefix}invalid_relationships.json", event_result, entry)
+        
+        # log dropped property information
+        result, valid_props = fill_nulls(rel_result)
+        if not valid_props:
+            log_failure(f"{log_prefix}invalid_properties.json", rel_result, entry)
+
     return result
 
+def check_valid_json(data):
+    json_str = fr'{data}'
+    try:
+        _ = json.loads(json_str)
+        return True
+    except:
+        return False
+    
+def log_failed_people(data):
+    json_str = fr'{data}'
+    data = json.loads(json_str)
+    
+    success = True
+    for p in data['people']:
+        if 'id' not in p or 'name' not in p:
+            success = False
+
+    data['people'] = [p for p in data['people'] if 'id' in p and 'name' in p]
+        
+    return json.dumps(data), success
+
+def log_failed_events(data):
+    json_str = fr'{data}'
+    data = json.loads(json_str)
+    
+    success = True
+    if 'events' in data:
+        for e in data['events']:
+            if 'type' not in e or 'principals' not in e or not isinstance(e['principals'], list):
+                success = False
+
+        data['events'] = [e for e in data['events'] if 'type' in e and 'principals' in e and isinstance(e['principals'], list)]
+        
+    return json.dumps(data), success
 
 def log_failed_relationships(data):
     """Logs any entries with invalid relationships.
@@ -173,34 +206,84 @@ def log_failed_relationships(data):
                        "godparent": "godchild", "godchild": "godparent"}
 
     json_str = fr'{data}'
-    try:
-        data = dict(json.loads(json_str))
-    except:
-        print("Invalid JSON encountered.")
-        return json.dumps(data), False
+    data = json.loads(json_str)
 
     ids = [p['id'] for p in data['people']]
 
     valid = True
 
     relationships = {}
-    for p in data['people']:
-        if not re.match(r"^P\d{2}$", p["id"]):
-            valid = False
+    for p in [p for p in data['people'] if 'relationships' in p]:
         relationships[p['id']] = {}
-        for r in p['relationships']:
+        for r in [p for p in p['relationships'] if 'relationship_type' in p and'related_person' in p]:
             relationships[p['id']][r['related_person']] = [r['relationship_type']  for r in p['relationships']]
-        p['relationships'] = [r for r in p['relationships'] if r['related_person'] in ids]
-    
+        valid_rels = [r for r in p['relationships'] if 'related_person' in r and 
+                              'relationship_type' in r and r['related_person'] in ids]
+        if len(p['relationships']) != len(valid_rels):
+            valid=False
+            p['relationships'] = valid_rels
+
     for p1 in relationships:
         for p2, rel in p.items():
             if p2 not in relationships or relationships[p2][p1] !=  reciprocal_rels[rel]:
                 valid = False
-
-    valid_principals = [e for e in data['events'] if 'principal' in e and e['principal'] in ids]
-    data['events'] = valid_principals
-    for e in data['events']:
-        if 'principal' in e and e['principal'] not in ids:
-            valid = False
     
+    if 'events' in data:
+        valid_events = [e for e in data['events'] if 'principals' in e]
+        if len(data['events']) != len(valid_events):
+            valid=False
+            data['events'] = valid_events
+        
+        for e in data['events']:
+            valid_principals = [p for p in e['principals'] if p in ids]
+            if len(e['principals']) != len(valid_principals):
+                valid=False
+                e['principals'] = valid_principals
+
     return json.dumps(data), valid
+
+def log_failure(path, cur_result, entry):
+    cur_entry = entry
+    cur_entry["data"] = json.loads(cur_result)
+    if os.path.exists(path):
+                with open(path, "r") as f:
+                    data = json.load(f)
+                    data["entries"].append(entry)
+    else:
+        data = {}
+        data["entries"] = [entry] 
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump(data, f)
+
+def fill_nulls(data):
+    json_str = fr'{data}'
+    data = json.loads(json_str)
+
+    nullable_props = ['rank', 'origin', 'ethnicity', 'age', 'legitimate', 'occupation', 'phenotype', 'free']
+    people_props = nullable_props + ['id', 'name', 'titles', 'relationships']
+
+    success = True
+    for p in data['people']:
+        p['titles'] = p.pop('titles') if 'titles' in p and isinstance(p['titles'], list) else []
+        for prop in nullable_props:
+            p[prop] = p.pop(prop) if prop in p else None
+            if isinstance(p[prop], list):
+                valid_values = [x for x in p[prop] if isinstance(x, str)]
+                val = valid_values[0] if len(valid_values) > 0 else None
+                p[prop] = val
+                success = False
+        p['relationships'] = p.pop('relationships') if 'relationships' in p and isinstance(p['relationships'], list) else []
+        original_len = len(p)
+        p = {k:v for k,v in p.items() if k in people_props}
+        if len(p) != original_len:
+            success=False
+    event_props = ['type', 'principals', 'date']
+    if 'events' in data:
+        for e in data['events']:
+            e['date'] = e.pop('date') if 'date' in e and isinstance(e['date'], str) else None
+            original_len = len(e)
+            e = {k:v for k,v in e.items() if k in event_props}
+            if len(e) != original_len:
+                success=False
+        
+    return json.dumps(data), success
