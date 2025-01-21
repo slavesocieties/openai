@@ -149,23 +149,30 @@
         },
         {
             "cases": [
-                "transcription"
+                "transcription", "Florida"
             ],
             "sequence": 5,
+            "text": "One exception to the previous instruction: this record is from Spanish Florida, which had a substantial amount of cultural crossover with the British colonies to the north, so you can expect to encounter some Anglo surnames in these records."
+       },
+        {
+            "cases": [
+                "transcription"
+            ],
+            "sequence": 6,
             "text": "These records frequently contain idiosyncratic and/or archaic capitalization, punctuation, and word spellings. As you transcribe, amend these artifacts if and only if they affect the clarity of the transcription."
         },
         {
             "cases": [
                 "transcription"
             ],
-            "sequence": 6,
+            "sequence": 7,
             "text": "These records also frequently contain abbreviated words or names. Where possible, replace all abbreviations with the full words or names that they represent."
         },
         {
             "cases": [
                 "transcription"
             ],
-            "sequence": 7,
+            "sequence": 8,
             "text": "Transcribing these images can be challenging, and certainty is often impossible. When you're uncertain about a name, date, or other piece of important information, please enclose the uncertain transcription in braces {like this}."
         }
     ]

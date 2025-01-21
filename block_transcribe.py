@@ -83,7 +83,7 @@ def transcribe_block(id, instructions_path="instructions.json", examples_path="h
 			)
 	try:
 		response = client.chat.completions.create(
-			model="gpt-4o",	
+			model= "gpt-4o",	
 			messages = conversation
 		)
 		print(f"{id} transcribed.")
