@@ -29,8 +29,34 @@ def last_name(last_names):
 
 # add code to randomize name selection
 
-fname = first_name("first_names.json")
-lname = last_name("last_names.json")
-gen_name_1 = random.choice(fname)
-gen_name_2 = random.choice(lname)
-print(gen_name_1, gen_name_2)
+def generate_name():
+    fname = first_name("first_names.json")
+    lname = last_name("last_names.json")
+    gen_name = random.choice(fname) + ' ' + random.choice(lname)
+    return gen_name
+
+# create person record
+# id, name, title, occupation, relationships etc.
+# most likely: phenotype, title, maybe ethnicity/free/legitimate, everything else rare, relationships!!
+def generatePersonRecord():
+    indivRecord = {}
+    indivRecord['name'] = generate_name()
+    return indivRecord
+
+def addPersonRecord(peopleList):
+    indivRecord = {}
+    indivRecord['name'] = generate_name()
+    peopleList.update(indivRecord)
+    return indivRecord
+
+def testMyCode():
+    myDictionary = {}
+    addPersonRecord(myDictionary)
+    print(myDictionary)
+
+# general function to create field (whatever it is and select from the associated pool)
+# basic control vocab for fields
+# function to generate relationships
+# update record creation function to build full record
+
+testMyCode()
