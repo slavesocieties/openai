@@ -1,5 +1,6 @@
 import random
 import json
+import os.path
 
 def read_names(spanish_names):
     with open(spanish_names, 'r') as sn:
@@ -29,7 +30,7 @@ def last_name(last_names):
 
 # add code to randomize name selection
 
-def generate_name():
+def generateName():
     fname = first_name("first_names.json")
     lname = last_name("last_names.json")
     gen_name = random.choice(fname) + ' ' + random.choice(lname)
@@ -38,25 +39,48 @@ def generate_name():
 # create person record
 # id, name, title, occupation, relationships etc.
 # most likely: phenotype, title, maybe ethnicity/free/legitimate, everything else rare, relationships!!
-def generatePersonRecord():
+'''def generatePersonRecord():
     indivRecord = {}
-    indivRecord['name'] = generate_name()
+    indivRecord['name'] = generateName()
     return indivRecord
 
 def addPersonRecord(peopleList):
     indivRecord = {}
-    indivRecord['name'] = generate_name()
+    indivRecord['name'] = generateName()
     peopleList.update(indivRecord)
     return indivRecord
 
 def testMyCode():
     myDictionary = {}
     addPersonRecord(myDictionary)
-    print(myDictionary)
+    print(myDictionary)'''
 
 # general function to create field (whatever it is and select from the associated pool)
 # basic control vocab for fields
 # function to generate relationships
 # update record creation function to build full record
 
-testMyCode()
+def createPool():
+    vocabPool = {}
+    currentDir = os.getcwd()
+    parentDir = os.path.dirname(currentDir)
+    pathToFile = os.path.join(parentDir, "vocab.json")
+    with open(pathToFile, 'r') as allVocab:
+        data = json.load(allVocab)
+        allVocab = data["controlled_vocabularies"]
+        for vocabSet in allVocab:
+            vocabPool[vocabSet["key"]] = vocabSet["vocab"]
+    return vocabPool
+
+def createNewPerson(vocabPool):
+    personRecords = {}
+    personRecords["name"] = generateName()
+    for vocabType, vocabList in vocabPool.items():
+        vocabIndex = random.randint(0, len(vocabList) - 1)
+        personRecords[vocabType] = vocabList[vocabIndex]
+    return personRecords
+
+# Test code
+'''myPool = createPool()
+myRecord = createNewPerson(myPool)
+print(myRecord)'''
