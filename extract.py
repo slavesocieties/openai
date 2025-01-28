@@ -127,7 +127,7 @@ def extract_data_from_entry(entry, volume_metadata, examples, instructions, log_
    
     #generate response from llm
     response = client.chat.completions.create(
-        model="gpt-4o-2024-08-06",
+        model="gpt-4o",
         response_format={"type": "json_object"},
         messages = conversation        
     )

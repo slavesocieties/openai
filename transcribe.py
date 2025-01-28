@@ -60,7 +60,7 @@ def transcribe_line(image_url, instructions, examples=None):
 	)
 	
 	response = client.chat.completions.create(
-		model="gpt-4-vision-preview",	
+		model="gpt-4o",	
 		messages = conversation
 	)
 

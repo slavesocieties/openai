@@ -9,11 +9,11 @@
     "entries": [
         {
             "id": "0088-01",
-            "text": "Lunes, día diecisiete de octubre de mil ochocientos noventa y tres, yo Don Miguel O'Reilly, cura beneficiado, vicario, juez eclesiástico de esta iglesia parroquial, plaza y provincia de San Agustín de la Florida, etc., bauticé y puse los santos óleos a una niña de color morena de unos trece meses de edad, hija natural de Santiago y Fortunera, todos esclavos del Rey, y en ella ejercí las sacras ceremonias y preces de nuestra Santa Madre Iglesia, y le puse por nombre Ana María Josefa. Fue su madrina Doña Ana María M. Donato, vecina de esta ciudad, a quien advertí del parentesco espiritual y demás obligaciones, y lo firmé en dicho día, mes y año. Miguel O'Reilly"
+            "text": "Lunes, día diecisiete de octubre de mil ochocientos noventa y nueve, yo Don Miguel O'Reilly, cura beneficiado, vicario y juez eclesiástico de esta iglesia parroquial, plaza y provincia de San Agustín de la Florida, etc., bauticé y puse los santos óleos a una niña de color moreno, como de trece meses de edad, hija natural de Santiago y María Fort, todos esclavos del Rey. En ella ejercí las sacras ceremonias y preces de nuestra Santa Madre Iglesia y la puse por nombre Ana María Josefa. Fue su madrina Doña Ana María M. Domato, vecina de esta ciudad, a quien avisé del parentesco espiritual y demás obligaciones, y lo firmé en dicho día, mes y año. Miguel O'Reilly."
         },
         {
             "id": "0088-02",
-            "text": "Sábado, día veinte y nueve de octubre de mil setecientos noventa y siete, yo Don Miguel O'Reilly, cura beneficiado, vicario, juez eclesiástico de esta iglesia parroquial, plaza, y provincia de San Agustín de la Florida, etc., bauticé y puse los santos óleos a un niño de color moreno, que nació el día catorce del corriente mes y año, hijo natural de Francisco Moreno libre, natural de Carolina del Sur en los Estados Unidos de América y de Ritona Moreno, esclava de Doña Juana Rodríguez, vecina de esta ciudad. En él ejercí las sacras ceremonias y preces de nuestra madre Iglesia y le puse por nombre Celestino Tomás. Fue su padrino Don Tomás de Aguilar. Le advertí el parentesco espiritual y demás obligaciones y lo firmé en dicho día, mes, y año. Miguel O'Reilly."
+            "text": "Sábado, día veintinueve de octubre de mil setecientos noventa y seis. Yo, Don Miguel O'Reilly, cura beneficiado, vicario, juez eclesiástico de esta iglesia parroquial, plaza y provincia de San Agustín de la Florida, etc., bauticé y puse los santos óleos a un niño de color moreno que nació el día catorce del corriente mes y año. Hijo natural de Juan Moreno, libre y natural de Carolina del Sur, en los Estados Unidos de América, y de Elena, morena esclava de Don Juan Rodriguez, vecino de esta ciudad. En él ejercí las sacras ceremonias y preces de nuestra madre iglesia y le puse por nombre Celestino Tomás. Fue su padrino Don Tomás de Aguilar, a quien advertí del parentesco espiritual y demás obligaciones, y lo firmé en dicho día, mes y año, Miguel O'Reilly."
         }
     ],
     "people": [
@@ -23,18 +23,7 @@
             "titles": [
                 "Don"
             ],
-            "rank": null,
-            "origin": null,
-            "ethnicity": null,
-            "age": "adult",
-            "legitimate": true,
             "occupation": "cleric",
-            "phenotype": [
-                "moreno",
-                "blanco"
-            ],
-            "free": true,
-            "relationships": [],
             "mentions": [
                 "0088-02",
                 "0088-01"
@@ -43,14 +32,6 @@
         {
             "id": "239746-P00002",
             "name": "Santiago",
-            "titles": [],
-            "rank": null,
-            "origin": null,
-            "ethnicity": null,
-            "age": "adult",
-            "legitimate": true,
-            "occupation": null,
-            "phenotype": "blanco",
             "free": false,
             "relationships": [
                 {
@@ -58,23 +39,15 @@
                     "relationship_type": "spouse"
                 },
                 {
-                    "related_person": "239746-P00005",
-                    "relationship_type": "parent"
+                    "related_person": "239746-P00004",
+                    "relationship_type": "child"
                 }
             ],
             "mentions": "0088-01"
         },
         {
             "id": "239746-P00003",
-            "name": "Fortunera",
-            "titles": [],
-            "rank": null,
-            "origin": null,
-            "ethnicity": null,
-            "age": "adult",
-            "legitimate": true,
-            "occupation": null,
-            "phenotype": "blanco",
+            "name": "María Fort",
             "free": false,
             "relationships": [
                 {
@@ -82,101 +55,93 @@
                     "relationship_type": "spouse"
                 },
                 {
-                    "related_person": "239746-P00005",
-                    "relationship_type": "spouse"
+                    "related_person": "239746-P00004",
+                    "relationship_type": "child"
                 }
             ],
             "mentions": "0088-01"
         },
         {
             "id": "239746-P00004",
-            "name": "Ana María M. Donato",
-            "titles": [
-                "Don"
+            "name": "Ana María Josefa",
+            "age": "child",
+            "phenotype": "moreno",
+            "free": false,
+            "relationships": [
+                {
+                    "related_person": "239746-P00002",
+                    "relationship_type": "parent"
+                },
+                {
+                    "related_person": "239746-P00003",
+                    "relationship_type": "parent"
+                },
+                {
+                    "related_person": "239746-P00005",
+                    "relationship_type": "godparent"
+                }
             ],
-            "rank": null,
-            "origin": null,
-            "ethnicity": null,
-            "age": "adult",
-            "legitimate": true,
-            "occupation": null,
-            "phenotype": "blanco",
-            "free": true,
-            "relationships": [],
             "mentions": "0088-01"
         },
         {
             "id": "239746-P00005",
-            "name": "Ana María Josef",
-            "titles": [],
-            "rank": null,
-            "origin": null,
-            "ethnicity": null,
-            "age": "infant",
-            "legitimate": true,
-            "occupation": null,
-            "phenotype": "blanco",
-            "free": true,
-            "relationships": [],
+            "name": "Ana María M. Domato",
+            "titles": [
+                "Doña"
+            ],
+            "relationships": [
+                {
+                    "related_person": "239746-P00004",
+                    "relationship_type": "godchild"
+                }
+            ],
             "mentions": "0088-01"
         },
         {
             "id": "239746-P00006",
-            "name": "Francisco Moreno",
-            "titles": [],
-            "rank": null,
-            "origin": "South Carolina, United States of America",
-            "ethnicity": null,
-            "age": "adult",
-            "legitimate": true,
-            "occupation": "cleric",
-            "phenotype": "moreno",
+            "name": "Juan Moreno",
+            "origin": "Carolina del Sur, Estados Unidos de América",
             "free": true,
-            "relationships": [],
+            "phenotype": "moreno",
+            "relationships": [
+                {
+                    "related_person": "239746-P00008",
+                    "relationship_type": "parent"
+                }
+            ],
             "mentions": "0088-02"
         },
         {
             "id": "239746-P00007",
-            "name": "Ritona Moreno",
-            "titles": [],
-            "rank": null,
-            "origin": null,
-            "ethnicity": null,
-            "age": "adult",
-            "legitimate": true,
-            "occupation": null,
-            "phenotype": "pardo",
+            "name": "Elena",
+            "phenotype": "moreno",
             "free": false,
             "relationships": [
                 {
-                    "related_person": "239746-P00009",
-                    "relationship_type": "slave"
+                    "related_person": "239746-P00008",
+                    "relationship_type": "parent"
                 },
                 {
-                    "related_person": "239746-P00010",
-                    "relationship_type": "godparent"
+                    "related_person": "239746-P00009",
+                    "relationship_type": "enslaver"
                 }
             ],
             "mentions": "0088-02"
         },
         {
             "id": "239746-P00008",
-            "name": "Juana Rodríguez",
-            "titles": [
-                "Doña"
-            ],
-            "rank": null,
-            "origin": null,
-            "ethnicity": null,
-            "age": "adult",
-            "legitimate": true,
-            "occupation": null,
+            "name": "Celestino Tomás",
+            "age": "child",
             "phenotype": "moreno",
-            "free": true,
+            "legitimate": false,
             "relationships": [
                 {
-                    "related_person": "239746-P00009",
-                    "relationship_type": "slave"
+                    "related_person": "239746-P00006",
+                    "relationship_type": "parent"
+                },
+                {
+                    "related_person": "239746-P00007",
+                    "relationship_type": "parent"
                 },
                 {
                     "related_person": "239746-P00010",
@@ -187,20 +152,14 @@
         },
         {
             "id": "239746-P00009",
-            "name": "Celestino Tomás",
-            "titles": [],
-            "rank": null,
-            "origin": null,
-            "ethnicity": null,
-            "age": "infant",
-            "legitimate": false,
-            "occupation": null,
-            "phenotype": "moreno",
-            "free": true,
+            "name": "Juan Rodriguez",
+            "titles": [
+                "Don"
+            ],
             "relationships": [
                 {
-                    "related_person": "239746-P00010",
-                    "relationship_type": "godparent"
+                    "related_person": "239746-P00007",
+                    "relationship_type": "slave"
                 }
             ],
             "mentions": "0088-02"
@@ -211,22 +170,33 @@
             "titles": [
                 "Don"
             ],
-            "rank": null,
-            "origin": null,
-            "ethnicity": null,
-            "age": "adult",
-            "legitimate": true,
-            "occupation": null,
-            "phenotype": "pardo",
-            "free": true,
             "relationships": [
                 {
-                    "related_person": "239746-P00009",
-                    "relationship_type": "godparent"
+                    "related_person": "239746-P00008",
+                    "relationship_type": "godchild"
                 }
             ],
             "mentions": "0088-02"
         }
     ],
-    "events": []
+    "events": [
+        {
+            "type": "baptism",
+            "principal": "239746-P00004",
+            "date": "1899-10-17",
+            "id": "0088-01-E00"
+        },
+        {
+            "type": "baptism",
+            "principal": "239746-P00008",
+            "date": "1796-10-29",
+            "id": "0088-02-E00"
+        },
+        {
+            "type": "birth",
+            "principal": "239746-P00008",
+            "date": "1796-10-14",
+            "id": "0088-02-E01"
+        }
+    ]
 }

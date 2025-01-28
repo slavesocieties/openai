@@ -1390,7 +1390,7 @@
                         "id": "P02",
                         "name": "Escolástica Guillerma Lopes",
                         "origin": "Matanzas",
-                        "free": "true",
+                        "free": true,
                         "relationships": [
                             {
                                 "related_person": "P04",
@@ -1419,7 +1419,7 @@
                     {
                         "id": "P04",
                         "name": "Maria Luisa del Rosario",
-                        "free": "true",
+                        "free": true,
                         "relationships": [
                             {
                                 "related_person": "P02",

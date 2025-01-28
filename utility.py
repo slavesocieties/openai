@@ -217,7 +217,7 @@ def parse_volume_record(volume_record_path):
     else:
         language = "Portuguese"
 
-    volume_metadata = {"type": data["type"], "language": language, "institution": data["institution"], "id": data["id"]}
+    volume_metadata = {"type": data["type"], "language": language, "institution": data["institution"], "id": data["id"], "state": data["state"]}
 
     return data, volume_metadata
 
@@ -264,7 +264,7 @@ def collect_instructions(instructions_path, volume_metadata, mode):
         else:
             language = "Spanish"        
 
-        keywords = [mode, language, volume_metadata["type"]]
+        keywords = [mode, language, volume_metadata["type"], volume_metadata["fields"]["state"]]
     else:
         keywords = [mode, volume_metadata["language"], volume_metadata["type"]]
     
