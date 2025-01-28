@@ -759,43 +759,64 @@
                                 "relationship_type":"grandchild"
                             },
                             {
-                                "related_person"
+                                "related_person": "P04",
+                                "relationship_type": "spouse"
                             }
                         ]
                     },
                     {
                         "id":"P04",
                         "name":"Juliana Moreña",
-                        "relationships":[
+                        "relationships": [
                             {
-                                "related_person":"P02"
+                                "related_person":"P02",
+                                "relationship_type":"child"
+                            },
+                            {
+                                "related_person":"P05",
+                                "relationship_type":"grandchild"
+                            },
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "spouse"
                             }
                         ]
                     },
                     {
                         "id":"P05",
                         "name":"Andres",
-                        "relationships":[
+                        "relationships": [
                             {
-                                "related_person":"P02"
+                                "related_person":"P02",
+                                "relationship_type":"parent"
+                            },
+                            {
+                                "related_person":"P03",
+                                "relationship_type":"grandparent"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "grandparent"
                             }
                         ]
                     },
                     {
                         "id":"P06",
                         "name":"Juan Rodir",
-                        "relationships":[
+                        "relationships": [
                             {
-                                "related_person":"P05"
+                                "related_person":"P05",
+                                "relationship_type": "godchild"
                             }
                         ]
                     },
                     {
                         "id":"P07",
                         "name":"Marina Plar",
-                        "relationships":[
+                        "relationships": [
                             {
-                                "related_person":"P05"
+                                "related_person":"P05",
+                                "relationship_type": "godchild"
                             }
                         ]
                     }
@@ -982,7 +1003,7 @@
                     },
                     {
                         "type":"birth",
-                        "principal",
+                        "principal": "P06",
                         "date":"1872-10-21"
                     }
                 ]
