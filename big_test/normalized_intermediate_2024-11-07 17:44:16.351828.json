@@ -1,0 +1,26 @@
+{
+    "type": "marriage",
+    "country": "Cuba",
+    "state": "La Habana",
+    "city": "Havana",
+    "institution": "Iglesia del Santo \u00c1ngel Custodio",
+    "id": 1710,
+    "title": "Libro 4 de Matrimonios de Pardos y Morenos, 1812-1839",
+    "entries": [
+        {
+            "id": "0003-01",
+            "raw": "En la ciudad de la Havana en diez y ocho de Julio de mil ochocientos y doze a\u00f1os, haviendose leydo las tres canoni cas amo#staciones en tres dias festivos sin resultar im pedimen#, yo Licenciado D Andres Cascales, Beneficiado por S Majestad de la Iglesia Auxiliar del Santo Angel Custodio de esta ciudad de la Havana, case y vel\u00e9 ritualmente \u00e1 Pablo Ayende natural de esta ciudad, hijo leg\u00edtimo de Josef Antonio y de Maria de la Soledad Olibos, Viudo de Maria del Carmen Fernandez; y a Maria Josefa Catarina Gomes de la misma naturalidad, hija leg\u00edtima de Juan Bautista, y de Felipa Carvajal, todos pardos libres; y dhos contrayentes confesaron y comulgaron, fueron examinados en la doctrina Cristiana siendo Padrinos Eugenio Gomes, y Maria del Rosa # #, y testigos D Francisco Cortinas, y D Gabriel Garcia sacrista nes menores y lo firme",
+            "normalized": "En la ciudad de La Habana, en dieciocho de julio de mil ochocientos doce a\u00f1os, habi\u00e9ndose le\u00eddo las tres can\u00f3nicas amonestaciones en tres d\u00edas festivos sin resultar impedimento, yo, Licenciado Don Andr\u00e9s Cascales, Beneficiado por Su Majestad de la Iglesia Auxiliar del Santo \u00c1ngel Custodio de esta ciudad de La Habana, cas\u00e9 y vel\u00e9 ritualmente a Pablo Ayende, natural de esta ciudad, hijo leg\u00edtimo de Jos\u00e9 Antonio y de Mar\u00eda de la Soledad Olibos, viudo de Mar\u00eda del Carmen Fern\u00e1ndez; y a Mar\u00eda Josefa Catarina G\u00f3mez de la misma naturalidad, hija leg\u00edtima de Juan Bautista y de Felipa Carvajal, todos pardos libres. Los mencionados contrayentes confesaron y comulgaron, y fueron examinados en la doctrina cristiana. Fueron padrinos Eugenio G\u00f3mez y Mar\u00eda del Rosario, y testigos Don Francisco Cortinas y Don Gabriel Garc\u00eda, sacristanes menores, y lo firm\u00e9."
+        },
+        {
+            "id": "0003-02",
+            "raw": "En la ciudad de la Havana, en tres de Agosto de milochocien tos y doze a\u00f1os, haviendose leydo las tres canonicas amonestaciones en tres d\u00edas festivos sin resultar impedimento, yo Licenciado D Andres Cascales Beneficiado por S Majestad de la Iglesia Auxiliar, del Santo Angel Custodio de esta ciudad de la Havana, cas\u00e9 y vel\u00e9 #itualmente \u00e1 Josef Rafael, Congo, esclavo de D Juan Josef de Hita, y \u00e1 Juana Leandra, morena criolla de esta ciudad, hija leg\u00edtima de Juan de Dios Henrique y de Maria del Rosario de Hita, y dhos contrayentes confesa# y comulgaron, fueron examinados en la doctrina Cristiana sie# testigos D Francisco Cortinas, y Pedro Ruiz y lo firme",
+            "normalized": "En la ciudad de La Habana, en tres de agosto de mil ochocientos doce a\u00f1os, habi\u00e9ndose le\u00eddo las tres can\u00f3nicas amonestaciones en tres d\u00edas festivos sin resultar impedimento, yo, Licenciado don Andr\u00e9s Cascales, Beneficiado por Su Majestad de la Iglesia Auxiliar del Santo \u00c1ngel Custodio de esta ciudad de La Habana, cas\u00e9 y vel\u00e9 ritualmente a Jos\u00e9 Rafael, Congo, esclavo de don Juan Jos\u00e9 de Hita, y a Juana Leandra, morena criolla de esta ciudad, hija leg\u00edtima de Juan de Dios Henr\u00edquez y de Mar\u00eda del Rosario de Hita. Los dichos contrayentes confesaron y comulgaron, fueron examinados en la doctrina cristiana, siendo testigos don Francisco Cortinas y Pedro Ruiz. Y lo firm\u00e9."
+        },
+        {
+            "id": "0004-01",
+            "raw": "de la Cruz, #onga En la ciudad de la Havana en tres # Agosto de m#l ochocientos y doze a\u00f1os, havindose le\u00eddo las tres canonicas amonestaciones en tres d\u00edas festivos sin resultar impedimento, yo Licenciado D Andres Cascales Beneficiado de la Iglesia Auxiliar del Santo Angel Custodio de esta ciudad de la Havana, por S Majestad case y vel\u00e9 ritualmente a Josef de la Trinidad, mandinga, esclavo de D Josef Martin, y a Maria de la Cruz, Conga, esclava de D Fr#.co Q#edo; y dhos contrayentes confesaron y comulgaron, fueron exami nados en la doctrina Cristiana, siendo testigos D Francisco Cortinas, y Manuel Silbestre, y padrinos pedro Ruiz y Rosa Garcia, y lo firme",
+            "normalized": "En la ciudad de La Habana, en tres de agosto de mil ochocientos doce a\u00f1os, habi\u00e9ndose le\u00eddo las tres can\u00f3nicas amonestaciones en tres d\u00edas festivos sin resultar impedimento, yo, Licenciado Don Andr\u00e9s Cascales, beneficiado de la Iglesia Auxiliar del Santo \u00c1ngel Custodio de esta ciudad de La Habana, por Su Majestad, cas\u00e9 y vel\u00e9 ritualmente a Jos\u00e9 de la Trinidad, mandinga, esclavo de Don Jos\u00e9 Mart\u00edn, y a Mar\u00eda de la Cruz, conga, esclava de Don Francisco Quevedo. Los contrayentes confesaron y comulgaron y fueron examinados en la doctrina cristiana, siendo testigos Don Francisco Cortinas y Manuel Silvestre, y padrinos Pedro Ruiz y Rosa Garc\u00eda, y lo firm\u00e9."
+        }
+    ]
+}
