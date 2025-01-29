@@ -63,7 +63,7 @@
                 "events": [
                     {
                         "type": "baptism",
-                        "principal": [
+                        "principals": [
                             "P03"
                         ],
                         "date": "1840-07-19"
@@ -185,14 +185,14 @@
                 "events": [
                     {
                         "type": "baptism",
-                        "principal": [
+                        "principals": [
                             "P05"
                         ],
                         "date": "1839-10-17"
                     },
                     {
                         "type": "birth",
-                        "principal": [
+                        "principals": [
                             "P05"
                         ],
                         "date": "1837-06-13"
@@ -311,14 +311,14 @@
                 "events": [
                     {
                         "type": "baptism",
-                        "principal": [
+                        "principals": [
                             "P04"
                         ],
                         "date": "1839-10-16"
                     },
                     {
                         "type": "birth",
-                        "principal": [
+                        "principals": [
                             "P04"
                         ],
                         "date": "1838-09-24"
@@ -363,7 +363,7 @@
                 "events": [
                     {
                         "type": "baptism",
-                        "principal": [
+                        "principals": [
                             "P01"
                         ],
                         "date": "1748-03-31"
@@ -458,7 +458,7 @@
                 "events": [
                     {
                         "type": "baptism",
-                        "principal": [
+                        "principals": [
                             "P05"
                         ],
                         "date": "1750-08-09"
@@ -517,7 +517,7 @@
                 "events": [
                     {
                         "type": "baptism",
-                        "principal": [
+                        "principals": [
                             "P03"
                         ],
                         "date": "1753-06-27"
@@ -637,7 +637,7 @@
                 "events": [
                     {
                         "type": "marriage",
-                        "principal": [
+                        "principals": [
                             "P02",
                             "P03"
                         ],
@@ -760,7 +760,7 @@
                 "events": [
                     {
                         "type": "marriage",
-                        "principal": [
+                        "principals": [
                             "P02",
                             "P03"
                         ],
@@ -908,7 +908,7 @@
                 "events": [
                     {
                         "type": "marriage",
-                        "principal": [
+                        "principals": [
                             "P02",
                             "P03"
                         ],
@@ -998,7 +998,7 @@
                 "events": [
                     {
                         "type": "marriage",
-                        "principal": [
+                        "principals": [
                             "P02",
                             "P03"
                         ],
@@ -1136,14 +1136,14 @@
                 "events": [
                     {
                         "type": "baptism",
-                        "principal": [
+                        "principals": [
                             "P05"
                         ],
                         "date": "1873-01-11"
                     },
                     {
                         "type": "birth",
-                        "principal": [
+                        "principals": [
                             "P05"
                         ],
                         "date": "1872-09-12"
@@ -1351,14 +1351,14 @@
                 "events": [
                     {
                         "type": "baptism",
-                        "principal": [
+                        "principals": [
                             "P08"
                         ],
                         "date": "1873-01-17"
                     },
                     {
                         "type": "birth",
-                        "principal": [
+                        "principals": [
                             "P08"
                         ],
                         "date": "1873-01-10"
@@ -1459,14 +1459,14 @@
                 "events": [
                     {
                         "type": "baptism",
-                        "principal": [
+                        "principals": [
                             "P03"
                         ],
                         "date": "1873-01-16"
                     },
                     {
                         "type": "birth",
-                        "principal": [
+                        "principals": [
                             "P03"
                         ],
                         "date": "1872-10-06"
@@ -1631,14 +1631,14 @@
                 "events": [
                     {
                         "type": "baptism",
-                        "principal": [
+                        "principals": [
                             "P07"
                         ],
                         "date": "1873-02-12"
                     },
                     {
                         "type": "birth",
-                        "principal": [
+                        "principals": [
                             "P07"
                         ],
                         "date": "1872-08-16"
@@ -1799,14 +1799,14 @@
                 "events": [
                     {
                         "type": "baptism",
-                        "principal": [
+                        "principals": [
                             "P06"
                         ],
                         "date": "1873-04-19"
                     },
                     {
                         "type": "birth",
-                        "principal": [
+                        "principals": [
                             "P06"
                         ],
                         "date": "1872-12-22"
@@ -1936,7 +1936,7 @@
                 "events": [
                     {
                         "type": "baptism",
-                        "principal": [
+                        "principals": [
                             "P05"
                         ],
                         "date": "1873-05-19"
@@ -2049,14 +2049,14 @@
                 "events": [
                     {
                         "type": "baptism",
-                        "principal": [
+                        "principals": [
                             "P04"
                         ],
                         "date": "1793-11-24"
                     },
                     {
                         "type": "birth",
-                        "principal": [
+                        "principals": [
                             "P04"
                         ],
                         "date": "1793-09-26"
@@ -2156,14 +2156,14 @@
                 "events": [
                     {
                         "type": "baptism",
-                        "principal": [
+                        "principals": [
                             "P04"
                         ],
                         "date": "1798-05-21"
                     },
                     {
                         "type": "birth",
-                        "principal": [
+                        "principals": [
                             "P04"
                         ],
                         "date": "1798-05-16"
