@@ -1012,7 +1012,7 @@
         {
             "id": "0004-01",
             "raw": "Sábado veinte y cinco de Enero de mil ochocientos setenta y tres: yo Presbitero Don Santiago Serra, cura párroco vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas bauticé solemnemente y puse los santos óleos á una párvula parda que nació el dia veinte y uno de Septiembre último hija de padre no conocido y de la de igual clase Ysabel Pinto cuya naturalidad no espresaron vecina de esta feligresía esclava de Agustina Ynfame de Pinto tambien de la referida clase; nieta materna de Ynes Hernandes y abuelo no espresada en dicha párvula ejercí las sagradas preces y ceremonias y le puse por nombre Maria Daniela de la Caridad: la cual es libre por beneficio de la ley sancionada por las cortes constituyentes de la Nacion en veinte y tres de Junio de mil ochocientos setenta años comunicada con fecha cuatro de Julio del propio al escelentisimo Señor Gobernador Superior Político de esta Ysla publicada en la Gaceta Oficial correspondiente al Sábado primero de Octubre del referido año fueron sus padrinos Claudio Pinto y Juana Rosquin, á quienes advertí el parentesco espiritual y obligaciones que contrajeron y lo",
-            "normalized":"Sábado veinte y cinco de enero de mil ochocientos setenta y tres, yo Presbitero Don Santiago Serra, cura párroco vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas, bauticé solemnemente y puse los santos óleos á una párvula parda que nació el dia veinte y uno de Septiembre último, hija de padre no conocido y de la de igual clase Isabel Pinto cuya naturalidad no espresaron vecina de esta feligresía, esclava de Agustina Ynfame de Pinto, tambien de la referida clase nieta materna de Ines Hernandes y abuelo no espresada. En dicha párvula ejercí las sagradas preces y ceremonias y le puse por nombre Maria Daniela de la Caridad, la cual es libre por beneficio de la ley sancionada por las cortes constituyentes de la Nacion en veinte y tres de junio de mil ochocientos setenta años comunicada con fecha cuatro de julio del propio al Escelentisimo Señor Gobernador Superior Político de esta Ysla publicada en la Gaceta Oficial correspondiente al sábado primero de octubre del referido año. Fueron sus padrinos Claudio Pinto y Juana Rosquin, á quienes advertí el parentesco espiritual y obligaciones que contrajeron y lo firme Santiago Serra",
+            "normalized":"Sábado veinte y cinco de enero de mil ochocientos setenta y tres, yo Presbitero Don Santiago Serra, cura párroco vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas, bauticé solemnemente y puse los santos óleos á una párvula parda que nació el dia veinte y uno de septiembre último, hija de padre no conocido y de la de igual clase Isabel Pinto cuya naturalidad no espresaron vecina de esta feligresía, esclava de Agustina Infame de Pinto, tambien de la referida clase nieta materna de Ines Hernandes y abuelo no espresada. En dicha párvula ejercí las sagradas preces y ceremonias y le puse por nombre Maria Daniela de la Caridad, la cual es libre por beneficio de la ley sancionada por las cortes constituyentes de la Nacion en veinte y tres de junio de mil ochocientos setenta años comunicada con fecha cuatro de julio del propio al Escelentisimo Señor Gobernador Superior Político de esta Isla publicada en la Gaceta Oficial correspondiente al sábado primero de octubre del referido año. Fueron sus padrinos Claudio Pinto y Juana Rosquin, á quienes advertí el parentesco espiritual y obligaciones que contrajeron y lo firme Santiago Serra",
             "data":{
                 "people":[
                     {
@@ -1025,19 +1025,27 @@
                     },
                     {
                         "id":"P02",
-                        "name":"Ysabel Pinto",
+                        "name":"Isabel Pinto",
                         "free":false,
                         "legitimate":false,
                         "relationships":[
                             {
                                 "related_person":"P03",
                                 "relationship_type":"enslaver"
+                            },
+                            {
+                                "related_person":"P04",
+                                "relationship_type":"parent"
+                            },
+                            {
+                                "related_person":"P05",
+                                "relationship_type":"child"
                             }
                         ]
                     },
                     {
                         "id":"P03",
-                        "name":"Agustina Ynfame de Pinto",
+                        "name":"Agustina Infame de Pinto",
                         "relationships":[
                             {
                                 "related_person":"P02",
@@ -1047,12 +1055,16 @@
                     },
                     {
                         "id":"P04",
-                        "name":"Ynes Hernandes",
+                        "name":"Ines Hernandes",
                         "free":false,
                         "relationships":[
                             {
                                 "related_person":"P02",
                                 "relationship_type":"child"
+                            },
+                            {
+                                "related_person":"P05",
+                                "relationship_type":"grandchild"
                             }
                         ]
                     },
@@ -1061,10 +1073,23 @@
                         "name":"Maria Daniela de la Caridad",
                         "free":true,
                         "legitimate":false,
+                        "phenotype":"pardo",
                         "relationships":[
                             {
                                 "related_person":"P02",
                                 "relationship_type":"parent"
+                            },
+                            {
+                                "related_person":"P04",
+                                "relationship_type":"grandparent"
+                            },
+                            {
+                                "related_person":"P07",
+                                "relationship_type":"godparent"
+                            },
+                            {
+                                "related_person":"P08",
+                                "relationship_type":"godparent"
                             }
                         ]
                     },
@@ -1094,20 +1119,359 @@
                             }
                         ]
                     }
+                ],
+                "events":[
+                    {
+                        "type":"baptism",
+                        "principal":"P05",
+                        "date":"1873-01-25"
+                    },
+                    {
+                        "type":"birth",
+                        "principal":"P05",
+                        "date":"1872-09-21"
+                    }
                 ]
             }
         },
         {
             "id": "0004-02",
-            "raw": "Sábado veinte y cinco de Enero de mil ochocientos setenta y tres: yo Presbitero Don Santiago Serra, cura párroco vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas bauticé solemnemente y puse los santos óleos á un párvulo, que nació el dia once de Octubre último hijo de padre no conocido y de la parda Dionisia Bentancur de condicion libre natural y vecina de esta feligresía; nieto materno de Esteban y de Salome Noriega en dicho párvulo ejercí las sagradas preces y ceremonias y le puse por nombre José Teodoro: fueron sus padrinos el Asiatico Pedro Soojer y Rosario Hernandes, á quienes advertí el parentesco espiritual y obligaciones que contrajeron y lo firmé Santiago Serra"
+            "raw": "Sábado veinte y cinco de Enero de mil ochocientos setenta y tres: yo Presbitero Don Santiago Serra, cura párroco vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas bauticé solemnemente y puse los santos óleos á un párvulo, que nació el dia once de Octubre último hijo de padre no conocido y de la parda Dionisia Bentancur de condicion libre natural y vecina de esta feligresía; nieto materno de Esteban y de Salome Noriega en dicho párvulo ejercí las sagradas preces y ceremonias y le puse por nombre José Teodoro: fueron sus padrinos el Asiatico Pedro Soojer y Rosario Hernandes, á quienes advertí el parentesco espiritual y obligaciones que contrajeron y lo firmé Santiago Serra",
+            "normalized":"Sábado veinte y cinco de enero de mil ochocientos setenta y tres, yo Presbitero Don Santiago Serra, cura párroco vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas, bauticé solemnemente y puse los santos óleos á un párvulo, que nació el dia once de octubre último hijo de padre no conocido y de la parda Dionisia Bentancur de condicion libre, natural y vecina de esta feligresía, nieto materno de Esteban y de Salome Noriega. En dicho párvulo ejercí las sagradas preces y ceremonias y le puse por nombre José Teodoro. Fueron sus padrinos el Asiatico Pedro Soojer y Rosario Hernandes, á quienes advertí el parentesco espiritual y obligaciones que contrajeron y lo firmé Santiago Serra",
+            "data":{
+                "people":[
+                    {
+                        "id":"P01",
+                        "name":"Santiago Serra",
+                        "occupation":"cleric",
+                        "titles":[
+                            "Don"
+                        ]
+                    },
+                    {
+                        "id":"P02",
+                        "name":"Dionisia Bentancur",
+                        "free":true,
+                        "legitimate":true,
+                        "origin":"Matanzas",
+                        "phenotype":"pardo",
+                        "relationships":[
+                            {
+                                "related_person":"P03",
+                                "relationship_type":"parent"
+                            },
+                            {
+                                "related_person":"P04",
+                                "relationship_type":"parent"
+                            },
+                            {
+                                "related_person":"P05",
+                                "relationship_type":"child"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P03",
+                        "name":"Esteban",
+                        "relationships":[
+                            {
+                                "related_person":"P02",
+                                "relationship_type":"child"
+                            },
+                            {
+                                "related_person":"P04",
+                                "relationship_type":"spouse"
+                            },
+                            {
+                                "related_person":"P05",
+                                "relationship_type":"grandchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P04",
+                        "name":"Salome Noriega",
+                        "relationships":[
+                            {
+                                "related_person":"P02",
+                                "relationship_type":"child"
+                            },
+                            {
+                                "related_person":"P03",
+                                "relationship_type":"spouse",
+                            },
+                            {
+                                "related_person":"P05",
+                                "relationship_type":"grandchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P05",
+                        "name":"José Teodoro",
+                        "legitimate":false,
+                        "relationships":[
+                            {
+                                "related_person":"P02",
+                                "relationship_type":"parent"
+                            },
+                            {
+                                "related_person":"P03",
+                                "relationship_type":"grandparent"
+                            },
+                            {
+                                "related_person":"P04",
+                                "relationship_type":"grandparent"
+                            },
+                            {
+                                "related_person":"P06",
+                                "relationship_type":"godparent"
+                            },
+                            {
+                                "related_person":"P07",
+                                "relationship_type":"godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P06",
+                        "name":"Asiatico Pedro Soojer",
+                        "relationships":[
+                            {
+                                "related_person":"P05",
+                                "relationship_type":"godchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P07",
+                        "name":"Rosario Hernandes",
+                        "relationships":[
+                            {
+                                "related_person":"P05",
+                                "relationship_type":"godchild"
+                            }
+                        ]
+                    }
+                ],
+                "events":[
+                    {
+                        "type":"baptism",
+                        "principal":"P05",
+                        "date":"1873-01-25"
+                    },
+                    {
+                        "type":"birth",
+                        "principal":"P05",
+                        "date":"1872-10-11"
+                    }
+                ]
+            }
         },
         {
             "id": "0004-03",
-            "raw": "Sábado veinte y cinco de Enero de mil ochocientos setenta y tres: yo Presbitero Don Santiago Serra, cura párroco vicario foraneo interino de esta iglesia de Término de San Cárlos de Matanzas bauticé solemnemente y puse los santos óleos á un párvulo pardo, que nació el dia once de Octubre último hijo de padre no conocido y de la morena Antonia Silva natural y vecina de esta feligresía esclava de Don Juan Antonio Silva; nieto materno de Juan de Dios y de Teresa Silva en dicho párvulo ejercí las sagradas preces y ceremonias y le puse por nombre José Fermin Arturo: el cual es libre por beneficio de la ley sancionada por las cortes constituyentes de la Nacion en veinte y tres de Junio de mil ochocientos setenta años comunicada con fecha cuatro de Julio del propio año, al Escelentisimo Señor Gobernador Superior Político de esta Ysla, publicada en la Gaceta Oficial correspondiente al Sábado primero de Octubre del referido año fueron sus padrinos Don Pablo Noriega y Faustina de la Crus á quienes advertí el parentesco espiritual y obligaciones que contrajeron y lo firmé Santiago Serra"
+            "raw": "Sábado veinte y cinco de Enero de mil ochocientos setenta y tres: yo Presbitero Don Santiago Serra, cura párroco vicario foraneo interino de esta iglesia de Término de San Cárlos de Matanzas bauticé solemnemente y puse los santos óleos á un párvulo pardo, que nació el dia once de Octubre último hijo de padre no conocido y de la morena Antonia Silva natural y vecina de esta feligresía esclava de Don Juan Antonio Silva; nieto materno de Juan de Dios y de Teresa Silva en dicho párvulo ejercí las sagradas preces y ceremonias y le puse por nombre José Fermin Arturo: el cual es libre por beneficio de la ley sancionada por las cortes constituyentes de la Nacion en veinte y tres de Junio de mil ochocientos setenta años comunicada con fecha cuatro de Julio del propio año, al Escelentisimo Señor Gobernador Superior Político de esta Ysla, publicada en la Gaceta Oficial correspondiente al Sábado primero de Octubre del referido año fueron sus padrinos Don Pablo Noriega y Faustina de la Crus á quienes advertí el parentesco espiritual y obligaciones que contrajeron y lo firmé Santiago Serra",
+            "normalized":"Sábado veinte y cinco de enero de mil ochocientos setenta y tres, yo Presbitero Don Santiago Serra, cura párroco vicario foraneo interino de esta iglesia de Término de San Cárlos de Matanzas, bauticé solemnemente y puse los santos óleos á un párvulo pardo, que nació el dia once de octubre último, hijo de padre no conocido y de la morena Antonia Silva, natural y vecina de esta feligresía, esclava de Don Juan Antonio Silva, nieto materno de Juan de Dios y de Teresa Silva. En dicho párvulo ejercí las sagradas preces y ceremonias y le puse por nombre José Fermin Arturo, el cual es libre por beneficio de la ley sancionada por las cortes constituyentes de la Nacion en veinte y tres de junio de mil ochocientos setenta años comunicada con fecha cuatro de julio del propio año, al Escelentisimo Señor Gobernador Superior Político de esta Isla, publicada en la Gaceta Oficial correspondiente al sábado primero de octubre del referido año. Fueron sus padrinos Don Pablo Noriega y Faustina de la Crus á quienes advertí el parentesco espiritual y obligaciones que contrajeron y lo firmé Santiago Serra",
+            "data":{
+                "people":[
+                    {
+                        "id":"P01",
+                        "name":"Santiago Serra",
+                        "occupation":"cleric",
+                        "titles":[
+                            "Don"
+                        ]
+                    },
+                    {
+                        "id":"P02",
+                        "name":"Antonia Silva",
+                        "free":false,
+                        "legitimate":true,
+                        "phenotype":"moreno",
+                        "origin":"Matanzas",
+                        "relationships":[
+                            {
+                                "related_person":"P03",
+                                "relationship_type":"enslaver"
+                            },
+                            {
+                                "related_person":"P04",
+                                "relationship_type":"parent"
+                            },
+                            {
+                                "related_person":"P05",
+                                "relationship_type":"parent"
+                            },
+                            {
+                                "related_person":"P06",
+                                "relationship_type":"child"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P03",
+                        "name":"Juan Antonio Silva",
+                        "titles":[
+                            "Don"
+                        ],
+                        "relationships":[
+                            {
+                                "related_person":"P02",
+                                "relationship_type":"slave"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P04",
+                        "name":"Juan de Dios",
+                        "relationships":[
+                            {
+                                "related_person":"P02",
+                                "relationship_type":"child"
+                            },
+                            {
+                                "related_person":"P05",
+                                "relationship_type":"spouse"
+                            },
+                            {
+                                "related_person":"P06",
+                                "relationship_type":"grandchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P05",
+                        "name":"Teresa Silva",
+                        "relationships":[
+                            {
+                                "related_person":"P02",
+                                "relationship_type":"child"
+                            },
+                            {
+                                "related_person":"P04",
+                                "relationship_type":"spouse"
+                            },
+                            {
+                                "related_person":"P06",
+                                "relationship_type":"grandchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P06",
+                        "name":"José Fermin Arturo",
+                        "free":true,
+                        "legitimate":false,
+                        "phenotype":"pardo",
+                        "relationships":[
+                            {
+                                "related_person":"P02",
+                                "relationship_type":"parent"
+                            },
+                            {
+                                "related_person":"P04",
+                                "relationship_type":"grandparent"
+                            },
+                            {
+                                "related_person":"P05",
+                                "relationship_type":"grandparent"
+                            },
+                            {
+                                "related_person":"P08",
+                                "relationship_type":"godparent"
+                            },
+                            {
+                                "related_person":"P09",
+                                "relationship_type":"godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P07",
+                        "titles":[
+                            "Escelentisimo Señor Gobernador Superior Político"
+                        ]
+                    },
+                    {
+                        "id":"P08",
+                        "name":"Pablo Noriega",
+                        "titles":[
+                            "Don"
+                        ],
+                        "relationships":[
+                            {
+                                "related_person":"P06",
+                                "relationship_type":"godchild"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P09",
+                        "name":"Faustina de la Crus",
+                        "relationships":[
+                            {
+                                "related_person":"P06",
+                                "relationship_type":"godchild"
+                            }
+                        ]
+                    }
+                ],
+                "events":[
+                    {
+                        "type":"baptism",
+                        "principal":"P06",
+                        "date":"1873-01-25"
+                    },
+                    {
+                        "type":"birth",
+                        "principal":"P06",
+                        "date":"1872-10-11"
+                    }
+                ]
+            }
         },
         {
             "id": "0004-04",
-            "raw": "Sábado veinte y cinco de Enero de mil ochocientos setenta y tres años: yo Presbitero Don Santiago Serra, cura párroco vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas bauticé solemnemente y puse los santos óleos á una párvula que nació el dia veinte y ocho de Julio último, hija de padre no conocido y de la morena libre Felicia Casal natural y vecina de esta feligresía; nieta materna de Tomas y de Sofia Casal en dicha párvula ejercí las sagradas preces y ceremonias y le puse por nombre Maria Antonia: fueron sus padrinas Fernando Fumero y Gabriela Morejon, á quienes advertí el parentesco espiritual y obligaciones que contrajeron"
+            "raw": "Sábado veinte y cinco de Enero de mil ochocientos setenta y tres años: yo Presbitero Don Santiago Serra, cura párroco vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas bauticé solemnemente y puse los santos óleos á una párvula que nació el dia veinte y ocho de Julio último, hija de padre no conocido y de la morena libre Felicia Casal natural y vecina de esta feligresía; nieta materna de Tomas y de Sofia Casal en dicha párvula ejercí las sagradas preces y ceremonias y le puse por nombre Maria Antonia: fueron sus padrinas Fernando Fumero y Gabriela Morejon, á quienes advertí el parentesco espiritual y obligaciones que contrajeron",
+            "normalized":"Sábado veinte y cinco de enero de mil ochocientos setenta y tres años, yo Presbitero Don Santiago Serra, cura párroco vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas, bauticé solemnemente y puse los santos óleos á una párvula, que nació el dia veinte y ocho de julio último, hija de padre no conocido y de la morena libre Felicia Casal, natural y vecina de esta feligresía, nieta materna de Tomas y de Sofia Casal. En dicha párvula ejercí las sagradas preces y ceremonias y le puse por nombre Maria Antonia. Fueron sus padrinas Fernando Fumero y Gabriela Morejon, á quienes advertí el parentesco espiritual y obligaciones que contrajeron y lo firme Santiago Serra",
+            "data":{
+                "people":[
+                    {
+                        "id":"P01",
+                        "name":"Santiago Serra",
+                        "occupation":"cleric",
+                        "titles":[
+                            "Don"
+                        ]
+                    },
+                    {
+                        "id":"P02",
+                        "name":"Felicia Casal",
+                        "free":true,
+                        "legitimate":true,
+                        "phenotype":"moreno",
+                        "origin":"Matanzas",
+                        "relationships":[
+                            {
+                                "related_person":"P03",
+                                "relationship_type":"parent"
+                            },
+                            {
+                                "related_person":"P04",
+                                "relationship_type":"parent"
+                            },
+                            {
+                                "related_person":"P05",
+                                "relationship_type":"child"
+                            }
+                        ]
+                    },
+                    {
+                        "id":"P03",
+                        "name":"Tomas Casal"
+                    }
+                ]
+            }
         },
         {
             "id": "0005-01",
