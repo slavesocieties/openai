@@ -11,3 +11,4 @@ masks/
 *.png
 .DS_Store
 testing/*
+failure_log.json

@@ -20,7 +20,6 @@ NLP
     -assess performance for different kinds of records
 
 HTR
-    -solve rate limit issue (spend a bunch of money or try a different LLM)    
     -build more training data
     -determine how granular model tuning needs to be
     -incorporate name list checks for people, places, characteristics, etc.
