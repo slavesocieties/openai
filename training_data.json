@@ -312,14 +312,14 @@
                     {
                         "type": "baptism",
                         "principals": [
-                            "P04"
+                            "P05"
                         ],
                         "date": "1839-10-16"
                     },
                     {
                         "type": "birth",
                         "principals": [
-                            "P04"
+                            "P05"
                         ],
                         "date": "1838-09-24"
                     }
@@ -2107,7 +2107,7 @@
                         "titles": [
                             "Don"
                         ],
-                        "rank": "Lieutenant colonel",
+                        "rank": "Lieutenant Colonel",
                         "occupation": "engineer",
                         "relationships": [
                             {

@@ -1,31 +1,103 @@
 {
     "controlled_vocabularies": [
         {
-           "key": "titles",
-           "language": "Spanish",
-           "vocab": [
-                "Don", "Doña", "Padre", "Vicario", "Doctor", "Alcalde", "Licenciado", "Regidor", "Fray", "señor", "Alguacil"
-           ] 
+            "key": "titles",
+            "language": "Spanish",
+            "vocab": [
+                "Don",
+                "Doña",
+                "Padre",
+                "Vicario",
+                "Doctor",
+                "Alcalde",
+                "Licenciado",
+                "Regidor",
+                "Fray",
+                "señor",
+                "Alguacil"
+            ]
+        },
+        {
+            "key": "ranks",
+            "language": "English",
+            "vocab": [
+                "Sergeant",
+                "Sergeant Major",
+                "Lieutenant",
+                "Captain",
+                "Colonel",
+                "Lieutenant Colonel"
+            ]
         },
         {
             "key": "ethnicity",
             "language": "Spanish",
             "vocab": [
-                "Gangá", "Español", "Carabalí", "Arará", "Inglés", "Kongo", "Lucumí", "Mandinga", "Mina", "Apache"
+                "Gangá",
+                "Español",
+                "Carabalí",
+                "Arará",
+                "Inglés",
+                "Kongo",
+                "Lucumí",
+                "Mandinga",
+                "Mina",
+                "Fula",
+                "Biohó",
+                "Jolof",
+                "Bran",
+                "Bambara"
             ]
         },
         {
-           "key": "occupation",
-           "language": "English",
-           "vocab": [
-                "cleric", "engineer", "student"
-           ] 
+            "key": "age",
+            "language": "English",
+            "vocab": [
+                "infant",
+                "child",
+                "adult"
+            ]
         },
+        {
+            "key": "occupation",
+            "language": "English",
+            "vocab": [                
+                "Cleric",                
+                "Student",
+                "Scribe",                
+                "Engineer",
+                "Judge",
+                "Educator"
+            ]
+        }
+        ,
         {
             "key": "phenotype",
             "language": "Spanish",
             "vocab": [
-                "negro", "moreno", "indio", "pardo", "mestizo", "mulato", "blanco", "criollo"
+                "negro",
+                "moreno",
+                "indio",
+                "pardo",
+                "mestizo",
+                "mulato",
+                "blanco",
+                "criollo"
+            ]
+        },
+        {
+            "key": "relationship_type",
+            "language": "English",
+            "vocab": [
+                "spouse",
+                "parent",
+                "child",
+                "grandparent",
+                "grandchild",
+                "enslaver",
+                "slave",
+                "godparent",
+                "godchild"
             ]
         }
     ]
