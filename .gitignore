@@ -10,3 +10,4 @@ output/
 masks/
 *.png
 .DS_Store
+testing/*
