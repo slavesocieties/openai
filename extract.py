@@ -486,13 +486,16 @@ def fix_relationships(data, id, path):
     
 
     def del_relation(p1, p2):
-        for rel_list in [p['relationships'] for p in data['people'] if p['id'] == p1]:
-            rel_list = [r for r in rel_list if r['related_person'] != p2]
+        for person in data["people"]:
+            if person["id"] == p1:
+                person["relationships"][:] = [r for r in person["relationships"] if r["related_person"] != p2]
 
     def add_relation(p1, p2, type):
-        del_relation(p1, p2)
-        for rel_list in [p['relationships'] for p in data['people'] if p['id'] == p1]:
-            rel_list.append(dict({"related_person": p2, "relationship_type": type}))
+        del_relation(p1, p2)  # Ensure no duplicate relationships before adding
+        for person in data["people"]:
+            if person["id"] == p1:
+                person["relationships"].append({"related_person": p2, "relationship_type": type})
+                break  # Stop after modifying the first matching person
 
     def is_principal(p):
        return p in data['events'][0]['principals']
