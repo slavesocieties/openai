@@ -4,7 +4,7 @@ import boto3
 import json
 
 def driver(path_to_data, bucket="ssda-htr-training", verbose=False):
-    #remember to update credentials
+    # remember to update credentials
     s3_client = boto3.client('s3')
     images = []
     for folder, subfolders, files in os.walk(path_to_data):       

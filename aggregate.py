@@ -28,8 +28,8 @@ def aggregate_entry_records(path_to_entry_records, output_path=None):
     else:
         data = path_to_entry_records
 
-    #attempts to complete any missing dates
-    #assumes that entries are in chronological order
+    # attempts to complete any missing dates
+    # assumes that entries are in chronological order
     last_date = parse_date("1500-01-01")
     needs_date = []
 
@@ -53,7 +53,7 @@ def aggregate_entry_records(path_to_entry_records, output_path=None):
                 if event["type"] != "birth":
                     needs_date.append((x, index))
 
-    #creates volume-level metadata
+    # creates volume-level metadata
     volume = {}
 
     for key in ["type", "country", "state", "city", "institution", "id", "title"]:
@@ -63,7 +63,7 @@ def aggregate_entry_records(path_to_entry_records, output_path=None):
     volume["people"] = []    
     volume["events"] =[]
 
-    #creates metadata about people and events 
+    # creates metadata about people and events 
     for entry in data["entries"]:        
         volume["entries"].append({"id": entry["id"], "text": entry["normalized"]})
 
@@ -71,13 +71,13 @@ def aggregate_entry_records(path_to_entry_records, output_path=None):
             if key not in entry['data']:
                 entry['data'][key] = ""        
         
-        #adds entry info to each person id so that it is unique at the volume level
+        # adds entry info to each person id so that it is unique at the volume level
         for person in entry["data"]["people"]:
             person["id"] = f"{entry['id']}-{person['id']}"
             person["mentions"] = entry['id']
             if "relationships" in person:
                 for rel in person["relationships"]:
-                    #temporary fix to catch incorrectly structured model output
+                    # temporary fix to catch incorrectly structured model output
                     try:
                         rel["related_person"] = f"{entry['id']}-{rel['related_person']}"
                     except:
@@ -87,7 +87,7 @@ def aggregate_entry_records(path_to_entry_records, output_path=None):
                         elif type(rel) == str:
                             print(f"Bad relationship: {rel}")
             add = False
-            #recursively disambiguates people who appear in the data
+            # recursively disambiguates people who appear in the data
             for i, p in enumerate(volume["people"]):
                 if (person["name"] == p["name"]) and disambiguate_people(person, p):
                     volume["people"][i] = merge_records(person, p)
@@ -95,12 +95,14 @@ def aggregate_entry_records(path_to_entry_records, output_path=None):
             if not add:
                 volume["people"].append(person)
 
-        #adds entry info the person ids that appear in events, assigns unique ids to events
+        # adds entry info the person ids that appear in events, assigns unique ids to events
         if "events" not in entry["data"]:
             continue
         
         for index, event in enumerate(entry["data"]["events"]):
-            if "principals" in event:
+            if len(event["principals"]) == 1:
+                event["principals"] = [f"{entry['id']}-{event['principals'][0]}"]
+            elif "principals" in event:
                 for x, p in enumerate(event["principals"]):
                     event["principals"][x] =  f"{entry['id']}-{event['principals'][x]}"
             if "witnesses" in event:
@@ -109,7 +111,7 @@ def aggregate_entry_records(path_to_entry_records, output_path=None):
             event["id"] = f"{entry['id']}-E{'0' * (2 - len(str(index))) + str(index)}"
             volume["events"].append(event)
 
-    #assigns volume-level unique id to each *disambiguated* person
+    # assigns volume-level unique id to each *disambiguated* person
     next_id = 1
     id_map = {}
     for person in volume["people"]:
@@ -124,7 +126,7 @@ def aggregate_entry_records(path_to_entry_records, output_path=None):
     """with open("people.json", "w", encoding="utf-8") as f:
         json.dump(id_map, f)"""
 
-    #applies volume-level unique ids to people records
+    # applies volume-level unique ids to people records
     for i, person in enumerate(volume["people"]):
         if type(person["id"]) == str:
             volume["people"][i]["id"] = id_map[person["id"]]
@@ -132,17 +134,18 @@ def aggregate_entry_records(path_to_entry_records, output_path=None):
             volume["people"][i]["id"] = id_map[person["id"][0]]
         if "relationships" in person:
             for j, rel in enumerate(person["relationships"]):
-                #temporary fix to catch model overfitting to few-shot training
+                # temporary fix to catch model overfitting to few-shot training(is this necessary with extraction improvement?)
                 try:
                     volume["people"][i]["relationships"][j]["related_person"] = id_map[volume["people"][i]["relationships"][j]["related_person"]]
                 except:
                     print(f"Found bad related person identifier: {volume['people'][i]['relationships'][j]['related_person']}")
 
-    #applies volume-level unique ids to event records
+    # applies volume-level unique ids to event records
     for i, event in enumerate(volume["events"]):
         if len(event["principals"]) == 1:
-            volume["events"][i]["principals"] = [id_map[volume["events"][i]["principals"][0]]]          
-        elif len(event["principals"]) == 2:
+            # volume["events"][i]["principals"] = volume["events"][i]["principals"].replace('[', '').replace(']', '').replace("'","")
+            volume["events"][i]["principals"] = [id_map[volume["events"][i]["principals"][0]]]            
+        elif len(event["principals"]) > 1:
             volume["events"][i]["principals"] = [id_map[volume["events"][i]["principals"][0]], id_map[volume["events"][i]["principals"][1]]]
         elif "witnesses" in event:
             for j in range(len(event["witnesses"])):

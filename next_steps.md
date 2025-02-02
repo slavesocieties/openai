@@ -7,8 +7,7 @@
     -add verbosity to other pipeline components
     -improve ability to detect horizontal breaks between sections and prevent false positives
 
-NLP
-    -why are some people ids padded and others not?
+NLP    
     -possible fix for relationships: represent as separate list on same level as people/events
     -improve check to determine if entry is complete or not
         -will likely need training data, but can be simple
@@ -20,7 +19,6 @@ NLP
     -assess performance for different kinds of records
 
 HTR
-    -solve rate limit issue (spend a bunch of money or try a different LLM)    
     -build more training data
     -determine how granular model tuning needs to be
     -incorporate name list checks for people, places, characteristics, etc.

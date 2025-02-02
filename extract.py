@@ -154,7 +154,7 @@ def extract_data_from_entry(entry, volume_metadata, examples, instructions, log_
         nulled_result, props_valid = fill_nulls(rel_result, entry['id'], log_path)
 
         # log relationship reciprocity fixing
-        result, recip_valid = fix_relationshiops(nulled_result, entry['id'], log_path)
+        result, recip_valid = fix_relationships(nulled_result, entry['id'], log_path)
 
     return result
 
@@ -453,7 +453,7 @@ def fill_nulls(data, id, path):
 
     return json.dumps(data), success
 
-def fix_relationshiops(data, id, path):
+def fix_relationships(data, id, path):
     """Checks for irreciprocal relationship errors and fixes them with the following assumptions:
         - a principal is always the child, slave, godchild, or spouse in the relationship
         - irreciprocal relationships involving two non-principals are un-fixable
@@ -486,13 +486,16 @@ def fix_relationshiops(data, id, path):
     
 
     def del_relation(p1, p2):
-        for rel_list in [p['relationships'] for p in data['people'] if p['id'] == p1]:
-            rel_list = [r for r in rel_list if r['related_person'] != p2]
+        for person in data["people"]:
+            if person["id"] == p1:
+                person["relationships"][:] = [r for r in person["relationships"] if r["related_person"] != p2]
 
     def add_relation(p1, p2, type):
-        del_relation(p1, p2)
-        for rel_list in [p['relationships'] for p in data['people'] if p['id'] == p1]:
-            rel_list.append(dict({"related_person": p2, "relationship_type": type}))
+        del_relation(p1, p2)  # Ensure no duplicate relationships before adding
+        for person in data["people"]:
+            if person["id"] == p1:
+                person["relationships"].append({"related_person": p2, "relationship_type": type})
+                break  # Stop after modifying the first matching person
 
     def is_principal(p):
        return p in data['events'][0]['principals']
@@ -503,7 +506,7 @@ def fix_relationshiops(data, id, path):
             if p1 not in relationships[p2]:
                 success = False
                 log_failure(id, path, "relationships", 
-                            f"Irreciproal relationship for {p1} and {p2}: None and {rel}", data)
+                            f"Non-reciprocal relationship for {p1} and {p2}: None and {rel}", data)
                 add_relation(p2, p1, RECIPROCAL_RELS[rel])
             elif relationships[p2][p1] ==  RECIPROCAL_RELS[rel]:
                 ##Valid reciprocal relationship
@@ -512,14 +515,14 @@ def fix_relationshiops(data, id, path):
                 ##Give up
                 success = False
                 log_failure(id, path, "relationships", 
-                            f"Unfixable irreciproal relationship for {p1} and {p2}: {relationships[p2][p1]} and {rel}", data)
+                            f"Unfixable non-reciprocal relationship for {p1} and {p2}: {relationships[p2][p1]} and {rel}", data)
                 del_relation(p2, p1)
                 del_relation(p1, p2)
             else:
                 ##Fixable
                 success = False
                 log_failure(id, path, "relationships", 
-                            f"Fixable irreciproal relationship for {p1} and {p2}: {relationships[p2][p1]} and {rel}", data)
+                            f"Fixable non-reciprocal relationship for {p1} and {p2}: {relationships[p2][p1]} and {rel}", data)
                 principal = p1 if is_principal(p1) else p2
                 other = p2 if principal == p1 else p1
                 if rel in ["child", "slave", "godchild"]:
