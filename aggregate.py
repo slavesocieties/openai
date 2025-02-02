@@ -100,9 +100,7 @@ def aggregate_entry_records(path_to_entry_records, output_path=None):
             continue
         
         for index, event in enumerate(entry["data"]["events"]):
-            if "principal" in event:
-                event["principal"] = f"{entry['id']}-{event['principal']}"
-            elif "principals" in event:
+            if "principals" in event:
                 for x, p in enumerate(event["principals"]):
                     event["principals"][x] =  f"{entry['id']}-{event['principals'][x]}"
             if "witnesses" in event:
@@ -142,10 +140,9 @@ def aggregate_entry_records(path_to_entry_records, output_path=None):
 
     #applies volume-level unique ids to event records
     for i, event in enumerate(volume["events"]):
-        if "principal" in event:
-            volume["events"][i]["principal"] = volume["events"][i]["principal"].replace('[', '').replace(']', '').replace("'","")
-            volume["events"][i]["principal"] = id_map[volume["events"][i]["principal"]]            
-        elif "principals" in event:
+        if len(event["principals"]) == 1:
+            volume["events"][i]["principals"] = [id_map[volume["events"][i]["principals"][0]]]          
+        elif len(event["principals"]) == 2:
             volume["events"][i]["principals"] = [id_map[volume["events"][i]["principals"][0]], id_map[volume["events"][i]["principals"][1]]]
         elif "witnesses" in event:
             for j in range(len(event["witnesses"])):
