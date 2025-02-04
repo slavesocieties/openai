@@ -102,6 +102,51 @@
     "city": "Isleta Pueblo",
     "institution": "San Agustín de la Isleta",
     "id": 7548705,
+    "raw": "En esta Mission de San Augustin de la Ysleta en treinta y uno de marzo de mil seteçientos y quarenta y ocho años baptise solemnemente a Diego apache de nacion fue su madrina Gregoria para que conste lo firme ut supra.",
+    "normalized": "En esta Misión de San Agustín de la Ysleta, en treinta y uno de marzo de mil setecientos cuarenta y ocho años, bauticé solemnemente a Diego, apache de nación. Su madrina fue Gregoria, para que conste, lo firmé ut supra.",
+    "data": {
+        "people": [
+            {
+                "id": "P01",
+                "name": "Diego",
+                "ethnicity": "Apache",
+                "relationships": [
+                    {
+                        "related_person": "P02",
+                        "relationship_type": "godparent"
+                    }
+                ]
+            },
+            {
+                "id": "P02",
+                "name": "Gregoria",
+                "relationships": [
+                    {
+                        "related_person": "P01",
+                        "relationship_type": "godchild"
+                    }
+                ]
+            }
+        ],
+        "events": [
+            {
+                "type": "baptism",
+                "principals": [
+                    "P01"
+                ],
+                "date": "1748-03-31"
+            }
+        ]
+    }
+},        
+{
+    "type": "baptism",
+    "language": "Spanish",
+    "country": "United States",
+    "state": "New Mexico",
+    "city": "Isleta Pueblo",
+    "institution": "San Agustín de la Isleta",
+    "id": 7548705,
     "raw": "En el pueblo y Mission de San Augustin de la Yzleta en veynte y siete dias del mes de junio de el año de mill setecientos y sinquenta y tres baptise solemnemente y puse los santos oleos y chrysma a Maria Antonia parbula hija de padres ynfieles fueron sus padrinos Juan Antonio Chabes y Manuela Romero y para que conste lo firme en dicho pueblo y mission en dicho dia mes y año.",
     "normalized": "En el pueblo y Misión de San Agustín de la Ysleta, en veinte y siete días del mes de junio del año de mil setecientos cincuenta y tres, bauticé solemnemente y puse los santos óleos y crisma a Maria Antonia, parbula hija de padres infieles. Fueron sus padrinos Juan Antonio Chabes y Manuela Romero. Para que conste, lo firmé en dicho pueblo y misión, en dicho día, mes y año.",
     "data": {

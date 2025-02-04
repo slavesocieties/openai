@@ -8,6 +8,7 @@
             "city": "Cienfuegos",
             "institution": "Catedral de Nuestra Señora de la Purisima Concepción",
             "id": 166470,
+            "entry": "0031-07",
             "raw": "En diezynuebe de Julio de mil ochocientoscuarenta; yo Don Antonio Loreto Sanchez Presbitero cura beneficiado por Su Majestad de la Iglesia Parroquial de la Purisima Concepción de esta villa de Cienfuegos en ella y su jurisdiccion vicario Eclesiastico por Santa Eclesiastica Illustrisima bauticé solemnemente y puse los santos oleos a una negra adulta natural de Africa, de la propiedad de Don Juan Vives, en cuya negra ejerci las sacras ceremonias y preces y la puse por nombre Dominga fue su madrina Isabel aquien adverti el parentesco espiritual y demas obligaciones y lo firmé",
             "normalized": "En diecinueve de julio de mil ochocientos cuarenta, yo Don Antonio Loreto Sanchez, Presbítero cura beneficiado por Su Majestad de la Iglesia Parroquial de la Purísima Concepción de esta villa de Cienfuegos y su jurisdicción, vicario eclesiástico por Santa Eclesiástica Illustrísima, bauticé solemnemente y puse los santos óleos a una negra adulta natural de África, de la propiedad de Don Juan Vives. En esta negra ejercí las sacras ceremonias y preces y le puse por nombre Dominga. Fue su madrina Isabel, a quien advertí el parentesco espiritual y demás obligaciones, y lo firmé.",
             "data": {
@@ -79,6 +80,7 @@
             "city": "Cienfuegos",
             "institution": "Catedral de Nuestra Señora de la Purisima Concepción",
             "id": 166470,
+            "entry": "0008-01",
             "raw": "En diezyseis de Octubre de mil ochocientostreintaynuebe; yo Don Antonio Loreto Sanchez Presbitero cura beneficiado por Santa Majestad de la Iglesia Parroquial de la Purisima Concepción de esta villa de Cienfuegos en ella y su jurisdiccion vicario Eclesiastico Santa Eclesiastica Illustrisima bautice solemnemente y puse los santos oleos a una parvula que nació el trece de Junio del año de mil ochocientostreintaysiete hija legitima de los morenos Julian y Sabina, esta libre naturales de Guinea esclavos de Don Jose Corras: en cuya parvula ejervi las sacras ceremonias y preces y le puse por nombre Antonia fur su madrina Budesiceda aquien adverti el parentesco espiritual y demas obligaciones y lo firme",
             "normalized": "En dieciséis de octubre de mil ochocientos treinta y nueve, yo Don Antonio Loreto Sanchez, Presbítero cura beneficiado por Santa Majestad de la Iglesia Parroquial de la Purísima Concepción de esta villa de Cienfuegos, en ella y su jurisdicción, vicario Eclesiástico Santa Eclesiástica Illustrísima, bauticé solemnemente y puse los santos óleos a una parvula libre que nació el trece de junio del año de mil ochocientos treinta y siete, hija legítima de los morenos Julian y Sabina, naturales de Guinea, esclavos de Don José Corras. En cuya parvula ejercí las sacras ceremonias y preces, y le puse por nombre Antonia. Fue su madrina Budesiceda, a quien advertí el parentesco espiritual y demás obligaciones, y lo firmé.",
             "data": {
@@ -208,6 +210,7 @@
             "state": "Cienfuegos",
             "city": "Cienfuegos",
             "id": 166470,
+            "entry": "0008-04",
             "raw": "En diezyseis de Octubre de mil ochocientostreintaynuebe; yo Don Antonio Loreto Sanchez Presbitero cura beneficiado por Su Majestad de la Iglesia Parroquial de la Purisima Concepción de esta villa de Cienfuegos en ella y su jurisdiccion vicario Eclesiastico por Santa Eclesiastica Illustrisima bautice solemnemente y puse los santos oleos a una parvula que nacio el veinteycuatro de Septiembre del año pasado hija legitima de los negros Sebastian y Jucina naturales de Guinea de la propiedad de Don Jose Corras; en cuya parvula ejerci las sacras preces y ceremonias y precse y le puse por nombre Merced fue su madrina Don Maria Ramona Prieto; aquien adverti el parentesco espiritual y demas obligaciones y lo fir",
             "normalized": "En dieciséis de octubre de mil ochocientos treinta y nueve, yo Don Antonio Loreto Sánchez, presbítero cura beneficiado por Su Majestad de la Iglesia Parroquial de la Purísima Concepción de esta villa de Cienfuegos, en ella y su jurisdicción, vicario eclesiástico por la Santa Eclesiástica Illustrísima, bauticé solemnemente y puse los santos óleos a una parvula que nació el veinticuatro de septiembre del año pasado, hija legítima de los negros Sebastian y Jucina, naturales de Guinea, de la propiedad de Don José Corras. En cuya parvula ejercí las sacras preces y ceremonias, y le puse por nombre Merced. Fue su madrina Doña Maria Ramona Prieto, a quien advertí el parentesco espiritual y demás obligaciones, y lo firmé.",
             "data": {
@@ -327,51 +330,6 @@
             }
         },
         {
-            "type": "baptism",
-            "language": "Spanish",
-            "country": "United States",
-            "state": "New Mexico",
-            "city": "Isleta Pueblo",
-            "institution": "San Agustín de la Isleta",
-            "id": 7548705,
-            "raw": "En esta Mission de San Augustin de la Ysleta en treinta y uno de marzo de mil seteçientos y quarenta y ocho años baptise solemnemente a Diego apache de nacion fue su madrina Gregoria para que conste lo firme ut supra.",
-            "normalized": "En esta Misión de San Agustín de la Ysleta, en treinta y uno de marzo de mil setecientos cuarenta y ocho años, bauticé solemnemente a Diego, apache de nación. Su madrina fue Gregoria, para que conste, lo firmé ut supra.",
-            "data": {
-                "people": [
-                    {
-                        "id": "P01",
-                        "name": "Diego",
-                        "ethnicity": "Apache",
-                        "relationships": [
-                            {
-                                "related_person": "P02",
-                                "relationship_type": "godparent"
-                            }
-                        ]
-                    },
-                    {
-                        "id": "P02",
-                        "name": "Gregoria",
-                        "relationships": [
-                            {
-                                "related_person": "P01",
-                                "relationship_type": "godchild"
-                            }
-                        ]
-                    }
-                ],
-                "events": [
-                    {
-                        "type": "baptism",
-                        "principals": [
-                            "P01"
-                        ],
-                        "date": "1748-03-31"
-                    }
-                ]
-            }
-        },        
-        {
             "type": "marriage",
             "language": "Spanish",
             "country": "Cuba",
@@ -379,6 +337,7 @@
             "city": "Havana",
             "institution": "Catedral de la Habana",
             "id": 6517,
+            "entry": "0001-02",
             "raw": "En beynte y tres dias del dho dicho mes de julio del dho año de 1584 aso el Ser Vico nicolas jermo desposo y belo a juan diaz natural de setubal y a ana de çamora hija de franco de çamora fueron sus padrinos julian hernandes y ysabel belasques su mujer doy fe dello",
             "normalized": "En veintitrés días del mismo mes de julio del mismo año de 1584, el señor Vicario Nicolás Geronimo desposó y veló a Juan Díaz, natural de Setúbal, y a Ana de Zamora, hija de Francisco de Zamora. Fueron sus padrinos Julián Hernández y Isabel Velázquez, su mujer. Doy fe de ello.",
             "data": {
@@ -500,6 +459,7 @@
             "city": "Havana",
             "institution": "Catedral de la Habana",
             "id": 6517,
+            "entry": "0001-03",
             "raw": "En beynte y cinco dias del mes de julio de 1584 el Ser Vico nicolas jermo desposo y belo a diego albites y a franca hurtada criada de manuel diaz fueron sus padrinos franco ximenez y doña maria de mendoça su mujer doy fe dello",
             "normalized": "En veinticinco días del mes de julio de 1584, el señor Vicario Nicolás Geronimo desposó y veló a Diego Albites y a Francisca Hurtada, criada de Manuel Díaz. Fueron sus padrinos Francisco Ximénez y Doña María de Mendoza, su mujer. Doy fe de ello.",
             "data": {
@@ -623,6 +583,7 @@
             "city": "Havana",
             "institution": "Catedral de la Habana",
             "id": 6517,
+            "entry": "0002-01",
             "raw": "lunes que se contaron beynte y dos dias del mes de otubre del dho año de 1584 años el Ser Vico nicolas jermo desposo y belo a juan peres esturiano y a mariana de la aia hija de dio diego de la aia y de cecilia de arestaça su mujer fueron su padrinos el ser Alcayde diego fernandez de quiñones y doña maria de sotolongo doy fe dello yo",
             "normalized": "Lunes que se contaron veintidós días del mes de octubre del año de 1584, el señor Vicario Nicolás Geronimo desposó y veló a Juan Peres Esturiano y a Mariana de la Aia, hija de Diego de la Aia y de Cecilia de Arestaça, su mujer. Fueron sus padrinos el señor Alcalde Diego Fernández de Quiñones y Doña María de Sotolongo. Doy fe de ello yo.",
             "data": {
@@ -771,6 +732,7 @@
             "city": "Havana",
             "institution": "Catedral de la Habana",
             "id": 6517,
+            "entry": "0348-01",
             "raw": "en 12 de octubre de 1618 aso yo anto çapata cura en la sta ygla mor desta ciudad de la havana despose con licencia de su sa segun orden de la sta madre yglesia a manuel anchico esclavo de jua martin y a cristina angola esclava de ma de las nieves siendo tos juo perez barvero y xpoval de samora y germo Ros criados de su sa y se velaron los dhos en 14 del dho mes y año ffo ut supra",
             "normalized": "En 12 de octubre de 1618 años, yo Antonio Zapata, cura en la Santa Iglesia Mayor de esta ciudad de La Habana, desposé con licencia de su santidad, según orden de la Santa Madre Iglesia, a Manuel Anchico, esclavo de Juan Martín, y a Cristina Angola, esclava de María de las Nieves. Fueron testigos Juan Pérez Barbero, Cristóbal de Zamora, y Gerónimo Ros, criados de su santidad. Los desposados se velaron el 14 del mismo mes y año. Fue así.",
             "data": {
@@ -861,6 +823,7 @@
             "city": "Matánzas",
             "institution": "Catedral de San Borromeo",
             "id": 22152,
+            "entry": "0001-01",
             "raw": "Sábado once de Enero de mil ochocientos setenta y tres yo Presbitero Don Santiago Serra , cura párroco, vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas, bauticé solemnemente y puse los santos óleos á una párvula, que nació el dia doce de Septiembre último, hija de padre no conocido y de la morena libre Aleja Peres, natural y vecina de esta feligresía; nieta materna de Telesforo y de Francisca Sanches: en dicha párvula ejercí las sagradas preces y ceremonias y le puse por nombre Maria Leoncia: fueron sus padrinos José Timoteo Pujadas y Leonarda Peñalver, a quienes advertí el parentesco espiritual y obligaciones que contrajeron y lo firmé Santiago Serra",
             "normalized": "Sábado once de enero de mil ochocientos setenta y tres, yo Presbítero Don Santiago Serra, cura párroco y vicario foráneo interino de esta iglesia de Término de San Carlos de Matanzas, bauticé solemnemente y puse los santos óleos a una parvula que nació el dia doce de septiembre último, hija de padre no conocido y de la morena libre Aleja Pérez, natural y vecina de esta feligresía, nieta materna de Telesforo y de Francisca Sánchez. En dicha parvula ejercí las sagradas preces y ceremonias, y le puse por nombre Maria Leoncia. Fueron sus padrinos José Timoteo Pujadas y Leonarda Peñalver, a quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé Santiago Serra",
             "data": {
@@ -1005,6 +968,7 @@
             "city": "Matánzas",
             "institution": "Catedral de San Borromeo",
             "id": 22152,
+            "entry": "0001-04",
             "raw": "Jueves diez y seis de Enero de mil ochocientos setenta y tres: yo Presbitero Don Santiago Serra, cura párroco vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas bauticé solemnemente y puse los santos óleos á un párvulo que nació el dia diez de los corrientes hijo legítimo de Rufino Sequeira natural de esta y de Matilde Silva natural de la Havana y vecinos Linda de esta feligresía; nieto paterno de José y de Belen Sequeira y materno de Pio y de Rosario Marias en dicho párvulo ejercí las sagradas preces y ceremonias y le puse por nombre José Gonsalo Nicanor: fueron sus padrinos Cristobal Roque y Asuncion Armono, a quienes advertí el parentesco espiritual y obligaciones que contrajeron y lo firmé Santiago Serra",
             "normalized": "Jueves diez y seis de enero de mil ochocientos setenta y tres, yo Presbitero Don Santiago Serra, cura párroco vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas bauticé solemnemente y puse los santos óleos á un párvulo, que nació el dia diez de los corrientes, hijo legítimo de Rufino Sequeira natural de esta y de Matilde Silva natural de la Havana y vecinos linda de esta feligresía, nieto paterno de José y de Belen Sequeira y materno de Pio y de Rosario Marias. En dicho párvulo ejercí las sagradas preces y ceremonias y le puse por nombre José Gonsalo Nicanor. Fueron sus padrinos Cristobal Roque y Asuncion Armono, a quienes advertí el parentesco espiritual y obligaciones que contrajeron y lo firmé. Santiago Serra",
             "data": {
@@ -1220,6 +1184,7 @@
             "city": "Matánzas",
             "institution": "Catedral de San Borromeo",
             "id": 22152,
+            "entry": "0001-05",
             "raw": "Jueves diez y seis de Enero de mil ochocientos setenta y tres: yo Presbitero Don Santiago Serra, cura párroco vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas bauticé solemnemente y puse los santos óleos á una párvula parda que nació el dia seis de Octubre último, hija de padre no conocido y de la de igual clase y de condicion libre Escolástica Guillerma Lopes natural y vecina de esta feligresía; nieta materna de Trinidad Acuña y abuelo no espresado, en dicha párvula ejercí las sagradas preces y ceremonias y le puse por nombre Maria Luisa del Rosario: fue su madrina Doña Casilda Orgen y en su nombre y representacion Ana Galceran, á quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé",
             "normalized": "Jueves diez y seis de enero de mil ochocientos setenta y tres, yo Presbitero Don Santiago Serra, cura párroco vicario foráneo interino de esta iglesia de Término de San Cárlos de Matánzas, bauticé solemnemente y puse los santos óleos á una párvula parda que nació el dia seis de octubre último, hija de padre no conocido y de la de igual clase y de condicion libre Escolástica Guillerma Lopes, natural y vecina de esta feligresía, nieta materna de Trinidad Acuña y abuelo no espresado. En dicha párvula ejercí las sagradas preces y ceremonias y le puse por nombre Maria Luisa del Rosario. Fue su madrina Doña Casilda Orgen y en su nombre y representacion Ana Galceran, á quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé Santiago Serra",
             "data": {
@@ -1328,6 +1293,7 @@
             "city": "Matánzas",
             "institution": "Catedral de San Borromeo",
             "id": 22152,
+            "entry": "0009-01",
             "raw": "Miércoles doce de Febrero de mil ochocientos setenta y tres: yo Presbitero Don Benito Valls y Martinez Teniente cura interino de esta iglesia de Término de San Cárlos de Matánzas y en ausencia ministerial del Señor cura párroco y vicario foráneo tambien interino de la misma Presbitero Don Santiago Serra, bauticé solemnemente y puse los santos óleos á una párvula parda, que nació el dia diez y seis de Agosto último, hija de padre no conocido y de la morena Modesta criolla y vecina de esta feligresía, esclava de Doña Maria del Rosario de Fuentes; nieta materna de Pablo Bruson y de Ysabel Andux: en dicha párvula ejercí las sagradas preces y ceremonias y le puse por nombre Margarita Amelia: la cual es libre por beneficio de la ley, sancionada por las cortes constituyentes de la Nacion, en veinte y tres de Junio de mil ochocientos setenta años, comunicada con fecha cuatro de Julio del propio, al Escelentisimo Señor Gobernador Superior Político de esta Ysla, publicada en la Gaceta Oficial correspondiente al Sábado primero de Octubre del referido año: fueron sus padrinos Don Antonio Sanches y Eduarda Andux, á quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé Santiago Serra",
             "normalized": "Miércoles, doce de febrero de mil ochocientos setenta y tres, yo Presbítero Don Benito Valls y Martinez, teniente cura interino de esta iglesia de Término de San Cárlos de Matanzas, y en ausencia ministerial del Señor cura párroco y vicario foráneo también interino de la misma Presbítero Don Santiago Serra, bauticé solemnemente y puse los santos óleos a una párvula parda, que nació el dia dieciséis de agosto último, hija de padre no conocido y de la morena Modesta criolla, vecina de esta feligresia y esclava de Doña Maria del Rosario de Fuentes, nieta materna de Pablo Bruson y de Isabel Andux. En dicha párvula ejercí las sagradas, preces y ceremonias. Le puse por nombre Margarita Amelia, la cual es libre por beneficio de la ley, sancionada por las cortes constituyentes de la nación en veintitrés de junio de mil ochocientos setenta años, comunicada con fecha cuatro de julio del propio, al excelentísimo señor gobernador superior político de esta isla, publicada en la Gaceta Oficial correspondiente al sábado primero de octubre del referido año. Fueron sus padrinos Don Antonio Sánchez y Eduarda Andux, a quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé",
             "data": {
@@ -1500,6 +1466,7 @@
             "city": "Matánzas",
             "institution": "Catedral de San Borromeo",
             "id": 22152,
+            "entry": "0024-03",
             "raw": "Sábado diez y nueve de Abril de mil ochocientos setenta y tres: yo Presbitero Don Santiago Serra, cura párroco, vicario, foráneo interino de esta iglesia de Término de San Cárlos de Matánzas, bauticé solemnemente y puse los santos óleos á un párvulo, que nació el dia veinte y dos de Diciembre último, hija legitimo de los pardos libres Manuel Carnera y de Dolores Carbó, el primero natural de Ceiba Mocha y la segunda natural de esta feligresía, de la que arriba son vecinos; nieto paterno de Esperanza Carriera y materno de Victoria Molins y abuelos no espresados: en dicho párvulo ejercí las sagradas preces y ceremonias y le puse por nombre Demetrio, Luis Alfonso: fueron sus padrinos Don Juan Luis Acosta y Doña Luisa de la Cabada, á quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé. Entre renglonesdevale.",
             "normalized": "Sábado diez y nueve de abril de mil ochocientos setenta y tres, yo presbítero Don Santiago Serra, cura párroco, vicario, foráneo interino de esta iglesia de Término de San Cárlos de Matánzas, bauticé solemnemente y puse los santos óleos a un párvulo, que nació el día veintidós de diciembre último. Hijo legítimo de los pardos libres Manuel Carnera y de Dolores Carbo, el primero natural de Ceiba Mocha y la segunda natural de esta feligresia, de la que arriba son vecinos, y nieto paterno de Esperanza Carriera y materno de Victoria Molina y abuelos no espresados. En dicho párvulo ejercí las sagradas preces y ceremonias, y le puse por nombre Demetrio Luis Alfonso. Fueron sus padrinos Don Juan Luis Acosta y Doña Luisa de la Cabada, a quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé.",
             "data": {
@@ -1668,6 +1635,7 @@
             "city": "Matánzas",
             "institution": "Catedral de San Borromeo",
             "id": 22152,
+            "entry": "0032-02",
             "raw": "Lúnes dies y nueve de Mayo de mil ochocientos setenta y tres: yo Presbítero Dn Santiago Serra, Cura Párroco, Vicario foráneo interino de esta Yglesia de Término de San Cárlos de Matánzas, bauticé solemnemente y puse los sántos óleos á una párvula parda, que nació el dia doce de Diciembre último, hija de padre no conocido y de la de igual clase Rita, natural de Alacranes y vecina de esta feligresía, esclava de Dn Felipe Sicre; nieta materna de María de Jesus Olano: y abuelo no espresado: en dicha párvula ejercí las sagradas préces y ceremónias y le puse por nombre Maria Rita Guadalupe: la cual es libre por beneficio de la Ley, sancionada por las Córtes constituyentes de la Nacion, en veinte y tres de Junio de mil ochocientos setenta años, comunicada con fecha cuatro de Julio del propio, al Escelentisimo Señor Gobernador Superior Político de esta Ysla, publicada en la Gaceta Oficial correspondiente al Sábado primero de Octubre del referido año: fueron sus padrinos D. Domingo Veulens y Da Regina del propio apellido, á quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé. Sant. Serra",
             "normalized": "Lunes, diecinueve de mayo de mil ochocientos setenta y tres, yo presbitero Don Santiago Serra, cura párroco vicario foráneo interino de esta iglesia de término de San Carlos de Matanzas, bauticé solemnemente y puse los santos óleos a una párvula parda, que nació el día doce de diciembre último, hija de padre no conocido y de la de igual clase Rita, natural de Alacranes y vecina de esta feligresia, esclava de Don Felipe Sicre; nieta materna de María de Jesús Olano y abuelo no expresado. En dicha párvula ejercí las sagradas preces y ceremonias y le puse por nombre María Rita Guadalupe, la cual es libre por beneficio de la ley, sancionada por las cortes constituyentes de la nación, en veintitrés de junio de mil ochocientos setenta años, comunicada con fecha cuatro de julio del propio año, al escelentísimo señor gobernador superior político de esta isla, publicada en la Gaceta Oficial correspondiente al sábado, primero de octubre del referido año. Fueron sus padrinos Don Domingo Veulens y Doña Regina del propio apellido, a quienes advertí el parentesco espiritual y obligaciones que contrajeron, y lo firmé. Santiago Serra",
             "data": {
@@ -1798,6 +1766,7 @@
             "city": "St. Augustine",
             "institution": "Archives of the Diocese of St. Augustine",
             "id": 239746,
+            "entry": "0014-02",
             "raw": "Domingo, día veinte y quatro de Noviembre de Mil Setecientos Noventa y Tres. Yo Don Miguel O'Reilly Teniente de Cura Beneficiado, Vicario, y Juez Eclesiástico Auxiliar de esta Yglesia parroquial, y provincia de San Agustín de la Florida Oriental. Baptisé y puse los santos oleos a una niña libre de color, morena, que nacio el dia veinte y seis de Septiembre del presente año, hija natural de los Negros libres Andres Camel, y Eva Fish, ambos Naturales de Nueva York, y en ella exerci las sacras Ceremonias, y preces de nuestra Santa madre Iglesia, y la puse por nombre Maria Tere sa. fueron sus padrinos Francisco Huiten, y Andrea Ortigas ambos morenos y vecinos de esta Ciu dad, les advertí el parentesco espiritual, y demás obligaciones, y lo firmé en dicho dia, mes y año.",
             "normalized": "Domingo, día veinticuatro de noviembre de mil setecientos noventa y tres, yo Don Miguel O'Reilly, teniente de cura beneficiado vicario y juez eclesiástico auxiliar de esta yglesia parroquial y provincia de San Agustín de la Florida Oriental, bauticé y puse los santos óleos a una niña libre de color morena, que nació el día veintseis de septiembre del presente año, hija natural de los negros libres Andrés Camel y Eva Fish, ambos naturales de Nueva York, y en ella ejercí las sacras ceremonias y preces de nuestra Santa Madre Iglesia, y la puse por nombre Maria Teresa. Fueron sus padrinos Francisco Huiten y Andrea Ortigas, ambos morenos y vecinos de esta ciudad, les advertí el parentesco espiritual, y demás obligaciones, y lo firmé en dicho día, mes, y año.",
             "data": {
@@ -1918,6 +1887,7 @@
             "city": "St. Augustine",
             "institution": "Archives of the Diocese of St. Augustine",
             "id": 239746,
+            "entry": "0109-02",
             "raw": "Lunes dia veinte y uno de Mayo de mil sete cientos noventa y ocho. Yo Don Miguel OReilly Cura beneficiado, Vicario y Juez Eclesiastico de esta Yglesia parroquial, Plaza y Provincia de San Agus tin de la Florida Ol. Baptizé y puse los santos oleos á una Niña de color parda, que nació el día diez y seis del presente mes, hija de Padre no conocido, y de Maria del Carmen morena natural de la Costa de Gui nea y esclava del Teniente Coronel, e Yngeniero Don Pe dro Díaz Berrio; y en él exerci las peculiares sacras cere monias, y preces de nuestra santa madre Yglesia, y la puse por nombre Ubalda Juana Nepomucena: fue su madrina Rita, morena esclava esclava del dicho Don Pedro: le advertí el Parentesco espiritual y demás obligaciones y lo firmé en dicho dia mez, y año.",
             "normalized": "Lunes, día veintiuno de mayo de mil setecientos noventa y ocho. Yo Don Miguel O'Reilly cura beneficiado vicario y juez eclesiástico de esta iglesia parroquial, plaza y provincia de San Agustín de la Florida Oriental, bapticé y puse los santos óleos a una niña de color parda que nació el día dieciséis del presente mes. Hija de padre no conocido y de Maria del Carmen, natural de la Costa de Guinea y esclava del teniente coronel e ingeniero Don Pedro Díaz Berrío, y en él ejercí las peculiares sacras ceremonias y preces de nuestra santa madre iglesia, y la puse por nombre Ubalda Juana Nepomucena. Fue su madrina Rita, morena esclava del dicho Don Pedro, le advertí el parentesco espiritual y demás obligaciones, y lo firmé en dicho día, mes, y año.",
             "data": {
