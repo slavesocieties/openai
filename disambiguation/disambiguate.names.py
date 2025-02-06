@@ -60,7 +60,7 @@ def testMyCode():
 # function to generate relationships
 # update record creation function to build full record
 
-def createPool():
+'''def createPool():
     vocabPool = {}
     currentDir = os.getcwd()
     parentDir = os.path.dirname(currentDir)
@@ -70,17 +70,37 @@ def createPool():
         allVocab = data["controlled_vocabularies"]
         for vocabSet in allVocab:
             vocabPool[vocabSet["key"]] = vocabSet["vocab"]
-    return vocabPool
+    return vocabPool'''
 
-def createNewPerson(vocabPool):
+
+# create single term
+# personRecords is existing dictionary, add termToCreate
+# can also modify: create personRecords within method and return single term dict
+def createTerm(personRecords, termToCreate):
+    randomTerm = "N/A"
+    currentDir = os.getcwd()
+    parentDir = os.path.dirname(currentDir)
+    pathToFile = os.path.join(parentDir, "vocab.json")
+    with open(pathToFile, 'r') as allVocab:
+        data = json.load(allVocab)
+        allVocab = data["controlled_vocabularies"]
+    for vocabSet in allVocab:
+        if vocabSet["key"] == termToCreate:
+            vocabIndex = random.randint(0, len(vocabSet["vocab"]) - 1)
+            randomTerm = vocabSet["vocab"][vocabIndex]
+            break
+    personRecords[termToCreate] = randomTerm
+
+
+'''def createNewPerson(vocabPool):
     personRecords = {}
     personRecords["name"] = generateName()
     for vocabType, vocabList in vocabPool.items():
         vocabIndex = random.randint(0, len(vocabList) - 1)
         personRecords[vocabType] = vocabList[vocabIndex]
-    return personRecords
+    return personRecords'''
 
 # Test code
-'''myPool = createPool()
-myRecord = createNewPerson(myPool)
-print(myRecord)'''
+'''personRecords = {}
+createTerm(personRecords, "titles")
+print(personRecords)'''
