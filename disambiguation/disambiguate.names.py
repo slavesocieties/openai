@@ -16,7 +16,13 @@ import os.path
 # personRecords is existing dictionary, add termToCreate
 # can also modify: create personRecords within method and return single term dict
 
-allTerms = ["f_names"]
+
+necTerm = ["f_names", "l_names"]
+commonTerms = ["phenotype", "titles", "legitimate", "free", "ethnicity"]
+rareTerms = ["ranks", "age", "occupation"]
+relTerms = ["related_person", "relationship_type"]
+
+
 
 def createTerm(personRecords, termToCreate):
     randomTerm = "N/A"
@@ -34,26 +40,12 @@ def createTerm(personRecords, termToCreate):
     personRecords[termToCreate] = randomTerm
 
 
-# Test code
-'''personRecords = {}
-createTerm(personRecords, "titles")
-print(personRecords)'''
 
-
-
-
-
-# here lies scrap code RIP
-
-'''def read_names(spanish_names):
+def read_names(spanish_names):
     with open(spanish_names, 'r') as sn:
         data = json.load(sn)
         names = data['names']
         return names
-
-def random_element(names):
-    name_index = random.randint(0, len(names)-1)
-    return names[name_index]
 
 def first_name(first_names):
     with open(first_names, 'r') as fn:
@@ -67,17 +59,43 @@ def last_name(last_names):
         l_name = data['l_names']
     return l_name
 
-
-# span_nl = read_names("spanish_names.json")
-# print(random_element(span_nl))
-
-# add code to randomize name selection
-
 def generateName():
     fname = first_name("first_names.json")
     lname = last_name("last_names.json")
     gen_name = random.choice(fname) + ' ' + random.choice(lname)
     return gen_name
+
+
+
+# question: name affect relationship?
+def genRelatedPerson():
+    relatedFile = {}
+    relatedFile["related_person"] = generateName()
+    createTerm(relatedFile, "relationship_type")
+    return relatedFile
+
+
+
+# Test code
+'''personRecords = {}
+createTerm(personRecords, "titles")
+print(personRecords)'''
+
+
+
+
+
+# here lies scrap code RIP
+
+'''
+def random_element(names):
+    name_index = random.randint(0, len(names)-1)
+    return names[name_index]
+
+# span_nl = read_names("spanish_names.json")
+# print(random_element(span_nl))
+
+# add code to randomize name selection
 
 def generatePersonRecord():
     indivRecord = {}
@@ -113,4 +131,5 @@ def createNewPerson(vocabPool):
     for vocabType, vocabList in vocabPool.items():
         vocabIndex = random.randint(0, len(vocabList) - 1)
         personRecords[vocabType] = vocabList[vocabIndex]
-    return personRecords'''
+    return personRecords
+    '''
