@@ -1,6 +1,40 @@
 {
     "controlled_vocabularies": [
         {
+            "key": "f_names",
+            "vocab": [
+                "José",
+                "Antonio",
+                "Tiburcio",
+                "Juan",
+                "Salvador"
+            ]
+        },
+        {
+            "key": "l_names",
+            "vocab": [
+                "Aponte",
+                "Peñalver",
+                "Bautista",
+                "Lisundia",
+                "Ternero"
+            ]
+        },
+        {
+            "key": "legitimate",
+            "vocab": [
+                true,
+                false
+            ]
+        },
+        {
+            "key": "free",
+            "vocab": [
+                true,
+                false
+            ]
+        },
+        {
             "key": "titles",
             "language": "Spanish",
             "vocab": [
