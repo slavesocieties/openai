@@ -17,10 +17,28 @@ import os.path
 # can also modify: create personRecords within method and return single term dict
 
 
+
+# set numeric scale for frequency of terms
+# missing origin (also missing in json)
 necTerm = ["f_names", "l_names"]
-commonTerms = ["phenotype", "titles", "legitimate", "free", "ethnicity"]
+allTerms = ["phenotype", "titles", "legitimate", "free", "ethnicity", "ranks", "age", "occupation"]
+frequentTerms = ["phenotype", "titles"]
+commonTerms = ["legitimate", "free", "ethnicity"]
 rareTerms = ["ranks", "age", "occupation"]
 relTerms = ["related_person", "relationship_type"]
+
+# 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
+def genFrequency(this, term):
+    frequencyIndex = random.randint(0, 10)
+    if term in frequentTerms:
+        if frequencyIndex < 6:
+            createTerm(this, term)
+    elif term in commonTerms:
+        if frequencyIndex < 4:
+            createTerm(this, term)
+    else:
+        if frequencyIndex < 2:
+            createTerm(this, term)
 
 
 
@@ -66,6 +84,19 @@ def generateName():
     return gen_name
 
 
+# rudimentary generate person code
+def genIndiv():
+    thisPerson = {}
+
+    for nameTerm in necTerm:
+        createTerm(thisPerson, nameTerm)
+    
+    for term in allTerms:
+        genFrequency(thisPerson, term)
+
+    return thisPerson
+
+
 
 # question: name affect relationship?
 def genRelatedPerson():
@@ -76,11 +107,18 @@ def genRelatedPerson():
 
 
 
+# second person
+# classification of relationship: same, diffname, diffppl
+'''def otherRelated(similarity):
+    if similarity == "exactSame":
+        relatedPerson = existingPerson'''
+
+
+
 # Test code
 '''personRecords = {}
 createTerm(personRecords, "titles")
 print(personRecords)'''
-
 
 
 
