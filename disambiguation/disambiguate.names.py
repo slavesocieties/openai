@@ -27,6 +27,9 @@ commonTerms = ["legitimate", "free", "ethnicity"]
 rareTerms = ["ranks", "age", "occupation"]
 relTerms = ["related_person", "relationship_type"]
 
+allRelTypes = ["slave", "enslaver", "godparent", "godchild", "spouse", "child", "parent"]
+
+
 # 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
 def genFrequency(this, term):
     frequencyIndex = random.randint(0, 10)
@@ -39,7 +42,6 @@ def genFrequency(this, term):
     else:
         if frequencyIndex < 2:
             createTerm(this, term)
-
 
 
 def createTerm(personRecords, termToCreate):
@@ -56,7 +58,6 @@ def createTerm(personRecords, termToCreate):
             randomTerm = vocabSet["vocab"][vocabIndex]
             break
     personRecords[termToCreate] = randomTerm
-
 
 
 def read_names(spanish_names):
@@ -94,31 +95,45 @@ def genIndiv():
     for term in allTerms:
         genFrequency(thisPerson, term)
 
-    return thisPerson
+    # remainingrels to be passed into next individual's relationships
+    remainingRels, allThisRels = genAllRels(allRelTypes)
+    if len(allThisRels) > 0:
+        thisPerson["relationships"] = allThisRels
+
+    return remainingRels, thisPerson
 
 
-
-# question: name affect relationship?
-def genRelatedPerson():
+def genRelatedPerson(possibleRels):
     relatedFile = {}
     relatedFile["related_person"] = generateName()
-    createTerm(relatedFile, "relationship_type")
-    return relatedFile
 
+    vocabIndex = random.randint(0, len(possibleRels) - 1)
+    randomTerm = possibleRels[vocabIndex]
+    relatedFile["relationship_type"] = randomTerm
+
+    return randomTerm, relatedFile
+
+
+def genAllRels(possibleRels):
+    copyRels = possibleRels[:]
+    allRels = []
+
+    for i in range(random.randint(0, 3)):
+        relUsed, newFile = genRelatedPerson(copyRels)
+        allRels.append(newFile)
+        copyRels.remove(relUsed)
+
+    return copyRels, allRels
 
 
 # second person
 # classification of relationship: same, diffname, diffppl
-'''def otherRelated(similarity):
-    if similarity == "exactSame":
-        relatedPerson = existingPerson'''
-
+# def otherRelated():
 
 
 # Test code
-'''personRecords = {}
-createTerm(personRecords, "titles")
-print(personRecords)'''
+rels, personRecords = genIndiv()
+print(personRecords)
 
 
 
