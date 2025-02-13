@@ -7,6 +7,7 @@ from layout import layout_analyze
 from binarize_data import rotate_block
 from find_pixels import find_pixels
 from segment_lines import segment_lines
+from pathlib import Path
 
 def downscale_image(path_to_image):
     """reduces image size to 3MB or less by proportionally shrinking dimensions
@@ -140,7 +141,9 @@ def segmentation_driver(path_to_image, save_cropped_images=True, save_directory=
         print("Image normalized.")       
     
     blocks, coordinates, angle = layout_analyze(pooled, display=display)    
-    entry_blocks, entry_coords = filter_blocks(blocks, coordinates)    
+    entry_blocks, entry_coords = filter_blocks(blocks, coordinates)
+
+    Path(save_directory).mkdir(exist_ok=True)    
 
     """for i, block in enumerate(entry_blocks):
         #deg, block = rotate_block(block)

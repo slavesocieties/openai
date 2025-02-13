@@ -4,6 +4,7 @@ from segmentation_driver import segmentation_driver
 import boto3
 from eval_entry import *
 from utility import load_volume_metadata
+from pathlib import Path
 
 def process_image(image_id):
     output = transcribe_block(image_id)
@@ -41,8 +42,9 @@ def actual_full_demo(image_id, bucket_name="ssda-openai-test", local_file_path="
             entry = build_entry(output)
         entries.append(entry)
 
-    volume_id = int(image_id.split("-")[0])    
-    write_volume(volume_id, entries, output_path=f"testing/{volume_id}_full_demo_transcription.json")    
+    volume_id = int(image_id.split("-")[0])
+    Path("testing").mkdir(exist_ok=True) 
+    write_volume(volume_id, entries, output_path=f"testing/{volume_id}_full_demo_transcription.json")       
     process_transcription(f"testing/{volume_id}_full_demo_transcription.json", "instructions.json", "training_data.json",
                           training_keywords = {"type": "baptism", "country": "Cuba"}, mode = "and", out_path = f"testing/{volume_id}_full_demo_output.json")
     
