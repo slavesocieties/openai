@@ -1,0 +1,462 @@
+{
+    "type": "baptism",
+    "country": "Cuba",
+    "state": "Cienfuegos",
+    "city": "Cienfuegos",
+    "institution": "Catedral de Nuestra Señora de la Purisima Concepción",
+    "id": 166470,
+    "title": "Libro 3 de Bautismos de Pardos y Morenos, 1839 - 1843",
+    "entries": [
+        {
+            "id": "0008-06",
+            "text": "En dieciséis de octubre de mil ochocientos treinta y nueve, yo Don Antonio Loreto Sánchez, presbítero cura beneficiado por Su Majestad de la Iglesia Parroquial de la Purísima Concepción de esta villa de Cienfuegos, en ella y su jurisdicción, vicario eclesiástico por Santa Eclesiástica Illustrísima, bauticé solemnemente y puse los santos óleos a una parvula que nació el quince de julio del presente año, hija legítima de los morenos Fabián y de Isabel, naturales de África, de la propiedad de Don José Corras. En cuya parvula ejercí las sacras ceremonias y preces, y le puse por nombre Maria del Carmen. Fue su madrina Francisca Maria Herrera, a quien advertí el parentesco espiritual y demás obligaciones, y lo firmé."
+        },
+        {
+            "id": "9-01",
+            "text": "En dieciséis de octubre de mil ochocientos treinta y nueve, yo Don Antonio Loreto Sánchez, Presbítero cura beneficiado por Su Majestad de la Iglesia Parroquial de la Purísima Concepción de esta villa de Cienfuegos, en ella y su jurisdicción, vicario Eclesiástico por la Santa Eclesiástica Illustrísima, bauticé solemnemente y puse los santos óleos a un parvulo que nació el diecinueve de agosto del presente año, hijo legítimo de los morenos Manuel y Beatriz, naturales de África, esclavos de Don José Corras. En cuyo parvulo ejercí las sacras ceremonias y preces, y le puse por nombre Luis. Fueron los padrinos Don Juan Fernández y Doña Maria Ramona Prieto, a quienes advertí el parentesco espiritual y demás obligaciones, y lo firmé."
+        },
+        {
+            "id": "0009-02",
+            "text": "En veinte de octubre de mil ochocientos treinta y nueve, yo Don Antonio Loreto Sánchez, Presbítero cura beneficiado por Santa Majestad de la Iglesia Parroquial de la Purísima Concepción de esta villa de Cienfuegos, en ella y su jurisdicción, vicario eclesiástico por Santa Eclesiástica Illustrísima, bauticé solemnemente y puse los santos óleos a un parvulo que nació el trece de septiembre del presente año, hijo de la morena María Josefa Valvidez, natural de Cumanayagua, y de padre no conocido, abuelos paternos José Manuel y Micaela Ramírez, naturales de Trinidad. En cuyo parvulo ejercí las sacras ceremonias, preces, y le puse por nombre Jose Crecencio. Fue su padrino Don Andrés Castellano, a quien advertí el parentesco espiritual y demás obligaciones, y lo firmé."
+        },
+        {
+            "id": "0009-03",
+            "text": "En veintisiete de octubre de mil ochocientos treinta y nueve, yo Don Antonio Loreto Sánchez, presbítero cura beneficiado por Su Majestad de la Iglesia Parroquial de la Purísima Concepción de esta villa de Cienfuegos, en ella y su jurisdicción, vicario eclesiástico por Santa Eclesiástica Illustrísima, bauticé solemnemente y puse los santos óleos a una negra adulta natural de Guinea, esclava de Don Agustín de Santa Cruz. En esta negra ejercí las sacras ceremonias y preces, y le puse por nombre Calletana Leonor. Fue su padrino Calletano, a quien advertí el parentesco espiritual y demás obligaciones, y lo firmé."
+        },
+        {
+            "id": "0009-04",
+            "text": "En veintisiete de octubre de mil ochocientos treinta y nueve, yo Don Antonio Loreto Sánchez, Presbítero cura beneficiado por Su Majestad de la Iglesia Parroquial de la Purísima Concepción de esta villa de Cienfuegos, en ella y su jurisdicción, vicario Eclesiástico por Santa Eclesiástica Illustrísima, bauticé solemnemente y puse los santos óleos a un negro adulto natural de Guinea, de la propiedad de Don Agustín Santa Cruz. En este negro ejercí las sacras ceremonias y preces, y le puse por nombre Rosendo. Fueron sus padrinos Félix y Regina, a quienes advertí el parentesco espiritual y demás obligaciones."
+        }
+    ],
+    "people": [
+        {
+            "id": "166470-P00001",
+            "name": "Antonio Loreto Sánchez",
+            "titles": [
+                "Don"
+            ],
+            "occupation": "cleric"
+        },
+        {
+            "id": "166470-P00002",
+            "name": "Fabián",
+            "origin": "África",
+            "phenotype": "moreno",
+            "free": false,
+            "relationships": [
+                {
+                    "related_person": "166470-P00003",
+                    "relationship_type": "spouse"
+                },
+                {
+                    "related_person": "166470-P00004",
+                    "relationship_type": "enslaver"
+                },
+                {
+                    "related_person": "166470-P00005",
+                    "relationship_type": "child"
+                }
+            ]
+        },
+        {
+            "id": "166470-P00003",
+            "name": "Isabel",
+            "origin": "África",
+            "phenotype": "morena",
+            "free": false,
+            "relationships": [
+                {
+                    "related_person": "166470-P00002",
+                    "relationship_type": "spouse"
+                },
+                {
+                    "related_person": "166470-P00004",
+                    "relationship_type": "enslaver"
+                },
+                {
+                    "related_person": "166470-P00005",
+                    "relationship_type": "child"
+                }
+            ]
+        },
+        {
+            "id": "166470-P00004",
+            "name": "Jose Corras",
+            "titles": [
+                "Don"
+            ],
+            "relationships": [
+                {
+                    "related_person": "166470-P00008",
+                    "relationship_type": "slave"
+                },
+                {
+                    "related_person": "166470-P00009",
+                    "relationship_type": "slave"
+                },
+                {
+                    "related_person": "166470-P00002",
+                    "relationship_type": "enslaver"
+                },
+                {
+                    "related_person": "166470-P00003",
+                    "relationship_type": "enslaver"
+                },
+                {
+                    "related_person": "166470-P00005",
+                    "relationship_type": "godparent"
+                }
+            ]
+        },
+        {
+            "id": "166470-P00005",
+            "name": "Maria del Carmen",
+            "age": "infant",
+            "legitimate": true,
+            "relationships": [
+                {
+                    "related_person": "166470-P00002",
+                    "relationship_type": "parent"
+                },
+                {
+                    "related_person": "166470-P00003",
+                    "relationship_type": "parent"
+                },
+                {
+                    "related_person": "166470-P00006",
+                    "relationship_type": "godparent"
+                }
+            ]
+        },
+        {
+            "id": "166470-P00006",
+            "name": "Francisca Maria Herrera",
+            "relationships": [
+                {
+                    "related_person": "166470-P00005",
+                    "relationship_type": "godchild"
+                }
+            ]
+        },
+        {
+            "id": "166470-P00007",
+            "name": "Antonio Loreto Sanchez",
+            "titles": [
+                "Don"
+            ],
+            "occupation": "cleric"
+        },
+        {
+            "id": "166470-P00008",
+            "name": "Manuel",
+            "origin": "Africa",
+            "phenotype": "moreno",
+            "free": false,
+            "relationships": [
+                {
+                    "related_person": "166470-P00009",
+                    "relationship_type": "spouse"
+                },
+                {
+                    "related_person": "166470-P00004",
+                    "relationship_type": "enslaver"
+                },
+                {
+                    "related_person": "166470-P00010",
+                    "relationship_type": "child"
+                }
+            ]
+        },
+        {
+            "id": "166470-P00009",
+            "name": "Beatriz",
+            "origin": "Africa",
+            "phenotype": "morena",
+            "free": false,
+            "relationships": [
+                {
+                    "related_person": "166470-P00008",
+                    "relationship_type": "spouse"
+                },
+                {
+                    "related_person": "166470-P00004",
+                    "relationship_type": "enslaver"
+                },
+                {
+                    "related_person": "166470-P00010",
+                    "relationship_type": "child"
+                }
+            ]
+        },
+        {
+            "id": "166470-P00010",
+            "name": "Luis",
+            "age": "infant",
+            "legitimate": true,
+            "relationships": [
+                {
+                    "related_person": "166470-P00008",
+                    "relationship_type": "parent"
+                },
+                {
+                    "related_person": "166470-P00009",
+                    "relationship_type": "parent"
+                },
+                {
+                    "related_person": "166470-P00011",
+                    "relationship_type": "godparent"
+                },
+                {
+                    "related_person": "166470-P00012",
+                    "relationship_type": "godparent"
+                }
+            ]
+        },
+        {
+            "id": "166470-P00011",
+            "name": "Juan Fernandez",
+            "titles": [
+                "Don"
+            ],
+            "relationships": [
+                {
+                    "related_person": "166470-P00010",
+                    "relationship_type": "godparent"
+                }
+            ]
+        },
+        {
+            "id": "166470-P00012",
+            "name": "Maria Ramona Prieto",
+            "titles": [
+                "Doña"
+            ],
+            "phenotype": "pardo",
+            "relationships": [
+                {
+                    "related_person": "166470-P00010",
+                    "relationship_type": "godparent"
+                }
+            ]
+        },
+        {
+            "id": "166470-P00013",
+            "name": "María Josefa Valvidez",
+            "phenotype": "morena",
+            "origin": "Cumanayagua",
+            "relationships": [
+                {
+                    "related_person": "166470-P00015",
+                    "relationship_type": "parent"
+                }
+            ]
+        },
+        {
+            "id": "166470-P00014",
+            "name": "José Manuel",
+            "origin": "Trinidad",
+            "relationships": [
+                {
+                    "related_person": "166470-P00015",
+                    "relationship_type": "grandparent"
+                }
+            ]
+        },
+        {
+            "id": "166470-P00015",
+            "name": "Micaela Ramírez",
+            "origin": "Trinidad",
+            "relationships": [
+                {
+                    "related_person": "166470-P00013",
+                    "relationship_type": "grandparent"
+                },
+                {
+                    "related_person": "166470-P00016",
+                    "relationship_type": "parent"
+                }
+            ]
+        },
+        {
+            "id": "166470-P00016",
+            "name": "Jose Crecencio",
+            "age": "infant",
+            "legitimate": true,
+            "relationships": [
+                {
+                    "related_person": "166470-P00013",
+                    "relationship_type": "parent"
+                },
+                {
+                    "related_person": "166470-P00015",
+                    "relationship_type": "parent"
+                },
+                {
+                    "related_person": "166470-P00017",
+                    "relationship_type": "godparent"
+                }
+            ]
+        },
+        {
+            "id": "166470-P00017",
+            "name": "Andrés Castellano",
+            "titles": [
+                "Don"
+            ],
+            "relationships": [
+                {
+                    "related_person": "166470-P00016",
+                    "relationship_type": "godparent"
+                }
+            ]
+        },
+        {
+            "id": "166470-P00018",
+            "name": "Agustin de Santa Cruz",
+            "rank": "Colonel",
+            "relationships": [
+                {
+                    "related_person": "166470-P00019",
+                    "relationship_type": "enslaver"
+                }
+            ]
+        },
+        {
+            "id": "166470-P00019",
+            "name": "Calletana Leonor",
+            "origin": "Guinea",
+            "phenotype": "negro",
+            "free": false,
+            "relationships": [
+                {
+                    "related_person": "166470-P00018",
+                    "relationship_type": "enslaver"
+                },
+                {
+                    "related_person": "166470-P00020",
+                    "relationship_type": "godparent"
+                }
+            ]
+        },
+        {
+            "id": "166470-P00020",
+            "name": "Calletano",
+            "relationships": [
+                {
+                    "related_person": "166470-P00019",
+                    "relationship_type": "godchild"
+                }
+            ]
+        },
+        {
+            "id": "166470-P00021",
+            "name": "Juan Rafael",
+            "titles": [
+                "Don"
+            ],
+            "occupation": "cleric"
+        },
+        {
+            "id": "166470-P00022",
+            "name": "Agustín Santa Cruz",
+            "rank": "Colonel",
+            "relationships": [
+                {
+                    "related_person": "166470-P00023",
+                    "relationship_type": "enslaver"
+                }
+            ]
+        },
+        {
+            "id": "166470-P00023",
+            "name": "Rosendo",
+            "origin": "Guinea",
+            "phenotype": "negro",
+            "free": false,
+            "relationships": [
+                {
+                    "related_person": "166470-P00022",
+                    "relationship_type": "enslaver"
+                },
+                {
+                    "related_person": "166470-P00024",
+                    "relationship_type": "godparent"
+                },
+                {
+                    "related_person": "166470-P00025",
+                    "relationship_type": "godparent"
+                }
+            ]
+        },
+        {
+            "id": "166470-P00024",
+            "name": "Félix",
+            "relationships": [
+                {
+                    "related_person": "166470-P00023",
+                    "relationship_type": "godparent"
+                }
+            ]
+        },
+        {
+            "id": "166470-P00025",
+            "name": "Regina",
+            "relationships": [
+                {
+                    "related_person": "166470-P00023",
+                    "relationship_type": "godparent"
+                }
+            ]
+        }
+    ],
+    "events": [
+        {
+            "type": "baptism",
+            "principal": "166470-P00005",
+            "date": "1839-10-16",
+            "id": "0008-06-E00"
+        },
+        {
+            "type": "birth",
+            "principal": "166470-P00005",
+            "date": "1839-07-15",
+            "id": "0008-06-E01"
+        },
+        {
+            "type": "baptism",
+            "principal": "166470-P00010",
+            "date": "1839-10-16",
+            "id": "9-01-E00"
+        },
+        {
+            "type": "birth",
+            "principal": "166470-P00010",
+            "date": "1839-08-19",
+            "id": "9-01-E01"
+        },
+        {
+            "type": "baptism",
+            "principal": "166470-P00016",
+            "date": "1839-10-20",
+            "id": "0009-02-E00"
+        },
+        {
+            "type": "birth",
+            "principal": "166470-P00016",
+            "date": "1839-09-13",
+            "id": "0009-02-E01"
+        },
+        {
+            "type": "baptism",
+            "principal": "166470-P00019",
+            "date": "1839-10-27",
+            "id": "0009-03-E00"
+        },
+        {
+            "type": "baptism",
+            "principal": "166470-P00023",
+            "date": "1839-10-27",
+            "id": "0009-04-E00"
+        }
+    ]
+}

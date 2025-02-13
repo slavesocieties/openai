@@ -1,0 +1,262 @@
+{
+    "type": "marriage",
+    "country": "Cuba",
+    "state": "La Habana",
+    "city": "Havana",
+    "institution": "Catedral de la Habana",
+    "id": 6517,
+    "title": "Libro de Barajas: Matrimonios, 1584-1622",
+    "entries": [
+        {
+            "id": "0006-01",
+            "raw": "en veynte y quatro dias del mes de febrero del dho año de 1585 aso Ser Vico nicolas jermo desposo y belo a damian esclavo de manuel diaz y a ana biafara esclava de po seRano fueron sus padrinos luys jolofo y ynes hernandes morena esclava de sebastian mirn doy fe dello yo",
+            "normalized": "En veinte y cuatro días del mes de febrero del mismo año de 1585, el señor Vicario Nicolás Gerónimo desposó y veló a Damián, esclavo de Manuel Díaz, y a Ana Biafara, esclava de Pedro Serrano. Fueron sus padrinos Luís Jolofo e Inés Hernández, morena esclava de Sebastián Mirón. Doy fe de ello yo.",
+            "data": {
+                "people": [
+                    {
+                        "id": "P01",
+                        "name": "Nicolás Gerónimo",
+                        "titles": [
+                            "Vicario"
+                        ],
+                        "occupation": "cleric"
+                    },
+                    {
+                        "id": "P02",
+                        "name": "Damián",
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "enslaver"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "godparent"
+                            },
+                            {
+                                "related_person": "P07",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P03",
+                        "name": "Manuel Díaz",
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "slave"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P04",
+                        "name": "Ana Biafara",
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "enslaver"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P05",
+                        "name": "Pedro Serrano",
+                        "relationships": [
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "master"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P06",
+                        "name": "Luís Jolofo",
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P07",
+                        "name": "Inés Hernández",
+                        "phenotype": "morena",
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P08",
+                        "name": "Sebastián Mirón"
+                    }
+                ],
+                "events": [
+                    {
+                        "type": "marriage",
+                        "principals": [
+                            "P02",
+                            "P04"
+                        ],
+                        "witnesses": [
+                            "P06",
+                            "P07"
+                        ],
+                        "date": "1585-02-24"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "0286-02",
+            "raw": "en 6 dias del mes de febrero de 1612 años bele yo el pe barme bibas con licencia de los curas a mateo hernandes y a catalina hernandez fueron sus padrinos alo ruiz y maria hernandez y lo firme fecho ut supra",
+            "normalized": "En 6 días del mes de febrero de 1612 años, velé yo, el Padre Bartolomé Bibas, con licencia de los curas, a Mateo Hernández y a Catalina Hernández. Fueron sus padrinos Álvaro Ruiz y María Hernández. Lo firmé, hecho así.",
+            "data": {
+                "people": [
+                    {
+                        "id": "P01",
+                        "name": "Bartolomé Bibas",
+                        "titles": [
+                            "Padre"
+                        ],
+                        "occupation": "cleric"
+                    },
+                    {
+                        "id": "P02",
+                        "name": "Mateo Hernández",
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P03",
+                        "name": "Catalina Hernández",
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P04",
+                        "name": "Álvaro Ruiz",
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P05",
+                        "name": "María Hernández",
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    }
+                ],
+                "events": [
+                    {
+                        "type": "marriage",
+                        "principals": [
+                            "P02",
+                            "P03"
+                        ],
+                        "witnesses": [
+                            "P04",
+                            "P05"
+                        ],
+                        "date": "1612-02-06"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "0370-01",
+            "raw": "en 13 de enero de 1621 as desposse y bele con licencia de su sa a anton carabali esclavo de su magd y a ma carabali negra horra tos que fueron presentes juo de sigura y padrinos juo de baragan y germo de acosta y lo firme ffo ut supa",
+            "normalized": "En 13 de enero de 1621, desposé y velé con licencia de su santidad a Antonio Carabalí, esclavo de Su Majestad, y a María Carabalí, negra honra. Fueron presentes Juan de Figueroa, y los padrinos fueron Juan de Barragán y Jerónimo de Acosta. Lo firmé. Fue así.",
+            "data": {
+                "people": [
+                    {
+                        "id": "P01",
+                        "name": "Antonio Carabalí",
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "spouse"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P02",
+                        "name": "María Carabalí"
+                    },
+                    {
+                        "id": "P03",
+                        "name": "Juan de Figueroa"
+                    },
+                    {
+                        "id": "P04",
+                        "name": "Juan de Barragán",
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P05",
+                        "name": "Jerónimo de Acosta",
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    }
+                ],
+                "events": [
+                    {
+                        "type": "marriage",
+                        "principals": [
+                            "P01",
+                            "P02"
+                        ],
+                        "witnesses": [
+                            "P03"
+                        ],
+                        "date": "1621-01-13"
+                    }
+                ]
+            }
+        }
+    ]
+}

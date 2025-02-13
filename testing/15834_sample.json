@@ -1,0 +1,41 @@
+{
+    "type": "baptism",
+    "country": "Cuba",
+    "state": "Matanzas",
+    "city": "Matanzas",
+    "institution": "Catedral de San Carlos Borromeo",
+    "id": 15834,
+    "title": "Libro 1 de Bautismos de Pardos y Morenos, 1719 - 1752, Parroquia de San Carlos de Matanzas",
+    "entries": [
+        {
+            "id": "0037-02",
+            "raw": "Domingo dos de Julio de mil sietec.tos y diez y nueve yo el Joseph Hern.z religioso del Orden de Predic.s lizentia Paro chi baptizé y pusse los s.tos oleos á Joseph negro adulto de nacion Malagas esc.o del Cap.n D. Bruno Cavallero ing militar fue su P. el Cap.n D. Manuel Chacon, y lo fir",
+            "normalized": "Domingo dos de julio de mil setecientos diecinueve yo el Joseph Hernández, religioso del Orden de Predicadores, licenciado parroquial, bauticé y puse los santos óleos a Joseph, negro adulto de nacion Malagas, esclavo del Capitan Don Bruno Cavallero, ingeniero militar. Fue su padrino el Capitan Don Manuel Chacón, y lo firmé."
+        },
+        {
+            "id": "0037-03",
+            "raw": "Domingo treinta de Julio de mil sietec.tos y diez y nueve Yo Joseph Lopez de Cuella sacristan m.or desta Ygla. Parroq. baptizé, y pusse los Ss. oleos á Maria negra Adulta de n.on Mina esc.va de D. Juan Joseph de Justis fue su P. Juan Ygnacio Miraval y lo firmé con dho. B.do : Thomas de Orvera/Joseph Lopez de Cuella",
+            "normalized": "Domingo treinta de julio de mil setecientos diecinueve. Yo Joseph Lopez de Cuella, sacristán mayor de esta Iglesia Parroquial, bauticé y puse los Santos óleos a Maria, negra adulta de nación Mina, esclava de Don Juan Joseph de Justis. Fue su padrino Juan Ygnacio Miraval y lo firmé con dicho Bartolomé : Thomas de Orvera/Joseph Lopez de Cuella."
+        },
+        {
+            "id": "0037-04",
+            "raw": "Domingo treinta de Julio de mil sietec.tos y diez y nueve Yo Joseph Lopez de Cuella sacristan m.or desta Ygla. Parroq. lizentia Parochi baptize, y pusse los Ss. oleos á Ant.a negra adulta de n.on arara esc.va de D. Ju.o Joseph de Justis fue su P. Joseph Frnz. y lo firmé con dho. B.do : Thomas de Orvera/Joseph Lopez de Cuella",
+            "normalized": "Domingo treinta de julio de mil setecientos diecinueve. Yo Joseph Lopez de Cuella, sacristán mayor de esta Iglesia Parroquial con licencia Parroquial, bauticé y puse los Santos Óleos a Antonia, negra adulta de nación arara, esclava de Don Juan Joseph de Justis. Fue su padrino Joseph Fernandez, y lo firmé con dicho Bartolomé Drvera / Joseph Lopez de Cuella."
+        },
+        {
+            "id": "0038-01",
+            "raw": "Agosto de mil sietectos y diez y nu seph Cuella sacristan m.or lizentia Parochi baptizé, y pusse los s.tos oleos a Juan negro adulto de nacion ingles esc.o de D. Ju.n Joseph de Justis fue su P. Mig. Canigo, y lo firmé. con dho : Thomas de Orvera/Joseph Lopez de Cuella",
+            "normalized": "Agosto de mil setecientos diez y nueve, Joseph Cuella, sacristán mayor con licencia parroquial, bauticé y puse los santos óleos a Juan, negro adulto de nación inglesa, esclavo de Don Juan Joseph de Justis. Fue su padrino Miguel Canigo, y lo firmé: Thomas de Orvera/Joseph Lopez de Cuella."
+        },
+        {
+            "id": "0038-02",
+            "raw": "Domingo primero de Octubre de mil sietec.tos y diez y nueve Yo Joseph Lopez de Cuella sacristan m.or lizentia Parochi baptizé, y pusse los Ss. oleos á Alexandro adulto de n.on Malagas esc.o de Fran.o Benites fue su P. Pablo de Olivera, y lo firmé con dho. Beneficiado. : Thomas de Orvera/Joseph Lopez de Cuella",
+            "normalized": "Domingo primero de octubre de mil setecientos diecinueve, yo Joseph Lopez de Cuella, sacristán mayor con licencia parroquial, bauticé y puse los Santos Óleos a Alexandro, adulto de nación Malagas, esclavo de Fran.o Benites. Fue su padrino Pablo de Olivera, y lo firmé junto con el beneficiado Thomas de Orvera."
+        },
+        {
+            "id": "0038-03",
+            "raw": "Juebes dies y nueve de Octubre de mil sietec.tos y dies y nueve Yo Thomas de Orvera Baptize y puse los stos oleos a Elena Maria parda libre q nacio a catorse de dho mes. y año hocultado lex.ma de Joseph de Cepeda y de Michaela Dias de la Cruz pardos libres vez.os19 desta ciudad. P. Juo Gaspar. y lo firme",
+            "normalized": "Jueves diecinueve de octubre de mil setecientos diecinueve yo Thomas de Orvera bauticé y puse los santos óleos a Elena Maria, parda libre, que nació el catorce de dicho mes y año. Hija legítima de Joseph de Cepeda y de Michaela Dias de la Cruz, pardos libres, vecinos de esta ciudad. Fue su padrino Juan Gaspar, y lo firmé."
+        }
+    ]
+}

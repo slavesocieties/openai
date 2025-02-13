@@ -1,0 +1,26 @@
+{
+    "type": "baptism",
+    "country": "United States",
+    "city": "Isleta Pueblo",
+    "institution": "San Agustín de la Isleta",
+    "id": 7548705,
+    "title": "ISLETA BAPTISMS 2",
+    "entries": [        
+        {
+            "id": "108L4",
+            "raw": "En el pueblo y Mission de San Agustin de la Yzleta en dos dias de el mes de agosto de el año de mill setecientos y sinquenta baptise solemnemente y puse los santos oleos y chrysma a Joseph Maria yndio hijo de padres no conosidos fueron sus padrinos Juan Miguel Albares del Castillo y su hija Anna Maria y para que conste lo firme en dicho pueblo y mission dicho dia mes y año."
+        },
+        {
+            "id": "108L5",
+            "raw": "En el pueblo y Mission de San Augustin de la Yzleta en nuebe dias de el mes de agosto de el año de mill setecientos synquenta baptise solemnemente y puse los santos oleos y chrysma a Juan Domingo hijo lexitimo de Andres y Pascuala fueron sus padrinos Joseph Marcos y Francisca y para que conste lo firme en dicho pueblo y mission dicho dia mes y año."
+        },
+        {
+            "id": "108R1",
+            "raw": "En el pueblo y Mission de San Augustin de la Yzleta siete? de septiembre de el año de mill setecientos y sinquenta baptise solemnemente y puse los santos oleos y chrysma a Diego adulto hijo de padres ynfieles fue su padrino Martin y para que conste lo firme en dicho pueblo y mission dicho dia mes y año."
+        },
+        {
+            "id": "109L1",
+            "raw": "En el pueblo y Mission de San Agustin de Ysleta en treinta y un dias del mes de octubre de el año mil setecientos y sinquenta baptise solemnemente y puse los santos oleos y chrysma a Maria Francisca adulta de nacion apache fueron sus padrinos Juan Antonio y Juana y para que conste lo firme en dicho pueblo y mission dicho dia mes y año."
+        }
+    ]
+}

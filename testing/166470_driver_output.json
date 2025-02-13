@@ -1,0 +1,470 @@
+{
+    "type": "baptism",
+    "country": "Cuba",
+    "state": "Cienfuegos",
+    "city": "Cienfuegos",
+    "institution": "Catedral de Nuestra Señora de la Purisima Concepción",
+    "id": 166470,
+    "title": "Libro 3 de Bautismos de Pardos y Morenos, 1839 - 1843",
+    "entries": [
+        {
+            "id": "0008-06",
+            "raw": "En diezysies de Octubre de mil ochocientostreintaynuebe; yo Don Antonio Loreto Sanchez Presbitero cura beneficiado por Su Majestad de la Iglesia Parroquial de la Purisima Concepción de esta villa de Cienfuegos en ella y su jurisdiccion vicario Eclesiastico por Santa Eclesiastica Illustrisima bautice solemnemente y puse los santos oleos a una parvula que nacio, el quince de Julio del presente año hija legitima de los morenos Fabian y de Isabel naturales de Africa de la propiedad de Don Jose Corras; en cuya parvula ejerci las sacras ceremonias y preces y le puse por nombre Maria del Carmen; fue su madrina Francisca Maria Herrera; aquien adverti el parentesco espiritual y demas obligaciones y lo firme",
+            "normalized": "En dieciséis de octubre de mil ochocientos treinta y nueve, yo Don Antonio Loreto Sánchez, presbítero cura beneficiado por Su Majestad de la Iglesia Parroquial de la Purísima Concepción de esta villa de Cienfuegos, en ella y su jurisdicción, vicario eclesiástico por Santa Eclesiástica Illustrísima, bauticé solemnemente y puse los santos óleos a una parvula que nació el quince de julio del presente año, hija legítima de los morenos Fabián y de Isabel, naturales de África, de la propiedad de Don José Corras. En cuya parvula ejercí las sacras ceremonias y preces, y le puse por nombre María del Carmen. Fue su madrina Francisca María Herrera, a quien advertí el parentesco espiritual y demás obligaciones, y lo firmé.",
+            "data": {
+                "people": [
+                    {
+                        "id": "P01",
+                        "name": "Antonio Loreto Sanchez",
+                        "titles": [
+                            "Don"
+                        ],
+                        "occupation": "cleric"
+                    },
+                    {
+                        "id": "P02",
+                        "name": "Fabián",
+                        "origin": "Africa",
+                        "phenotype": "moreno",
+                        "status": "enslaved",
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "enslaver"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "parent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P03",
+                        "name": "Isabel",
+                        "origin": "Africa",
+                        "phenotype": "moreno",
+                        "status": "enslaved",
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "enslaver"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "parent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P04",
+                        "name": "Jose Corras",
+                        "titles": [
+                            "Don"
+                        ],
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "enslaved"
+                            },
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "enslaved"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P05",
+                        "name": "María del Carmen",
+                        "age": "infant",
+                        "legitimacy": "legitimate",
+                        "status": "enslaved",
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P06",
+                        "name": "Francisca María Herrera",
+                        "relationships": [
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "godchild"
+                            }
+                        ]
+                    }
+                ],
+                "events": [
+                    {
+                        "type": "baptism",
+                        "principal": "P05",
+                        "date": "1839-10-16"
+                    },
+                    {
+                        "type": "birth",
+                        "principal": "P05",
+                        "date": "1839-07-15"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "9-01",
+            "raw": "En diezyseis de Octubre de mil ochocientostreintaynuebe; yo Don Antonio Loreto Sanchez Presbitero cura beneficado por Su Majestad de la Iglesia Parroquial de la Purisima Concepcion de esta villa de Cienfuegos en ella y su jurisdiccion vicario Eclesiastico por Santa Eclesiastica Illustrisima bautice solemnemente y puse los santos oleos a un parvulo que nacio el diezynuebe de Agosto del presente año hijo legitimo; de los morenos Manuel y Beatriz naturales de Africa esclavos de Don Jose Corras: en cuyo parvulo ejerci las sacras ceremonias y preces y le puse por nombre Luis fueron los padrinos Don Juan Jernandez y Doña Maria Ramona Prieto; aquienes adverti el parentesco espiritual y demas obligaciones y lo firme",
+            "normalized": "En dieciséis de octubre de mil ochocientos treinta y nueve, yo Don Antonio Loreto Sánchez, Presbítero cura beneficiado por Su Majestad de la Iglesia Parroquial de la Purísima Concepción de esta villa de Cienfuegos, en ella y su jurisdicción, vicario Eclesiástico por Santa Eclesiástica Illustrísima, bauticé solemnemente y puse los santos óleos a un parvulo que nació el diecinueve de agosto del presente año, hijo legítimo de los morenos Manuel y Beatriz, naturales de África, esclavos de Don José Corras. En cuyo parvulo ejercí las sacras ceremonias y preces y le puse por nombre Luis. Fueron los padrinos Don Juan Fernández y Doña Maria Ramona Prieto, a quienes advertí el parentesco espiritual y demás obligaciones, y lo firmé.",
+            "data": {
+                "people": [
+                    {
+                        "id": "P01",
+                        "name": "Antonio Loreto Sánchez",
+                        "titles": [
+                            "Don"
+                        ],
+                        "occupation": "cleric"
+                    },
+                    {
+                        "id": "P02",
+                        "name": "Manuel",
+                        "origin": "Africa",
+                        "phenotype": "moreno",
+                        "status": "enslaved",
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "parent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P03",
+                        "name": "Beatriz",
+                        "origin": "Africa",
+                        "status": "enslaved",
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "spouse"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "parent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P04",
+                        "name": "Luis",
+                        "age": "infant",
+                        "legitimacy": "legitimate",
+                        "status": "enslaved",
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "godparent"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P05",
+                        "name": "Juan Fernández",
+                        "titles": [
+                            "Don"
+                        ],
+                        "relationships": [
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P06",
+                        "name": "Maria Ramona Prieto",
+                        "titles": [
+                            "Doña"
+                        ],
+                        "phenotype": "parda",
+                        "relationships": [
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    }
+                ],
+                "events": [
+                    {
+                        "type": "baptism",
+                        "principal": "P04",
+                        "date": "1839-10-16"
+                    },
+                    {
+                        "type": "birth",
+                        "principal": "P04",
+                        "date": "1839-08-19"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "0009-02",
+            "raw": "En veinte de Octubre de mil ochocientostreintaynuebe; yo Don Antonio Loreto Sanchez Presbitero cura beneficiado por Santa Majestad de la Iglesia Parroquial de la Purisima Concepción de esta villa de Cienfuegos en ella y su jurisdiccion vicario Eclesiastico por Santa Eclesiastica Illustrisima bautice solemnemente y puse los santos oleos a un parvulo que nació el trece de Septiembre del presente año hijo de la morena Maria Josefa Valvidez natural de Cumanayagua y de padre no conocido abuelos paternos Jose Manuel y Micaela Ramirez naturales de Trinidad; en cuyo parvulo ejerci las sacras ceremonias preces y le puse por nombre Jose Crecencio; fue su padrino Don Andres Castellano; aquien adverti el parentesco espiritual y demas obligaciones y lo firme",
+            "normalized": "En veinte de octubre de mil ochocientos treinta y nueve, yo Don Antonio Loreto Sánchez, presbítero cura beneficiado por Santa Majestad de la Iglesia Parroquial de la Purísima Concepción de esta villa de Cienfuegos, en ella y su jurisdicción, vicario eclesiástico por Santa Eclesiástica Illustrísima, bauticé solemnemente y puse los santos óleos a un parvulo que nació el trece de septiembre del presente año, hijo de la morena Maria Josefa Valvidez, natural de Cumanayagua, y de padre no conocido, abuelos paternos Jose Manuel y Micaela Ramirez, naturales de Trinidad. En cuyo parvulo ejercí las sacras ceremonias y preces, y le puse por nombre Jose Crecencio. Fue su padrino Don Andrés Castellano, a quien advertí el parentesco espiritual y demás obligaciones, y lo firmé.",
+            "data": {
+                "people": [
+                    {
+                        "id": "P01",
+                        "name": "Antonio Loreto Sánchez",
+                        "titles": [
+                            "Don"
+                        ],
+                        "occupation": "cleric"
+                    },
+                    {
+                        "id": "P02",
+                        "name": "María Josefa Valvidez",
+                        "phenotype": "morena",
+                        "origin": "Cumanayagua"
+                    },
+                    {
+                        "id": "P03",
+                        "name": "Jose Manuel",
+                        "origin": "Trinidad",
+                        "relationships": [
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "grandparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P04",
+                        "name": "Micaela Ramirez",
+                        "origin": "Trinidad",
+                        "relationships": [
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "grandparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P05",
+                        "name": "Jose Crecencio",
+                        "age": "infant",
+                        "legitimacy": "illegitimate",
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "parent"
+                            },
+                            {
+                                "related_person": "P06",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P06",
+                        "name": "Andrés Castellano",
+                        "titles": [
+                            "Don"
+                        ],
+                        "relationships": [
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    }
+                ],
+                "events": [
+                    {
+                        "type": "baptism",
+                        "principal": "P05",
+                        "date": "1839-10-20"
+                    },
+                    {
+                        "type": "birth",
+                        "principal": "P05",
+                        "date": "1839-09-13"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "0009-03",
+            "raw": "En veinteysiete de Octubre de mil ochocientostrientaynuebe; yo Don Antonio Loreto Sanchez Presbitero cura beneficiado por Su Majestad de la Iglesia Parroquial de la Purisima Concepción de esta villa de Cienfuegos en ella y su jurisdiccion vicario Eclesiastico por Santa Eclesiastica Illustrisima bautice solemnemente y puse los santos oleos a una negra adulta natural de Guinea esclava de Don Agustin de Santa Cruz en cuya negra ejerci las sacras ceremonias y preces y le puse por nombre Calletana Leonor; fue su padrino Calletana aquien adverti el parentesco espiritual y demas obligaciones y lo firme",
+            "normalized": "En veintisiete de octubre de mil ochocientos treinta y nueve, yo Don Antonio Loreto Sánchez, Presbítero cura beneficiado por Su Majestad de la Iglesia Parroquial de la Purísima Concepción de esta villa de Cienfuegos, en ella y su jurisdicción, vicario Eclesiástico por Santa Eclesiástica Illustrísima, bauticé solemnemente y puse los santos óleos a una negra adulta natural de Guinea, esclava de Don Agustín de Santa Cruz. En esta negra ejercí las sacras ceremonias y preces, y le puse por nombre Catalina Leonor. Fue su padrino Catalina, a quien advertí el parentesco espiritual y demás obligaciones, y lo firmé.",
+            "data": {
+                "people": [
+                    {
+                        "id": "P01",
+                        "name": "Antonio Loreto Sánchez",
+                        "titles": [
+                            "Don"
+                        ],
+                        "occupation": "cleric"
+                    },
+                    {
+                        "id": "P02",
+                        "name": "Agustín de Santa Cruz",
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "enslaver"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P03",
+                        "name": "Catalina Leonor",
+                        "age": "adult",
+                        "origin": "Guinea",
+                        "phenotype": "negro",
+                        "status": "enslaved",
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "enslaver"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P04",
+                        "name": "Catalina",
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "godchild"
+                            }
+                        ]
+                    }
+                ],
+                "events": [
+                    {
+                        "type": "baptism",
+                        "principal": "P03",
+                        "date": "1839-10-27"
+                    }
+                ]
+            }
+        },
+        {
+            "id": "0009-04",
+            "raw": "En veinteysiete de Octubre de mil ochocientostrientaynuebe; yo Don Antonio Loreto Sanchez Presbitero cura beneficiado por Su Majestad de la Iglesia Parroquial de la Purisima Concepción de esta villa de Cienfuegos en ella y su jurisdiccion vicario Eclesiastico por Santa Eclesiastica Illustrisima bautice solemnemente y puse los santos oleos a un negro adulto natural de Guinea de la propiedad de Don Agustin Santa Cruz; en cuyo negro ejerci las sacras ceremonias y preces y le puse por nombre Rosendo fueron sus padrinos Feliz y Regina aquien adverti el parentesco espiritual y demas obligaciones y",
+            "normalized": "En veintisiete de octubre de mil ochocientos treinta y nueve, yo Don Antonio Loreto Sánchez, Presbítero cura beneficiado por Su Majestad de la Iglesia Parroquial de la Purísima Concepción de esta villa de Cienfuegos, en ella y su jurisdicción, vicario Eclesiástico por Santa Eclesiástica Illustrísima, bauticé solemnemente y puse los santos óleos a un negro adulto natural de Guinea, de la propiedad de Don Agustín Santa Cruz. En este negro ejercí las sacras ceremonias y preces, y le puse por nombre Rosendo. Fueron sus padrinos Félix y Regina, a quienes advertí el parentesco espiritual y demás obligaciones.",
+            "data": {
+                "people": [
+                    {
+                        "id": "P01",
+                        "name": "Antonio Loreto Sánchez",
+                        "titles": [
+                            "Don"
+                        ],
+                        "occupation": "cleric"
+                    },
+                    {
+                        "id": "P02",
+                        "name": "Agustín Santa Cruz",
+                        "titles": [
+                            "Don"
+                        ],
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "enslaver"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P03",
+                        "name": "Rosendo",
+                        "age": "adult",
+                        "phenotype": "negro",
+                        "status": "enslaved",
+                        "relationships": [
+                            {
+                                "related_person": "P02",
+                                "relationship_type": "enslaver"
+                            },
+                            {
+                                "related_person": "P04",
+                                "relationship_type": "godparent"
+                            },
+                            {
+                                "related_person": "P05",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P04",
+                        "name": "Félix",
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "P05",
+                        "name": "Regina",
+                        "relationships": [
+                            {
+                                "related_person": "P03",
+                                "relationship_type": "godparent"
+                            }
+                        ]
+                    }
+                ],
+                "events": [
+                    {
+                        "type": "baptism",
+                        "principal": "P03",
+                        "date": "1839-10-27"
+                    }
+                ]
+            }
+        }
+    ]
+}
