@@ -8,6 +8,117 @@
     "title": "Baptisms - 1793-1807",
     "entries": [
         {
+            "id": "0017-02",
+            "lines": [
+                "Viernes, día diez de Enero de Mil Setecientos",
+                "Noventa y Quatro. Yo Don Miguel O'Reilly Teniente",
+                "de Cura Beneficiado, Vicario, y Juez Eclesiástico Auxiliar",
+                "de esta Yglesia parroquial, y provincia de San Agustin",
+                "de la Florida Oriental. Baptisé, y puse los santos oleos",
+                "a una niña de color morena, que nacio el dia seis del",
+                "presente mes, y año, hija de la negra Maria Ortegas,",
+                "natural de Guinea, y de padre no conoscido, y ambas",
+                "Esclavas de Sebastián Ortegas; y en ella exerci las sa",
+                "-cras Ceremonias, y preces de nuestra Santa madre Igles",
+                "-ia, y la puse por nombre Maria Teresa. Fueron",
+                "sus padrinos Juan Martinely y Mariana Cavedo,",
+                "vecinos de esta Ciudad, les advertí el parentesco espiri",
+                "tual, y demás obligaciones, y lo firmé en dicho dia,",
+                "mes y año- Miguel O'Reilly"
+            ],
+            "complete": true
+        },
+        {
+            "id": "0017-03",
+            "lines": [
+                "Lunes, día treze de Enero de Mil Setecientos Noven",
+                "-ta y Quatro. Yo Don Miguel O'Reilly Teniente de Cura Be",
+                "neficiado, Vicario, y Juez Eclesiástico Auxiliar de esta Ig",
+                "-lesia parroquial, y provincia de San Agustín de la Flori",
+                "-da Oriental. Baptisé y puse los santos oleos a una niña",
+                "de color parda, libre, que nacio el dia siete del presente",
+                "mes, y año, hija de la Mulata libre Margarita Cupar,",
+                "Natural de providencia, y de padre conoscido; y en ella",
+                "exerci las sacras Ceremonias, y preces de nuestra santa"
+            ],
+            "complete": false
+        },
+        {
+            "id": "0019-01",
+            "lines": [
+                "conoscido, y ambos esclavos de Don Mateo Guadarrama",
+                "y en el exerci las sacras Ceremonias, y preces de nuestra",
+                "Santa madre Iglesia, y la puse por nombre Eusebio",
+                "Joseph Ramon fueron sus padrinos Pedro Miranda y Ma",
+                "-ria Dolores Miranda vecinos de esta Ciudad, les advertí",
+                "el parentesco espiritual, y demás obligaciones, y lo firmé",
+                "en dicho dia, mes y año-"
+            ],
+            "complete": false
+        },
+        {
+            "id": "0022-01",
+            "lines": [
+                "Martes, día veinte de Mayo de Mil Setecientos",
+                "Noventa y Quatro. Yo Don Miguel O'Reilly Teniente",
+                "de Cura Beneficiado, Vicario, y Juez Eclesiástico Auxili",
+                "-ar de esta Iglesia parroquial, y provincia de San Agus",
+                "tin de la Florida Oriental. Baptisé y puse los santos",
+                "oleos á un negro adulto como de cincuenta años de",
+                "edad, Natural de Jamaica e hijo de padres no conos",
+                "-cidos, y Esclavo de Don Miguel Lorenzo Isnardy",
+                "y en el exerci las sacras Ceremonias, y preces de",
+                "nuestra santa madre Iglesia, y le puse por nom",
+                "-bre Juan Baptistafue su padrino Don Miguel",
+                "Lorenzo Isnardy, vecino de esta Ciudad, le advertí",
+                "el parentesco espiritual, y demás obligaciones, y",
+                "lo firmé en dicho dia, mes y año-"
+            ],
+            "complete": true
+        },
+        {
+            "id": "0022-02",
+            "lines": [
+                "Martes, día veinte y uno de Mayo de",
+                "Mil Setecientos Noventa y Quatro. Yo Don Thomas",
+                "Hafsett, Cura Beneficiado, Vicario, y Juez Eclesiástico",
+                "de esta Yglesia parroquial, y provincia de San Agus",
+                "-tin de la Florida Oriental. Baptisé y puse los santos",
+                "oleos á un niño de cinco años de edad de color more",
+                "-no, hijo natural de los Negros Roberto y Eleonora na",
+                "-turales de America del Norte y todos Esclavos de",
+                "Don Juan Macqueen y en el exerci las sacras ce",
+                "-remonias, y preces de nuestra santa madre Iglesia,",
+                "y le puse por nombre Roberto y fue su padrino",
+                "El Doctor Don Thomas Sterling vecino de esta provin",
+                "-cia, le adverti el parentesco espiritual, y demás obli",
+                "-aciones, y lo firmé en dicho dia, mes y año-",
+                "Thomas Hafsett"
+            ],
+            "complete": true
+        },
+        {
+            "id": "0025-02",
+            "lines": [
+                "Miércoles, día veinte y uno de Mayo de Mil",
+                "Setecientos Noventa y quatro. Yo Don Thomas Haf",
+                "-sett, Cura Beneficiado, Vicario, y Juez Eclesiástico",
+                "de esta Iglesia parroquial, y provincia de San Agus",
+                "-tin de la Florida Oriental. Baptisé y puse los san",
+                "-tos oleos a una niña de color morena de cinco años",
+                "de edad, hija natural de los negros Juan y Dafíny",
+                "Macqueen, naturales de la America del Norte, y",
+                "todos esclavos de Don Juan Macqueen; y en ella",
+                "exerci las sacras Ceremonias, y preces de nuestra",
+                "santa madre Iglesia, y le puse por nombre Maria",
+                "Josepha, fue su padrino el Doctor Don Thomas",
+                "Sterling, vecino de esta provincia, le adverti el pa",
+                "-rentesco espiritual, y demás obligaciones, y lo firmé",
+                "en dicho dia, mes y año- Thomas Hafsett"
+            ],
+            "complete": true
+        },
+        {
             "id": "0027-02",
             "lines": [
                 "Miercoles, dia veinte y uno de Mayo de Mil, sete",
