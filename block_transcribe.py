@@ -3,7 +3,7 @@ from utility import *
 from segmentation_driver import *
 import json
 
-def transcribe_block(id, instructions_path="instructions.json", examples_path="htr_training_data/239746_short_htr.json", bucket_name="ssda-openai-test"):	
+def transcribe_block(id, instructions_path="instructions.json", examples_path="htr_training_data/239746_short_htr.json", bucket_name="ssda-openai-test", fine_tune=False):	
 	volume_id = int(id.split("-")[0])
 	block_id = id[id.find("-") + 1:]
 	volume_metadata = load_volume_metadata(volume_id)
@@ -81,11 +81,54 @@ def transcribe_block(id, instructions_path="instructions.json", examples_path="h
                     ]
 			    }
 			)
-	try:
-		response = client.chat.completions.create(
-			model= "gpt-4o",	
-			messages = conversation
+	if fine_tune:
+		conversation = []
+
+		for instruction in instructions:
+			conversation.append(
+				{
+						"role": "system",
+						"content": instruction["text"]
+				}
+			)
+		conversation.append(
+			{
+                    "role": "user",
+                    "content": [
+                        {
+							"type": "text",
+							"text": f"Please transcribe the sacramental record {block_id}, which appears in the attached images."
+						},
+                        {
+                            "type": "image_url",
+                            "image_url": {
+                                "url": f"https://{bucket_name}.s3.amazonaws.com/{id}-color.jpg",
+                                "detail": "high"
+                            }
+                        },
+                        {
+                            "type": "image_url",
+                            "image_url": {
+                                "url": f"https://{bucket_name}.s3.amazonaws.com/{id}-pooled.jpg",
+                                "detail": "high"
+                            }
+                        }
+                    ]
+			    }
 		)
+	
+	try:
+		if fine_tune:
+			response = client.chat.completions.create(
+				model= "ft:gpt-4o-2024-08-06:personal::B4xSaBY4",	
+				messages = conversation
+			)
+			print(response.choices[0].message.content)
+		else:
+			response = client.chat.completions.create(
+				model= "gpt-4o",	
+				messages = conversation
+			)
 		print(f"{id} transcribed.")
 	except:
 		print(f"Failed to transcribe {id}.")

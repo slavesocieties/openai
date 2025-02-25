@@ -1,4 +1,7 @@
-import json
+# file-U6o2w18nXb9PNn7fXGmDD9
+# ft:gpt-4o-2024-08-06:personal::B4xSaBY4
+
+"""import json
 from utility import *
 
 with open("htr_training_data/239746_htr.json", "r", encoding='utf-8') as f:
@@ -63,39 +66,28 @@ for entry in data["entries"]:
 
 with open("fine_tune.jsonl", "w") as f:
     for example in examples:
-        f.write(json.dumps(example) + "\n")
+        f.write(json.dumps(example) + "\n")"""
 
 from openai import OpenAI
-client = OpenAI()
-
-client.files.create(
-  file=open("fine_tune.jsonl", "rb"),
-  purpose="fine-tune"
-)
-
-# file-UnYsSL8XTvRjFtWSciR7Eu
-
-from openai import OpenAI
-
 client = OpenAI()
 
 """response = client.files.create(
-  file=open("fine_tune.jsonl", "rb"),
+  file=open("fine_tune_updated.jsonl", "rb"),
   purpose="fine-tune"
-)"""
+)
 
-# print(client.files.list())
+print(client.files.list())"""
 
 """client.fine_tuning.jobs.create(
-    training_file="file-UnYsSL8XTvRjFtWSciR7Eu",
+    training_file="file-U6o2w18nXb9PNn7fXGmDD9",
     model="gpt-4o-2024-08-06"
 )"""
 
 # List 10 fine-tuning jobs
-print(client.fine_tuning.jobs.list(limit=10))
+# print(client.fine_tuning.jobs.list(limit=10))
 
 # Retrieve the state of a fine-tune
-# client.fine_tuning.jobs.retrieve("ftjob-abc123")
+print(client.fine_tuning.jobs.retrieve("ftjob-gMlikLjIKAgrOxnNq9qNIEuA"))
 
 # Cancel a job
 # client.fine_tuning.jobs.cancel("ftjob-abc123")

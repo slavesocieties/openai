@@ -16,7 +16,7 @@ def process_image(image_id):
 
 #process_image("239746-0076-01")
     
-def actual_full_demo(image_id, bucket_name="ssda-openai-test", local_file_path="images"):
+def actual_full_demo(image_id, bucket_name="ssda-openai-test", local_file_path="images", fine_tune=False):
 
     # Create an S3 client
     s3 = boto3.client('s3')    
@@ -33,13 +33,15 @@ def actual_full_demo(image_id, bucket_name="ssda-openai-test", local_file_path="
         segment_id = f"{image_id}-{segment['segment_id']}"
         s3.upload_file(f"segmented/{segment_id}-color.jpg", bucket_name, f'{segment_id}-color.jpg', ExtraArgs={'ContentType': "image/jpeg"})
         s3.upload_file(f"segmented/{segment_id}-pooled.jpg", bucket_name, f'{segment_id}-pooled.jpg', ExtraArgs={'ContentType': "image/jpeg"})
-        output = transcribe_block(segment_id)
+        output = transcribe_block(segment_id, fine_tune=fine_tune)
         if output is None:
             continue
         entry = build_entry(output)
-        while entry is False:
-            output = transcribe_block(segment_id)
-            entry = build_entry(output)
+        if entry is False:
+            continue        
+        """while entry is False:
+            output = transcribe_block(segment_id, fine_tune=fine_tune)
+            entry = build_entry(output)"""
         entries.append(entry)
 
     volume_id = int(image_id.split("-")[0])
@@ -48,7 +50,7 @@ def actual_full_demo(image_id, bucket_name="ssda-openai-test", local_file_path="
     process_transcription(f"testing/{volume_id}_full_demo_transcription.json", "instructions.json", "training_data.json",
                           training_keywords = {"type": "baptism", "country": "Cuba"}, mode = "and", out_path = f"testing/{volume_id}_full_demo_output.json")
     
-actual_full_demo("239746-0088")
+actual_full_demo("239746-0088", fine_tune=True)
 
 def volume_demo(volume_id, image_bucket="ssda-openai-test", local_image_dir="images"):
     volume_metadata = load_volume_metadata(volume_id)
