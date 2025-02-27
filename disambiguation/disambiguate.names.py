@@ -28,6 +28,10 @@ rareTerms = ["ranks", "age", "occupation"]
 relTerms = ["related_person", "relationship_type"]
 
 allRelTypes = ["slave", "enslaver", "godparent", "godchild", "spouse", "child", "parent"]
+# death might not be the actual word for it - check
+relsDict = {"baptism": ["enslaver", "godparent", "parent", "parent"],
+            "marriage": ["slave", "enslaver", "spouse"],
+            "death": ["slave", "enslaver", "child"]}
 
 
 # 0, 1, 2, 3, 4, 5, 6, 7, 8, 9
@@ -95,15 +99,54 @@ def genIndiv():
     for term in allTerms:
         genFrequency(thisPerson, term)
 
-    # remainingrels to be passed into next individual's relationships
-    remainingRels, allThisRels = genAllRels(allRelTypes)
+    thisScenario, allThisRels = genRelSet()
     if len(allThisRels) > 0:
         thisPerson["relationships"] = allThisRels
 
-    return remainingRels, thisPerson
+    return thisScenario, thisPerson
 
 
-def genRelatedPerson(possibleRels):
+# alternative for generate rels: based on scenario
+
+def genRelSet():
+    scenario = random.choice(list(relsDict.keys()))
+    possibleRels = relsDict[scenario][:]
+    addRels = []
+
+    howMany = random.randint(0, len(possibleRels))
+
+    for i in range(howMany):
+        if not possibleRels:
+            return scenario, addRels
+
+        relType = random.choice(possibleRels)
+
+        if relType == "slave" and "enslaver" in possibleRels:
+            possibleRels.remove("enslaver")
+        elif relType == "enslaver" and "slave" in possibleRels:
+            possibleRels.remove("slave")
+
+        possibleRels.remove(relType)
+        thisRel = {"related_person": generateName(), "relationship_type": relType}
+        addRels.append(thisRel)
+    
+    return scenario, addRels
+
+# second person
+# classification of relationship: same, diffname, diffppl
+# def otherRelated():
+
+
+# Test code
+scenario, personRecords = genIndiv()
+print(personRecords)
+
+
+
+
+# here lies scrap code RIP
+
+'''def genRelatedPerson(possibleRels):
     relatedFile = {}
     relatedFile["related_person"] = generateName()
 
@@ -123,22 +166,7 @@ def genAllRels(possibleRels):
         allRels.append(newFile)
         copyRels.remove(relUsed)
 
-    return copyRels, allRels
-
-
-# second person
-# classification of relationship: same, diffname, diffppl
-# def otherRelated():
-
-
-# Test code
-rels, personRecords = genIndiv()
-print(personRecords)
-
-
-
-
-# here lies scrap code RIP
+    return copyRels, allRels'''
 
 '''
 def random_element(names):
