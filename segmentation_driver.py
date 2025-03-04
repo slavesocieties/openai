@@ -187,7 +187,7 @@ def segmentation_driver(path_to_image, save_cropped_images=True, save_directory=
     path_to_image = path_to_image[path_to_image.rfind("/") + 1:]   
      
 
-    for entry_id, block in enumerate(entry_blocks):                        
+    for entry_id, block in enumerate(entry_blocks):                                
         deg, block = rotate_block(block)
         segment_id = f"{'0' * (2 - len(str(entry_id + 1)))}{entry_id + 1}"
         if not "image_id" in im_record:
@@ -242,6 +242,6 @@ def segmentation_driver(path_to_image, save_cropped_images=True, save_directory=
     #print(im_record)
     return im_record
 
-"""import json
+import json
 with open("segmentation_test.json", "w") as f:
-    json.dump(segmentation_driver("/Users/kevinchen/Desktop/SSDA/full size/239746-0021.jpg", display=True), f)"""
+    json.dump(segmentation_driver("images/239746-0088.jpg", display=True), f)

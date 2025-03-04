@@ -53,7 +53,7 @@ def get_degree(orig_image_gray):
         pixel_counts = np.sum(data, axis=1, keepdims=True)
         array = [] #TODO can convert to np.sum for performance boost
         for val in pixel_counts:  # flatten the numpy array
-            array.append(data.shape[1] - val[0])
+            array.append(data.shape[1] - val[0])        
         crop_pixels = scipy.signal.find_peaks(array, prominence=prominance)[0]
         peaks = []
         for pixel in crop_pixels:

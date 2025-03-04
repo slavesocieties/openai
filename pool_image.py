@@ -1,7 +1,7 @@
 import numpy as np
 import cv2
 
-def block_image(im_file):
+def block_image(im_file, data=False):
     """Function to create a grayscale version of the image with enhanced contrast and normalized background variations
 
     Parameters
@@ -14,7 +14,10 @@ def block_image(im_file):
     im : numpy array
         a grayscaled, contrast-enhanced, and normalized version of the image
     """
-    im = cv2.imread(im_file)     
+    if not data:
+        im = cv2.imread(im_file)
+    else:
+        im = im_file     
 
     # full-color image is split into its three basic color channels
     # each channel is treated as a separate grayscale image representing the intensity of that color in the image
