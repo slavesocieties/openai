@@ -14,7 +14,7 @@ def parse_xml_transcriptions(xml_file):
             lines = entry.text.split("\n") if entry.text else []
             filtered_lines = [line.strip() for line in lines if len(line.strip()) >= 20]
             
-            transcriptions[f"{image_id}-{entry_id}"] = " ".join(filtered_lines)
+            transcriptions[f"{image_id}-{entry_id}"] = filtered_lines
     
     return transcriptions
 
@@ -23,11 +23,14 @@ def process_transcriptions(annotation_file, xml_file, output_json):
     with open(annotation_file, 'r') as f:
         data = json.load(f)
     
-    transcriptions = parse_xml_transcriptions(xml_file)
+    transcriptions = parse_xml_transcriptions(xml_file)    
     output_entries = []
+    entries = []
     
     for image_info in data["images"]:
         annotations = image_info["annotations"]
+        filename = image_info["filename"]
+        image_id = filename[filename.rfind('-') + 1:filename.rfind('.')]
         
         # Filter relevant text annotations (non-partial, non-margin)
         text_annotations = [
@@ -37,15 +40,17 @@ def process_transcriptions(annotation_file, xml_file, output_json):
         
         # Sort annotations by vertical position (top coordinate)
         text_annotations.sort(key=lambda x: x["polygon"][1])
+
+        for idx, anno in enumerate(text_annotations, start=1):
+            entries.append(f"{image_id}-{idx:02d}")
         
-        # Match transcriptions to text annotations
-        for anno in text_annotations:
-            annotation_id = f"0{image_info['filename'][1:4]}-{int(anno['polygon'][1]):02d}"  # Generate matching ID
-            if annotation_id in transcriptions:
-                output_entries.append({
-                    "id": annotation_id,
-                    "lines": transcriptions[annotation_id]
-                })
+    # Match transcriptions to text annotations
+    for entry in entries:        
+        if entry in transcriptions:
+            output_entries.append({
+                "id": entry,
+                "lines": transcriptions[entry]
+            })
     
     # Save structured JSON output
     with open(output_json, 'w', encoding='utf-8') as f:
@@ -54,7 +59,7 @@ def process_transcriptions(annotation_file, xml_file, output_json):
     print(f"Processed transcriptions saved to {output_json}")
 
 # Example usage
-annotation_file = "annotations.json"
-xml_file = "239746.xml"
-output_json = "processed_transcriptions.json"
+annotation_file = "image_annotations/annotations.json"
+xml_file = "xml/239746.xml"
+output_json = "htr_training_data/239746_full_htr.json"
 process_transcriptions(annotation_file, xml_file, output_json)

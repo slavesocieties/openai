@@ -242,6 +242,6 @@ def segmentation_driver(path_to_image, save_cropped_images=True, save_directory=
     #print(im_record)
     return im_record
 
-import json
+"""import json
 with open("segmentation_test.json", "w") as f:
-    json.dump(segmentation_driver("images/239746-0088.jpg", display=True), f)
+    json.dump(segmentation_driver("images/239746-0088.jpg", display=True), f)"""
