@@ -64,7 +64,7 @@ for entry in data["entries"]:
     
     examples.append({"messages": conversation})
 
-with open("fine_tune_239746_full.jsonl", "w") as f:
+with open("fine_tune_239746_full.jsonl", "w", encoding="utf-8") as f:
     for example in examples:
         f.write(json.dumps(example) + "\n")
 
@@ -83,20 +83,21 @@ print(client.files.list())"""
 from openai import OpenAI
 client = OpenAI()
 
-"""client.fine_tuning.jobs.create(
+'''client.fine_tuning.jobs.create(
     training_file="file-UKXN7Y8NyHHHk1YBXhVzhQ",
     model="gpt-4o-2024-08-06"
-)"""
+)'''
 
 # List 10 fine-tuning jobs
 # print(client.fine_tuning.jobs.list(limit=10))
 
 # 3/6/25 fine-tuning job ftjob-GkVpSWk1Q6A5sacxxAaW5gLw
+# 3/10/25 fine-tuning job ftjob-Zik6PkwxcDKZSeCRn8EARG7G
 # Retrieve the state of a fine-tune
-print(client.fine_tuning.jobs.retrieve("ftjob-GkVpSWk1Q6A5sacxxAaW5gLw"))
+print(client.fine_tuning.jobs.retrieve("ftjob-Zik6PkwxcDKZSeCRn8EARG7G"))
 
 # Cancel a job
-# client.fine_tuning.jobs.cancel("ftjob-abc123")
+# client.fine_tuning.jobs.cancel("ftjob-GkVpSWk1Q6A5sacxxAaW5gLw")
 
 # List up to 10 events from a fine-tuning job
 # client.fine_tuning.jobs.list_events(fine_tuning_job_id="ftjob-abc123", limit=10)
