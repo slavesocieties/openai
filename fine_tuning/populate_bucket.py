@@ -6,6 +6,7 @@ from io import BytesIO
 import cv2
 import numpy as np
 import sys
+import math
 
 # Add the repository root to sys.path
 sys.path.append(os.path.abspath(os.path.dirname(__file__) + "/.."))
@@ -39,6 +40,9 @@ def process_annotations(annotation_file, source_bucket, destination_bucket):
     for image_info in data["images"]:
         filename = image_info["filename"]
         annotations = image_info["annotations"]
+        size = image_info["size"]
+        width_ratio = 960 / size["width"]
+        height_ratio = 1280 / size["height"]
         
         # Download image
         image = download_image(s3_client, source_bucket, filename)                
@@ -55,7 +59,7 @@ def process_annotations(annotation_file, source_bucket, destination_bucket):
         # Crop and upload text regions
         for idx, anno in enumerate(text_annotations, start=1):
             left, top, right, bottom = anno["polygon"]
-            cropped_image = image.crop((left, top, right, bottom))
+            cropped_image = image.crop((left, top, right, bottom)).resize((math.floor((right - left) * width_ratio), math.floor((bottom - top) * height_ratio)))
             cv_image = pil_to_cv2(cropped_image)
             pooled_image = block_image(cv_image, data=True)
             pooled_image = Image.fromarray(pooled_image, mode="L")            

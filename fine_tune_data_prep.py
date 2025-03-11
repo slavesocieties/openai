@@ -1,7 +1,7 @@
 # file-U6o2w18nXb9PNn7fXGmDD9
 # ft:gpt-4o-2024-08-06:personal::B4xSaBY4
 
-"""import json
+'''import json
 from utility import *
 
 with open("htr_training_data/239746_full_htr.json", "r", encoding='utf-8') as f:
@@ -58,7 +58,7 @@ for entry in data["entries"]:
     conversation.append(
 				{
 					"role": "assistant",
-					"content": json.dumps(output)
+					"content": json.dumps(output, ensure_ascii=False)
 				}
 			)
     
@@ -66,38 +66,36 @@ for entry in data["entries"]:
 
 with open("fine_tune_239746_full.jsonl", "w", encoding="utf-8") as f:
     for example in examples:
-        f.write(json.dumps(example) + "\n")
+        f.write(json.dumps(example, ensure_ascii=False) + "\n")'''
 
 from openai import OpenAI
 client = OpenAI()
 
-response = client.files.create(
+'''response = client.files.create(
   file=open("fine_tune_239746_full.jsonl", "rb"),
   purpose="fine-tune"
 )
 
-print(client.files.list())"""
+print(client.files.list())'''
 
 # fine_tune_239746_full.jsonl 3/6/25 file-UKXN7Y8NyHHHk1YBXhVzhQ
-
-from openai import OpenAI
-client = OpenAI()
+# fine_tune_239746_sample.jsonl 3/11/25 file-FMUtFWrUUNWttRbTPioK3E
+# fine_tune_239746_full.jsonl 3/11/25 file-Th9EedvgSjCn5hPht5dLVW
 
 '''client.fine_tuning.jobs.create(
-    training_file="file-UKXN7Y8NyHHHk1YBXhVzhQ",
+    training_file="file-Th9EedvgSjCn5hPht5dLVW",
     model="gpt-4o-2024-08-06"
 )'''
 
 # List 10 fine-tuning jobs
-# print(client.fine_tuning.jobs.list(limit=10))
+# print(client.fine_tuning.jobs.list(limit=1))
 
-# 3/6/25 fine-tuning job ftjob-GkVpSWk1Q6A5sacxxAaW5gLw
-# 3/10/25 fine-tuning job ftjob-Zik6PkwxcDKZSeCRn8EARG7G
+# file-Th9EedvgSjCn5hPht5dLVW 3/11/25 ftjob-2JPYzqlfFPEJD3QWVmSUSy4u
 # Retrieve the state of a fine-tune
-print(client.fine_tuning.jobs.retrieve("ftjob-Zik6PkwxcDKZSeCRn8EARG7G"))
+print(client.fine_tuning.jobs.retrieve("ftjob-2JPYzqlfFPEJD3QWVmSUSy4u"))
 
 # Cancel a job
-# client.fine_tuning.jobs.cancel("ftjob-GkVpSWk1Q6A5sacxxAaW5gLw")
+# client.fine_tuning.jobs.cancel("ftjob-XpJNsTlUNPirodFycbQPBF9I")
 
 # List up to 10 events from a fine-tuning job
 # client.fine_tuning.jobs.list_events(fine_tuning_job_id="ftjob-abc123", limit=10)
