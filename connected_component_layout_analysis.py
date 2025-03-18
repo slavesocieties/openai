@@ -196,7 +196,52 @@ def detect_spine_column(
             center_col = start_col + column_width // 2
             return center_col
 
+    print("No spine detected.")
     return None
+
+def filter_large_and_contained_components(
+    bboxes,
+    classifications,
+    max_component_size=50000
+):
+    """
+    For each bounding box whose area > max_component_size, mark it as "other."
+    Then, for every other bounding box that is fully contained by this large bounding box,
+    also mark it as "other."
+
+    :param bboxes: list of (x, y, w, h) bounding boxes.
+    :param classifications: parallel list of labels (strings). This function modifies it in-place.
+    :param max_component_size: area threshold above which a component is considered "large."
+    """
+    n = len(bboxes)
+    # 1) Identify large bounding boxes
+    large_indices = []
+    for i, (bx, by, bw, bh) in enumerate(bboxes):
+        area = bw * bh
+        if area > max_component_size:
+            # Mark it as other
+            classifications[i] = "other"
+            large_indices.append(i)
+
+    # 2) For each large bounding box, mark any boxes fully contained by it as "other."
+    for li in large_indices:
+        (Lx, Ly, Lw, Lh) = bboxes[li]
+        # bounding box corners for the large box
+        Lx2 = Lx + Lw
+        Ly2 = Ly + Lh
+
+        for j, (bx, by, bw, bh) in enumerate(bboxes):
+            # skip if j is already "other"
+            if classifications[j] == "other":
+                continue
+
+            # check containment: top-left >= large box's top-left
+            # and bottom-right <= large box's bottom-right
+            jx2 = bx + bw
+            jy2 = by + bh
+            if (bx >= Lx) and (by >= Ly) and (jx2 <= Lx2) and (jy2 <= Ly2):
+                # fully contained => mark other
+                classifications[j] = "other"
 
 def classify_components_single_pass(
     image_path,
@@ -210,7 +255,8 @@ def classify_components_single_pass(
     facing_folio_fraction=0.15,
     narrow_width_fraction=0.2,
     tall_ratio=5.0,
-    color_map=None
+    wide_ratio=10.0,
+    color_map=None    
 ):
     """
     Classifies bounding boxes into:
@@ -268,6 +314,8 @@ def classify_components_single_pass(
     if image is None:
         raise IOError(f"Could not load {image_path}")
     img_h, img_w = image.shape[:2]
+    img_area = img_h * img_w
+    max_component_size = .03 * img_area
 
     classifications = ["" for _ in bboxes]
 
@@ -366,9 +414,17 @@ def classify_components_single_pass(
                 if height_ratio > tall_ratio:
                     classifications[i] = "other"
                     continue
+            if bh > 0:
+                width_ratio = bw / float(bh)
+                if width_ratio > wide_ratio:
+                    classifications[i] = "other"
+                    continue
+            
             # check narrowness
             if bw < avg_text_width * narrow_width_fraction:
                 classifications[i] = "other"
+
+    filter_large_and_contained_components(bboxes=bboxes, classifications=classifications, max_component_size=max_component_size)             
 
         # If you also want to override "facing_folio" if it's extremely tall, 
         # you could do the same checks for cat == "facing_folio" etc.
@@ -691,7 +747,7 @@ def finalize_text_bounding_boxes(
     return final_boxes
 
 if __name__ == "__main__":    
-    image_path = "images/239746-0020.jpg"
+    image_path = "images/701006-0026.jpg"
     output_path = "classification_with_spine_detection.png"
 
     text_boxes = finalize_text_bounding_boxes(
