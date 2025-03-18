@@ -1,5 +1,151 @@
 import cv2
 import numpy as np
+from scipy.signal import find_peaks
+
+def detect_vertical_line_paragraph_breaks(
+    image_path,
+    text_bboxes,
+    min_lines=20,
+    max_lines=40,
+    paragraph_gap_multiplier=2.0,
+    smoothing_kernel=5,
+    output_path="line_paragraph_breaks.png"
+):
+    """
+    Identifies potential line breaks by finding local minima in a vertical 
+    component-density curve. Also identifies extended low-density regions 
+    as paragraph breaks if they exceed 'paragraph_gap_multiplier' times 
+    the average line-gap height.
+
+    1) For each bounding box in text_bboxes, increment row_density[row] 
+       from y..y+h. 
+    2) Smooth row_density with a small kernel (smoothing_kernel).
+    3) Find local minima in the negative row_density (so we look for valleys).
+       Adapt threshold to get ~ [min_lines, max_lines] minima, if possible.
+    4) Measure average gap between consecutive minima => 
+       identify any region of low density that is >= paragraph_gap_multiplier * that gap 
+       as a 'paragraph break.'
+    5) Visualize line breaks (thin horizontal lines) & paragraph breaks (thicker lines)
+       on the original image, saving to output_path.
+
+    :param image_path: Path to the original image.
+    :param text_bboxes: List of (x, y, w, h) bounding boxes for the main text region.
+    :param min_lines: desired lower bound on # lines
+    :param max_lines: desired upper bound on # lines
+    :param paragraph_gap_multiplier: e.g. 2.0 => if a gap is twice the average line-gap => paragraph break
+    :param smoothing_kernel: size (in rows) of the moving-average smoothing.
+    :param output_path: Where to save the annotated image.
+    :return: (line_break_rows, paragraph_break_ranges)
+             line_break_rows: list of y-coordinates (int) for potential line breaks
+             paragraph_break_ranges: list of (start_y, end_y) for extended low-density regions
+    """
+
+    # 1) Load image & get dimensions
+    image = cv2.imread(image_path)
+    if image is None:
+        raise IOError(f"Could not load image: {image_path}")
+    img_h, img_w = image.shape[:2]
+
+    # 2) Build a vertical density array
+    row_density = np.zeros(img_h, dtype=np.int32)
+    for (bx, by, bw, bh) in text_bboxes:
+        top = max(0, by)
+        bot = min(img_h, by + bh)
+        row_density[top:bot] += 1
+
+    # 3) (Optional) Smooth row_density with a small moving average or convolution
+    if smoothing_kernel > 1:
+        kernel = np.ones(smoothing_kernel) / smoothing_kernel
+        smoothed = np.convolve(row_density, kernel, mode='same')
+    else:
+        smoothed = row_density.astype(np.float32)
+
+    # We'll invert it (negate) so that line gaps => local minima become local *maxima* in negative space
+    # but we can also directly find minima with find_peaks on (-smoothed).
+    neg_smoothed = -smoothed
+
+    # 4) Find local minima (peaks in neg_smoothed). We'll adapt the 'prominence' or 'distance' 
+    #    threshold so we end up with ~ [min_lines, max_lines] peaks if possible.
+
+    # A function to do the detection with adjustable parameters
+    def detect_minima(neg_signal, distance=10, prominence=5):
+        # find_peaks => local maxima in neg_signal => local minima in original smoothed
+        # distance => minimal spacing between peaks
+        # prominence => minimal difference from surrounding baseline
+        peaks, properties = find_peaks(neg_signal, distance=distance, prominence=prominence)
+        return peaks, properties
+
+    # We'll do a simple iterative approach adjusting "prominence" until we get 
+    # the # of peaks in [min_lines, max_lines], or we give up.
+    # We'll start with some baseline guess for distance and prominence.
+    distance_guess = 10
+    prominence_guess = 5
+    found_peaks = []
+    max_iter = 20
+
+    for _ in range(max_iter):
+        peaks, _ = detect_minima(neg_smoothed, distance=distance_guess, prominence=prominence_guess)
+        count = len(peaks)
+        if min_lines <= count <= max_lines:
+            found_peaks = peaks
+            break
+        # If too many lines => increase prominence => fewer peaks
+        if count > max_lines:
+            prominence_guess += 2
+        elif count < min_lines and prominence_guess > 0:
+            # too few => decrease prominence if possible
+            prominence_guess = max(0, prominence_guess - 1)
+        else:
+            # if that fails to converge, we could also tweak 'distance_guess'
+            # but let's keep it simple for now
+            pass
+
+    line_break_rows = found_peaks.tolist()  # potential line-break row indices
+    line_break_rows.sort()
+
+    # 5) Identify paragraph breaks: we measure average gap between line_break_rows.
+    #    If there's a gap >= paragraph_gap_multiplier * average_gap => call that 
+    #    region a paragraph break region.
+    paragraph_break_ranges = []
+    if len(line_break_rows) > 1:
+        # measure gaps
+        gaps = []
+        for i in range(len(line_break_rows) - 1):
+            gap = line_break_rows[i+1] - line_break_rows[i]
+            gaps.append(gap)
+        if gaps:
+            avg_gap = np.mean(gaps)
+            para_gap = paragraph_gap_multiplier * avg_gap
+
+            # find consecutive row_breaks that differ by >= para_gap
+            # the region between them is a "paragraph break region"
+            for i in range(len(gaps)):
+                if gaps[i] >= para_gap:
+                    # paragraph break region from line_break_rows[i] 
+                    # to line_break_rows[i+1]
+                    start_y = line_break_rows[i]
+                    end_y = line_break_rows[i+1]
+                    paragraph_break_ranges.append((start_y, end_y))
+
+    # 6) Visualize line breaks (thin green horizontal lines) & paragraph breaks (thick red lines).
+    annotated = image.copy()
+
+    # Draw line breaks
+    for row_y in line_break_rows:
+        cv2.line(annotated, (0, row_y), (img_w, row_y), (0, 255, 0), 1)
+
+    # Draw paragraph breaks
+    for (start_y, end_y) in paragraph_break_ranges:
+        # We'll draw a thicker red line in the midpoint or at start or something.
+        # E.g. let's draw a 2-pixel thick line at the start of the paragraph break region:
+        cv2.line(annotated, (0, start_y), (img_w, start_y), (0, 0, 255), 2)
+
+    # Or optionally fill a translucent rectangle from start_y to end_y
+    # but that's more advanced. We'll keep it simple with lines for now.
+
+    cv2.imwrite(output_path, annotated)
+
+    return line_break_rows, paragraph_break_ranges
 
 def detect_spine_column(
     image_path,
@@ -417,65 +563,132 @@ def adaptive_merge_pipeline(
 def finalize_text_bounding_boxes(
     image_path,
     output_path,
+    # Existing pipeline parameters:
     min_area=50,
     max_area=50000,
-    # classification parameters
     folio_side="recto",
     nbins=50,
     percentile=50,
     marginal_width_fraction=0.2,
     facing_folio_fraction=0.15,
-    # merging parameters
-    box_count_range=(2, 4),
-    initial_merge_threshold=10,
-    max_iterations=10
+    # New line/paragraph detection parameters:
+    min_lines=20,
+    max_lines=40,
+    paragraph_gap_multiplier=2.0,
+    smoothing_kernel=5,
+    # Possibly pass in your color_map or other advanced parameters
 ):
     """
-    1) Extract connected components with adaptive threshold for faint handwriting.
-    2) Classify them (text_region vs. margin vs. facing_folio), 
-       saving an intermediate annotated image if desired.
-    3) Filter to only text_region bounding boxes.
-    4) Adaptive-merge them to get 2-4 final bounding boxes.
-    5) Annotate and return the final bounding boxes.
+    1) Extract connected components from 'image_path'.
+    2) Classify them (text vs. margin vs. facing_folio, etc.).
+    3) Filter to only text-labeled bounding boxes => 'text_bboxes'.
+    4) Run detect_vertical_line_paragraph_breaks(...) on text_bboxes to find
+       line_break_rows + paragraph_break_ranges.
+    5) Merge all text_bboxes into a single bounding rectangle. If no paragraph 
+       breaks => keep as is. Otherwise, subdivide that rectangle at each 
+       line break that occurs right after a paragraph break region.
+    6) Return the resulting bounding boxes, also visualize them in a final image.
     """
-    # -- A) Extract connected components (with adaptive threshold, per your updated function) --    
-    all_bboxes = extract_connected_components(image_path, min_area, max_area)
 
-    # -- B) Classify them (this saves an annotated image with margin/facing_folio/text) --    
+    ##### Step A: Extract connected components #####    
+    all_bboxes = extract_connected_components(
+        image_path,
+        min_area=min_area,
+        max_area=max_area
+    )
+
+    ##### Step B: Classify bounding boxes #####    
     text_bboxes = classify_components_single_pass(
         image_path=image_path,
         bboxes=all_bboxes,
-        output_path=output_path,  # e.g. "classified_components.png"
+        output_path="classification_intermediate.png",  # intermediate result
         folio_side=folio_side,
         nbins=nbins,
         percentile=percentile,
-        narrow_width_fraction=marginal_width_fraction,
-        facing_folio_fraction=facing_folio_fraction
+        facing_folio_fraction=facing_folio_fraction,
+        narrow_width_fraction=marginal_width_fraction,  
+    )
+    # 'text_bboxes' are the bounding boxes labeled "text_region" by the classifier
+
+    if not text_bboxes:
+        # No text => nothing to do
+        final_img = cv2.imread(image_path)
+        if final_img is not None:
+            cv2.imwrite(output_path, final_img)
+        print("No text regions found.")
+        return []
+
+    ##### Step C: Detect lines & paragraphs #####
+    # We'll use your new function, e.g.: detect_vertical_line_paragraph_breaks    
+    line_breaks, paragraph_breaks = detect_vertical_line_paragraph_breaks(
+        image_path=image_path,
+        text_bboxes=text_bboxes,
+        min_lines=min_lines,
+        max_lines=max_lines,
+        paragraph_gap_multiplier=paragraph_gap_multiplier,
+        smoothing_kernel=smoothing_kernel,
+        output_path="line_paragraph_annotated.png"  # debug visualization
     )
 
-    # -- C) Now we only keep text_region bboxes => run adaptive merging
-    merged_bboxes, final_thr, success = adaptive_merge_pipeline(
-        bboxes=text_bboxes,
-        box_count_range=box_count_range,
-        initial_merge_threshold=initial_merge_threshold,
-        max_iterations=max_iterations
-    )
+    ##### Step D: Merge all text boxes into one big bounding region #####
+    # (If you prefer to handle multiple disjoint blocks, do so. For simplicity, 
+    #  we unify them all into minX..maxX, minY..maxY.)
+    min_x = min(bx for (bx,by,bw,bh) in text_bboxes)
+    max_x = max(bx + bw for (bx,by,bw,bh) in text_bboxes)
+    min_y = min(by for (bx,by,bw,bh) in text_bboxes)
+    max_y = max(by + bh for (bx,by,bw,bh) in text_bboxes)
 
-    # Optionally, we can annotate these final merged boxes in a new image
+    big_region = (min_x, min_y, max_x - min_x, max_y - min_y)
+
+    # If no paragraph breaks => we skip subdividing
+    if not paragraph_breaks:
+        # Just return this single region
+        final_boxes = [big_region]
+    else:
+        # Subdivide: For each paragraph break range (start_y, end_y),
+        # we find the line break row that is strictly > end_y => 
+        # that's our horizontal cut. 
+        # We'll gather these cut rows, then produce sub-bounding boxes from 
+        # top->cut1, cut1->cut2, etc.
+        cut_rows = []
+        for (start_y, end_y) in paragraph_breaks:
+            # find the first line break row that is > end_y
+            next_line_break = None
+            for lb in line_breaks:
+                if lb >= end_y:
+                    next_line_break = lb
+                    break
+            if next_line_break is not None:
+                cut_rows.append(next_line_break)
+
+        # Now produce sub-bounding boxes from min_y..cut1, cut1..cut2, ... last..max_y
+        cut_rows = sorted(set(cut_rows))  # unique & sorted
+        final_boxes = []
+        current_top = min_y
+        for cr in cut_rows:
+            if cr <= current_top or cr >= max_y:
+                # skip invalid or out-of-bounds
+                continue
+            sub_height = cr - current_top
+            final_boxes.append((min_x, current_top, max_x - min_x, sub_height))
+            current_top = cr
+        # remainder
+        if current_top < max_y:
+            final_boxes.append((min_x, current_top, max_x - min_x, max_y - current_top))
+
+    ##### Step E: Visualize the final boxes #####
     final_img = cv2.imread(image_path)
     if final_img is None:
-        raise IOError("Could not load original image")
-    # Draw final boxes in e.g. green
-    for (x, y, w, h) in merged_bboxes:
-        cv2.rectangle(final_img, (x, y), (x+w, y+h), (0, 255, 0), 3)
+        raise IOError(f"Could not reload {image_path}")
 
-    merged_output_path = "final_merged_output.png"
-    cv2.imwrite(merged_output_path, final_img)
+    # Let's draw them in green
+    for (bx,by,bw,bh) in final_boxes:
+        cv2.rectangle(final_img, (bx,by), (bx+bw, by+bh), (0,255,0), 3)
 
-    print(f"Adaptive merge success={success}, final threshold={final_thr}, final box count={len(merged_bboxes)}")
-    print(f"Final merged annotation saved to {merged_output_path}")
+    cv2.imwrite(output_path, final_img)
 
-    return merged_bboxes
+    print(f"Final subdivided text bounding boxes saved to {output_path}.")
+    return final_boxes
 
 if __name__ == "__main__":    
     image_path = "images/239746-0020.jpg"
@@ -491,11 +704,7 @@ if __name__ == "__main__":
         nbins=50,
         percentile=50,
         marginal_width_fraction=0.2,
-        facing_folio_fraction=0.15,
-        # merging parameters
-        box_count_range=(2, 4),
-        initial_merge_threshold=10,
-        max_iterations=10
+        facing_folio_fraction=0.15
     )
 
     print(f"Found {len(text_boxes)} bounding boxes in main text region. Classification visualization saved to {output_path}")
