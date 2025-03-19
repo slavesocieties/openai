@@ -1,6 +1,7 @@
 import cv2
 import numpy as np
 from scipy.signal import find_peaks
+import math
 
 def detect_vertical_line_paragraph_breaks(
     image_path,
@@ -147,58 +148,6 @@ def detect_vertical_line_paragraph_breaks(
 
     return line_break_rows, paragraph_break_ranges
 
-def detect_spine_column(
-    image_path,
-    column_width=5,
-    dark_fraction_threshold=0.5,
-    folio_side="recto",
-    edge_margin_fraction=0.25
-):
-    """
-    Searches for a narrow vertical strip of width ~ column_width
-    where each column is at least dark_fraction_threshold black.
-    If folio_side="recto", we limit to left edge;
-    if folio_side="verso", we limit to right edge.
-    Returns the center x-coordinate of the first matching spine strip, or None if none found.
-    """
-    gray = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
-    if gray is None:
-        raise IOError(f"Could not load image: {image_path}")
-
-    img_h, img_w = gray.shape
-
-    # Threshold (Otsu)
-    _, thresh = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY | cv2.THRESH_OTSU)
-    # We assume the background is black => 0, folio is white => 255, no invert needed. 
-    # If your data is reversed, do: thresh = cv2.bitwise_not(thresh)
-
-    # Fraction of black pixels per column
-    is_black = (thresh == 0)
-    col_black_counts = np.sum(is_black, axis=0)  # shape=(img_w,)
-    col_black_fraction = col_black_counts / float(img_h)
-
-    # Limit search region to the left or right side if desired
-    left_limit = 0
-    right_limit = img_w
-    if folio_side == "recto":
-        right_limit = int(img_w * edge_margin_fraction)
-    else:  # verso
-        left_limit = int(img_w * (1.0 - edge_margin_fraction))
-
-    left_limit = max(0, left_limit)
-    right_limit = min(img_w, right_limit)
-
-    # Slide a window of width column_width across [left_limit, right_limit]
-    for start_col in range(left_limit, right_limit - column_width + 1):
-        window = col_black_fraction[start_col : start_col + column_width]
-        if np.all(window >= dark_fraction_threshold):
-            # Found a potential spine
-            center_col = start_col + column_width // 2
-            return center_col
-
-    print("No spine detected.")
-    return None
-
 def filter_large_and_contained_components(
     bboxes,
     classifications,
@@ -243,6 +192,323 @@ def filter_large_and_contained_components(
                 # fully contained => mark other
                 classifications[j] = "other"
 
+def compute_xaxis_density(
+    bboxes,
+    image_width,
+    nbins=50
+):
+    """
+    Compute a normalized density distribution of bounding-box centers 
+    across the x-axis, returning a density_array of length nbins in [0..1].
+    1) We bin each bounding box's center x-coordinate in [0..image_width].
+    2) We increment bin_counts[bin_idx].
+    3) We scale the bin_counts by dividing by max_count so the resulting
+       density_array is in [0..1].
+    """
+    bin_width = float(image_width)/nbins
+
+    bin_counts = np.zeros(nbins, dtype=np.float32)
+    for (bx, by, bw, bh) in bboxes:
+        cx = bx + bw/2.0
+        bin_idx = int(cx // bin_width)
+        if bin_idx < 0:
+            bin_idx = 0
+        elif bin_idx >= nbins:
+            bin_idx = nbins - 1
+        bin_counts[bin_idx] += 1.0
+
+    max_count = np.max(bin_counts)
+    if max_count > 0:
+        density_array = bin_counts / max_count
+    else:
+        # no bounding boxes or all zero => everything is 0
+        density_array = bin_counts
+    return density_array
+
+def density_to_color(density):
+    """
+    Convert a density in [0..1] to a BGR color.
+    We'll do a simple linear blend from blue -> red, ignoring green.
+    0 => pure blue, 1 => pure red.
+    """
+    b = int((1.0 - density)*255)
+    r = int(density*255)
+    g = 0
+    return (b, g, r)
+
+def classify_components_xdensity_with_scenario(
+    scenario,  # "unbound", "recto", or "verso"
+    image_path,
+    bboxes,
+    image_width,
+    image_height,
+    nbins=50,
+    smooth_kernel=5,
+    sharpness_threshold=0.2,
+    xdensity_heatmap_path=None,
+    margin_label="margin",
+    text_label="text_region",
+    facing_label="facing_folio"
+):
+    """
+    Classify bounding boxes based on x-axis density, using prior knowledge 
+    of whether the image is "unbound", "recto", or "verso."
+
+    - "unbound": expects exactly 1 disjuncture in the left portion => margin < xcut => text >= xcut
+    - "recto": expects exactly 2 disjunctures in the left portion => 
+               facing < xcut1 < margin < xcut2 < text
+    - "verso": expects 1 disjuncture in left portion (margin->text), 
+               plus 2 disjunctures in right portion (text->margin->facing).
+               Then "all bounding boxes to the right of the second disjuncture (in the right portion) are facing."
+
+    :param scenario: one of {"unbound","recto","verso"}
+    :param image_path: path to the original image (for heatmap).
+    :param bboxes: list of bounding boxes (x,y,w,h).
+    :param image_width, image_height: size of the image in pixels.
+    :param nbins: how many bins for x-axis density
+    :param smooth_kernel: size of moving-average for smoothing
+    :param sharpness_threshold: absolute diff threshold for a "sharp" disjuncture
+    :param xdensity_heatmap_path: if provided, we save an intermediate bounding-box heatmap.
+    :return: classifications, a list of labels in {margin_label,text_label,facing_label}
+    """
+    n = len(bboxes)
+    classifications = [None]*n
+
+    # Step 1) Compute x-density => [0..1]
+    density_array = compute_xaxis_density(bboxes, image_width, nbins=nbins)
+
+    # Step 2) Smooth
+    if smooth_kernel>1:
+        kernel = np.ones(smooth_kernel,dtype=np.float32)/smooth_kernel
+        smoothed = np.convolve(density_array, kernel, mode='same')
+    else:
+        smoothed = density_array
+
+    # Step 3) Diff array => find disjunctures where |diff[i]| >= sharpness_threshold
+    diff = np.zeros(len(smoothed)-1, dtype=np.float32)
+    for i in range(len(smoothed)-1):
+        diff[i] = smoothed[i+1] - smoothed[i]
+
+    bin_width = float(image_width)/ nbins
+
+    # We'll define 3 helper subroutines:
+    def find_biggest_disjuncture_in_range(start_bin, end_bin):
+        """
+        Return the bin index i in [start_bin..end_bin-1] that has the biggest |diff[i]|.
+        Return (i, diff[i]) or (None, 0) if invalid.
+        """
+        i_best = None
+        val_best = 0.0
+        for i2 in range(start_bin, min(end_bin, len(diff))):
+            if abs(diff[i2])> abs(val_best):
+                i_best = i2
+                val_best = diff[i2]
+        return i_best, val_best
+
+    def find_top2_disjunctures_in_range(start_bin, end_bin):
+        """
+        Return the top two distinct bin indices in [start_bin..end_bin-1] 
+        by absolute diff value. If we can't find 2, we return fewer.
+        """
+        candidates = []
+        for i2 in range(start_bin, min(end_bin, len(diff))):
+            candidates.append( (i2, diff[i2]) )
+        # sort by absolute value
+        candidates.sort(key=lambda x: abs(x[1]), reverse=True)
+        # pick top 2
+        return candidates[:2]  # might have 1 if not enough
+
+    def find_topN_disjunctures_in_range(start_bin, end_bin, N=2):
+        candidates = []
+        for i2 in range(start_bin, min(end_bin, len(diff))):
+            candidates.append( (i2, diff[i2]) )
+        candidates.sort(key=lambda x: abs(x[1]), reverse=True)
+        return candidates[:N]
+
+    # We'll define 'left_third' = image_width/3, 'right_third'= 2*image_width/3 => bin indexes
+    left_third_bin = int(nbins*(1.0/3.0))
+    right_third_bin = int(nbins*(2.0/3.0))
+
+    # We'll define xcuts = []
+    # Then label bounding boxes according to scenario.
+    xcuts = []
+
+    if scenario=="unbound":
+        # we want exactly 1 disjuncture in ~left portion
+        # for simplicity, let's search the left half or left third, whichever user wants.
+        # let's do the left half => bin < nbins/2
+        half_bin = nbins//2
+        i_best, val_best = find_biggest_disjuncture_in_range(0, half_bin)
+        if i_best is None:
+            # fallback => everything text
+            for i in range(n):
+                classifications[i] = text_label
+        else:
+            xcut = (i_best+1)*bin_width
+            # margin < xcut, text >= xcut
+            for idx,(bx,by,bw,bh) in enumerate(bboxes):
+                cx = bx + bw/2.0
+                if cx< xcut:
+                    classifications[idx] = margin_label
+                else:
+                    classifications[idx] = text_label
+            xcuts.append(xcut)
+
+    elif scenario=="recto":
+        # we want 2 disjunctures in the left third => facing < xcut1 < margin < xcut2 < text
+        # so let's find top2 in [0..left_third_bin], then sort them
+        top2 = find_top2_disjunctures_in_range(0, left_third_bin)
+        if len(top2)<2:
+            # fallback => everything text
+            for i in range(n):
+                classifications[i] = text_label
+        else:
+            top2.sort(key=lambda x: x[0])  # sort by bin index
+            i1, val1 = top2[0]
+            i2, val2 = top2[1]
+            xcut1 = (i1+1)*bin_width
+            xcut2 = (i2+1)*bin_width
+            if xcut2< xcut1:
+                xcut1, xcut2 = xcut2, xcut1
+            xcuts=[xcut1,xcut2]
+            # classify
+            for idx,(bx,by,bw,bh) in enumerate(bboxes):
+                cx = bx + bw/2.0
+                if cx< xcut1:
+                    classifications[idx] = facing_label
+                elif cx< xcut2:
+                    classifications[idx] = margin_label
+                else:
+                    classifications[idx] = text_label
+
+    elif scenario=="verso":
+        # 1 disjuncture in left portion => margin < xcut1 => text >= xcut1
+        # 2 disjunctures in right portion => bounding boxes > xcut2 => facing
+        # ignoring xcut3 for labeling. 
+        # We'll define 'left' portion => left_third_bin or half_bin?
+        # user said "the first disjuncture in the leftmost third," "the two additional in the rightmost third."
+
+        # 1 in [0..left_third_bin], 2 in [right_third_bin..(len(diff))]
+        i_left, val_left = find_biggest_disjuncture_in_range(0, left_third_bin)
+        top2_right = find_topN_disjunctures_in_range(right_third_bin, len(diff), N=2)
+
+        if i_left is None or len(top2_right)<2:
+            # fallback => everything text
+            for i in range(n):
+                classifications[i] = text_label
+        else:
+            # interpret
+            xcut1 = (i_left+1)*bin_width
+            top2_right.sort(key=lambda x: x[0]) 
+            i2,val2 = top2_right[0]
+            i3,val3 = top2_right[1]
+            xcut2 = (i2+1)*bin_width
+            xcut3 = (i3+1)*bin_width
+            if xcut3< xcut2:
+                xcut2, xcut3 = xcut3, xcut2
+            xcuts=[xcut1,xcut2,xcut3]
+
+            # margin < xcut1, text in [xcut1.. xcut2), facing > xcut2
+            for idx,(bx,by,bw,bh) in enumerate(bboxes):
+                cx = bx + bw/2.0
+                if cx< xcut1:
+                    classifications[idx] = margin_label
+                elif cx> xcut2:
+                    classifications[idx] = facing_label
+                else:
+                    classifications[idx] = text_label
+
+    else:
+        # fallback => everything text
+        for i in range(n):
+            classifications[i] = text_label
+
+    # Step: produce heatmap if path is given
+    if xdensity_heatmap_path is not None:
+        heatmap_img = cv2.imread(image_path)
+        if heatmap_img is None:
+            # fallback => black canvas
+            heatmap_img = np.zeros((int(image_height), int(image_width),3), dtype=np.uint8)
+
+        # compute the raw bin-based density for each bounding box
+        density_array = compute_xaxis_density(bboxes, image_width, nbins=nbins)
+        bin_width = float(image_width)/ nbins
+        for (bx,by,bw,bh) in bboxes:
+            cx = bx + bw/2.0
+            bin_idx = int(cx//bin_width)
+            if bin_idx<0: bin_idx=0
+            elif bin_idx>= nbins: bin_idx= nbins-1
+            dens_val = density_array[bin_idx]
+            color = density_to_color(dens_val)
+            cv2.rectangle(
+                heatmap_img,
+                (int(bx), int(by)),
+                (int(bx+bw), int(by+bh)),
+                color, 2
+            )
+
+        # optional: also draw vertical lines at xcuts if found
+        for xcut in xcuts:
+            cv2.line(heatmap_img, (int(xcut),0), (int(xcut), int(image_height)), (0,255,255), 2)
+
+        cv2.imwrite(xdensity_heatmap_path, heatmap_img)
+
+    return classifications
+
+def postprocess_classifications(bboxes, classifications, scenario="unbound"):
+    """
+    :param bboxes: list of (x, y, w, h)
+    :param classifications: parallel list of strings (e.g. "margin", "text_region", "facing_folio")
+    :param scenario: one of {"unbound", "recto", "verso"}
+    :return: modifies 'classifications' in-place for the described edge cases
+    """
+
+    # 1) Calculate margin_max_x => the maximum (x + w) among components labeled margin
+    margin_max_x = None
+    for (bx, by, bw, bh), label in zip(bboxes, classifications):
+        if label == "margin":
+            right_edge = bx + bw
+            if margin_max_x is None or right_edge > margin_max_x:
+                margin_max_x = right_edge
+
+    # 1a) If we have a margin_max_x, re-classify "text" components that lie entirely to the left
+    #     of that margin_max_x => margin
+    if margin_max_x is not None:
+        for i, ((bx, by, bw, bh), label) in enumerate(zip(bboxes, classifications)):
+            if label == "text_region":
+                if (bx + bw) <= margin_max_x:
+                    classifications[i] = "margin"
+
+    # 2) For scenario="verso", push-out some facing_folio => text
+    if scenario == "verso":
+        # Find text_max_x => maximum (x + w) among text-labeled components
+        text_max_x = None
+        for (bx, by, bw, bh), label in zip(bboxes, classifications):
+            if label == "text_region":
+                right_edge = bx + bw
+                if text_max_x is None or right_edge > text_max_x:
+                    text_max_x = right_edge
+
+        if text_max_x is not None:
+            # re-label facing_folio => text if >= half their width is to the left of text_max_x
+            # i.e. overlap( [x, x+w], [0, text_max_x] ) >= w/2
+            for i, ((bx, by, bw, bh), label) in enumerate(zip(bboxes, classifications)):
+                if label == "facing_folio":
+                    box_left = bx
+                    box_right = bx + bw
+                    # Overlap with [0, text_max_x]
+                    overlap = 0.0
+                    if box_right > 0 and box_left < text_max_x:
+                        overlap_start = max(box_left, 0)
+                        overlap_end = min(box_right, text_max_x)
+                        if overlap_end > overlap_start:
+                            overlap = overlap_end - overlap_start
+                    if overlap >= bw/2.0:
+                        classifications[i] = "text_region"
+
+    # Return the modified classifications
+    return classifications
+
 def classify_components_single_pass(
     image_path,
     bboxes,
@@ -255,7 +521,7 @@ def classify_components_single_pass(
     facing_folio_fraction=0.15,
     narrow_width_fraction=0.2,
     tall_ratio=5.0,
-    wide_ratio=10.0,
+    wide_ratio=5.0,
     color_map=None    
 ):
     """
@@ -293,116 +559,30 @@ def classify_components_single_pass(
             "margin": (0, 215, 255),
             "facing_folio": (255, 0, 0),
             "other": (128, 128, 128)
-        }
-
-    # 1) Detect spine
-    spine_x = None
-    for cw in range(5, 0, -1):
-        attempt = detect_spine_column(
-            image_path=image_path,
-            column_width=cw,
-            dark_fraction_threshold=0.5,
-            folio_side=folio_side,
-            edge_margin_fraction=0.25
-        )
-        if attempt is not None:
-            spine_x = attempt
-            break
+        }    
 
     # Load the image for drawing
     image = cv2.imread(image_path)
     if image is None:
         raise IOError(f"Could not load {image_path}")
-    img_h, img_w = image.shape[:2]
-    img_area = img_h * img_w
-    max_component_size = .03 * img_area
-
-    classifications = ["" for _ in bboxes]
-
-    # 2) If we have spine => label bounding boxes across it as facing_folio
-    if spine_x is not None:
-        if folio_side == "recto":
-            # everything left => facing_folio
-            for i, (bx, by, bw, bh) in enumerate(bboxes):
-                cx = bx + bw/2.0
-                if cx < spine_x:
-                    classifications[i] = "facing_folio"
-        else:
-            # verso => everything right => facing_folio
-            for i, (bx, by, bw, bh) in enumerate(bboxes):
-                cx = bx + bw/2.0
-                if cx > spine_x:
-                    classifications[i] = "facing_folio"
-
-    # 3) Column histogram for non-facing_folio => define main region
-    bins = np.zeros(nbins, dtype=int)
-    unclassified_idxs = []
-    for i, (bx, by, bw, bh) in enumerate(bboxes):
-        if classifications[i] == "facing_folio":
-            continue
-        cx = bx + bw/2.0
-        bin_idx = int((cx / float(img_w)) * nbins)
-        bin_idx = max(0, min(bin_idx, nbins - 1))
-        bins[bin_idx] += 1
-        unclassified_idxs.append(i)
-
-    sorted_counts = np.sort(bins)
-    cutoff_index = int((percentile / 100.0) * nbins)
-    cutoff_index = max(0, min(cutoff_index, nbins - 1))
-    threshold_value = sorted_counts[cutoff_index]
-    non_sparse_bins = [b for b, c in enumerate(bins) if c >= threshold_value]
-
-    if not non_sparse_bins:
-        leftmost_bin = 0
-        rightmost_bin = nbins - 1
-    else:
-        leftmost_bin = min(non_sparse_bins)
-        rightmost_bin = max(non_sparse_bins)
-
-    leftmost_main_x = leftmost_bin * (img_w / float(nbins))
-    rightmost_main_x = (rightmost_bin + 1) * (img_w / float(nbins))
-
-    # 4) If no spine => fallback fraction approach for facing_folio
-    if spine_x is None:
-        for i in unclassified_idxs:
-            (bx, by, bw, bh) = bboxes[i]
-            cx = bx + bw/2.0
-            if folio_side == "recto":
-                if cx < leftmost_main_x * (1 - facing_folio_fraction):
-                    classifications[i] = "facing_folio"
-            else:
-                if cx > rightmost_main_x * (1 + facing_folio_fraction):
-                    classifications[i] = "facing_folio"
-
-    # 5) Among remaining, label margin vs text_region
-    #    margin = center < leftmost_main_x
-    #    text_region = otherwise
-    plausible_text_widths = []
-    for i in unclassified_idxs:
-        if classifications[i] == "":
-            bx, by, bw, bh = bboxes[i]
-            cx = bx + bw/2.0
-            if cx < leftmost_main_x:
-                classifications[i] = "margin"
-            else:
-                classifications[i] = "text_region"
-                plausible_text_widths.append(bw)
-
-    # Re-check margin: if center >= leftmost_main_x => label text_region
-    for i, cat in enumerate(classifications):
-        if cat == "margin":
-            (bx, by, bw, bh) = bboxes[i]
-            cx = bx + bw/2.0
-            if cx >= leftmost_main_x:
-                classifications[i] = "text_region"
-                plausible_text_widths.append(bw)
-
-    # 6) Final pass: label "other" if box is extremely tall (bh > tall_ratio * bw)
-    #    or narrower than narrow_width_fraction * average_text_width
-    if plausible_text_widths:
-        avg_text_width = np.mean(plausible_text_widths)
-    else:
-        avg_text_width = 1.0
+    h, w = image.shape[:2]
+    max_component_size = .03 * h * w
+    
+    # 1) Call classify_components_by_xaxis_density
+    classifications = classify_components_xdensity_with_scenario(
+        folio_side,
+        image_path,
+        bboxes,
+        w,
+        h,
+        nbins=50,
+        smooth_kernel=0,
+        sharpness_threshold=0.2,
+        xdensity_heatmap_path="coverage_heatmap.png",
+        margin_label="margin",
+        text_label="text_region",
+        facing_label="facing_folio"
+    )    
 
     for i, cat in enumerate(classifications):
         if cat not in ("facing_folio", "other"):
@@ -418,13 +598,16 @@ def classify_components_single_pass(
                 width_ratio = bw / float(bh)
                 if width_ratio > wide_ratio:
                     classifications[i] = "other"
-                    continue
-            
-            # check narrowness
-            if bw < avg_text_width * narrow_width_fraction:
-                classifications[i] = "other"
+                    continue                           
 
-    filter_large_and_contained_components(bboxes=bboxes, classifications=classifications, max_component_size=max_component_size)             
+    filter_large_and_contained_components(bboxes=bboxes, classifications=classifications, max_component_size=max_component_size)
+
+    classifications = postprocess_classifications(
+        bboxes,
+        classifications,
+        scenario=folio_side  # or "unbound"/"recto"
+    )
+            
 
         # If you also want to override "facing_folio" if it's extremely tall, 
         # you could do the same checks for cat == "facing_folio" etc.
@@ -444,7 +627,7 @@ def classify_components_single_pass(
     ]
     return text_region_bboxes
 
-def extract_connected_components(image_path, min_area=50, max_area=50000):
+def extract_connected_components(image_path, min_area=100, max_area=50000):
     # 1) Load grayscale
     gray = cv2.imread(image_path, cv2.IMREAD_GRAYSCALE)
     if gray is None:
@@ -646,6 +829,13 @@ def finalize_text_bounding_boxes(
     6) Return the resulting bounding boxes, also visualize them in a final image.
     """
 
+    # 1) Load image & get dimensions
+    image = cv2.imread(image_path)
+    if image is None:
+        raise IOError(f"Could not load image: {image_path}")
+    img_h, img_w = image.shape[:2]
+    min_area = .00001 * img_h * img_w
+
     ##### Step A: Extract connected components #####    
     all_bboxes = extract_connected_components(
         image_path,
@@ -747,14 +937,12 @@ def finalize_text_bounding_boxes(
     return final_boxes
 
 if __name__ == "__main__":    
-    image_path = "images/701006-0026.jpg"
+    image_path = "images/239746-0088.jpg"
     output_path = "classification_with_spine_detection.png"
 
     text_boxes = finalize_text_bounding_boxes(
         image_path,
-        output_path,
-        min_area=50,
-        max_area=50000,
+        output_path,        
         # classification parameters
         folio_side="verso",
         nbins=50,
