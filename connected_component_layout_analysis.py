@@ -1,7 +1,6 @@
 import cv2
 import numpy as np
 from scipy.signal import find_peaks
-import math
 
 def detect_vertical_line_paragraph_breaks(
     image_path,
@@ -10,35 +9,43 @@ def detect_vertical_line_paragraph_breaks(
     max_lines=40,
     paragraph_gap_multiplier=2.0,
     smoothing_kernel=5,
-    output_path="line_paragraph_breaks.png"
+    output_path="line_paragraph_breaks.png",
+    low_line_density_threshold=0.25
 ):
     """
-    Identifies potential line breaks by finding local minima in a vertical 
-    component-density curve. Also identifies extended low-density regions 
-    as paragraph breaks if they exceed 'paragraph_gap_multiplier' times 
-    the average line-gap height.
+    Identifies line breaks (local minima) in vertical bounding-box density
+    and then flags some breaks as paragraph breaks. Paragraph breaks
+    are determined by:
+      1) A large vertical gap >= paragraph_gap_multiplier * average_gap, or
+      2) A line whose density is < (low_line_density_threshold * mean_line_density).
+         The line break above that line is considered a paragraph break.
+         If multiple consecutive line breaks qualify, only the bottom-most is used.
 
-    1) For each bounding box in text_bboxes, increment row_density[row] 
-       from y..y+h. 
-    2) Smooth row_density with a small kernel (smoothing_kernel).
-    3) Find local minima in the negative row_density (so we look for valleys).
-       Adapt threshold to get ~ [min_lines, max_lines] minima, if possible.
-    4) Measure average gap between consecutive minima => 
-       identify any region of low density that is >= paragraph_gap_multiplier * that gap 
-       as a 'paragraph break.'
-    5) Visualize line breaks (thin horizontal lines) & paragraph breaks (thicker lines)
-       on the original image, saving to output_path.
+    Steps:
+      1) Build a row_density array by incrementing for each row spanned by bounding boxes.
+      2) Smooth row_density. Then find local minima => line breaks.
+      3) Adapts prominence to achieve ~ [min_lines, max_lines] lines if possible.
+      4) For each line i, measure line_density[i], the average row_density from line_break[i].. line_break[i+1].
+         Compute mean_line_density across all lines.
+      5) Mark line i as a potential paragraph break if:
+           (gap[i] >= paragraph_gap_multiplier*avg_gap) OR
+           (line_density[i+1] < low_line_density_threshold * mean_line_density)
+         (the second condition means "the line immediately below line_break[i] has low density")
+      6) If multiple consecutive line breaks are flagged, only the bottom-most is used.
+      7) Draw line breaks (thin green) & paragraph breaks (thicker red lines) on the image, saving to output_path.
 
-    :param image_path: Path to the original image.
-    :param text_bboxes: List of (x, y, w, h) bounding boxes for the main text region.
-    :param min_lines: desired lower bound on # lines
-    :param max_lines: desired upper bound on # lines
-    :param paragraph_gap_multiplier: e.g. 2.0 => if a gap is twice the average line-gap => paragraph break
-    :param smoothing_kernel: size (in rows) of the moving-average smoothing.
-    :param output_path: Where to save the annotated image.
-    :return: (line_break_rows, paragraph_break_ranges)
-             line_break_rows: list of y-coordinates (int) for potential line breaks
-             paragraph_break_ranges: list of (start_y, end_y) for extended low-density regions
+    :param image_path: path to the input image.
+    :param text_bboxes: bounding boxes belonging to the main text region.
+    :param min_lines, max_lines: target range for line count.
+    :param paragraph_gap_multiplier: factor to mark big vertical gaps as paragraphs.
+    :param smoothing_kernel: size for smoothing row_density.
+    :param output_path: path to save the annotated result.
+    :param low_line_density_threshold: fraction of average line density 
+                                       below which a line is flagged as a paragraph break line.
+                                       default 0.5 => 50%.
+    :return: (line_break_rows, paragraph_break_rows)
+             line_break_rows => list of row indices for line breaks
+             paragraph_break_ranges => list of (start_y, end_y) for paragraphs.
     """
 
     # 1) Load image & get dimensions
@@ -47,106 +54,160 @@ def detect_vertical_line_paragraph_breaks(
         raise IOError(f"Could not load image: {image_path}")
     img_h, img_w = image.shape[:2]
 
-    # 2) Build a vertical density array
+    # 2) Build a vertical row_density array
     row_density = np.zeros(img_h, dtype=np.int32)
     for (bx, by, bw, bh) in text_bboxes:
         top = max(0, by)
         bot = min(img_h, by + bh)
         row_density[top:bot] += 1
 
-    # 3) (Optional) Smooth row_density with a small moving average or convolution
-    if smoothing_kernel > 1:
-        kernel = np.ones(smoothing_kernel) / smoothing_kernel
+    # 3) Smooth row_density with a small moving average
+    if smoothing_kernel>1:
+        kernel = np.ones(smoothing_kernel, dtype=np.float32)/smoothing_kernel
         smoothed = np.convolve(row_density, kernel, mode='same')
     else:
         smoothed = row_density.astype(np.float32)
 
-    # We'll invert it (negate) so that line gaps => local minima become local *maxima* in negative space
-    # but we can also directly find minima with find_peaks on (-smoothed).
+    # We'll invert it to find line breaks as local maxima in -smoothed (valleys in smoothed).
     neg_smoothed = -smoothed
 
-    # 4) Find local minima (peaks in neg_smoothed). We'll adapt the 'prominence' or 'distance' 
-    #    threshold so we end up with ~ [min_lines, max_lines] peaks if possible.
+    # 4) Use find_peaks to detect line breaks as local maxima in neg_smoothed
+    from scipy.signal import find_peaks
+    def detect_minima_with_adaptation(neg_signal, min_lines, max_lines):
+        # We'll adapt 'prominence' to get #peaks in [min_lines, max_lines] if possible
+        distance_guess = 10
+        prominence_guess = 5
+        found_peaks = []
+        max_iter = 20
 
-    # A function to do the detection with adjustable parameters
-    def detect_minima(neg_signal, distance=10, prominence=5):
-        # find_peaks => local maxima in neg_signal => local minima in original smoothed
-        # distance => minimal spacing between peaks
-        # prominence => minimal difference from surrounding baseline
-        peaks, properties = find_peaks(neg_signal, distance=distance, prominence=prominence)
-        return peaks, properties
+        for _ in range(max_iter):
+            peaks, _ = find_peaks(neg_signal, distance=distance_guess, prominence=prominence_guess)
+            count = len(peaks)
+            if min_lines <= count <= max_lines:
+                return peaks
+            # If too many => increase prominence => fewer peaks
+            if count> max_lines:
+                prominence_guess += 2
+            elif count< min_lines and prominence_guess>0:
+                # too few => reduce prominence
+                prominence_guess = max(0, prominence_guess - 1)
+            else:
+                # not converging quickly => keep adjusting
+                pass
 
-    # We'll do a simple iterative approach adjusting "prominence" until we get 
-    # the # of peaks in [min_lines, max_lines], or we give up.
-    # We'll start with some baseline guess for distance and prominence.
-    distance_guess = 10
-    prominence_guess = 5
-    found_peaks = []
-    max_iter = 20
+        return peaks  # fallback
 
-    for _ in range(max_iter):
-        peaks, _ = detect_minima(neg_smoothed, distance=distance_guess, prominence=prominence_guess)
-        count = len(peaks)
-        if min_lines <= count <= max_lines:
-            found_peaks = peaks
-            break
-        # If too many lines => increase prominence => fewer peaks
-        if count > max_lines:
-            prominence_guess += 2
-        elif count < min_lines and prominence_guess > 0:
-            # too few => decrease prominence if possible
-            prominence_guess = max(0, prominence_guess - 1)
+    line_breaks = detect_minima_with_adaptation(neg_smoothed, min_lines, max_lines)
+    line_breaks = np.sort(line_breaks).tolist()  # row indices
+
+    if len(line_breaks) <2:
+        # trivial => no lines or 1 line => no paragraphs
+        # we'll draw them & return
+        annotated = image.copy()
+        for row_y in line_breaks:
+            cv2.line(annotated, (0,row_y), (img_w,row_y), (0,255,0), 1) # green line
+        cv2.imwrite(output_path, annotated)
+        return line_breaks, []
+
+    # 5) Identify paragraph breaks. 
+    #    We measure gap[i] = line_breaks[i+1] - line_breaks[i].
+    #    We also measure the "line density" for each line => average row_density from 
+    #    line_breaks[i].. line_breaks[i+1].
+    #    Then compute mean_line_density, see which lines are < threshold => potential paragraph.
+
+    # line gaps
+    gaps = []
+    for i in range(len(line_breaks)-1):
+        gap = line_breaks[i+1] - line_breaks[i]
+        gaps.append(gap)
+    avg_gap = np.mean(gaps) if gaps else 0
+
+    # line densities => for line i in [i, i+1)
+    # We'll define line_density[i] => average smoothed or average row_density?
+    # We'll do average row_density in that segment. 
+    # We can do average(smoothed) or sum(row_density)/ length. 
+    # We'll do sum(row_density)/ line_height for consistency.
+    line_densities = []
+    for i in range(len(line_breaks)-1):
+        top = line_breaks[i]
+        bot = line_breaks[i+1]
+        segment = row_density[top:bot]  # integer
+        if len(segment)>0:
+            avg_line_val = np.mean(segment)
         else:
-            # if that fails to converge, we could also tweak 'distance_guess'
-            # but let's keep it simple for now
-            pass
+            avg_line_val = 0
+        line_densities.append(avg_line_val)
 
-    line_break_rows = found_peaks.tolist()  # potential line-break row indices
-    line_break_rows.sort()
+    mean_line_density = np.mean(line_densities) if len(line_densities)>0 else 0
 
-    # 5) Identify paragraph breaks: we measure average gap between line_break_rows.
-    #    If there's a gap >= paragraph_gap_multiplier * average_gap => call that 
-    #    region a paragraph break region.
+    # Potential paragraph breaks
+    potential_parabreaks = set()
+    for i in range(len(line_breaks)-1):
+        # Condition A: gap >= paragraph_gap_multiplier * avg_gap
+        big_gap = (gaps[i] >= paragraph_gap_multiplier * avg_gap) if avg_gap>0 else False
+
+        # Condition B: line_densities[i+1] < low_line_density_threshold * mean_line_density
+        #   i.e. the "line" immediately below break i has low density
+        #   if i+1 == len(line_densities), there's no line after break i => skip
+        low_density = False
+        if i+1 < len(line_densities) and mean_line_density>0:
+            if line_densities[i+1] < low_line_density_threshold* mean_line_density:
+                low_density = True
+
+        if big_gap or low_density:
+            potential_parabreaks.add(i)
+
+    # Now we only keep the bottom-most break in consecutive sequences
+    # We treat line breaks in 'potential_parabreaks' as consecutive if i and i+1 are in the set
+    # We'll do a pass scanning from top to bottom:
+    # if we see consecutive i, i+1 => only keep i+1
+    paragraph_break_indices = []
+    sorted_pb = sorted(potential_parabreaks)
+    skip_next = False
+    for idx in range(len(sorted_pb)):
+        if skip_next:
+            skip_next = False
+            continue
+        current_i = sorted_pb[idx]
+        if idx+1< len(sorted_pb):
+            next_i = sorted_pb[idx+1]
+            if next_i == current_i+1:
+                # consecutive => only keep next_i => skip this one
+                paragraph_break_indices.append(next_i)
+                skip_next = True
+            else:
+                paragraph_break_indices.append(current_i)
+        else:
+            paragraph_break_indices.append(current_i)
+
+    # paragraph_break_indices now are the line-break indexes (the i in line_breaks[i], line_breaks[i+1]) 
+    # that mark paragraphs.
+
+    # We define paragraph_break_rows in terms of (start_y, end_y). We interpret "the region from 
+    # line_breaks[i].. line_breaks[i+1]" as a paragraph gap. We'll store each as (start_row, end_row).
+    # The user previously wanted e.g. "start_y= line_break_rows[i], end_y= line_break_rows[i+1]" 
+    # for paragraphs. We'll do that:
     paragraph_break_ranges = []
-    if len(line_break_rows) > 1:
-        # measure gaps
-        gaps = []
-        for i in range(len(line_break_rows) - 1):
-            gap = line_break_rows[i+1] - line_break_rows[i]
-            gaps.append(gap)
-        if gaps:
-            avg_gap = np.mean(gaps)
-            para_gap = paragraph_gap_multiplier * avg_gap
+    for i in paragraph_break_indices:
+        start_y = line_breaks[i]
+        if i+1< len(line_breaks):
+            end_y = line_breaks[i+1]
+            paragraph_break_ranges.append((start_y, end_y))
 
-            # find consecutive row_breaks that differ by >= para_gap
-            # the region between them is a "paragraph break region"
-            for i in range(len(gaps)):
-                if gaps[i] >= para_gap:
-                    # paragraph break region from line_break_rows[i] 
-                    # to line_break_rows[i+1]
-                    start_y = line_break_rows[i]
-                    end_y = line_break_rows[i+1]
-                    paragraph_break_ranges.append((start_y, end_y))
-
-    # 6) Visualize line breaks (thin green horizontal lines) & paragraph breaks (thick red lines).
+    # 6) Visualize line breaks & paragraph breaks
     annotated = image.copy()
 
-    # Draw line breaks
-    for row_y in line_break_rows:
-        cv2.line(annotated, (0, row_y), (img_w, row_y), (0, 255, 0), 1)
+    # draw line breaks in green
+    for row_y in line_breaks:
+        cv2.line(annotated, (0,row_y), (img_w,row_y), (0,255,0), 1)
 
-    # Draw paragraph breaks
+    # draw paragraph breaks => thicker red line at the top of the break range
     for (start_y, end_y) in paragraph_break_ranges:
-        # We'll draw a thicker red line in the midpoint or at start or something.
-        # E.g. let's draw a 2-pixel thick line at the start of the paragraph break region:
-        cv2.line(annotated, (0, start_y), (img_w, start_y), (0, 0, 255), 2)
-
-    # Or optionally fill a translucent rectangle from start_y to end_y
-    # but that's more advanced. We'll keep it simple with lines for now.
+        cv2.line(annotated, (0,start_y), (img_w,start_y), (0,0,255), 2)
 
     cv2.imwrite(output_path, annotated)
 
-    return line_break_rows, paragraph_break_ranges
+    return line_breaks, paragraph_break_ranges
 
 def filter_large_and_contained_components(
     bboxes,
@@ -410,12 +471,12 @@ def classify_components_xdensity_with_scenario(
 
             # margin < xcut1, text in [xcut1.. xcut2), facing > xcut2
             for idx,(bx,by,bw,bh) in enumerate(bboxes):
-                cx = bx + bw/2.0
+                cx = bx + bw/2.0                
                 if cx< xcut1:
                     classifications[idx] = margin_label
-                elif cx> xcut2:
+                elif cx > xcut2:                                        
                     classifications[idx] = facing_label
-                else:
+                else:                    
                     classifications[idx] = text_label
 
     else:
@@ -455,15 +516,27 @@ def classify_components_xdensity_with_scenario(
 
     return classifications
 
-def postprocess_classifications(bboxes, classifications, scenario="unbound"):
+def postprocess_classifications(
+    bboxes,
+    classifications,
+    scenario="unbound",
+    image_width=None,
+    image_height=None,
+    tile_size_ratio=0.05,
+    tile_box_count_threshold=2
+):
     """
-    :param bboxes: list of (x, y, w, h)
-    :param classifications: parallel list of strings (e.g. "margin", "text_region", "facing_folio")
-    :param scenario: one of {"unbound", "recto", "verso"}
-    :return: modifies 'classifications' in-place for the described edge cases
+    1) Reclassify text -> margin if fully left of margin_max_x
+    2) If scenario == "verso", reclassify facing_folio -> text if half box is left of text_max_x
+    3) New Tiling Step: only for the bounding region covering all text-labeled boxes.
+       - Tile the region into tile_size_ratio steps (e.g. 0.05 => 20 tiles).
+       - For each tile, count how many text-labeled bounding boxes partially/entirely intersect it.
+       - If the count < tile_box_count_threshold => "low coverage tile."
+       - Reclassify any text-labeled bounding box that intersects a low-coverage tile => "other."
     """
 
-    # 1) Calculate margin_max_x => the maximum (x + w) among components labeled margin
+    # -----------------------------
+    # (A) Margin pull-in
     margin_max_x = None
     for (bx, by, bw, bh), label in zip(bboxes, classifications):
         if label == "margin":
@@ -471,17 +544,15 @@ def postprocess_classifications(bboxes, classifications, scenario="unbound"):
             if margin_max_x is None or right_edge > margin_max_x:
                 margin_max_x = right_edge
 
-    # 1a) If we have a margin_max_x, re-classify "text" components that lie entirely to the left
-    #     of that margin_max_x => margin
     if margin_max_x is not None:
         for i, ((bx, by, bw, bh), label) in enumerate(zip(bboxes, classifications)):
             if label == "text_region":
                 if (bx + bw) <= margin_max_x:
                     classifications[i] = "margin"
 
-    # 2) For scenario="verso", push-out some facing_folio => text
+    '''# -----------------------------
+    # (B) Verso scenario => push-out facing_folio -> text
     if scenario == "verso":
-        # Find text_max_x => maximum (x + w) among text-labeled components
         text_max_x = None
         for (bx, by, bw, bh), label in zip(bboxes, classifications):
             if label == "text_region":
@@ -490,23 +561,119 @@ def postprocess_classifications(bboxes, classifications, scenario="unbound"):
                     text_max_x = right_edge
 
         if text_max_x is not None:
-            # re-label facing_folio => text if >= half their width is to the left of text_max_x
-            # i.e. overlap( [x, x+w], [0, text_max_x] ) >= w/2
             for i, ((bx, by, bw, bh), label) in enumerate(zip(bboxes, classifications)):
                 if label == "facing_folio":
                     box_left = bx
                     box_right = bx + bw
-                    # Overlap with [0, text_max_x]
-                    overlap = 0.0
-                    if box_right > 0 and box_left < text_max_x:
-                        overlap_start = max(box_left, 0)
-                        overlap_end = min(box_right, text_max_x)
-                        if overlap_end > overlap_start:
-                            overlap = overlap_end - overlap_start
-                    if overlap >= bw/2.0:
-                        classifications[i] = "text_region"
+                    overlap_start = max(box_left, 0)
+                    overlap_end = min(box_right, text_max_x)
+                    overlap = 0
+                    if overlap_end > overlap_start:
+                        overlap = overlap_end - overlap_start
+                    if overlap >= bw / 2.0:
+                        classifications[i] = "text_region"'''
 
-    # Return the modified classifications
+    # -----------------------------
+    # (C) Tiling Step with bounding region of text-labeled boxes,
+    #     counting # of text boxes in each tile, not coverage area.
+
+    if image_width is not None and image_height is not None:
+        # 1) Gather all text-labeled boxes
+        text_boxes = [
+            (bx, by, bw, bh)
+            for (bx, by, bw, bh), lab in zip(bboxes, classifications)
+            if lab == "text_region"
+        ]
+        if text_boxes:
+            min_x_text = min(bx for (bx, by, bw, bh) in text_boxes)
+            max_x_text = max(bx + bw for (bx, by, bw, bh) in text_boxes)
+            min_y_text = min(by for (bx, by, bw, bh) in text_boxes)
+            max_y_text = max(by + bh for (bx, by, bw, bh) in text_boxes)
+
+            region_w = max_x_text - min_x_text
+            region_h = max_y_text - min_y_text
+
+            if region_w > 0 and region_h > 0:
+                tile_w = region_w * tile_size_ratio
+                tile_h = region_h * tile_size_ratio
+
+                num_tiles_x = int(1.0 / tile_size_ratio)  # e.g. 20 if 0.05
+                num_tiles_y = int(1.0 / tile_size_ratio)
+
+                # We'll store how many text boxes partially/entirely intersect each tile
+                tile_box_count = np.zeros((num_tiles_y, num_tiles_x), dtype=int)
+
+                def overlap_1d(a1, a2, b1, b2):
+                    return max(0, min(a2, b2) - max(a1, b1))
+
+                # 2) For each text-labeled box, increment the tile's box count if intersects
+                for (bx, by, bw, bh), label in zip(bboxes, classifications):
+                    if label == "text_region":
+                        # region coords
+                        rx1 = bx - min_x_text
+                        ry1 = by - min_y_text
+                        rx2 = rx1 + bw
+                        ry2 = ry1 + bh
+
+                        start_tx = int(rx1 // tile_w)
+                        end_tx   = int(rx2 // tile_w)
+                        start_ty = int(ry1 // tile_h)
+                        end_ty   = int(ry2 // tile_h)
+
+                        for ty in range(start_ty, end_ty + 1):
+                            if 0 <= ty < num_tiles_y:
+                                tile_top = ty * tile_h
+                                tile_bottom = tile_top + tile_h
+                                for tx in range(start_tx, end_tx + 1):
+                                    if 0 <= tx < num_tiles_x:
+                                        tile_left = tx * tile_w
+                                        tile_right = tile_left + tile_w
+                                        overlap_w = overlap_1d(rx1, rx2, tile_left, tile_right)
+                                        overlap_h = overlap_1d(ry1, ry2, tile_top, tile_bottom)
+                                        if overlap_w > 0 and overlap_h > 0:
+                                            tile_box_count[ty, tx] += 1
+
+                # 3) Identify "low coverage" tiles => tile_box_count < tile_box_count_threshold
+                low_tiles = set()
+                for ty in range(num_tiles_y):
+                    for tx in range(num_tiles_x):
+                        if tile_box_count[ty, tx] < tile_box_count_threshold:
+                            low_tiles.add((ty, tx))
+
+                # 4) Reclassify text-labeled boxes that intersect these tiles => "other"
+                for i, ((bx, by, bw, bh), label) in enumerate(zip(bboxes, classifications)):
+                    if label == "text_region":
+                        rx1 = bx - min_x_text
+                        ry1 = by - min_y_text
+                        rx2 = rx1 + bw
+                        ry2 = ry1 + bh
+
+                        stx = int(rx1 // tile_w)
+                        etx = int(rx2 // tile_w)
+                        sty = int(ry1 // tile_h)
+                        ety = int(ry2 // tile_h)
+
+                        intersects_low_tile = False
+                        for ty in range(sty, ety+1):
+                            if 0 <= ty < num_tiles_y:
+                                tile_top = ty*tile_h
+                                tile_bottom = tile_top+tile_h
+                                for tx in range(stx, etx+1):
+                                    if 0 <= tx < num_tiles_x:
+                                        if (ty, tx) in low_tiles:
+                                            # check overlap is non-zero
+                                            tile_left = tx* tile_w
+                                            tile_right= tile_left+ tile_w
+                                            overlap_w = overlap_1d(rx1, rx2, tile_left, tile_right)
+                                            overlap_h = overlap_1d(ry1, ry2, tile_top, tile_bottom)
+                                            if overlap_w>0 and overlap_h>0:
+                                                intersects_low_tile = True
+                                                break
+                                if intersects_low_tile:
+                                    break
+                        if intersects_low_tile:
+                            classifications[i] = "other"
+
     return classifications
 
 def classify_components_single_pass(
@@ -605,9 +772,12 @@ def classify_components_single_pass(
     classifications = postprocess_classifications(
         bboxes,
         classifications,
-        scenario=folio_side  # or "unbound"/"recto"
-    )
-            
+        scenario=folio_side,
+        image_height=h,
+        image_width=w,
+        tile_box_count_threshold=2,
+        tile_size_ratio=0.1
+    )            
 
         # If you also want to override "facing_folio" if it's extremely tall, 
         # you could do the same checks for cat == "facing_folio" etc.
@@ -835,6 +1005,7 @@ def finalize_text_bounding_boxes(
         raise IOError(f"Could not load image: {image_path}")
     img_h, img_w = image.shape[:2]
     min_area = .00001 * img_h * img_w
+    max_area = .001 * img_h * img_w
 
     ##### Step A: Extract connected components #####    
     all_bboxes = extract_connected_components(
@@ -871,9 +1042,10 @@ def finalize_text_bounding_boxes(
         text_bboxes=text_bboxes,
         min_lines=min_lines,
         max_lines=max_lines,
-        paragraph_gap_multiplier=paragraph_gap_multiplier,
-        smoothing_kernel=smoothing_kernel,
-        output_path="line_paragraph_annotated.png"  # debug visualization
+        paragraph_gap_multiplier=1.5,
+        smoothing_kernel=5,
+        output_path="line_paragraph_annotated.png",  # debug visualization
+        low_line_density_threshold=.25
     )
 
     ##### Step D: Merge all text boxes into one big bounding region #####
@@ -937,14 +1109,14 @@ def finalize_text_bounding_boxes(
     return final_boxes
 
 if __name__ == "__main__":    
-    image_path = "images/239746-0088.jpg"
+    image_path = "images/585912-0092.jpg"
     output_path = "classification_with_spine_detection.png"
 
     text_boxes = finalize_text_bounding_boxes(
         image_path,
         output_path,        
         # classification parameters
-        folio_side="verso",
+        folio_side="recto",
         nbins=50,
         percentile=50,
         marginal_width_fraction=0.2,

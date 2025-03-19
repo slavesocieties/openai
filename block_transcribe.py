@@ -120,7 +120,7 @@ def transcribe_block(id, instructions_path="instructions.json", examples_path="h
 	try:
 		if fine_tune:
 			response = client.chat.completions.create(
-				model= "ft:gpt-4o-2024-08-06:personal::B4xSaBY4",	
+				model= "ft:gpt-4o-2024-08-06:personal::B9yazDFQ",	
 				messages = conversation
 			)
 			print(response.choices[0].message.content)
